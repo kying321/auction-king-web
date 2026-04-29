@@ -1,0 +1,68 @@
+{
+    "collection_families": {
+        "relics": {
+            "label": "文物",
+            "prior": 1.1,
+            "value_bias": 1.1,
+            "red_type_bias": {
+                "big_red": 1.08,
+                "gold_red": 1.12
+            }
+        },
+        "books": {
+            "label": "书籍/书画",
+            "prior": 1.02,
+            "value_bias": 1.05,
+            "red_type_bias": {
+                "big_red": 1.02,
+                "gold_red": 1.06
+            }
+        },
+        "jewelry": {
+            "label": "珠宝",
+            "prior": 1.05,
+            "value_bias": 1.12,
+            "red_type_bias": {
+                "big_red": 1.08,
+                "gold_red": 1.22
+            }
+        },
+        "medicine": {
+            "label": "医药",
+            "prior": 1,
+            "value_bias": 1,
+            "red_type_bias": {
+                "small_red": 1.03
+            }
+        },
+        "furniture": {
+            "label": "家居",
+            "prior": 0.95,
+            "value_bias": 0.9,
+            "red_type_bias": {
+                "small_red": 1.08,
+                "big_red": 0.88,
+                "gold_red": 0.78
+            }
+        },
+        "cargo": {
+            "label": "货物/航运",
+            "prior": 1.02,
+            "value_bias": 1.06,
+            "red_type_bias": {
+                "big_red": 1.06,
+                "gold_red": 1.12
+            }
+        },
+        "trendy": {
+            "label": "潮流藏品",
+            "prior": 0.95,
+            "value_bias": 0.94,
+            "red_type_bias": {
+                "small_red": 1.06,
+                "big_red": 0.88,
+                "gold_red": 0.82
+            }
+        }
+    }
+}

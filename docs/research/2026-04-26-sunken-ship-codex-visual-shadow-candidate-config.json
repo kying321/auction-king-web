@@ -1,0 +1,1813 @@
+{
+  "app": {
+    "title": "竞拍之王 | 手填模板工作台",
+    "default_map_id": "sunken_ship",
+    "default_template_id": "ahmed_default",
+    "config_source_version": "ak_workspace_v2_20260426_catalog_cell_max12"
+  },
+  "fields": {
+    "items": [
+      {
+        "id": "total_items",
+        "label": "总数量",
+        "short_help": "本局拍品总件数",
+        "family": "aggregate",
+        "metric": "count",
+        "input_mode": "integer",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "total_storage_cells",
+        "label": "总格数",
+        "short_help": "本局仓储总占格",
+        "family": "aggregate",
+        "metric": "total_cells",
+        "input_mode": "integer",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "total_value",
+        "label": "总价值",
+        "family": "aggregate",
+        "metric": "total_value",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "system_avg_value_type_count",
+        "label": "系统均价类型数",
+        "short_help": "系统均价提示覆盖的藏品类型数量，仅作为回放证据保留",
+        "family": "aggregate",
+        "metric": "type_count",
+        "input_mode": "integer",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "system_avg_value_per_cell",
+        "label": "系统每格均价",
+        "short_help": "系统提示的本场占位每格均价，数值为四舍五入近似值",
+        "family": "aggregate",
+        "metric": "avg_value",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": true
+      },
+      {
+        "id": "bid",
+        "label": "Bid",
+        "family": "aggregate",
+        "metric": "bid",
+        "input_mode": "integer",
+        "participates_in_solver": true,
+        "participates_in_valuation": true
+      },
+      {
+        "id": "white_count",
+        "label": "白色数量",
+        "family": "quality",
+        "quality": "w",
+        "metric": "count",
+        "input_mode": "integer",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "white_avg_cells",
+        "label": "白色均格",
+        "family": "quality",
+        "quality": "w",
+        "metric": "avg_cells",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "white_total_cells",
+        "label": "白色总格",
+        "family": "quality",
+        "quality": "w",
+        "metric": "total_cells",
+        "input_mode": "integer",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "white_avg_value",
+        "label": "白色平均价值",
+        "family": "quality",
+        "quality": "w",
+        "metric": "avg_value",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "white_total_value",
+        "label": "白色全部价值",
+        "family": "quality",
+        "quality": "w",
+        "metric": "total_value",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "green_count",
+        "label": "绿色数量",
+        "family": "quality",
+        "quality": "g",
+        "metric": "count",
+        "input_mode": "integer",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "green_avg_cells",
+        "label": "绿色均格",
+        "family": "quality",
+        "quality": "g",
+        "metric": "avg_cells",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "green_total_cells",
+        "label": "绿色总格",
+        "family": "quality",
+        "quality": "g",
+        "metric": "total_cells",
+        "input_mode": "integer",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "green_avg_value",
+        "label": "绿色平均价值",
+        "family": "quality",
+        "quality": "g",
+        "metric": "avg_value",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "green_total_value",
+        "label": "绿色全部价值",
+        "family": "quality",
+        "quality": "g",
+        "metric": "total_value",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "blue_count",
+        "label": "蓝色数量",
+        "short_help": "已观测到的蓝色件数",
+        "family": "quality",
+        "quality": "b",
+        "metric": "count",
+        "input_mode": "integer",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "blue_avg_cells",
+        "label": "蓝色均格",
+        "short_help": "蓝色拍品平均占格",
+        "family": "quality",
+        "quality": "b",
+        "metric": "avg_cells",
+        "input_mode": "decimal",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "blue_total_cells",
+        "label": "蓝色总格",
+        "family": "quality",
+        "quality": "b",
+        "metric": "total_cells",
+        "input_mode": "integer",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "blue_avg_value",
+        "label": "蓝色平均价值",
+        "family": "quality",
+        "quality": "b",
+        "metric": "avg_value",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "blue_total_value",
+        "label": "蓝色全部价值",
+        "family": "quality",
+        "quality": "b",
+        "metric": "total_value",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "purple_count",
+        "label": "紫色数量",
+        "family": "quality",
+        "quality": "p",
+        "metric": "count",
+        "input_mode": "integer",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "purple_avg_cells",
+        "label": "紫色均格",
+        "short_help": "紫色拍品平均占格",
+        "family": "quality",
+        "quality": "p",
+        "metric": "avg_cells",
+        "input_mode": "decimal",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "purple_total_cells",
+        "label": "紫色总格",
+        "family": "quality",
+        "quality": "p",
+        "metric": "total_cells",
+        "input_mode": "integer",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "purple_avg_value",
+        "label": "紫色平均价值",
+        "family": "quality",
+        "quality": "p",
+        "metric": "avg_value",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": true
+      },
+      {
+        "id": "purple_total_value",
+        "label": "紫色全部价值",
+        "family": "quality",
+        "quality": "p",
+        "metric": "total_value",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "orange_count",
+        "label": "金色数量",
+        "family": "quality",
+        "quality": "o",
+        "metric": "count",
+        "input_mode": "integer",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "orange_avg_cells",
+        "label": "金色均格",
+        "short_help": "金色拍品平均占格",
+        "family": "quality",
+        "quality": "o",
+        "metric": "avg_cells",
+        "input_mode": "decimal",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "orange_total_cells",
+        "label": "金色总格",
+        "family": "quality",
+        "quality": "o",
+        "metric": "total_cells",
+        "input_mode": "integer",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "orange_avg_value",
+        "label": "金色平均价值",
+        "family": "quality",
+        "quality": "o",
+        "metric": "avg_value",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": true
+      },
+      {
+        "id": "orange_total_value",
+        "label": "金色全部价值",
+        "family": "quality",
+        "quality": "o",
+        "metric": "total_value",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "red_count",
+        "label": "红色数量",
+        "family": "quality",
+        "quality": "r",
+        "metric": "count",
+        "input_mode": "integer",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "red_avg_cells",
+        "label": "红色均格",
+        "family": "quality",
+        "quality": "r",
+        "metric": "avg_cells",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "red_total_cells",
+        "label": "红色总格",
+        "family": "quality",
+        "quality": "r",
+        "metric": "total_cells",
+        "input_mode": "integer",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "red_avg_value",
+        "label": "红色平均价值",
+        "family": "quality",
+        "quality": "r",
+        "metric": "avg_value",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": true
+      },
+      {
+        "id": "red_total_value",
+        "label": "红色全部价值",
+        "family": "quality",
+        "quality": "r",
+        "metric": "total_value",
+        "input_mode": "decimal",
+        "participates_in_solver": false,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "white_green_total_cells",
+        "label": "绿白总格数",
+        "short_help": "绿色与白色合计占格",
+        "family": "combo",
+        "metric": "total_cells",
+        "input_mode": "integer",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "white_green_avg_cells",
+        "label": "绿白均格",
+        "short_help": "绿白拍品平均占格",
+        "family": "combo",
+        "metric": "avg_cells",
+        "input_mode": "decimal",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "white_green_total_count",
+        "label": "绿白总数量",
+        "family": "combo",
+        "metric": "count",
+        "input_mode": "integer",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "orange_count_min",
+        "label": "金色数量下界",
+        "family": "constraint",
+        "metric": "min_count",
+        "input_mode": "integer",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "orange_count_max",
+        "label": "金色数量上界",
+        "family": "constraint",
+        "metric": "max_count",
+        "input_mode": "integer",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "red_count_min",
+        "label": "红色数量下界",
+        "family": "constraint",
+        "metric": "min_count",
+        "input_mode": "integer",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      },
+      {
+        "id": "red_count_max",
+        "label": "红色数量上界",
+        "family": "constraint",
+        "metric": "max_count",
+        "input_mode": "integer",
+        "participates_in_solver": true,
+        "participates_in_valuation": false
+      }
+    ]
+  },
+  "templates": {
+    "allow_local_clone": true,
+    "builtins": [
+      {
+        "id": "ahmed_default",
+        "label": "Ahmed 默认模板",
+        "description": "按总数量 -> 金色均格 -> 蓝色数量 -> 紫色均格 -> 绿白总格数 -> 绿白均格 -> 蓝色均格 -> 总格数的手填链组织。",
+        "groups": [
+          {
+            "id": "core",
+            "label": "核心链路"
+          }
+        ],
+        "fields": [
+          {
+            "field_id": "total_items",
+            "group_id": "core",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "orange_avg_cells",
+            "group_id": "core",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "blue_count",
+            "group_id": "core",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "purple_avg_cells",
+            "group_id": "core",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "white_green_total_cells",
+            "group_id": "core",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "white_green_avg_cells",
+            "group_id": "core",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "blue_avg_cells",
+            "group_id": "core",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "total_storage_cells",
+            "group_id": "core",
+            "recommended": true,
+            "default_visible": true
+          }
+        ]
+      },
+      {
+        "id": "generic_full_observation",
+        "label": "全观察模板",
+        "description": "展开更多数量/均格/总格字段，适合复盘和全量手填。",
+        "groups": [
+          {
+            "id": "counts",
+            "label": "数量"
+          },
+          {
+            "id": "cells",
+            "label": "格数"
+          },
+          {
+            "id": "value",
+            "label": "价值"
+          }
+        ],
+        "fields": [
+          {
+            "field_id": "total_items",
+            "group_id": "counts",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "white_count",
+            "group_id": "counts",
+            "recommended": false,
+            "default_visible": true
+          },
+          {
+            "field_id": "green_count",
+            "group_id": "counts",
+            "recommended": false,
+            "default_visible": true
+          },
+          {
+            "field_id": "blue_count",
+            "group_id": "counts",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "purple_count",
+            "group_id": "counts",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "orange_count",
+            "group_id": "counts",
+            "recommended": false,
+            "default_visible": true
+          },
+          {
+            "field_id": "white_green_total_count",
+            "group_id": "counts",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "white_green_total_cells",
+            "group_id": "cells",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "white_green_avg_cells",
+            "group_id": "cells",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "blue_avg_cells",
+            "group_id": "cells",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "purple_avg_cells",
+            "group_id": "cells",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "orange_avg_cells",
+            "group_id": "cells",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "total_storage_cells",
+            "group_id": "cells",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "system_avg_value_per_cell",
+            "group_id": "value",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "purple_avg_value",
+            "group_id": "value",
+            "recommended": false,
+            "default_visible": true
+          },
+          {
+            "field_id": "orange_avg_value",
+            "group_id": "value",
+            "recommended": false,
+            "default_visible": true
+          },
+          {
+            "field_id": "red_avg_value",
+            "group_id": "value",
+            "recommended": false,
+            "default_visible": true
+          },
+          {
+            "field_id": "total_value",
+            "group_id": "value",
+            "recommended": false,
+            "default_visible": true
+          },
+          {
+            "field_id": "bid",
+            "group_id": "value",
+            "recommended": true,
+            "default_visible": true
+          }
+        ]
+      },
+      {
+        "id": "value_focus",
+        "label": "价值观察模板",
+        "description": "把出价、各品质均价和总价值放在前面，适合高预算精细估值。",
+        "groups": [
+          {
+            "id": "solver",
+            "label": "核心约束"
+          },
+          {
+            "id": "value",
+            "label": "价值观察"
+          }
+        ],
+        "fields": [
+          {
+            "field_id": "total_items",
+            "group_id": "solver",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "orange_avg_cells",
+            "group_id": "solver",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "purple_avg_cells",
+            "group_id": "solver",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "blue_count",
+            "group_id": "solver",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "white_green_total_cells",
+            "group_id": "solver",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "system_avg_value_per_cell",
+            "group_id": "value",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "purple_avg_value",
+            "group_id": "value",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "orange_avg_value",
+            "group_id": "value",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "red_avg_value",
+            "group_id": "value",
+            "recommended": true,
+            "default_visible": true
+          },
+          {
+            "field_id": "total_value",
+            "group_id": "value",
+            "recommended": false,
+            "default_visible": true
+          },
+          {
+            "field_id": "bid",
+            "group_id": "value",
+            "recommended": true,
+            "default_visible": true
+          }
+        ]
+      }
+    ]
+  },
+  "maps": {
+    "sunken_ship": {
+      "label": "沉船图",
+      "map_name": "沉船图-高难-互联网校准v1",
+      "submaps": [
+        {
+          "id": "unknown_wreck",
+          "label": "未知残骸"
+        },
+        {
+          "id": "ocean_liner_hold",
+          "label": "远洋客轮仓房"
+        },
+        {
+          "id": "military_vault",
+          "label": "军用舰艇保险库"
+        },
+        {
+          "id": "cold_chain_quarantine",
+          "label": "冷链货船隔离舱"
+        },
+        {
+          "id": "colonial_treasure_hold",
+          "label": "殖民商船宝库"
+        },
+        {
+          "id": "explorer_archive",
+          "label": "探险家座舰资料库"
+        },
+        {
+          "id": "royal_supply_hold",
+          "label": "皇家御用货仓"
+        },
+        {
+          "id": "biolab_sample_vault",
+          "label": "生物实验室样本库"
+        }
+      ],
+      "alpha_counts": {
+        "w": 0.508361,
+        "g": 2.375738,
+        "b": 3.259181,
+        "p": 4.779672,
+        "o": 1.808524,
+        "r": 1.508525
+      },
+      "solver": {
+        "count_prior_strength": 4
+      },
+      "cells_per_item": {
+        "w": {
+          "mean": 1.3,
+          "sd": 0.45,
+          "min": 1,
+          "max": 12
+        },
+        "g": {
+          "mean": 1.65,
+          "sd": 0.55,
+          "min": 1,
+          "max": 12
+        },
+        "b": {
+          "mean": 2,
+          "sd": 0.7,
+          "min": 1,
+          "max": 12
+        },
+        "p": {
+          "mean": 2.55,
+          "sd": 0.78,
+          "min": 1,
+          "max": 12
+        },
+        "o": {
+          "mean": 2.95,
+          "sd": 0.9,
+          "min": 1,
+          "max": 12
+        },
+        "r": {
+          "mean": 3.7,
+          "sd": 1.2,
+          "min": 1,
+          "max": 12
+        }
+      },
+      "value_model": {
+        "w": {
+          "base_item_mean": 700,
+          "base_item_sd": 220,
+          "per_cell_mean": 260,
+          "per_cell_sd": 70
+        },
+        "g": {
+          "base_item_mean": 1700,
+          "base_item_sd": 500,
+          "per_cell_mean": 520,
+          "per_cell_sd": 140
+        },
+        "b": {
+          "base_item_mean": 3900,
+          "base_item_sd": 1100,
+          "per_cell_mean": 1100,
+          "per_cell_sd": 300
+        },
+        "p": {
+          "base_item_mean": 9000,
+          "base_item_sd": 2200,
+          "per_cell_mean": 2300,
+          "per_cell_sd": 600
+        },
+        "o": {
+          "base_item_mean": 20000,
+          "base_item_sd": 4800,
+          "per_cell_mean": 4300,
+          "per_cell_sd": 950
+        },
+        "r": {
+          "base_item_mean": 260000,
+          "base_item_sd": 80000,
+          "per_cell_mean": 30000,
+          "per_cell_sd": 8500
+        }
+      },
+      "red_type_profiles": {
+        "profiles": {
+          "small_red": {
+            "prior": 0.48,
+            "mean_cells_per_item": 2.6,
+            "sd_cells_per_item": 0.7,
+            "base_item_mean": 90000,
+            "base_item_sd": 30000,
+            "per_cell_mean": 16000,
+            "per_cell_sd": 4500
+          },
+          "big_red": {
+            "prior": 0.34,
+            "mean_cells_per_item": 4.3,
+            "sd_cells_per_item": 0.85,
+            "base_item_mean": 180000,
+            "base_item_sd": 65000,
+            "per_cell_mean": 24000,
+            "per_cell_sd": 7000
+          },
+          "gold_red": {
+            "prior": 0.18,
+            "mean_cells_per_item": 3.5,
+            "sd_cells_per_item": 0.8,
+            "base_item_mean": 360000,
+            "base_item_sd": 130000,
+            "per_cell_mean": 30000,
+            "per_cell_sd": 9000
+          }
+        }
+      },
+      "collection_families": {
+        "relics": {
+          "prior": 1.25,
+          "value_bias": 1.12,
+          "red_type_bias": {
+            "big_red": 1.1,
+            "gold_red": 1.18
+          }
+        },
+        "books": {
+          "prior": 1.05,
+          "value_bias": 1.06,
+          "red_type_bias": {
+            "big_red": 1.02,
+            "gold_red": 1.08
+          }
+        },
+        "furniture": {
+          "prior": 0.85,
+          "value_bias": 0.9,
+          "red_type_bias": {
+            "small_red": 1.06,
+            "big_red": 0.86,
+            "gold_red": 0.76
+          }
+        }
+      }
+    },
+    "villa": {
+      "label": "别墅图",
+      "map_name": "别墅图-高难-实值校准模板",
+      "submaps": [
+        {
+          "id": "unknown_villa",
+          "label": "未知别墅"
+        },
+        {
+          "id": "designer_residence",
+          "label": "设计师居所"
+        },
+        {
+          "id": "scientist_residence",
+          "label": "科学家居所"
+        },
+        {
+          "id": "wellness_residence",
+          "label": "养生学家居所"
+        },
+        {
+          "id": "noble_residence",
+          "label": "望族居所"
+        },
+        {
+          "id": "scholar_residence",
+          "label": "学者居所"
+        },
+        {
+          "id": "private_vault",
+          "label": "私人金库"
+        },
+        {
+          "id": "luxury_retirement_home",
+          "label": "奢华养老院"
+        },
+        {
+          "id": "doomsday_shelter",
+          "label": "末日庇护所"
+        }
+      ],
+      "alpha_counts": {
+        "w": 8.5,
+        "g": 7.6,
+        "b": 3.9,
+        "p": 3.2,
+        "o": 4,
+        "r": 0.12
+      },
+      "solver": {
+        "count_prior_strength": 8
+      },
+      "cells_per_item": {
+        "w": {
+          "mean": 1.8,
+          "sd": 0.6,
+          "min": 1,
+          "max": 12
+        },
+        "g": {
+          "mean": 2.2,
+          "sd": 0.7,
+          "min": 1,
+          "max": 12
+        },
+        "b": {
+          "mean": 2.7,
+          "sd": 0.85,
+          "min": 1,
+          "max": 12
+        },
+        "p": {
+          "mean": 3.1,
+          "sd": 1,
+          "min": 1,
+          "max": 12
+        },
+        "o": {
+          "mean": 3.6,
+          "sd": 1.1,
+          "min": 1,
+          "max": 12
+        },
+        "r": {
+          "mean": 4.1,
+          "sd": 1.2,
+          "min": 1,
+          "max": 12
+        }
+      },
+      "value_model": {
+        "w": {
+          "base_item_mean": 600,
+          "base_item_sd": 250,
+          "per_cell_mean": 300,
+          "per_cell_sd": 80
+        },
+        "g": {
+          "base_item_mean": 1600,
+          "base_item_sd": 500,
+          "per_cell_mean": 500,
+          "per_cell_sd": 150
+        },
+        "b": {
+          "base_item_mean": 3600,
+          "base_item_sd": 1000,
+          "per_cell_mean": 1000,
+          "per_cell_sd": 280
+        },
+        "p": {
+          "base_item_mean": 7000,
+          "base_item_sd": 1800,
+          "per_cell_mean": 1700,
+          "per_cell_sd": 500
+        },
+        "o": {
+          "base_item_mean": 11000,
+          "base_item_sd": 2800,
+          "per_cell_mean": 2200,
+          "per_cell_sd": 800
+        },
+        "r": {
+          "base_item_mean": 145000,
+          "base_item_sd": 48000,
+          "per_cell_mean": 18000,
+          "per_cell_sd": 6000
+        }
+      },
+      "red_type_profiles": {
+        "profiles": {
+          "small_red": {
+            "prior": 0.68,
+            "mean_cells_per_item": 2.2,
+            "sd_cells_per_item": 0.6,
+            "base_item_mean": 60000,
+            "base_item_sd": 22000,
+            "per_cell_mean": 10000,
+            "per_cell_sd": 3200
+          },
+          "big_red": {
+            "prior": 0.22,
+            "mean_cells_per_item": 3.8,
+            "sd_cells_per_item": 0.8,
+            "base_item_mean": 130000,
+            "base_item_sd": 50000,
+            "per_cell_mean": 18000,
+            "per_cell_sd": 5500
+          },
+          "gold_red": {
+            "prior": 0.1,
+            "mean_cells_per_item": 3,
+            "sd_cells_per_item": 0.7,
+            "base_item_mean": 240000,
+            "base_item_sd": 90000,
+            "per_cell_mean": 22000,
+            "per_cell_sd": 7000
+          }
+        }
+      },
+      "collection_families": {
+        "furniture": {
+          "notes": [
+            "别墅主家族"
+          ],
+          "prior": 2.25,
+          "value_bias": 0.84,
+          "red_type_bias": {
+            "small_red": 1.22,
+            "big_red": 0.78,
+            "gold_red": 0.6
+          }
+        },
+        "trendy": {
+          "notes": [
+            "别墅次主家族"
+          ],
+          "prior": 1.65,
+          "value_bias": 0.9,
+          "red_type_bias": {
+            "small_red": 1.18,
+            "big_red": 0.88,
+            "gold_red": 0.7
+          }
+        },
+        "relics": {
+          "prior": 0.7,
+          "value_bias": 1.02,
+          "red_type_bias": {
+            "big_red": 0.9,
+            "gold_red": 0.82
+          }
+        }
+      }
+    },
+    "shipping": {
+      "label": "航运区",
+      "map_name": "航运区-高难-实值校准模板",
+      "alpha_counts": {
+        "w": 4.5,
+        "g": 4.4,
+        "b": 3.6,
+        "p": 2.9,
+        "o": 2.2,
+        "r": 0.9
+      },
+      "cells_per_item": {
+        "w": {
+          "mean": 1.3,
+          "sd": 0.55,
+          "min": 1,
+          "max": 12
+        },
+        "g": {
+          "mean": 1.7,
+          "sd": 0.7,
+          "min": 1,
+          "max": 12
+        },
+        "b": {
+          "mean": 2.1,
+          "sd": 0.8,
+          "min": 1,
+          "max": 12
+        },
+        "p": {
+          "mean": 2.5,
+          "sd": 0.95,
+          "min": 1,
+          "max": 12
+        },
+        "o": {
+          "mean": 3.1,
+          "sd": 1.1,
+          "min": 1,
+          "max": 12
+        },
+        "r": {
+          "mean": 3.8,
+          "sd": 1.25,
+          "min": 1,
+          "max": 12
+        }
+      },
+      "value_model": {
+        "w": {
+          "base_item_mean": 900,
+          "base_item_sd": 300,
+          "per_cell_mean": 320,
+          "per_cell_sd": 90
+        },
+        "g": {
+          "base_item_mean": 2200,
+          "base_item_sd": 700,
+          "per_cell_mean": 700,
+          "per_cell_sd": 200
+        },
+        "b": {
+          "base_item_mean": 5200,
+          "base_item_sd": 1600,
+          "per_cell_mean": 1500,
+          "per_cell_sd": 450
+        },
+        "p": {
+          "base_item_mean": 12000,
+          "base_item_sd": 3600,
+          "per_cell_mean": 3300,
+          "per_cell_sd": 1000
+        },
+        "o": {
+          "base_item_mean": 28000,
+          "base_item_sd": 7000,
+          "per_cell_mean": 6500,
+          "per_cell_sd": 1700
+        },
+        "r": {
+          "base_item_mean": 260000,
+          "base_item_sd": 90000,
+          "per_cell_mean": 30000,
+          "per_cell_sd": 12000
+        }
+      },
+      "red_type_profiles": {
+        "profiles": {
+          "small_red": {
+            "prior": 0.46,
+            "mean_cells_per_item": 2.8,
+            "sd_cells_per_item": 0.7,
+            "base_item_mean": 100000,
+            "base_item_sd": 35000,
+            "per_cell_mean": 18000,
+            "per_cell_sd": 5200
+          },
+          "big_red": {
+            "prior": 0.32,
+            "mean_cells_per_item": 4.8,
+            "sd_cells_per_item": 0.9,
+            "base_item_mean": 220000,
+            "base_item_sd": 85000,
+            "per_cell_mean": 30000,
+            "per_cell_sd": 9000
+          },
+          "gold_red": {
+            "prior": 0.22,
+            "mean_cells_per_item": 3.7,
+            "sd_cells_per_item": 0.8,
+            "base_item_mean": 420000,
+            "base_item_sd": 150000,
+            "per_cell_mean": 36000,
+            "per_cell_sd": 11000
+          }
+        }
+      },
+      "collection_families": {
+        "cargo": {
+          "notes": [
+            "航运主家族"
+          ],
+          "prior": 2.15,
+          "value_bias": 1.14,
+          "red_type_bias": {
+            "big_red": 1.16,
+            "gold_red": 1.22
+          }
+        },
+        "jewelry": {
+          "notes": [
+            "航运高价值稀缺件"
+          ],
+          "prior": 1.75,
+          "value_bias": 1.22,
+          "red_type_bias": {
+            "big_red": 1.08,
+            "gold_red": 1.45
+          }
+        },
+        "relics": {
+          "prior": 0.8,
+          "value_bias": 1.05,
+          "red_type_bias": {
+            "big_red": 0.92,
+            "gold_red": 1.05
+          }
+        }
+      }
+    }
+  },
+  "model": {
+    "alpha_counts": {
+      "w": 1,
+      "g": 1.9,
+      "b": 3,
+      "p": 2.9,
+      "o": 2.5,
+      "r": 1.7
+    },
+    "cells_per_item": {
+      "w": {
+        "mean": 1.3,
+        "sd": 0.5,
+        "min": 1,
+        "max": 12
+      },
+      "g": {
+        "mean": 1.6,
+        "sd": 0.6,
+        "min": 1,
+        "max": 12
+      },
+      "b": {
+        "mean": 2,
+        "sd": 0.75,
+        "min": 1,
+        "max": 12
+      },
+      "p": {
+        "mean": 2.5,
+        "sd": 0.85,
+        "min": 1,
+        "max": 12
+      },
+      "o": {
+        "mean": 2.9,
+        "sd": 0.95,
+        "min": 1,
+        "max": 12
+      },
+      "r": {
+        "mean": 3.6,
+        "sd": 1.15,
+        "min": 1,
+        "max": 12
+      }
+    },
+    "value_model": {
+      "w": {
+        "base_item_mean": 700,
+        "base_item_sd": 250,
+        "per_cell_mean": 260,
+        "per_cell_sd": 80
+      },
+      "g": {
+        "base_item_mean": 1800,
+        "base_item_sd": 600,
+        "per_cell_mean": 550,
+        "per_cell_sd": 170
+      },
+      "b": {
+        "base_item_mean": 4200,
+        "base_item_sd": 1400,
+        "per_cell_mean": 1200,
+        "per_cell_sd": 380
+      },
+      "p": {
+        "base_item_mean": 9000,
+        "base_item_sd": 3000,
+        "per_cell_mean": 2300,
+        "per_cell_sd": 700
+      },
+      "o": {
+        "base_item_mean": 16000,
+        "base_item_sd": 5200,
+        "per_cell_mean": 3400,
+        "per_cell_sd": 1000
+      },
+      "r": {
+        "base_item_mean": 170000,
+        "base_item_sd": 55000,
+        "per_cell_mean": 22000,
+        "per_cell_sd": 6500
+      }
+    },
+    "red_type_profiles": {
+      "profiles": {
+        "small_red": {
+          "label": "小红",
+          "prior": 0.52,
+          "mean_cells_per_item": 2.6,
+          "sd_cells_per_item": 0.7,
+          "base_item_mean": 165000,
+          "base_item_sd": 42000,
+          "per_cell_mean": 18500,
+          "per_cell_sd": 5200
+        },
+        "big_red": {
+          "label": "大红",
+          "prior": 0.31,
+          "mean_cells_per_item": 4.4,
+          "sd_cells_per_item": 0.9,
+          "base_item_mean": 350000,
+          "base_item_sd": 90000,
+          "per_cell_mean": 30000,
+          "per_cell_sd": 8200
+        },
+        "gold_red": {
+          "label": "金",
+          "prior": 0.18,
+          "mean_cells_per_item": 3.6,
+          "sd_cells_per_item": 0.8,
+          "base_item_mean": 820000,
+          "base_item_sd": 230000,
+          "per_cell_mean": 40000,
+          "per_cell_sd": 11000
+        }
+      }
+    },
+    "collection_families": {
+      "relics": {
+        "label": "文物",
+        "prior": 1.1,
+        "value_bias": 1.1,
+        "red_type_bias": {
+          "big_red": 1.08,
+          "gold_red": 1.12
+        }
+      },
+      "books": {
+        "label": "书籍/书画",
+        "prior": 1.02,
+        "value_bias": 1.05,
+        "red_type_bias": {
+          "big_red": 1.02,
+          "gold_red": 1.06
+        }
+      },
+      "jewelry": {
+        "label": "珠宝",
+        "prior": 1.05,
+        "value_bias": 1.12,
+        "red_type_bias": {
+          "big_red": 1.08,
+          "gold_red": 1.22
+        }
+      },
+      "medicine": {
+        "label": "医药",
+        "prior": 1,
+        "value_bias": 1,
+        "red_type_bias": {
+          "small_red": 1.03
+        }
+      },
+      "furniture": {
+        "label": "家居",
+        "prior": 0.95,
+        "value_bias": 0.9,
+        "red_type_bias": {
+          "small_red": 1.08,
+          "big_red": 0.88,
+          "gold_red": 0.78
+        }
+      },
+      "cargo": {
+        "label": "货物/航运",
+        "prior": 1.02,
+        "value_bias": 1.06,
+        "red_type_bias": {
+          "big_red": 1.06,
+          "gold_red": 1.12
+        }
+      },
+      "trendy": {
+        "label": "潮流藏品",
+        "prior": 0.95,
+        "value_bias": 0.94,
+        "red_type_bias": {
+          "small_red": 1.06,
+          "big_red": 0.88,
+          "gold_red": 0.82
+        }
+      }
+    }
+  },
+  "solver": {
+    "max_states": 4000000,
+    "mc_samples": 180000,
+    "count_prior_strength": 1,
+    "average_observation": {
+      "rounding_mode": "truncate",
+      "relax_sparse_support": true,
+      "sparse_support_threshold": 1,
+      "fallback_slack_cells": 1,
+      "fallback_min_avg": 1
+    },
+    "staging": {
+      "refine_ratio": 0.45,
+      "refine_min_states": 50000,
+      "refine_min_samples": 4000,
+      "min_signals_for_full": 3,
+      "min_signals_for_full_sparse": 5,
+      "refine_timeout_ms_sparse": 1400,
+      "refine_timeout_ms_dense": 2200,
+      "full_timeout_ms_sparse": 2600,
+      "full_timeout_ms_dense": 4200
+    }
+  },
+  "calibration": {
+    "artifact_version": "ak_authority_calibration_v1",
+    "generated_at": "2026-04-25T19:24:47.833Z",
+    "source_summary": {
+      "catalog_batch_count": 6,
+      "battle_sample_count": 0,
+      "catalog_qualities": [
+        "b",
+        "g",
+        "o",
+        "p",
+        "r",
+        "w"
+      ],
+      "maps_with_battle_samples": [],
+      "battle_sample_import_context": null
+    },
+    "quality_status": {
+      "alpha_counts": "fallback_only",
+      "value_model_base_items": "catalog_backed",
+      "cells_per_item": "pending",
+      "collection_families": "ignored_phase1"
+    },
+    "manifest": {
+      "adopted_fields": [
+        "alpha_counts",
+        "value_model.base_item_mean",
+        "value_model.base_item_sd"
+      ],
+      "pending_fields": [
+        "cells_per_item",
+        "value_model.per_cell_mean",
+        "value_model.per_cell_sd"
+      ],
+      "ignored_fields": [
+        "collection_families"
+      ],
+      "source_inputs": {
+        "catalog_batch_count": 6,
+        "battle_sample_count": 0,
+        "battle_sample_import_context": null
+      }
+    },
+    "maps": {
+      "sunken_ship": {
+        "count_prior_calibration": {
+          "battle_sample_count": 0,
+          "authority_status": "fallback_only",
+          "alpha_counts": {
+            "w": 0.9,
+            "g": 1.6,
+            "b": 2.9,
+            "p": 3.84,
+            "o": 2.8,
+            "r": 2.2
+          },
+          "observed_qualities": [],
+          "fallback_qualities": [
+            "w",
+            "g",
+            "b",
+            "p",
+            "o",
+            "r"
+          ],
+          "notes": [
+            "no_battle_samples_using_current_map_defaults"
+          ]
+        },
+        "value_model_calibration": {
+          "catalog_batch_count": 6,
+          "authority_status": "catalog_backed",
+          "quality_sample_counts": {
+            "b": 103,
+            "g": 91,
+            "o": 100,
+            "p": 103,
+            "r": 92,
+            "w": 100
+          },
+          "missing_qualities": [],
+          "value_model": {
+            "w": {
+              "base_item_mean": 268,
+              "base_item_sd": 160,
+              "per_cell_mean": 260,
+              "per_cell_sd": 70
+            },
+            "g": {
+              "base_item_mean": 872,
+              "base_item_sd": 658,
+              "per_cell_mean": 520,
+              "per_cell_sd": 140
+            },
+            "b": {
+              "base_item_mean": 3126,
+              "base_item_sd": 2134,
+              "per_cell_mean": 1100,
+              "per_cell_sd": 300
+            },
+            "p": {
+              "base_item_mean": 9493,
+              "base_item_sd": 5520,
+              "per_cell_mean": 2300,
+              "per_cell_sd": 600
+            },
+            "o": {
+              "base_item_mean": 46325,
+              "base_item_sd": 29002,
+              "per_cell_mean": 4300,
+              "per_cell_sd": 950
+            },
+            "r": {
+              "base_item_mean": 822957,
+              "base_item_sd": 2521829,
+              "per_cell_mean": 30000,
+              "per_cell_sd": 8500
+            }
+          }
+        },
+        "cells_per_item_status": {
+          "adopted_fields": [],
+          "pending_fields": [
+            "cells_per_item"
+          ],
+          "ignored_fields": [
+            "collection_families"
+          ],
+          "notes": [
+            "phase1_keeps_existing_map_cells_per_item"
+          ]
+        }
+      },
+      "villa": {
+        "count_prior_calibration": {
+          "battle_sample_count": 0,
+          "authority_status": "fallback_only",
+          "alpha_counts": {
+            "w": 8.5,
+            "g": 7.6,
+            "b": 3.9,
+            "p": 3.2,
+            "o": 4,
+            "r": 0.12
+          },
+          "observed_qualities": [],
+          "fallback_qualities": [
+            "w",
+            "g",
+            "b",
+            "p",
+            "o",
+            "r"
+          ],
+          "notes": [
+            "no_battle_samples_using_current_map_defaults"
+          ]
+        },
+        "value_model_calibration": {
+          "catalog_batch_count": 6,
+          "authority_status": "catalog_backed",
+          "quality_sample_counts": {
+            "b": 103,
+            "g": 91,
+            "o": 100,
+            "p": 103,
+            "r": 92,
+            "w": 100
+          },
+          "missing_qualities": [],
+          "value_model": {
+            "w": {
+              "base_item_mean": 268,
+              "base_item_sd": 160,
+              "per_cell_mean": 300,
+              "per_cell_sd": 80
+            },
+            "g": {
+              "base_item_mean": 872,
+              "base_item_sd": 658,
+              "per_cell_mean": 500,
+              "per_cell_sd": 150
+            },
+            "b": {
+              "base_item_mean": 3126,
+              "base_item_sd": 2134,
+              "per_cell_mean": 1000,
+              "per_cell_sd": 280
+            },
+            "p": {
+              "base_item_mean": 9493,
+              "base_item_sd": 5520,
+              "per_cell_mean": 1700,
+              "per_cell_sd": 500
+            },
+            "o": {
+              "base_item_mean": 46325,
+              "base_item_sd": 29002,
+              "per_cell_mean": 2200,
+              "per_cell_sd": 800
+            },
+            "r": {
+              "base_item_mean": 822957,
+              "base_item_sd": 2521829,
+              "per_cell_mean": 18000,
+              "per_cell_sd": 6000
+            }
+          }
+        },
+        "cells_per_item_status": {
+          "adopted_fields": [],
+          "pending_fields": [
+            "cells_per_item"
+          ],
+          "ignored_fields": [
+            "collection_families"
+          ],
+          "notes": [
+            "phase1_keeps_existing_map_cells_per_item"
+          ]
+        }
+      },
+      "shipping": {
+        "count_prior_calibration": {
+          "battle_sample_count": 0,
+          "authority_status": "fallback_only",
+          "alpha_counts": {
+            "w": 4.5,
+            "g": 4.4,
+            "b": 3.6,
+            "p": 2.9,
+            "o": 2.2,
+            "r": 0.9
+          },
+          "observed_qualities": [],
+          "fallback_qualities": [
+            "w",
+            "g",
+            "b",
+            "p",
+            "o",
+            "r"
+          ],
+          "notes": [
+            "no_battle_samples_using_current_map_defaults"
+          ]
+        },
+        "value_model_calibration": {
+          "catalog_batch_count": 6,
+          "authority_status": "catalog_backed",
+          "quality_sample_counts": {
+            "b": 103,
+            "g": 91,
+            "o": 100,
+            "p": 103,
+            "r": 92,
+            "w": 100
+          },
+          "missing_qualities": [],
+          "value_model": {
+            "w": {
+              "base_item_mean": 268,
+              "base_item_sd": 160,
+              "per_cell_mean": 320,
+              "per_cell_sd": 90
+            },
+            "g": {
+              "base_item_mean": 872,
+              "base_item_sd": 658,
+              "per_cell_mean": 700,
+              "per_cell_sd": 200
+            },
+            "b": {
+              "base_item_mean": 3126,
+              "base_item_sd": 2134,
+              "per_cell_mean": 1500,
+              "per_cell_sd": 450
+            },
+            "p": {
+              "base_item_mean": 9493,
+              "base_item_sd": 5520,
+              "per_cell_mean": 3300,
+              "per_cell_sd": 1000
+            },
+            "o": {
+              "base_item_mean": 46325,
+              "base_item_sd": 29002,
+              "per_cell_mean": 6500,
+              "per_cell_sd": 1700
+            },
+            "r": {
+              "base_item_mean": 822957,
+              "base_item_sd": 2521829,
+              "per_cell_mean": 30000,
+              "per_cell_sd": 12000
+            }
+          }
+        },
+        "cells_per_item_status": {
+          "adopted_fields": [],
+          "pending_fields": [
+            "cells_per_item"
+          ],
+          "ignored_fields": [
+            "collection_families"
+          ],
+          "notes": [
+            "phase1_keeps_existing_map_cells_per_item"
+          ]
+        }
+      }
+    }
+  },
+  "codex_visual_shadow_candidate": {
+    "schema_version": "ak_codex_visual_shadow_candidate_config_v1",
+    "generated_at": "2026-04-26T06:20:00.000+08:00",
+    "change_class": "RESEARCH_ONLY",
+    "usage": "shadow_replay_only",
+    "source_gap_report": "<repo>/docs/research/2026-04-26-sunken-ship-codex-visual-candidate-posterior-gap.json",
+    "selection_policy": "best_blend",
+    "selected_source_classification": "codex_visual_shadow_blend_not_adoptable",
+    "applied_maps": [
+      "sunken_ship"
+    ],
+    "skipped_maps": [],
+    "skipped_map_reasons": {},
+    "selected_scenarios": {
+      "sunken_ship": {
+        "scenario_id": "blend_visual_50_alpha_strength_4",
+        "source_classification": "codex_visual_shadow_blend_not_adoptable",
+        "label": "50% visual-smoothed alpha blend, strength 4",
+        "alpha_counts": {
+          "w": 0.508361,
+          "g": 2.375738,
+          "b": 3.259181,
+          "p": 4.779672,
+          "o": 1.808524,
+          "r": 1.508525
+        },
+        "count_prior_strength": 4,
+        "total_abs_error": 8.1361,
+        "high_rarity_abs_error": 4.3818
+      }
+    },
+    "adoption_blockers": [
+      "codex_visual_review_shadow_only",
+      "missing_human_confirmed_count_fit_sample",
+      "single_visual_candidate_overfit_risk"
+    ],
+    "default_config_update_allowed": false
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": "ak_bidking_missing_item_authority_intake_audit_v1",
+  "generated_at": "2026-04-29T06:30:00.000+08:00",
+  "mode": "source_first_implementation",
+  "change_class": "SIM_ONLY",
+  "recommended_change_class": "SIM_ONLY",
+  "live_path_touched": false,
+  "inputs": {
+    "authority_intake_template": "<repo>/docs/research/2026-04-29-bidking-missing-item-authority-intake-template.json"
+  },
+  "summary": {
+    "intake_item_count": 1,
+    "valid_authority_item_count": 0,
+    "blocked_authority_item_count": 1,
+    "staging_item_row_count": 0,
+    "impacted_project_maps": [
+      "sunken_ship",
+      "villa"
+    ],
+    "direct_authority_source_available_for_all_items": false,
+    "staging_item_ingest_allowed": false,
+    "table_reference_integrity_clean_after_recovery": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "recommended_next_action": "complete_missing_authority_intake_fields_before_staging_ingest",
+    "blockers": [
+      "missing_raw_item_txt_row",
+      "missing_authority_source_type",
+      "missing_source_path_or_capture_id",
+      "missing_client_build_or_version",
+      "authority_intake_incomplete"
+    ]
+  },
+  "gates": {
+    "direct_authority_source_available_for_all_items": false,
+    "staging_item_ingest_allowed": false,
+    "recovered_rows_ingested": false,
+    "table_reference_integrity_clean_after_recovery": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "synthetic_item_as_authority_allowed": false,
+    "drop_tuple_exclusion_as_authority_allowed": false
+  },
+  "item_audits": [
+    {
+      "item_id": 1106013,
+      "priority": "P0",
+      "valid_direct_authority_source": false,
+      "staging_item_row_ingest_allowed": false,
+      "raw_item_row_id": null,
+      "authority_source_type": null,
+      "source_path_or_capture_id": null,
+      "client_build_or_version": null,
+      "impacted_project_maps": [
+        "sunken_ship",
+        "villa"
+      ],
+      "blockers": [
+        "missing_raw_item_txt_row",
+        "missing_authority_source_type",
+        "missing_source_path_or_capture_id",
+        "missing_client_build_or_version"
+      ],
+      "warnings": [
+        "neighboring_family_rows_remain_context_only"
+      ],
+      "blocked_actions": [
+        "table_reference_integrity_clean_without_rerun",
+        "table_backed_shadow_replay_promotion",
+        "authority_handoff",
+        "default_config_update"
+      ],
+      "reviewed_row": {
+        "id": 1106013,
+        "localized_name": null,
+        "item_type_id": null,
+        "slot_type": null,
+        "item_quality": null,
+        "base_value": null,
+        "max_per_listing": null,
+        "collection": null,
+        "collection_coin": null,
+        "icon_path": null,
+        "model_3D": null,
+        "raw_item_txt_row": null
+      }
+    }
+  ],
+  "staging_item_rows": [],
+  "notes": [
+    "Valid intake rows are staging-only evidence and do not mutate BidKing tables.",
+    "Table-reference integrity must be rerun after staging before table-backed replay can advance.",
+    "Authority handoff and default config updates remain closed."
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "batch_id": "purple_quality_items_batch_2026-04-23",
+  "source_kind": "manual_thread_images",
+  "quality": "p",
+  "reported_average_value": 9492,
+  "cell_count_status": "pending_high_res",
+  "name_status": "mostly_manual_ocr",
+  "notes": [
+    "用户提供的紫色品质图鉴截图。",
+    "当前会话中原始图片为线程附件，已将内容转录为可复用数据批次。",
+    "右下角占格仍不可稳定识别，cells 暂留空。"
+  ],
+  "items": [
+    { "name": "加特林重机枪", "value": 31688, "cells": null, "name_confidence": "high" },
+    { "name": "限定真人展示牌", "value": 25000, "cells": null, "name_confidence": "high" },
+    { "name": "黑曜石原石", "value": 23760, "cells": null, "name_confidence": "high" },
+    { "name": "全地形卡丁车", "value": 22064, "cells": null, "name_confidence": "high" },
+
+    { "name": "翡翠原石", "value": 21000, "cells": null, "name_confidence": "high" },
+    { "name": "可拆叠高韧性防护盾", "value": 20082, "cells": null, "name_confidence": "medium" },
+    { "name": "显卡扩展坞", "value": 19096, "cells": null, "name_confidence": "high" },
+    { "name": "赛车座椅", "value": 18872, "cells": null, "name_confidence": "high" },
+
+    { "name": "和田玉原石", "value": 18240, "cells": null, "name_confidence": "high" },
+    { "name": "铜矿堆", "value": 16520, "cells": null, "name_confidence": "high" },
+    { "name": "AWM狙击步枪", "value": 16310, "cells": null, "name_confidence": "high" },
+    { "name": "伊比利亚火腿", "value": 16212, "cells": null, "name_confidence": "high" },
+
+    { "name": "混合动力单元", "value": 15680, "cells": null, "name_confidence": "high" },
+    { "name": "玉山子", "value": 15456, "cells": null, "name_confidence": "high" },
+    { "name": "彩色打印机", "value": 14364, "cells": null, "name_confidence": "high" },
+    { "name": "家用制氧呼吸机", "value": 14240, "cells": null, "name_confidence": "high" },
+
+    { "name": "《淳化阁帖》宋拓本仿制册页", "value": 14112, "cells": null, "name_confidence": "medium" },
+    { "name": "手办展示架", "value": 13251, "cells": null, "name_confidence": "high" },
+    { "name": "1克拉钻石", "value": 13000, "cells": null, "name_confidence": "high" },
+    { "name": "除颤仪", "value": 12976, "cells": null, "name_confidence": "high" },
+
+    { "name": "M249轻机枪", "value": 12584, "cells": null, "name_confidence": "high" },
+    { "name": "超声波治疗仪", "value": 12581, "cells": null, "name_confidence": "high" },
+    { "name": "超级电动车电池组", "value": 12296, "cells": null, "name_confidence": "high" },
+    { "name": "铜钟", "value": 12045, "cells": null, "name_confidence": "high" },
+
+    { "name": "VR头显", "value": 12000, "cells": null, "name_confidence": "high" },
+    { "name": "高级驾驶辅助系统", "value": 11940, "cells": null, "name_confidence": "high" },
+    { "name": "电脑主板", "value": 11880, "cells": null, "name_confidence": "high" },
+    { "name": "牙雕船", "value": 11768, "cells": null, "name_confidence": "medium" },
+
+    { "name": "限量画集", "value": 11760, "cells": null, "name_confidence": "high" },
+    { "name": "M系列自动步枪", "value": 11752, "cells": null, "name_confidence": "high" },
+    { "name": "蝉翼拓片宣纸", "value": 11520, "cells": null, "name_confidence": "medium" },
+    { "name": "针灸人模型", "value": 11424, "cells": null, "name_confidence": "high" },
+
+    { "name": "三十年汾酒", "value": 11280, "cells": null, "name_confidence": "high" },
+    { "name": "青金石", "value": 10960, "cells": null, "name_confidence": "high" },
+    { "name": "竞技级复合弓", "value": 10920, "cells": null, "name_confidence": "high" },
+    { "name": "专业级充气泵", "value": 10620, "cells": null, "name_confidence": "high" },
+
+    { "name": "智能马桶", "value": 10542, "cells": null, "name_confidence": "high" },
+    { "name": "数位屏", "value": 10500, "cells": null, "name_confidence": "high" },
+    { "name": "青金石盒", "value": 10380, "cells": null, "name_confidence": "high" },
+    { "name": "汉元素汉服", "value": 10332, "cells": null, "name_confidence": "medium" },
+
+    { "name": "金粟山藏经纸", "value": 10260, "cells": null, "name_confidence": "medium" },
+    { "name": "电动摩托车", "value": 10080, "cells": null, "name_confidence": "high" },
+    { "name": "铜香炉", "value": 9960, "cells": null, "name_confidence": "high" },
+    { "name": "输液泵", "value": 9880, "cells": null, "name_confidence": "high" },
+
+    { "name": "洛丽塔小裙子", "value": 9749, "cells": null, "name_confidence": "high" },
+    { "name": "赛车方向盘", "value": 9604, "cells": null, "name_confidence": "high" },
+    { "name": "青花瓷瓶", "value": 9600, "cells": null, "name_confidence": "high" },
+    { "name": "螺钿妆匣", "value": 9440, "cells": null, "name_confidence": "high" },
+
+    { "name": "壁挂式空调", "value": 9115, "cells": null, "name_confidence": "high" },
+    { "name": "RPG火箭筒", "value": 8976, "cells": null, "name_confidence": "high" },
+    { "name": "宝宝哄睡椅", "value": 8974, "cells": null, "name_confidence": "high" },
+    { "name": "现代画家手稿", "value": 8940, "cells": null, "name_confidence": "high" },
+
+    { "name": "机动型水路两用气动靴", "value": 8830, "cells": null, "name_confidence": "medium" },
+    { "name": "沉香木镂空笔架", "value": 8700, "cells": null, "name_confidence": "high" },
+    { "name": "萤石晶体簇", "value": 8680, "cells": null, "name_confidence": "high" },
+    { "name": "孔雀石原石", "value": 8440, "cells": null, "name_confidence": "high" },
+
+    { "name": "名牌挎包", "value": 8380, "cells": null, "name_confidence": "high" },
+    { "name": "平板电脑", "value": 8360, "cells": null, "name_confidence": "high" },
+    { "name": "蕉叶白端砚", "value": 8240, "cells": null, "name_confidence": "medium" },
+    { "name": "扫地机器人", "value": 8115, "cells": null, "name_confidence": "high" },
+
+    { "name": "按摩椅", "value": 7758, "cells": null, "name_confidence": "high" },
+    { "name": "隆中牌制动间隙自动调整臂", "value": 7655, "cells": null, "name_confidence": "medium" },
+    { "name": "《心经》高僧手抄卷", "value": 7472, "cells": null, "name_confidence": "high" },
+    { "name": "激光剑仿真玩具", "value": 7380, "cells": null, "name_confidence": "high" },
+
+    { "name": "自爆式无人机", "value": 7140, "cells": null, "name_confidence": "high" },
+    { "name": "蓝龙虾", "value": 6960, "cells": null, "name_confidence": "high" },
+    { "name": "临摹版清明上河图", "value": 6824, "cells": null, "name_confidence": "high" },
+    { "name": "气腿机", "value": 6780, "cells": null, "name_confidence": "medium" },
+
+    { "name": "古韵镇纸", "value": 6624, "cells": null, "name_confidence": "medium" },
+    { "name": "罗盘仪", "value": 6620, "cells": null, "name_confidence": "high" },
+    { "name": "吸尘器", "value": 6554, "cells": null, "name_confidence": "high" },
+    { "name": "熟成和牛", "value": 6540, "cells": null, "name_confidence": "high" },
+
+    { "name": "虎睛石", "value": 6152, "cells": null, "name_confidence": "high" },
+    { "name": "单克隆抗体药物", "value": 6012, "cells": null, "name_confidence": "high" },
+    { "name": "特级鹿茸", "value": 5724, "cells": null, "name_confidence": "high" },
+    { "name": "琥珀", "value": 5160, "cells": null, "name_confidence": "high" },
+
+    { "name": "特级初榨茶油", "value": 5076, "cells": null, "name_confidence": "high" },
+    { "name": "蓝山咖啡豆", "value": 5040, "cells": null, "name_confidence": "high" },
+    { "name": "琥珀挂坠", "value": 4828, "cells": null, "name_confidence": "high" },
+    { "name": "冰酒", "value": 4788, "cells": null, "name_confidence": "high" },
+
+    { "name": "大哥大电话", "value": 4624, "cells": null, "name_confidence": "high" },
+    { "name": "名牌球鞋", "value": 4428, "cells": null, "name_confidence": "high" },
+    { "name": "限量手办", "value": 4428, "cells": null, "name_confidence": "high" },
+    { "name": "合金机器人模型", "value": 4428, "cells": null, "name_confidence": "high" },
+
+    { "name": "珍珠", "value": 4240, "cells": null, "name_confidence": "high" },
+    { "name": "智能手表", "value": 3960, "cells": null, "name_confidence": "high" },
+    { "name": "车辆定位器", "value": 3940, "cells": null, "name_confidence": "high" },
+    { "name": "猫屎咖啡", "value": 3920, "cells": null, "name_confidence": "high" },
+
+    { "name": "长白山野山参", "value": 3780, "cells": null, "name_confidence": "high" },
+    { "name": "唐卡", "value": 3650, "cells": null, "name_confidence": "high" },
+    { "name": "龙涎香", "value": 3640, "cells": null, "name_confidence": "high" },
+    { "name": "除湿器", "value": 3454, "cells": null, "name_confidence": "high" },
+
+    { "name": "热感应夜视防护头盔", "value": 3180, "cells": null, "name_confidence": "medium" },
+    { "name": "视频采集卡", "value": 3120, "cells": null, "name_confidence": "high" },
+    { "name": "无线CarPlay盒子", "value": 3040, "cells": null, "name_confidence": "high" },
+    { "name": "全天候激光瞄准镜", "value": 2720, "cells": null, "name_confidence": "high" },
+
+    { "name": "隐藏式行车记录仪", "value": 2600, "cells": null, "name_confidence": "high" },
+    { "name": "8848镀金手机壳", "value": 2560, "cells": null, "name_confidence": "high" },
+    { "name": "金丝眼镜", "value": 2514, "cells": null, "name_confidence": "high" },
+    { "name": "轻奢腕表", "value": 2460, "cells": null, "name_confidence": "high" },
+
+    { "name": "运动相机", "value": 2400, "cells": null, "name_confidence": "high" },
+    { "name": "西班牙藏红花", "value": 2160, "cells": null, "name_confidence": "high" },
+    { "name": "黑钻松露", "value": 2100, "cells": null, "name_confidence": "high" }
+  ]
+}

@@ -1,0 +1,717 @@
+{
+  "schema_version": "ak_bidking_drop_helper_semantics_v1",
+  "generated_at": "2026-04-28T18:01:20.054Z",
+  "mode": "architecture_review",
+  "change_class": "RESEARCH_ONLY",
+  "recommended_change_class": "RESEARCH_ONLY",
+  "inputs": {
+    "assembly_path": "<local-bidking-extract>/dll/Scripts.dll.bytes"
+  },
+  "summary": {
+    "parse_status": "drop_helper_semantics_candidate_built",
+    "evidence_confidence": "medium_high",
+    "authority_adoption_allowed": false,
+    "reverse_engineering_source_allowed": true,
+    "default_config_update_allowed": false,
+    "core_refactor_recommended_now": false,
+    "shadow_candidate_allowed": false,
+    "helper_method_count": 8,
+    "missing_helper_keys": [],
+    "random_count_upper_bound_exclusive": true,
+    "probability_mode_is_independent_bernoulli": true,
+    "weighted_mode_is_single_cumulative_choice": true
+  },
+  "helper_methods": [
+    {
+      "helper_key": "GetValues/1",
+      "declaring_type": "GameServerDemo.Utils",
+      "method_name": "GetValues",
+      "method_rid": 5925,
+      "metadata_token": "0x06001725",
+      "rva_hex": "0x00070944",
+      "signature": {
+        "return_type": "int[]",
+        "parameters": [
+          "int[][]"
+        ]
+      },
+      "body_summary": {
+        "parse_status": "parsed",
+        "code_size": 35,
+        "instruction_count": 29,
+        "call_count": 0,
+        "branch_count": 2
+      },
+      "semantics_candidate": {
+        "semantics": "extract tuple[1] from each row",
+        "pseudocode": [
+          "values = new int[rows.length]",
+          "for i in range(rows.length): values[i] = rows[i][1]",
+          "return values"
+        ],
+        "notes": [
+          "Not used by DoDrop main branch; included because it is in the same helper family."
+        ]
+      },
+      "instruction_signals": [
+        {
+          "il_offset": 3,
+          "opcode_name": "newarr",
+          "resolved_full_name": "TypeRef#247"
+        },
+        {
+          "il_offset": 11,
+          "opcode_name": "br.s",
+          "branch_target_offset": 27
+        },
+        {
+          "il_offset": 31,
+          "opcode_name": "blt.s",
+          "branch_target_offset": 13
+        },
+        {
+          "il_offset": 34,
+          "opcode_name": "ret"
+        }
+      ]
+    },
+    {
+      "helper_key": "GetValues/3",
+      "declaring_type": "GameServerDemo.Utils",
+      "method_name": "GetValues",
+      "method_rid": 5926,
+      "metadata_token": "0x06001726",
+      "rva_hex": "0x00070974",
+      "signature": {
+        "return_type": "int[]",
+        "parameters": [
+          "int[][]",
+          "int",
+          "int"
+        ]
+      },
+      "body_summary": {
+        "parse_status": "parsed",
+        "code_size": 44,
+        "instruction_count": 36,
+        "call_count": 0,
+        "branch_count": 4
+      },
+      "semantics_candidate": {
+        "semantics": "extract tuple[columnIndex] from each row, falling back when the row is too short",
+        "pseudocode": [
+          "values = new int[rows.length]",
+          "for i in range(rows.length):",
+          "  values[i] = fallback if columnIndex >= rows[i].length else rows[i][columnIndex]",
+          "return values"
+        ],
+        "notes": [
+          "DoDrop calls GetValues(items_list, 4, 10000), so tuple[4] is the probability or weight source."
+        ]
+      },
+      "instruction_signals": [
+        {
+          "il_offset": 3,
+          "opcode_name": "newarr",
+          "resolved_full_name": "TypeRef#247"
+        },
+        {
+          "il_offset": 11,
+          "opcode_name": "br.s",
+          "branch_target_offset": 36
+        },
+        {
+          "il_offset": 23,
+          "opcode_name": "blt.s",
+          "branch_target_offset": 28
+        },
+        {
+          "il_offset": 26,
+          "opcode_name": "br.s",
+          "branch_target_offset": 31
+        },
+        {
+          "il_offset": 40,
+          "opcode_name": "blt.s",
+          "branch_target_offset": 13
+        },
+        {
+          "il_offset": 43,
+          "opcode_name": "ret"
+        }
+      ]
+    },
+    {
+      "helper_key": "RandomWeightIndex/1",
+      "declaring_type": "GameServerDemo.Utils",
+      "method_name": "RandomWeightIndex",
+      "method_rid": 5927,
+      "metadata_token": "0x06001727",
+      "rva_hex": "0x000709ac",
+      "signature": {
+        "return_type": "int",
+        "parameters": [
+          "int[]"
+        ]
+      },
+      "body_summary": {
+        "parse_status": "parsed",
+        "code_size": 80,
+        "instruction_count": 54,
+        "call_count": 4,
+        "branch_count": 6
+      },
+      "semantics_candidate": {
+        "semantics": "single weighted choice by cumulative sum",
+        "pseudocode": [
+          "if weights is null or empty: throw ArgumentException",
+          "if weights.length == 1: return 0",
+          "total = Sum(weights)",
+          "threshold = Random().Next(0, total)",
+          "cumulative = 0",
+          "for i in range(weights.length):",
+          "  cumulative += weights[i]",
+          "  if threshold < cumulative: return i",
+          "return weights.length - 1"
+        ],
+        "notes": [
+          "Random source is a new System.Random per call."
+        ]
+      },
+      "instruction_signals": [
+        {
+          "il_offset": 1,
+          "opcode_name": "brfalse.s",
+          "branch_target_offset": 7
+        },
+        {
+          "il_offset": 5,
+          "opcode_name": "brtrue.s",
+          "branch_target_offset": 18
+        },
+        {
+          "il_offset": 7,
+          "opcode_name": "ldstr",
+          "resolved_full_name": "UserString#36693"
+        },
+        {
+          "il_offset": 12,
+          "opcode_name": "newobj",
+          "resolved_full_name": "System.ArgumentException..ctor"
+        },
+        {
+          "il_offset": 17,
+          "opcode_name": "throw"
+        },
+        {
+          "il_offset": 22,
+          "opcode_name": "bne.un.s",
+          "branch_target_offset": 26
+        },
+        {
+          "il_offset": 25,
+          "opcode_name": "ret"
+        },
+        {
+          "il_offset": 27,
+          "opcode_name": "call",
+          "resolved_full_name": "System.Linq.Enumerable.Sum"
+        },
+        {
+          "il_offset": 33,
+          "opcode_name": "newobj",
+          "resolved_full_name": "System.Random..ctor"
+        },
+        {
+          "il_offset": 40,
+          "opcode_name": "callvirt",
+          "resolved_full_name": "System.Random.Next"
+        },
+        {
+          "il_offset": 50,
+          "opcode_name": "br.s",
+          "branch_target_offset": 68
+        },
+        {
+          "il_offset": 60,
+          "opcode_name": "bge.s",
+          "branch_target_offset": 64
+        },
+        {
+          "il_offset": 63,
+          "opcode_name": "ret"
+        },
+        {
+          "il_offset": 72,
+          "opcode_name": "blt.s",
+          "branch_target_offset": 52
+        },
+        {
+          "il_offset": 79,
+          "opcode_name": "ret"
+        }
+      ]
+    },
+    {
+      "helper_key": "RandomProbabilityIndex/1",
+      "declaring_type": "GameServerDemo.Utils",
+      "method_name": "RandomProbabilityIndex",
+      "method_rid": 5928,
+      "metadata_token": "0x06001728",
+      "rva_hex": "0x00070a08",
+      "signature": {
+        "return_type": "System.Collections.Generic.List`1<int>",
+        "parameters": [
+          "int[]"
+        ]
+      },
+      "body_summary": {
+        "parse_status": "parsed",
+        "code_size": 49,
+        "instruction_count": 31,
+        "call_count": 4,
+        "branch_count": 2
+      },
+      "semantics_candidate": {
+        "semantics": "convert integer weights to probabilities and independently select all passing indexes",
+        "pseudocode": [
+          "total = Sum(weights)",
+          "probabilities = weights.map(weight => weight / total)",
+          "return SelectByProbability(probabilities)"
+        ],
+        "notes": [
+          "This can return multiple indexes, matching DoDrop AddRange behavior for weight_type == 1."
+        ]
+      },
+      "instruction_signals": [
+        {
+          "il_offset": 0,
+          "opcode_name": "newobj",
+          "resolved_full_name": "TypeSpec#2178..ctor"
+        },
+        {
+          "il_offset": 7,
+          "opcode_name": "call",
+          "resolved_full_name": "System.Linq.Enumerable.Sum"
+        },
+        {
+          "il_offset": 15,
+          "opcode_name": "br.s",
+          "branch_target_offset": 36
+        },
+        {
+          "il_offset": 27,
+          "opcode_name": "callvirt",
+          "resolved_full_name": "TypeSpec#2178.Add"
+        },
+        {
+          "il_offset": 40,
+          "opcode_name": "blt.s",
+          "branch_target_offset": 17
+        },
+        {
+          "il_offset": 43,
+          "opcode_name": "call",
+          "resolved_full_name": "GameServerDemo.Utils.SelectByProbability"
+        },
+        {
+          "il_offset": 48,
+          "opcode_name": "ret"
+        }
+      ]
+    },
+    {
+      "helper_key": "SelectByProbability/1",
+      "declaring_type": "GameServerDemo.Utils",
+      "method_name": "SelectByProbability",
+      "method_rid": 5929,
+      "metadata_token": "0x06001729",
+      "rva_hex": "0x00070a48",
+      "signature": {
+        "return_type": "System.Collections.Generic.List`1<int>",
+        "parameters": [
+          "System.Collections.Generic.List`1<double>"
+        ]
+      },
+      "body_summary": {
+        "parse_status": "parsed",
+        "code_size": 75,
+        "instruction_count": 34,
+        "call_count": 8,
+        "branch_count": 5
+      },
+      "semantics_candidate": {
+        "semantics": "independent Bernoulli selection for each probability entry",
+        "pseudocode": [
+          "if probabilities is null or empty: throw ArgumentException",
+          "selected = []",
+          "random = new Random()",
+          "for i in range(probabilities.Count):",
+          "  if random.NextDouble() < probabilities[i]: selected.Add(i)",
+          "return selected"
+        ],
+        "notes": [
+          "This is not roulette-wheel selection; each index is tested independently."
+        ]
+      },
+      "instruction_signals": [
+        {
+          "il_offset": 1,
+          "opcode_name": "brfalse.s",
+          "branch_target_offset": 11
+        },
+        {
+          "il_offset": 4,
+          "opcode_name": "callvirt",
+          "resolved_full_name": "TypeSpec#2178.get_Count"
+        },
+        {
+          "il_offset": 9,
+          "opcode_name": "brtrue.s",
+          "branch_target_offset": 22
+        },
+        {
+          "il_offset": 11,
+          "opcode_name": "ldstr",
+          "resolved_full_name": "UserString#36769"
+        },
+        {
+          "il_offset": 16,
+          "opcode_name": "newobj",
+          "resolved_full_name": "System.ArgumentException..ctor"
+        },
+        {
+          "il_offset": 21,
+          "opcode_name": "throw"
+        },
+        {
+          "il_offset": 22,
+          "opcode_name": "newobj",
+          "resolved_full_name": "TypeSpec#1352..ctor"
+        },
+        {
+          "il_offset": 28,
+          "opcode_name": "newobj",
+          "resolved_full_name": "System.Random..ctor"
+        },
+        {
+          "il_offset": 36,
+          "opcode_name": "br.s",
+          "branch_target_offset": 64
+        },
+        {
+          "il_offset": 39,
+          "opcode_name": "callvirt",
+          "resolved_full_name": "System.Random.NextDouble"
+        },
+        {
+          "il_offset": 46,
+          "opcode_name": "callvirt",
+          "resolved_full_name": "TypeSpec#2178.get_Item"
+        },
+        {
+          "il_offset": 51,
+          "opcode_name": "bge.un.s",
+          "branch_target_offset": 60
+        },
+        {
+          "il_offset": 55,
+          "opcode_name": "callvirt",
+          "resolved_full_name": "TypeSpec#1352.Add"
+        },
+        {
+          "il_offset": 66,
+          "opcode_name": "callvirt",
+          "resolved_full_name": "TypeSpec#2178.get_Count"
+        },
+        {
+          "il_offset": 71,
+          "opcode_name": "blt.s",
+          "branch_target_offset": 38
+        },
+        {
+          "il_offset": 74,
+          "opcode_name": "ret"
+        }
+      ]
+    },
+    {
+      "helper_key": "RandomCount/2",
+      "declaring_type": "GameServerDemo.Utils",
+      "method_name": "RandomCount",
+      "method_rid": 5930,
+      "metadata_token": "0x0600172a",
+      "rva_hex": "0x00070aa0",
+      "signature": {
+        "return_type": "int",
+        "parameters": [
+          "int",
+          "int"
+        ]
+      },
+      "body_summary": {
+        "parse_status": "parsed",
+        "code_size": 38,
+        "instruction_count": 25,
+        "call_count": 2,
+        "branch_count": 5
+      },
+      "semantics_candidate": {
+        "semantics": "random integer in normalized [min, max) range, exact return when min == max",
+        "pseudocode": [
+          "if a == b: return a",
+          "low = min(a, b)",
+          "high = max(a, b)",
+          "return Random().Next(low, high)"
+        ],
+        "notes": [
+          "System.Random.Next(min, max) uses an exclusive upper bound."
+        ]
+      },
+      "instruction_signals": [
+        {
+          "il_offset": 2,
+          "opcode_name": "bne.un.s",
+          "branch_target_offset": 6
+        },
+        {
+          "il_offset": 5,
+          "opcode_name": "ret"
+        },
+        {
+          "il_offset": 8,
+          "opcode_name": "blt.s",
+          "branch_target_offset": 13
+        },
+        {
+          "il_offset": 11,
+          "opcode_name": "br.s",
+          "branch_target_offset": 14
+        },
+        {
+          "il_offset": 17,
+          "opcode_name": "blt.s",
+          "branch_target_offset": 22
+        },
+        {
+          "il_offset": 20,
+          "opcode_name": "br.s",
+          "branch_target_offset": 23
+        },
+        {
+          "il_offset": 25,
+          "opcode_name": "newobj",
+          "resolved_full_name": "System.Random..ctor"
+        },
+        {
+          "il_offset": 32,
+          "opcode_name": "callvirt",
+          "resolved_full_name": "System.Random.Next"
+        },
+        {
+          "il_offset": 37,
+          "opcode_name": "ret"
+        }
+      ]
+    },
+    {
+      "helper_key": "AddRange/2",
+      "declaring_type": "GameServerDemo.Utils",
+      "method_name": "AddRange",
+      "method_rid": 5932,
+      "metadata_token": "0x0600172c",
+      "rva_hex": "0x00070bc0",
+      "signature": {
+        "return_type": "void",
+        "parameters": [
+          "System.Collections.Generic.Dictionary`2<int, int>",
+          "System.Collections.Generic.Dictionary`2<int, int>"
+        ]
+      },
+      "body_summary": {
+        "parse_status": "parsed",
+        "code_size": 67,
+        "instruction_count": 26,
+        "call_count": 7,
+        "branch_count": 3
+      },
+      "semantics_candidate": {
+        "semantics": "merge dictionary counts through AddItem",
+        "pseudocode": [
+          "for (key, value) in source:",
+          "  AddItem(target, key, value)"
+        ],
+        "notes": [
+          "Nested drop groups accumulate into the same result dictionary."
+        ]
+      },
+      "instruction_signals": [
+        {
+          "il_offset": 1,
+          "opcode_name": "callvirt",
+          "resolved_full_name": "TypeSpec#1401.GetEnumerator"
+        },
+        {
+          "il_offset": 7,
+          "opcode_name": "br.s",
+          "branch_target_offset": 41
+        },
+        {
+          "il_offset": 9,
+          "opcode_name": "ldloca.s",
+          "operand_value": 0
+        },
+        {
+          "il_offset": 11,
+          "opcode_name": "call",
+          "resolved_full_name": "TypeSpec#2173.get_Current"
+        },
+        {
+          "il_offset": 17,
+          "opcode_name": "ldloca.s",
+          "operand_value": 1
+        },
+        {
+          "il_offset": 19,
+          "opcode_name": "call",
+          "resolved_full_name": "TypeSpec#2174.get_Key"
+        },
+        {
+          "il_offset": 25,
+          "opcode_name": "ldloca.s",
+          "operand_value": 1
+        },
+        {
+          "il_offset": 27,
+          "opcode_name": "call",
+          "resolved_full_name": "TypeSpec#2174.get_Value"
+        },
+        {
+          "il_offset": 36,
+          "opcode_name": "call",
+          "resolved_full_name": "GameServerDemo.Utils.AddItem"
+        },
+        {
+          "il_offset": 41,
+          "opcode_name": "ldloca.s",
+          "operand_value": 0
+        },
+        {
+          "il_offset": 43,
+          "opcode_name": "call",
+          "resolved_full_name": "TypeSpec#2173.MoveNext"
+        },
+        {
+          "il_offset": 48,
+          "opcode_name": "brtrue.s",
+          "branch_target_offset": 9
+        },
+        {
+          "il_offset": 50,
+          "opcode_name": "leave.s",
+          "branch_target_offset": 66
+        },
+        {
+          "il_offset": 52,
+          "opcode_name": "ldloca.s",
+          "operand_value": 0
+        },
+        {
+          "il_offset": 54,
+          "opcode_name": "constrained.",
+          "resolved_full_name": "TypeSpec#2173"
+        },
+        {
+          "il_offset": 60,
+          "opcode_name": "callvirt",
+          "resolved_full_name": "System.IDisposable.Dispose"
+        },
+        {
+          "il_offset": 66,
+          "opcode_name": "ret"
+        }
+      ]
+    },
+    {
+      "helper_key": "AddItem/3",
+      "declaring_type": "GameServerDemo.Utils",
+      "method_name": "AddItem",
+      "method_rid": 5933,
+      "metadata_token": "0x0600172d",
+      "rva_hex": "0x00070c20",
+      "signature": {
+        "return_type": "void",
+        "parameters": [
+          "System.Collections.Generic.Dictionary`2<int, int>",
+          "int",
+          "int"
+        ]
+      },
+      "body_summary": {
+        "parse_status": "parsed",
+        "code_size": 39,
+        "instruction_count": 22,
+        "call_count": 4,
+        "branch_count": 1
+      },
+      "semantics_candidate": {
+        "semantics": "accumulate item count by dictionary key",
+        "pseudocode": [
+          "if result.ContainsKey(itemId): result[itemId] = result[itemId] + count",
+          "else: result.Add(itemId, count)"
+        ],
+        "notes": []
+      },
+      "instruction_signals": [
+        {
+          "il_offset": 2,
+          "opcode_name": "callvirt",
+          "resolved_full_name": "TypeSpec#1401.ContainsKey"
+        },
+        {
+          "il_offset": 7,
+          "opcode_name": "brfalse.s",
+          "branch_target_offset": 30
+        },
+        {
+          "il_offset": 11,
+          "opcode_name": "callvirt",
+          "resolved_full_name": "TypeSpec#1401.get_Item"
+        },
+        {
+          "il_offset": 24,
+          "opcode_name": "callvirt",
+          "resolved_full_name": "TypeSpec#1401.set_Item"
+        },
+        {
+          "il_offset": 29,
+          "opcode_name": "ret"
+        },
+        {
+          "il_offset": 33,
+          "opcode_name": "callvirt",
+          "resolved_full_name": "TypeSpec#1401.Add"
+        },
+        {
+          "il_offset": 38,
+          "opcode_name": "ret"
+        }
+      ]
+    }
+  ],
+  "refactor_impact": {
+    "recommended_change_class": "RESEARCH_ONLY",
+    "live_path_touched": false,
+    "useful_now": [
+      "DoDrop helper semantics are explicit enough to implement a shadow-only simulator",
+      "weight_type == 1 should be modeled as independent Bernoulli selection, not one weighted draw",
+      "RandomCount max bound should be treated as exclusive until runtime sampling proves otherwise"
+    ],
+    "blockers_before_model_change": [
+      "compare helper semantics against observed settlement samples",
+      "decide whether new System.Random per call needs deterministic replay injection",
+      "implement simulator behind shadow-only artifact gates",
+      "manual authority handoff must remain closed before estimator/default config changes"
+    ]
+  }
+}

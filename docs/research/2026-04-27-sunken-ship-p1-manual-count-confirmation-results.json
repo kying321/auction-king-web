@@ -1,0 +1,295 @@
+{
+  "schema_version": "ak_count_fit_sample_review_results_v1",
+  "generated_at": "2026-04-27T13:22:34.422Z",
+  "mode": "source_first_implementation",
+  "change_class": "RESEARCH_ONLY",
+  "source_template_schema_version": "ak_count_fit_sample_review_template_v1",
+  "source_template_generated_at": "2026-04-27T13:22:34.422Z",
+  "inputs": {
+    "codex_visual_review_results": "<repo>/docs/research/2026-04-27-sunken-ship-latest-capture-review-queue-template.json",
+    "red_residual_review_pack": "<repo>/docs/research/2026-04-27-red-residual-review-pack.json"
+  },
+  "notes": [
+    "User-editable manual confirmation draft generated from Codex visual candidates or capture review templates.",
+    "Counts are draft fields and are not authority until a human reviews the image.",
+    "Importer should block this draft until status is changed to approved_count_fit_sample after human review.",
+    "Keep actual_counts_source=manual_review only if the human has actually verified or corrected the counts."
+  ],
+  "summary": {
+    "manual_confirmation_draft_count": 1,
+    "fresh_capture_template_count": 1,
+    "map_counts": {
+      "sunken_ship": 1
+    },
+    "priority_filter": [
+      "P1"
+    ],
+    "priority_counts": {
+      "P1": 1
+    },
+    "red_residual_review_hint_count": 1,
+    "pixel_training_label_allowed_count": 0,
+    "import_ready_without_human_action": false
+  },
+  "review_results": [],
+  "fresh_capture_templates": [
+    {
+      "source_task_id": "capture_full_count_sunken_ship_2026_04_26T12_39_48_135Z",
+      "source_task_type": "capture_clipboard_full_count_review",
+      "status": "needs_human_confirmation",
+      "output_target": "count_fit_same_battle_sample",
+      "review_priority": "P1",
+      "review_reasons": [
+        "extreme_orange_avg_needs_orange_count_confirmation"
+      ],
+      "map_id": "sunken_ship",
+      "template_id": "local_1776929172815",
+      "template_label": "Ahmed 默认模板 副本",
+      "config_source_version": "ak_workspace_v2_20260426_red_tail",
+      "event_timestamp": "2026-04-26T12:39:48.135Z",
+      "review_image_path": "<repo>/tmp_capture_review/sunken_ship_2026-04-26T123948135Z_2026-04-26T123954089Z_review.png",
+      "review_image_manifest": {
+        "manifest_path": "<repo>/tmp_capture_review/sunken_ship_2026-04-26T123948135Z_2026-04-26T123954089Z_review.json",
+        "schema_version": "ak_capture_screenshot_stitch_v1",
+        "output_image": {
+          "width": 503,
+          "height": 992
+        },
+        "width_normalization": {
+          "strategy": "max_width_canvas_shared_area_match",
+          "input_content_widths": [
+            503,
+            503
+          ],
+          "comparison_width": 503,
+          "output_width": 503,
+          "min_to_max_ratio": 1,
+          "applied": false,
+          "quality_flags": []
+        },
+        "quality_flags": [],
+        "matches": [
+          {
+            "previous": "auction-king-battle-capture-sunken-ship-20260426T123948135Z.json",
+            "next": "auction-king-battle-capture-sunken-ship-20260426T123954089Z.json",
+            "delta": 439,
+            "overlap": 80,
+            "mse": 2639.255
+          }
+        ]
+      },
+      "review_image_quality_flags": [],
+      "capture_packages": [
+        {
+          "input_path": "<local-downloads>/auction-king-battle-capture-sunken-ship-20260426T123948135Z.json",
+          "basename": "auction-king-battle-capture-sunken-ship-20260426T123948135Z.json",
+          "schema_version": "ak_battle_clipboard_capture_v1",
+          "export_kind": "battle_input_clipboard_screenshot",
+          "exported_at": "2026-04-26T12:39:48.135Z",
+          "map_id": "sunken_ship",
+          "template_id": "local_1776929172815",
+          "template_label": "Ahmed 默认模板 副本",
+          "config_source_version": "ak_workspace_v2_20260426_red_tail",
+          "screenshot_attachment": {
+            "present": true,
+            "name": "clipboard-screenshot.png",
+            "type": "image/jpeg",
+            "has_data_url": true
+          }
+        },
+        {
+          "input_path": "<local-downloads>/auction-king-battle-capture-sunken-ship-20260426T123954089Z.json",
+          "basename": "auction-king-battle-capture-sunken-ship-20260426T123954089Z.json",
+          "schema_version": "ak_battle_clipboard_capture_v1",
+          "export_kind": "battle_input_clipboard_screenshot",
+          "exported_at": "2026-04-26T12:39:54.089Z",
+          "map_id": "sunken_ship",
+          "template_id": "local_1776929172815",
+          "template_label": "Ahmed 默认模板 副本",
+          "config_source_version": "ak_workspace_v2_20260426_red_tail",
+          "screenshot_attachment": {
+            "present": true,
+            "name": "clipboard-screenshot.png",
+            "type": "image/jpeg",
+            "has_data_url": true
+          }
+        }
+      ],
+      "required_fields": [
+        "map_id",
+        "event_timestamp",
+        "observed_state",
+        "actual_counts.w",
+        "actual_counts.g",
+        "actual_counts.b",
+        "actual_counts.p",
+        "actual_counts.o",
+        "actual_counts.r",
+        "actual_counts.total_items",
+        "actual_counts_source",
+        "reviewer_notes"
+      ],
+      "pixel_training_label_allowed": false,
+      "guardrails": [
+        "fill_actual_counts_by_human_review_only",
+        "do_not_copy_pixel_or_system_hint_into_actual_counts",
+        "keep_actual_counts_source_manual_review",
+        "record_explicit_event_timestamp",
+        "same_battle_multiple_screenshots_should_share_one_sample",
+        "manual_confirmation_required_before_import",
+        "status_must_remain_unapproved_until_human_verified"
+      ],
+      "samples": [
+        {
+          "source_task_id": "capture_full_count_sunken_ship_2026_04_26T12_39_48_135Z",
+          "source_task_type": "capture_clipboard_full_count_review",
+          "status": "needs_human_confirmation",
+          "output_target": "count_fit_same_battle_sample",
+          "review_priority": "P1",
+          "review_reasons": [
+            "extreme_orange_avg_needs_orange_count_confirmation"
+          ],
+          "map_id": "sunken_ship",
+          "map_variant_id": null,
+          "map_variant_label": null,
+          "event_timestamp": "2026-04-26T12:39:48.135Z",
+          "observed_state": {
+            "r1_total_items": 48,
+            "r1_blue_count": 17,
+            "r2_orange_avg": 12,
+            "r2_orange_avg_text": "12",
+            "r2_purple_count": 9,
+            "r2_orange_count": null,
+            "r2_white_green_cells": 24,
+            "r3_green_count": null,
+            "r3_purple_avg": 3.66,
+            "r3_purple_avg_text": "3.66",
+            "r3_white_green_avg": 2.4,
+            "r3_white_green_avg_text": "2.4",
+            "r4_blue_avg": 2.11,
+            "r4_blue_avg_text": "2.11",
+            "r4_total_storage_cells": null,
+            "r5_white_green_total": null,
+            "r5_white_count": null,
+            "custom_o_min": null,
+            "custom_o_max": null,
+            "custom_r_min": null,
+            "custom_r_max": null,
+            "custom_p_value_w": null,
+            "custom_o_value_w": null,
+            "custom_r_value_w": null,
+            "system_avg_value_type_count": null,
+            "system_avg_value_per_cell": null,
+            "bid_price": null,
+            "r2_orange_avg_rounding_mode": "truncate",
+            "r3_purple_avg_rounding_mode": "truncate",
+            "r3_white_green_avg_rounding_mode": "truncate",
+            "r4_blue_avg_rounding_mode": "truncate"
+          },
+          "actual_counts": {
+            "w": 0,
+            "g": 0,
+            "b": 0,
+            "p": 0,
+            "o": 0,
+            "r": 0,
+            "total_items": 48
+          },
+          "actual_counts_source": "manual_review",
+          "reviewer_notes": "Manual count entry draft from capture package. Fill w/g/b/p/o/r from the review image; only then set status=approved_count_fit_sample.",
+          "review_image_quality_override": "",
+          "pixel_training_label_allowed": false,
+          "guardrails": [
+            "fill_actual_counts_by_human_review_only",
+            "do_not_copy_pixel_or_system_hint_into_actual_counts",
+            "keep_actual_counts_source_manual_review",
+            "record_explicit_event_timestamp",
+            "same_battle_multiple_screenshots_should_share_one_sample"
+          ],
+          "metadata": {
+            "capture_review": {
+              "source_task_id": "capture_full_count_sunken_ship_2026_04_26T12_39_48_135Z",
+              "review_priority": "P1",
+              "review_reasons": [
+                "extreme_orange_avg_needs_orange_count_confirmation"
+              ],
+              "capture_package_count": 2,
+              "capture_package_paths": [
+                "<local-downloads>/auction-king-battle-capture-sunken-ship-20260426T123948135Z.json",
+                "<local-downloads>/auction-king-battle-capture-sunken-ship-20260426T123954089Z.json"
+              ],
+              "review_image_path": "<repo>/tmp_capture_review/sunken_ship_2026-04-26T123948135Z_2026-04-26T123954089Z_review.png",
+              "review_image_manifest_path": "<repo>/tmp_capture_review/sunken_ship_2026-04-26T123948135Z_2026-04-26T123954089Z_review.json",
+              "review_image_quality_flags": [],
+              "review_image_width_normalization": {
+                "strategy": "max_width_canvas_shared_area_match",
+                "input_content_widths": [
+                  503,
+                  503
+                ],
+                "comparison_width": 503,
+                "output_width": 503,
+                "min_to_max_ratio": 1,
+                "applied": false,
+                "quality_flags": []
+              },
+              "expected_total_items": 48,
+              "screenshot_attachment_count": 2
+            },
+            "manual_count_entry": {
+              "original_status": "needs_manual_input",
+              "approval_required": true,
+              "user_actions": [
+                "fill_w_g_b_p_o_r_against_review_image",
+                "ensure_quality_sum_matches_total_items",
+                "set_status_approved_count_fit_sample_after_human_review"
+              ]
+            },
+            "red_residual_review": {
+              "schema_version": "ak_red_residual_review_pack_v1",
+              "source_task_id": "capture_full_count_sunken_ship_2026_04_26T12_39_48_135Z",
+              "event_timestamp": "2026-04-26T12:39:48.135Z",
+              "queue_id": "red_residual_2026_04_26T12_39_48_135Z",
+              "group_id": "red_residual_group_map_id_sunken_ship_observed_state_bid_price_null_custom_o_max_null_custom_o_min_null_custom_o_va",
+              "priority": "P1",
+              "priority_score": 134.6385,
+              "first_decisive_field": "orange_count",
+              "decisive_fields": [
+                "orange_count",
+                "total_storage_cells",
+                "actual_counts.w/g/b/p/o/r/total_items"
+              ],
+              "one_field_fallback": "orange_count",
+              "current_model": {
+                "red_count_mean": 3.7133,
+                "red_cell_mean": 9.6705,
+                "orange_count_mean": 8.2867,
+                "purple_count_mean": 9,
+                "q25_value_w": 66.902,
+                "q50_value_w": 77.0104,
+                "mean_value_w": 90.1761
+              },
+              "constraint_diagnostics": {
+                "total_items": 48,
+                "blue_count": 17,
+                "purple_count": 9,
+                "orange_count": null,
+                "inferred_white_green_count": 10,
+                "orange_avg_cells": 12,
+                "orange_red_unknown_pool": 12,
+                "known_count_balance_complete": true,
+                "orange_count_missing": true
+              },
+              "model_error_hypothesis": "missing_orange_or_total_count_can_push_residual_into_red",
+              "recommended_next_action": "先补金色数量；若仍异常，再补红色数量或完整六品质数量。",
+              "review_image_path": "<repo>/tmp_capture_review/sunken_ship_2026-04-26T123948135Z_2026-04-26T123954089Z_review.png",
+              "training_label_allowed": false,
+              "authority_merge_allowed": false
+            }
+          }
+        }
+      ],
+      "actual_counts_source": "manual_review"
+    }
+  ]
+}

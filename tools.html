@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高级配置与图鉴校准</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="style.css?v=20260428232030">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-background"></div>
+    <div class="app-container workspace-shell">
+        <header class="app-header workspace-header">
+            <div class="workspace-title-block">
+                <p class="workspace-kicker">Advanced Workspace</p>
+                <h1>高级配置与图鉴校准</h1>
+                <p class="workspace-subtitle">图鉴、权重、样本回放和配置导入导出集中在此页，主工作台只保留决策输入。</p>
+            </div>
+            <div class="workspace-header-meta">
+                <div class="workspace-header-nav">
+                    <label class="input-group input-group-compact">
+                        <span>模板</span>
+                        <select id="template_select"></select>
+                    </label>
+                    <label class="input-group input-group-compact">
+                        <span>地图</span>
+                        <select id="map_select"></select>
+                    </label>
+                </div>
+                <div class="workspace-header-actions">
+                    <div class="header-status workspace-header-status">
+                        <span class="status-dot"></span><span id="status-text">等待输入完成</span>
+                    </div>
+                    <button class="btn secondary small-btn" id="btn-theme-toggle" type="button" aria-pressed="false">夜间</button>
+                    <button class="btn secondary small-btn" id="btn-config" type="button">结构化配置</button>
+                    <a class="btn secondary small-btn" href="index.html">返回决策台</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard workspace-dashboard tools-dashboard">
+            <section class="sequence-panel workspace-input-panel">
+                <div class="workspace-panel-heading">
+                    <div>
+                        <p class="workspace-panel-kicker">Authority Calibration</p>
+                        <h2>图鉴权威校准</h2>
+                    </div>
+                    <p>图鉴已作为分析数据库使用，前台只消费校准后的权威产物。</p>
+                </div>
+                <section id="calibration-panel" class="glass workspace-toolbar calibration-panel">
+                    <div class="workspace-toolbar-topline calibration-panel-header">
+                        <div>
+                            <p class="workspace-toolbar-kicker">Authority Calibration</p>
+                            <h3>图鉴权威校准</h3>
+                            <p class="workspace-toolbar-note">图鉴与战局样本生成权威产物；此页用于草稿、应用态、样本导入导出和回放包。</p>
+                        </div>
+                        <div class="calibration-mode-switch">
+                            <button class="btn secondary small-btn active" id="btn-calibration-mode-draft" type="button">本地草稿</button>
+                            <button class="btn secondary small-btn" id="btn-calibration-mode-apply" type="button">直接应用</button>
+                        </div>
+                    </div>
+                    <div class="workspace-toolbar-actions calibration-primary-actions" data-action-group="samples" aria-label="常用样本操作">
+                        <button class="btn primary small-btn" id="btn-calibration-capture-sample" type="button">保存当前输入为样本</button>
+                        <button class="btn secondary small-btn" id="btn-calibration-import-samples" type="button">导入结算样本</button>
+                        <button class="btn secondary small-btn" id="btn-calibration-export-samples" type="button">导出结算样本</button>
+                    </div>
+                    <div class="calibration-meta-grid">
+                        <div class="calibration-meta-card">
+                            <div class="calibration-meta-label">权威产物</div>
+                            <div id="calibration-artifact-meta" class="calibration-meta-value">等待加载权威产物。</div>
+                        </div>
+                        <div class="calibration-meta-card">
+                            <div class="calibration-meta-label">当前地图摘要</div>
+                            <div id="calibration-map-meta" class="calibration-meta-value">等待选择地图。</div>
+                        </div>
+                        <div class="calibration-meta-card">
+                            <div class="calibration-meta-label">本地样本摘要</div>
+                            <div id="calibration-sample-meta" class="calibration-meta-value">等待加载本地结算样本。</div>
+                        </div>
+                    </div>
+                    <div class="calibration-actions calibration-secondary-actions">
+                        <details class="calibration-action-group" data-action-group="workspace" aria-label="当前校准">
+                            <summary class="calibration-action-title">当前校准</summary>
+                            <button class="btn secondary small-btn" id="btn-calibration-apply-draft" type="button">应用草稿到当前 Workspace</button>
+                            <button class="btn secondary small-btn" id="btn-calibration-reset-authority" type="button">回到权威产物</button>
+                        </details>
+                        <details class="calibration-action-group" data-action-group="drafts" aria-label="草稿与应用态">
+                            <summary class="calibration-action-title">草稿与应用态</summary>
+                            <button class="btn secondary small-btn" id="btn-calibration-import-draft" type="button">导入草稿</button>
+                            <button class="btn secondary small-btn" id="btn-calibration-export-draft" type="button">导出草稿</button>
+                            <button class="btn secondary small-btn" id="btn-calibration-import-applied" type="button">导入应用态</button>
+                            <button class="btn secondary small-btn" id="btn-calibration-export-applied" type="button">导出应用态</button>
+                        </details>
+                        <details class="calibration-action-group" data-action-group="authority" aria-label="权威包导出">
+                            <summary class="calibration-action-title">权威包导出</summary>
+                            <button class="btn secondary small-btn" id="btn-calibration-export-filtered-replay-samples" type="button">导出当前筛选 Replay Samples</button>
+                            <button class="btn secondary small-btn" id="btn-calibration-export-filtered-authority-samples" type="button">导出当前筛选 Authority Battle Samples</button>
+                            <button class="btn secondary small-btn" id="btn-calibration-export-current-map-authority-samples" type="button">导出当前地图 Authority Battle Samples</button>
+                            <button class="btn secondary small-btn" id="btn-calibration-export-authority-samples" type="button">导出 Authority Battle Samples</button>
+                        </details>
+                        <details class="calibration-action-group danger" data-action-group="danger" aria-label="危险操作">
+                            <summary class="calibration-action-title">危险操作</summary>
+                            <button class="btn secondary small-btn" id="btn-calibration-clear-samples" type="button">清空结算样本</button>
+                        </details>
+                        <input id="calibration-import-draft-file" type="file" accept="application/json,.json" hidden>
+                        <input id="calibration-import-applied-file" type="file" accept="application/json,.json" hidden>
+                        <input id="calibration-import-samples-file" type="file" accept="application/json,.json" hidden>
+                    </div>
+                    <p class="workspace-persist-note calibration-status" id="calibration-status">首次进入默认是本地草稿模式；模式记忆保存在当前浏览器。</p>
+                    <div class="calibration-grid-shell">
+                        <div class="calibration-grid-card">
+                            <h4>数量先验 `alpha_counts`</h4>
+                            <div id="calibration-alpha-grid" class="calibration-grid"></div>
+                        </div>
+                        <div class="calibration-grid-card">
+                            <h4>价值基线：图鉴均值 / 标准差</h4>
+                            <div id="calibration-value-grid" class="calibration-grid"></div>
+                        </div>
+                        <div class="calibration-grid-card">
+                            <h4>当前 `cells_per_item` 只读</h4>
+                            <div id="calibration-cells-grid" class="calibration-grid"></div>
+                        </div>
+                        <div class="calibration-grid-card">
+                            <h4>本地样本校对</h4>
+                            <div id="calibration-sample-review" class="calibration-grid"></div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section class="report-panel workspace-result-panel">
+                <div class="workspace-panel-heading">
+                    <div>
+                        <p class="workspace-panel-kicker">Config</p>
+                        <h2>配置入口</h2>
+                    </div>
+                    <p>大多数品质、格数、价值信息已由图鉴产物提供，手动配置只保留模板、覆盖差异和导入导出。</p>
+                </div>
+                <div class="glass tools-config-card">
+                    <p class="workspace-toolbar-kicker">Simplified Config</p>
+                    <h3>结构化配置</h3>
+                    <p class="workspace-toolbar-note">优先使用图鉴权威产物；仅在要调整本地模板、查看覆盖差异或导入导出 JSON 时打开。</p>
+                    <div class="workspace-toolbar-actions">
+                        <button class="btn primary small-btn" type="button" onclick="document.getElementById('btn-config').click()">打开配置</button>
+                    </div>
+                </div>
+                <section class="glass tools-role-panel" id="role-decision-panel" aria-label="角色竞拍决策">
+                    <div class="workspace-toolbar-topline">
+                        <div>
+                            <p class="workspace-toolbar-kicker">Role Strategy</p>
+                            <h3>角色竞拍视角</h3>
+                            <p class="workspace-toolbar-note">读取主工作台当前输入，用角色技能偏好给出冷跟、稳跟和热抢上限。</p>
+                        </div>
+                    </div>
+                    <label class="input-group input-group-compact tools-role-select-row">
+                        <span>角色</span>
+                        <select id="role-strategy-select"></select>
+                    </label>
+                    <div class="tools-role-summary" id="role-strategy-summary">返回决策台填写总数量后生成角色策略。</div>
+                    <div class="tools-role-cap-grid" aria-label="角色出价上限">
+                        <div>
+                            <span>冷跟</span>
+                            <strong id="role-cap-cold">-</strong>
+                        </div>
+                        <div>
+                            <span>稳跟</span>
+                            <strong id="role-cap-steady">-</strong>
+                        </div>
+                        <div>
+                            <span>热抢</span>
+                            <strong id="role-cap-hot">-</strong>
+                        </div>
+                    </div>
+                    <ul class="tools-role-notes" id="role-strategy-notes">
+                        <li>等待当前工作台输入。</li>
+                    </ul>
+                </section>
+            </section>
+        </main>
+
+    </div>
+
+    <div id="config-modal" class="modal hidden">
+        <div class="modal-content glass workspace-config-modal">
+            <div class="round-header modal-header-row">
+                <div>
+                    <h2 id="config-modal-title">结构化配置</h2>
+                    <p class="subtitle" id="config-help-text">图鉴权威产物优先；JSON 仅作高级只读与导入导出参考。</p>
+                </div>
+                <button class="close-btn button-reset" id="close-config" type="button" aria-label="关闭配置面板">&times;</button>
+            </div>
+            <div class="config-view-switch">
+                <button class="btn secondary small-btn config-view-btn active" id="btn-config-view-structured" type="button">结构化配置</button>
+                <button class="btn secondary small-btn config-view-btn" id="btn-config-view-baseline" type="button">内置默认</button>
+                <button class="btn secondary small-btn config-view-btn" id="btn-config-view-overrides" type="button">覆盖差异</button>
+            </div>
+            <div id="config-editor-controls" class="config-editor-controls"></div>
+            <div class="panel-actions config-actions">
+                <button class="btn secondary small-btn" id="btn-config-import" type="button">导入 JSON</button>
+                <button class="btn secondary small-btn" id="btn-config-export" type="button">导出 JSON</button>
+                <button class="btn primary small-btn" id="btn-save-config" type="button">保存并生效</button>
+                <button class="btn secondary small-btn" id="btn-reset-config" type="button">恢复默认</button>
+                <input id="config-import-file" type="file" accept="application/json,.json" hidden>
+            </div>
+            <p class="help-text hidden" id="config-editor-status"></p>
+            <details class="config-json-details" id="config-json-details">
+                <summary class="config-json-summary">高级 JSON 参考</summary>
+                <textarea id="config-json" rows="10" class="code-editor" readonly></textarea>
+            </details>
+        </div>
+    </div>
+
+    <script type="module" src="workspace_runtime.js?v=20260428232030"></script>
+    <script type="module" src="source_data_runtime.js?v=20260428232030"></script>
+    <script type="module" src="authority_calibration_runtime.js?v=20260428232030"></script>
+    <script type="module" src="estimator.js?v=20260428232030"></script>
+    <script type="module" src="default_config_bundle.js?v=20260428232030"></script>
+    <script type="module" src="config_modal_state.js?v=20260428232030"></script>
+    <script type="module" src="numeric_input_runtime.js?v=20260428232030"></script>
+    <script type="module" src="dashboard_runtime.js?v=20260428232030"></script>
+    <script type="module" src="coarse_estimator.js?v=20260428232030"></script>
+    <script type="module" src="full_solver_runtime.js?v=20260428232030"></script>
+    <script type="module" src="config_editor_controls.js?v=20260428232030"></script>
+    <script type="module" src="config_editor_runtime.js?v=20260428232030"></script>
+    <script type="module" src="field_panel_runtime.js?v=20260428232030"></script>
+    <script type="module" src="result_panel_runtime.js?v=20260428232030"></script>
+    <script type="module" src="role_strategy.js?v=20260428232030"></script>
+    <script type="module" src="sample_dataset.js?v=20260428232030"></script>
+    <script type="module" src="app.js?v=20260428232030"></script>
+</body>
+</html>

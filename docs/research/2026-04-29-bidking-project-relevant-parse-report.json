@@ -1,0 +1,6859 @@
+{
+  "schema_version": "ak_bidking_project_relevant_parse_v1",
+  "generated_at": "2026-04-28T19:24:50.198Z",
+  "mode": "research_backtest",
+  "change_class": "SIM_ONLY",
+  "recommended_change_class": "SIM_ONLY",
+  "live_path_touched": false,
+  "summary": {
+    "parse_status": "project_relevant_parse_complete",
+    "evidence_confidence": "medium_high",
+    "authority_adoption_allowed": false,
+    "default_config_update_allowed": false,
+    "shadow_candidate_allowed": false,
+    "reverse_engineering_source_allowed": true,
+    "included_table_count": 12,
+    "included_record_count": 2746,
+    "missing_required_table_count": 0,
+    "project_current_map_count": 3,
+    "project_aligned_map_count": 3,
+    "collectible_item_count": 587,
+    "drop_group_count": 594,
+    "drop_tuple_count": 8782,
+    "reveal_or_strategy_skill_count": 221,
+    "project_relevant_method_scope_complete": true,
+    "dodrop_semantics_complete": true,
+    "helper_semantics_complete": true
+  },
+  "gates": {
+    "manual_mechanics_review_approved": false,
+    "same_battle_replay_samples_attached": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false
+  },
+  "included_project_scope": [
+    "map and bidmap structure",
+    "rank map count, role spawn, min bid, and bid type distributions",
+    "rank AI opponent bidding and item-use distributions",
+    "drop graph, nested groups, and helper semantics",
+    "collectible item quality, value, grid, and type distributions",
+    "strategy-visible skills, heroes, battle items, conditions, sim rows, and constants",
+    "project-relevant method markers and focused IL evidence"
+  ],
+  "skipped_irrelevant_scope": [
+    "login, account, payment, analytics, ads, mail, and social flows",
+    "full Unity scene, shader, sprite, audio, and localization asset graph",
+    "protocol payload implementation after request-wrapper identification",
+    "generic async/task plumbing not tied to estimator or table-backed mechanics",
+    "non-auction/non-collectible inventory systems outside current app strategy"
+  ],
+  "parse_completion": {
+    "table_coverage": {
+      "required_table_count": 12,
+      "parsed_table_count": 12,
+      "missing_tables": [],
+      "total_row_count": 2746,
+      "tables": [
+        {
+          "type_name": "Table_Map",
+          "table_file": "Map.txt",
+          "row_count": 8,
+          "mapping_mode": "id_plus_localized_columns_after_id",
+          "schema_field_count": 15,
+          "schema_fields": [
+            "id",
+            "map_name",
+            "map_desc",
+            "map_position",
+            "map_icon",
+            "auction_limit_notify",
+            "entrust_value",
+            "entrust_bidmap",
+            "entrust_cost",
+            "entrust_prob",
+            "type",
+            "entrust_num",
+            "is_open",
+            "mapgroup",
+            "world_process"
+          ]
+        },
+        {
+          "type_name": "Table_BidMap",
+          "table_file": "BidMap.txt",
+          "row_count": 104,
+          "mapping_mode": "id_plus_localized_columns_after_id",
+          "schema_field_count": 19,
+          "schema_fields": [
+            "id",
+            "s_map_name",
+            "s_map_logo",
+            "s_map_togname",
+            "s_map_desc",
+            "parent_map_id",
+            "map_group",
+            "map_income",
+            "map_cell",
+            "currency_cost",
+            "item_cost",
+            "map_time",
+            "required_items",
+            "special_output_items",
+            "drop_group_id",
+            "bidder_number",
+            "auction_rounds_rate",
+            "map_random_skill",
+            "map_resource"
+          ]
+        },
+        {
+          "type_name": "Table_RankMap",
+          "table_file": "RankMap.txt",
+          "row_count": 62,
+          "mapping_mode": "id_plus_localized_columns_after_id",
+          "schema_field_count": 5,
+          "schema_fields": [
+            "id",
+            "match_time",
+            "role_spawn",
+            "min_bid_range",
+            "bid_type"
+          ]
+        },
+        {
+          "type_name": "Table_RankAi",
+          "table_file": "RankAi.txt",
+          "row_count": 120,
+          "mapping_mode": "id_plus_localized_columns_after_id",
+          "schema_field_count": 8,
+          "schema_fields": [
+            "id",
+            "role_id",
+            "round_count",
+            "min_bid_ratio",
+            "item_use_probability",
+            "item_usage_group",
+            "bid_time",
+            "bid_pk"
+          ]
+        },
+        {
+          "type_name": "Table_Drop",
+          "table_file": "Drop.txt",
+          "row_count": 594,
+          "mapping_mode": "id_plus_localized_columns_after_id",
+          "schema_field_count": 3,
+          "schema_fields": [
+            "group_id",
+            "weight_type",
+            "items_list"
+          ]
+        },
+        {
+          "type_name": "Table_Item",
+          "table_file": "Item.txt",
+          "row_count": 1128,
+          "mapping_mode": "id_plus_localized_columns_after_id",
+          "schema_field_count": 36,
+          "schema_fields": [
+            "id",
+            "item_name",
+            "item_nm",
+            "item_desc",
+            "item_type_id",
+            "slot_type",
+            "item_quality",
+            "base_value",
+            "in_case",
+            "is_tradable",
+            "binds_on_purchase",
+            "is_auction",
+            "auction_baseprice",
+            "grid_count",
+            "transaction_tax_rate",
+            "max_stack_size",
+            "max_per_listing",
+            "collectible_item_type_id",
+            "skills",
+            "specified_obtain",
+            "drop_group_id",
+            "show_item",
+            "icon_path",
+            "icon_atlas",
+            "collection",
+            "rank7count",
+            "item_access",
+            "collection_coin",
+            "number",
+            "number_weight",
+            "cost",
+            "model_3D",
+            "is_show",
+            "exchangeId",
+            "is_sale",
+            "room_price"
+          ]
+        },
+        {
+          "type_name": "Table_Skill",
+          "table_file": "Skill.txt",
+          "row_count": 256,
+          "mapping_mode": "id_plus_localized_columns_after_id",
+          "schema_field_count": 25,
+          "schema_fields": [
+            "id",
+            "skill_group",
+            "skill_name",
+            "skilldesc",
+            "skill_textshow",
+            "skill_type",
+            "skilltarget",
+            "skilltargetvalue",
+            "skilltarget2",
+            "skilltargetvalue2",
+            "skilltarget3",
+            "skilltargetvalue3",
+            "skill_count_type",
+            "skill_count",
+            "skilleffect_position",
+            "skill_icon",
+            "skill_value",
+            "skill_active_type",
+            "skill_opt",
+            "skill_opt_param1",
+            "skill_opt_param2",
+            "skill_cast",
+            "skill_round",
+            "skill_CD",
+            "show_type"
+          ]
+        },
+        {
+          "type_name": "Table_Hero",
+          "table_file": "Hero.txt",
+          "row_count": 20,
+          "mapping_mode": "id_plus_localized_columns_after_id",
+          "schema_field_count": 19,
+          "schema_fields": [
+            "id",
+            "name",
+            "gender",
+            "hero_class",
+            "background",
+            "hero_skill_name",
+            "hero_skill_description",
+            "hero_effect_description",
+            "cast_type",
+            "icon_path",
+            "icon_path2",
+            "icon_path3",
+            "illustration_path",
+            "bg_path",
+            "access",
+            "voices",
+            "battleBgm",
+            "hero_tag",
+            "hero_task_group"
+          ]
+        },
+        {
+          "type_name": "Table_BattleItem",
+          "table_file": "BattleItem.txt",
+          "row_count": 64,
+          "mapping_mode": "id_plus_localized_columns_after_id",
+          "schema_field_count": 4,
+          "schema_fields": [
+            "id",
+            "item_type_id",
+            "item_quality",
+            "battle_item_type"
+          ]
+        },
+        {
+          "type_name": "Table_Condition",
+          "table_file": "Condition.txt",
+          "row_count": 206,
+          "mapping_mode": "id_plus_localized_columns_after_id",
+          "schema_field_count": 11,
+          "schema_fields": [
+            "id",
+            "type",
+            "preorconditions",
+            "preorconditionsparam",
+            "preconditions",
+            "preconditionsparam",
+            "condition",
+            "conditionparams",
+            "divided",
+            "maxvalue",
+            "desc"
+          ]
+        },
+        {
+          "type_name": "Table_Sim",
+          "table_file": "Sim.txt",
+          "row_count": 101,
+          "mapping_mode": "id_plus_localized_columns_after_id",
+          "schema_field_count": 6,
+          "schema_fields": [
+            "id",
+            "success_interval",
+            "simgold",
+            "simdorp",
+            "simshop",
+            "roudtime"
+          ]
+        },
+        {
+          "type_name": "Table_Constant",
+          "table_file": "Constant.txt",
+          "row_count": 83,
+          "mapping_mode": "direct_schema_columns",
+          "schema_field_count": 4,
+          "schema_fields": [
+            "Id",
+            "Name",
+            "Type",
+            "Value"
+          ]
+        }
+      ]
+    },
+    "method_scope": {
+      "target_method_marker_count": 15,
+      "primary_method_markers_missing": [],
+      "project_relevant_method_scope_complete": true,
+      "method_node_count": 56,
+      "direct_call_edge_count": 521,
+      "unresolved_edge_count": 240,
+      "unresolved_edge_ratio": 0.4607,
+      "focused_method_count": 14,
+      "unresolved_token_reference_ratio": 0.3113,
+      "retained_nonblocking_unresolved_scope": [
+        "generic TypeSpec or MethodSpec calls kept as evidence notes",
+        "network request wrappers are identified but protocol payload internals are out of strategy scope",
+        "async MoveNext callback internals are not promoted to estimator authority"
+      ]
+    },
+    "dodrop_semantics": {
+      "parse_status": "dodrop_semantics_candidate_built",
+      "il_signal_complete": true,
+      "weight_type_counts": {
+        "1": 47,
+        "2": 547
+      },
+      "tuple_width_counts": {
+        "0": 2,
+        "5": 8782
+      }
+    },
+    "drop_helper_semantics": {
+      "parse_status": "drop_helper_semantics_candidate_built",
+      "probability_mode_is_independent_bernoulli": true,
+      "weighted_mode_is_single_cumulative_choice": true,
+      "random_count_upper_bound_exclusive": true,
+      "missing_helper_keys": []
+    }
+  },
+  "project_maps": {
+    "shipping": {
+      "current_map_id": "shipping",
+      "bidking_map_id": 103,
+      "bidking_root_bidmap_id": 2301,
+      "evidence_confidence": "low_medium",
+      "alignment_blocker": "label overlap is weaker than villa/sunken_ship; requires screenshot or manual label alignment",
+      "map_record": {
+        "localized_name": null,
+        "map_name": "map_name_103",
+        "entrust_num": [
+          20,
+          25
+        ],
+        "entrust_value": 300000,
+        "entrust_bidmap": 2301,
+        "entrust_prob": 500,
+        "mapgroup": 103
+      },
+      "bidmap_count": 10,
+      "bidmap_samples": [
+        {
+          "id": 2301,
+          "localized_name": "杂货集装箱",
+          "map_cell": 20,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2301,
+            18,
+            36
+          ],
+          "root_drop_group_id": 2301
+        },
+        {
+          "id": 2302,
+          "localized_name": "家居集装箱",
+          "map_cell": 20,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2302,
+            18,
+            36
+          ],
+          "root_drop_group_id": 2302
+        },
+        {
+          "id": 2303,
+          "localized_name": "数码科技集装箱",
+          "map_cell": 20,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2303,
+            18,
+            36
+          ],
+          "root_drop_group_id": 2303
+        },
+        {
+          "id": 2304,
+          "localized_name": "冷链集装箱",
+          "map_cell": 20,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2304,
+            18,
+            36
+          ],
+          "root_drop_group_id": 2304
+        },
+        {
+          "id": 2305,
+          "localized_name": "古董工艺集装箱",
+          "map_cell": 20,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2305,
+            18,
+            36
+          ],
+          "root_drop_group_id": 2305
+        },
+        {
+          "id": 2306,
+          "localized_name": "文博集装箱",
+          "map_cell": 20,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2306,
+            18,
+            36
+          ],
+          "root_drop_group_id": 2306
+        },
+        {
+          "id": 2307,
+          "localized_name": "奢华集装箱",
+          "map_cell": 20,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2307,
+            18,
+            36
+          ],
+          "root_drop_group_id": 2307
+        },
+        {
+          "id": 2308,
+          "localized_name": "医疗用品集装箱",
+          "map_cell": 20,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2308,
+            18,
+            36
+          ],
+          "root_drop_group_id": 2308
+        },
+        {
+          "id": 2309,
+          "localized_name": "军用物资集装箱",
+          "map_cell": 20,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2309,
+            18,
+            36
+          ],
+          "root_drop_group_id": 2309
+        },
+        {
+          "id": 2310,
+          "localized_name": "潮牌集装箱",
+          "map_cell": 20,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2310,
+            18,
+            36
+          ],
+          "root_drop_group_id": 2310
+        }
+      ],
+      "root_rank_map": {
+        "id": 2301,
+        "localized_name": "杂货集装箱",
+        "match_time_summary": {
+          "range_count": 4,
+          "total_weight": 2100,
+          "min_low": 11,
+          "max_high": 30,
+          "top_ranges": [
+            [
+              11,
+              15,
+              1000
+            ],
+            [
+              16,
+              20,
+              1000
+            ],
+            [
+              21,
+              25,
+              50
+            ],
+            [
+              26,
+              30,
+              50
+            ]
+          ]
+        },
+        "role_spawn_summary": {
+          "entry_count": 20,
+          "total_weight": 2550,
+          "top_entries": [
+            [
+              206,
+              500
+            ],
+            [
+              209,
+              300
+            ],
+            [
+              107,
+              200
+            ],
+            [
+              202,
+              200
+            ],
+            [
+              108,
+              150
+            ],
+            [
+              110,
+              150
+            ],
+            [
+              301,
+              150
+            ],
+            [
+              103,
+              100
+            ],
+            [
+              104,
+              100
+            ],
+            [
+              201,
+              100
+            ]
+          ]
+        },
+        "min_bid_range_summary": {
+          "range_count": 5,
+          "total_weight": 308,
+          "min_low": 2001,
+          "max_high": 100000,
+          "top_ranges": [
+            [
+              20001,
+              50000,
+              200
+            ],
+            [
+              50001,
+              100000,
+              100
+            ],
+            [
+              10000,
+              20000,
+              5
+            ],
+            [
+              5001,
+              10000,
+              2
+            ],
+            [
+              2001,
+              5000,
+              1
+            ]
+          ]
+        },
+        "bid_type": [
+          10,
+          1,
+          100,
+          1,
+          1000,
+          20,
+          10000,
+          200,
+          100000,
+          10
+        ]
+      },
+      "rank_ai_rows_for_bidking_map": 6,
+      "root_drop_group_id": 2301,
+      "root_drop_graph": {
+        "root_group_id": 2301,
+        "reachable_drop_group_count": 68,
+        "reachable_tuple_count": 959,
+        "terminal_item_count": 569,
+        "missing_group_count": 0,
+        "missing_group_ids": []
+      },
+      "default_config_update_allowed": false,
+      "shadow_candidate_allowed": false
+    },
+    "sunken_ship": {
+      "current_map_id": "sunken_ship",
+      "bidking_map_id": 105,
+      "bidking_root_bidmap_id": 2501,
+      "evidence_confidence": "medium",
+      "alignment_blocker": "manual confirmation required before config mapping",
+      "map_record": {
+        "localized_name": null,
+        "map_name": "map_name_105",
+        "entrust_num": [
+          30,
+          35
+        ],
+        "entrust_value": 1000000,
+        "entrust_bidmap": 2501,
+        "entrust_prob": 500,
+        "mapgroup": 105
+      },
+      "bidmap_count": 10,
+      "bidmap_samples": [
+        {
+          "id": 2501,
+          "localized_name": "未知残骸",
+          "map_cell": 30,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2501,
+            22,
+            44
+          ],
+          "root_drop_group_id": 2501
+        },
+        {
+          "id": 2502,
+          "localized_name": "​远洋客轮舱房​",
+          "map_cell": 30,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2502,
+            22,
+            44
+          ],
+          "root_drop_group_id": 2502
+        },
+        {
+          "id": 2503,
+          "localized_name": "​军用舰艇保险库​",
+          "map_cell": 30,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2503,
+            22,
+            44
+          ],
+          "root_drop_group_id": 2503
+        },
+        {
+          "id": 2504,
+          "localized_name": "​冷链货船隔离舱​",
+          "map_cell": 30,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2504,
+            22,
+            44
+          ],
+          "root_drop_group_id": 2504
+        },
+        {
+          "id": 2505,
+          "localized_name": "​殖民商船宝库​",
+          "map_cell": 30,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2505,
+            22,
+            44
+          ],
+          "root_drop_group_id": 2505
+        },
+        {
+          "id": 2506,
+          "localized_name": "​探险家座舰资料库​",
+          "map_cell": 30,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2506,
+            22,
+            44
+          ],
+          "root_drop_group_id": 2506
+        },
+        {
+          "id": 2507,
+          "localized_name": "​皇家御用货舱​",
+          "map_cell": 30,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2507,
+            22,
+            44
+          ],
+          "root_drop_group_id": 2507
+        },
+        {
+          "id": 2508,
+          "localized_name": "​生物实验室样本库​",
+          "map_cell": 30,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2508,
+            22,
+            44
+          ],
+          "root_drop_group_id": 2508
+        },
+        {
+          "id": 2509,
+          "localized_name": "​私掠船军火舱​",
+          "map_cell": 30,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2509,
+            22,
+            44
+          ],
+          "root_drop_group_id": 2509
+        },
+        {
+          "id": 2510,
+          "localized_name": "​现代货轮娱乐库​",
+          "map_cell": 30,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2510,
+            22,
+            44
+          ],
+          "root_drop_group_id": 2510
+        }
+      ],
+      "root_rank_map": {
+        "id": 2501,
+        "localized_name": "未知残骸",
+        "match_time_summary": {
+          "range_count": 4,
+          "total_weight": 2100,
+          "min_low": 11,
+          "max_high": 30,
+          "top_ranges": [
+            [
+              11,
+              15,
+              1000
+            ],
+            [
+              16,
+              20,
+              1000
+            ],
+            [
+              21,
+              25,
+              50
+            ],
+            [
+              26,
+              30,
+              50
+            ]
+          ]
+        },
+        "role_spawn_summary": {
+          "entry_count": 20,
+          "total_weight": 2700,
+          "top_entries": [
+            [
+              206,
+              500
+            ],
+            [
+              209,
+              300
+            ],
+            [
+              301,
+              250
+            ],
+            [
+              107,
+              200
+            ],
+            [
+              202,
+              200
+            ],
+            [
+              103,
+              150
+            ],
+            [
+              108,
+              150
+            ],
+            [
+              110,
+              150
+            ],
+            [
+              104,
+              100
+            ],
+            [
+              201,
+              100
+            ]
+          ]
+        },
+        "min_bid_range_summary": {
+          "range_count": 7,
+          "total_weight": 554,
+          "min_low": 2001,
+          "max_high": 300000,
+          "top_ranges": [
+            [
+              100001,
+              200000,
+              300
+            ],
+            [
+              200001,
+              300000,
+              200
+            ],
+            [
+              50001,
+              100000,
+              50
+            ],
+            [
+              2001,
+              5000,
+              1
+            ],
+            [
+              5001,
+              10000,
+              1
+            ],
+            [
+              10000,
+              20000,
+              1
+            ],
+            [
+              20001,
+              50000,
+              1
+            ]
+          ]
+        },
+        "bid_type": [
+          10,
+          1,
+          100,
+          1,
+          1000,
+          10,
+          10000,
+          100,
+          100000,
+          30
+        ]
+      },
+      "rank_ai_rows_for_bidking_map": 6,
+      "root_drop_group_id": 2501,
+      "root_drop_graph": {
+        "root_group_id": 2501,
+        "reachable_drop_group_count": 68,
+        "reachable_tuple_count": 994,
+        "terminal_item_count": 588,
+        "missing_group_count": 0,
+        "missing_group_ids": []
+      },
+      "default_config_update_allowed": false,
+      "shadow_candidate_allowed": false
+    },
+    "villa": {
+      "current_map_id": "villa",
+      "bidking_map_id": 104,
+      "bidking_root_bidmap_id": 2401,
+      "evidence_confidence": "medium",
+      "alignment_blocker": "manual confirmation required before config mapping",
+      "map_record": {
+        "localized_name": null,
+        "map_name": "map_name_104",
+        "entrust_num": [
+          25,
+          30
+        ],
+        "entrust_value": 500000,
+        "entrust_bidmap": 2401,
+        "entrust_prob": 500,
+        "mapgroup": 104
+      },
+      "bidmap_count": 10,
+      "bidmap_samples": [
+        {
+          "id": 2401,
+          "localized_name": "未知别墅",
+          "map_cell": 25,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2401,
+            20,
+            40
+          ],
+          "root_drop_group_id": 2401
+        },
+        {
+          "id": 2402,
+          "localized_name": "设计师居所",
+          "map_cell": 25,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2402,
+            20,
+            40
+          ],
+          "root_drop_group_id": 2402
+        },
+        {
+          "id": 2403,
+          "localized_name": "科学家居所",
+          "map_cell": 25,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2403,
+            20,
+            40
+          ],
+          "root_drop_group_id": 2403
+        },
+        {
+          "id": 2404,
+          "localized_name": "养生学家居所",
+          "map_cell": 25,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2404,
+            20,
+            40
+          ],
+          "root_drop_group_id": 2404
+        },
+        {
+          "id": 2405,
+          "localized_name": "望族居所",
+          "map_cell": 25,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2405,
+            20,
+            40
+          ],
+          "root_drop_group_id": 2405
+        },
+        {
+          "id": 2406,
+          "localized_name": "学者居所",
+          "map_cell": 25,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2406,
+            20,
+            40
+          ],
+          "root_drop_group_id": 2406
+        },
+        {
+          "id": 2407,
+          "localized_name": "私人金库",
+          "map_cell": 25,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2407,
+            20,
+            40
+          ],
+          "root_drop_group_id": 2407
+        },
+        {
+          "id": 2408,
+          "localized_name": "奢华养老院",
+          "map_cell": 25,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2408,
+            20,
+            40
+          ],
+          "root_drop_group_id": 2408
+        },
+        {
+          "id": 2409,
+          "localized_name": "末日庇护所",
+          "map_cell": 25,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2409,
+            20,
+            40
+          ],
+          "root_drop_group_id": 2409
+        },
+        {
+          "id": 2410,
+          "localized_name": "极客改造屋",
+          "map_cell": 25,
+          "bidder_number": 4,
+          "auction_rounds_rate": [
+            2000,
+            1600,
+            1300,
+            1100,
+            0
+          ],
+          "drop_group_id": [
+            9999,
+            2410,
+            20,
+            40
+          ],
+          "root_drop_group_id": 2410
+        }
+      ],
+      "root_rank_map": {
+        "id": 2401,
+        "localized_name": "未知别墅",
+        "match_time_summary": {
+          "range_count": 4,
+          "total_weight": 2100,
+          "min_low": 11,
+          "max_high": 30,
+          "top_ranges": [
+            [
+              11,
+              15,
+              1000
+            ],
+            [
+              16,
+              20,
+              1000
+            ],
+            [
+              21,
+              25,
+              50
+            ],
+            [
+              26,
+              30,
+              50
+            ]
+          ]
+        },
+        "role_spawn_summary": {
+          "entry_count": 20,
+          "total_weight": 2700,
+          "top_entries": [
+            [
+              206,
+              500
+            ],
+            [
+              209,
+              300
+            ],
+            [
+              301,
+              250
+            ],
+            [
+              107,
+              200
+            ],
+            [
+              202,
+              200
+            ],
+            [
+              103,
+              150
+            ],
+            [
+              108,
+              150
+            ],
+            [
+              110,
+              150
+            ],
+            [
+              104,
+              100
+            ],
+            [
+              201,
+              100
+            ]
+          ]
+        },
+        "min_bid_range_summary": {
+          "range_count": 6,
+          "total_weight": 309,
+          "min_low": 2001,
+          "max_high": 200000,
+          "top_ranges": [
+            [
+              50001,
+              100000,
+              200
+            ],
+            [
+              100001,
+              200000,
+              100
+            ],
+            [
+              20001,
+              50000,
+              5
+            ],
+            [
+              10000,
+              20000,
+              2
+            ],
+            [
+              2001,
+              5000,
+              1
+            ],
+            [
+              5001,
+              10000,
+              1
+            ]
+          ]
+        },
+        "bid_type": [
+          10,
+          1,
+          100,
+          1,
+          1000,
+          10,
+          10000,
+          200,
+          100000,
+          10
+        ]
+      },
+      "rank_ai_rows_for_bidking_map": 6,
+      "root_drop_group_id": 2401,
+      "root_drop_graph": {
+        "root_group_id": 2401,
+        "reachable_drop_group_count": 68,
+        "reachable_tuple_count": 994,
+        "terminal_item_count": 588,
+        "missing_group_count": 0,
+        "missing_group_ids": []
+      },
+      "default_config_update_allowed": false,
+      "shadow_candidate_allowed": false
+    }
+  },
+  "indexes": {
+    "drop_graph": {
+      "drop_group_count": 594,
+      "tuple_count": 8782,
+      "empty_tuple_count": 2,
+      "weight_type_counts": {
+        "1": 47,
+        "2": 547
+      },
+      "tuple_kind_counts": {
+        "1": 9,
+        "2": 5,
+        "3": 8,
+        "4": 1,
+        "6": 21,
+        "7": 33,
+        "8": 64,
+        "11": 4402,
+        "12": 30,
+        "14": 20,
+        "15": 20,
+        "17": 12,
+        "18": 19,
+        "19": 17,
+        "100": 11,
+        "101": 190,
+        "102": 77,
+        "103": 89,
+        "104": 83,
+        "105": 103,
+        "106": 175,
+        "107": 136,
+        "108": 77,
+        "109": 88,
+        "110": 98,
+        "9999": 2994,
+        "empty": 2
+      },
+      "nested_group_id_count": 398,
+      "missing_nested_group_count": 0,
+      "missing_nested_group_ids": [],
+      "terminal_item_id_count": 900,
+      "missing_terminal_item_count": 17,
+      "missing_terminal_item_ids_sample": [
+        120006,
+        120007,
+        120008,
+        120009,
+        120010,
+        120011,
+        120012,
+        120013,
+        120014,
+        120015,
+        120016,
+        120017,
+        120018,
+        120019,
+        120020,
+        120021,
+        1106013
+      ]
+    },
+    "item_index": {
+      "total_item_count": 1128,
+      "collectible_item_count": 587,
+      "auction_collectible_item_count": 0,
+      "quality_counts": {
+        "1": 100,
+        "2": 91,
+        "3": 103,
+        "4": 103,
+        "5": 100,
+        "6": 90
+      },
+      "top_item_type_counts": [
+        {
+          "type_id": 101,
+          "count": 178
+        },
+        {
+          "type_id": 106,
+          "count": 127
+        },
+        {
+          "type_id": 107,
+          "count": 116
+        },
+        {
+          "type_id": 110,
+          "count": 78
+        },
+        {
+          "type_id": 103,
+          "count": 74
+        },
+        {
+          "type_id": 105,
+          "count": 71
+        },
+        {
+          "type_id": 109,
+          "count": 71
+        },
+        {
+          "type_id": 108,
+          "count": 70
+        },
+        {
+          "type_id": 104,
+          "count": 67
+        },
+        {
+          "type_id": 102,
+          "count": 64
+        },
+        {
+          "type_id": 112,
+          "count": 1
+        }
+      ],
+      "base_value_stats_by_quality": {
+        "1": {
+          "count": 100,
+          "min": 107,
+          "p50": 207,
+          "p90": 438,
+          "max": 902
+        },
+        "2": {
+          "count": 91,
+          "min": 252,
+          "p50": 734,
+          "p90": 1440,
+          "max": 5129
+        },
+        "3": {
+          "count": 103,
+          "min": 711,
+          "p50": 2565,
+          "p90": 5730,
+          "max": 14659
+        },
+        "4": {
+          "count": 103,
+          "min": 2100,
+          "p50": 8940,
+          "p90": 16310,
+          "max": 31688
+        },
+        "5": {
+          "count": 100,
+          "min": 7800,
+          "p50": 39690,
+          "p90": 82740,
+          "max": 199900
+        },
+        "6": {
+          "count": 90,
+          "min": 52500,
+          "p50": 249000,
+          "p90": 1236666,
+          "max": 13145200
+        }
+      },
+      "grid_count_stats_by_quality": {
+        "1": {
+          "count": 100,
+          "min": 0,
+          "p50": 0,
+          "p90": 0,
+          "max": 0
+        },
+        "2": {
+          "count": 91,
+          "min": 0,
+          "p50": 0,
+          "p90": 0,
+          "max": 0
+        },
+        "3": {
+          "count": 103,
+          "min": 0,
+          "p50": 0,
+          "p90": 0,
+          "max": 0
+        },
+        "4": {
+          "count": 103,
+          "min": 0,
+          "p50": 0,
+          "p90": 0,
+          "max": 0
+        },
+        "5": {
+          "count": 100,
+          "min": 0,
+          "p50": 0,
+          "p90": 0,
+          "max": 0
+        },
+        "6": {
+          "count": 90,
+          "min": 0,
+          "p50": 0,
+          "p90": 0,
+          "max": 0
+        }
+      },
+      "samples": [
+        {
+          "item_id": 1011001,
+          "localized_name": "数据线",
+          "item_type_id": [
+            101,
+            107
+          ],
+          "item_quality": 1,
+          "base_value": 160,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1011002,
+          "localized_name": "马克杯",
+          "item_type_id": [
+            101,
+            109
+          ],
+          "item_quality": 1,
+          "base_value": 198,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1011003,
+          "localized_name": "0.38MM中性笔",
+          "item_type_id": [
+            101
+          ],
+          "item_quality": 1,
+          "base_value": 179,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1011004,
+          "localized_name": "晾衣杆",
+          "item_type_id": [
+            101
+          ],
+          "item_quality": 1,
+          "base_value": 602,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1011005,
+          "localized_name": "插座",
+          "item_type_id": [
+            101,
+            107
+          ],
+          "item_quality": 1,
+          "base_value": 200,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1011006,
+          "localized_name": "快递单",
+          "item_type_id": [
+            101
+          ],
+          "item_quality": 1,
+          "base_value": 209,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1011007,
+          "localized_name": "电子体重秤",
+          "item_type_id": [
+            101,
+            102
+          ],
+          "item_quality": 1,
+          "base_value": 470,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1011008,
+          "localized_name": "披萨盒",
+          "item_type_id": [
+            101,
+            109
+          ],
+          "item_quality": 1,
+          "base_value": 599,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1011009,
+          "localized_name": "园林修理剪",
+          "item_type_id": [
+            101
+          ],
+          "item_quality": 1,
+          "base_value": 305,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1011010,
+          "localized_name": "废旧纸箱",
+          "item_type_id": [
+            101
+          ],
+          "item_quality": 1,
+          "base_value": 885,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1012001,
+          "localized_name": "电子手表",
+          "item_type_id": [
+            101,
+            107
+          ],
+          "item_quality": 2,
+          "base_value": 445,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1012002,
+          "localized_name": "抱枕",
+          "item_type_id": [
+            101
+          ],
+          "item_quality": 2,
+          "base_value": 1258,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1012003,
+          "localized_name": "HDIM高清线",
+          "item_type_id": [
+            101,
+            107
+          ],
+          "item_quality": 2,
+          "base_value": 755,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1012004,
+          "localized_name": "篮球",
+          "item_type_id": [
+            101
+          ],
+          "item_quality": 2,
+          "base_value": 1481,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1012005,
+          "localized_name": "足球",
+          "item_type_id": [
+            101
+          ],
+          "item_quality": 2,
+          "base_value": 1480,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1012006,
+          "localized_name": "羽毛球拍",
+          "item_type_id": [
+            101
+          ],
+          "item_quality": 2,
+          "base_value": 1776,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1012007,
+          "localized_name": "折叠床",
+          "item_type_id": [
+            101
+          ],
+          "item_quality": 2,
+          "base_value": 2415,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1012008,
+          "localized_name": "电水壶",
+          "item_type_id": [
+            101,
+            107
+          ],
+          "item_quality": 2,
+          "base_value": 1106,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1012009,
+          "localized_name": "遥控器",
+          "item_type_id": [
+            101,
+            107
+          ],
+          "item_quality": 2,
+          "base_value": 619,
+          "grid_count": 0,
+          "drop_group_id": 0
+        },
+        {
+          "item_id": 1012010,
+          "localized_name": "饮水机",
+          "item_type_id": [
+            101,
+            107
+          ],
+          "item_quality": 2,
+          "base_value": 1045,
+          "grid_count": 0,
+          "drop_group_id": 0
+        }
+      ]
+    },
+    "skill_index": {
+      "skill_count": 256,
+      "hero_count": 20,
+      "battle_item_count": 64,
+      "skill_type_counts": {
+        "0": 63,
+        "1": 52,
+        "2": 65,
+        "3": 76
+      },
+      "skill_count_type_counts": {
+        "1": 255,
+        "2": 1
+      },
+      "show_type_counts": {
+        "0": 244,
+        "1": 2,
+        "2": 10
+      },
+      "reveal_or_strategy_skill_count": 221,
+      "reveal_skill_category_counts": {
+        "outline_or_scan": 148,
+        "quality_reveal": 132,
+        "value_hint": 27
+      },
+      "reveal_or_strategy_skill_samples": [
+        {
+          "skill_id": 100,
+          "localized_name": "全库透视",
+          "localized_description": "显示所有藏品的轮廓",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 103,
+          "localized_name": "四象窥视",
+          "localized_description": "随机显示4件藏品轮廓",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 4,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 106,
+          "localized_name": "十方窥视",
+          "localized_description": "随机显示10件藏品轮廓",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 10,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 200,
+          "localized_name": "总仓储空间",
+          "localized_description": "所有藏品的总格数为{0}格",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": []
+        },
+        {
+          "skill_id": 201,
+          "localized_name": "普品扫描",
+          "localized_description": "所有白色和绿色品质藏品总占位数为{0}格",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            1,
+            2
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal",
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 202,
+          "localized_name": "良品扫描",
+          "localized_description": "所有蓝色品质藏品总占位数为{0}格",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            3
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal",
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 203,
+          "localized_name": "优品扫描",
+          "localized_description": "所有紫色品质藏品总占位数为{0}格",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            4
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal",
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 204,
+          "localized_name": "极品扫描",
+          "localized_description": "所有金色品质藏品总占位数为{0}格",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            5
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal",
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 205,
+          "localized_name": "珍品扫描",
+          "localized_description": "所有红色品质藏品总占位数为{0}格",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            6
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal",
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 301,
+          "localized_name": "普品均格",
+          "localized_description": "所有白色和绿色品质藏品平均占位{0}格",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            1,
+            2
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal"
+          ]
+        },
+        {
+          "skill_id": 302,
+          "localized_name": "良品均格",
+          "localized_description": "所有蓝色品质藏品平均占位{0}格",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            3
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal"
+          ]
+        },
+        {
+          "skill_id": 303,
+          "localized_name": "优品均格",
+          "localized_description": "所有紫色品质藏品平均占位{0}格",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            4
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal"
+          ]
+        },
+        {
+          "skill_id": 304,
+          "localized_name": "极品均格",
+          "localized_description": "所有金色品质藏品平均占位{0}格",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            5
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal"
+          ]
+        },
+        {
+          "skill_id": 305,
+          "localized_name": "珍品均格",
+          "localized_description": "所有红色品质藏品平均占位{0}格",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            6
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal"
+          ]
+        },
+        {
+          "skill_id": 401,
+          "localized_name": "普品存量",
+          "localized_description": "绿色品质藏品的总数量为{0}",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            2
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal"
+          ]
+        },
+        {
+          "skill_id": 402,
+          "localized_name": "良品存量",
+          "localized_description": "蓝色品质藏品的总数量为{0}",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            3
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal"
+          ]
+        },
+        {
+          "skill_id": 403,
+          "localized_name": "优品存量",
+          "localized_description": "紫色品质藏品的总数量为{0}",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            4
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal"
+          ]
+        },
+        {
+          "skill_id": 404,
+          "localized_name": "极品存量",
+          "localized_description": "金色品质藏品的总数量为{0}",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            5
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal"
+          ]
+        },
+        {
+          "skill_id": 405,
+          "localized_name": "珍品存量",
+          "localized_description": "红色品质藏品的总数量为{0}",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            6
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal"
+          ]
+        },
+        {
+          "skill_id": 500,
+          "localized_name": "终极审计",
+          "localized_description": "本次竞拍所有藏品的总价值为{0}",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "value_hint"
+          ]
+        },
+        {
+          "skill_id": 501,
+          "localized_name": "普品估价",
+          "localized_description": "所有绿色品质藏品的总价值为{0}",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            2
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "value_hint",
+            "quality_reveal"
+          ]
+        },
+        {
+          "skill_id": 502,
+          "localized_name": "良品估价",
+          "localized_description": "所有蓝色品质藏品的总价值为{0}",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            3
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "value_hint",
+            "quality_reveal"
+          ]
+        },
+        {
+          "skill_id": 503,
+          "localized_name": "优品估价",
+          "localized_description": "所有紫色品质藏品的总价值为{0}",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            4
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "value_hint",
+            "quality_reveal"
+          ]
+        },
+        {
+          "skill_id": 504,
+          "localized_name": "极品估价",
+          "localized_description": "所有金色品质藏品的总价值为{0}",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            5
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "value_hint",
+            "quality_reveal"
+          ]
+        },
+        {
+          "skill_id": 505,
+          "localized_name": "珍品估价",
+          "localized_description": "所有红色品质藏品的总价值为{0}",
+          "skill_type": 2,
+          "skilltarget": 2,
+          "skilltargetvalue": [
+            6
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "value_hint",
+            "quality_reveal"
+          ]
+        },
+        {
+          "skill_id": 600,
+          "localized_name": "全知全能",
+          "localized_description": "显示所有藏品",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 601,
+          "localized_name": "随机抽检（1）",
+          "localized_description": "随机显示1件藏品",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 1,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 602,
+          "localized_name": "随机抽检（2）",
+          "localized_description": "随机显示2件藏品",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 2,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 603,
+          "localized_name": "随机抽检（4）",
+          "localized_description": "随机显示4件藏品",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 4,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 604,
+          "localized_name": "随机抽检（6）",
+          "localized_description": "随机显示6件藏品",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 6,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 605,
+          "localized_name": "随机抽检（8）",
+          "localized_description": "随机显示8件藏品",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 8,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 606,
+          "localized_name": "随机抽检（10）",
+          "localized_description": "随机显示12件藏品",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 10,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 700,
+          "localized_name": "明镜之眼",
+          "localized_description": "显示所有藏品的品质",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal",
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 701,
+          "localized_name": "宝光双鉴",
+          "localized_description": "随机显示2件藏品的品质",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 2,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal",
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 702,
+          "localized_name": "宝光四鉴",
+          "localized_description": "随机显示4件藏品的品质",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 4,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal",
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 703,
+          "localized_name": "宝光六鉴",
+          "localized_description": "随机显示6件藏品的品质",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 6,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal",
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 704,
+          "localized_name": "宝光八鉴",
+          "localized_description": "随机显示8件藏品的品质",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 8,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal",
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 705,
+          "localized_name": "宝光十鉴",
+          "localized_description": "随机显示10件藏品的品质",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 10,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal",
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 706,
+          "localized_name": "华丽宝光",
+          "localized_description": "随机显示15件藏品的品质",
+          "skill_type": 2,
+          "skilltarget": 0,
+          "skilltargetvalue": [
+            0
+          ],
+          "skill_count_type": 1,
+          "skill_count": 15,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal",
+            "outline_or_scan"
+          ]
+        },
+        {
+          "skill_id": 801,
+          "localized_name": "【能源交通】检定",
+          "localized_description": "显示能源交通的藏品的轮廓和品质",
+          "skill_type": 2,
+          "skilltarget": 1,
+          "skilltargetvalue": [
+            108
+          ],
+          "skill_count_type": 1,
+          "skill_count": 0,
+          "skill_round": 0,
+          "skill_CD": 0,
+          "categories": [
+            "quality_reveal",
+            "outline_or_scan"
+          ]
+        }
+      ],
+      "hero_samples": [
+        {
+          "hero_id": 101,
+          "localized_name": "法蒂玛",
+          "localized_description": "拍卖开始时，显示 1 件本场价值最高的文玩古董类藏品的轮廓和品质。第二回合：随机显示 3 件轮廓未知文玩古董类藏品的轮廓；第三回合：随机显示 3 件品质未知文玩古董类藏品的品质；第四回合：随机显示 3 件轮廓未知文玩古董类藏品的轮廓；第五回合：随机显示 3 件品质未知文玩古董类藏品的品质。",
+          "cast_type": [
+            100101,
+            1001011,
+            1001012,
+            1001013,
+            1001014
+          ],
+          "hero_tag": 101,
+          "hero_task_group": [
+            1010101,
+            1010102
+          ]
+        },
+        {
+          "hero_id": 102,
+          "localized_name": "陈美",
+          "localized_description": "拍卖开始时，显示所有珠宝矿藏、时尚潮流类藏品的轮廓",
+          "cast_type": [
+            100102
+          ],
+          "hero_tag": 102,
+          "hero_task_group": [
+            1010201,
+            1010202
+          ]
+        },
+        {
+          "hero_id": 103,
+          "localized_name": "艾莎",
+          "localized_description": "按照回合数逐步显示价值最低的藏品,第一回合揭示所有蓝色品质道具的轮廓;第二回合揭示所有绿色品质道具的轮廓;第三回合揭示所有白色品质道具的轮廓。",
+          "cast_type": [
+            1001034,
+            1001033,
+            1001032,
+            1001031
+          ],
+          "hero_tag": 103,
+          "hero_task_group": [
+            1010301,
+            1010302
+          ]
+        },
+        {
+          "hero_id": 104,
+          "localized_name": "加布里埃拉",
+          "localized_description": "每个回合开始时，随机显示2个信息完全未知藏品的轮廓和品质。",
+          "cast_type": [
+            1001041,
+            1001042,
+            1001043,
+            1001044,
+            1001045
+          ],
+          "hero_tag": 104,
+          "hero_task_group": [
+            1010401,
+            1010402
+          ]
+        },
+        {
+          "hero_id": 105,
+          "localized_name": "塔蒂安娜",
+          "localized_description": "拍卖开始时，显示所有时尚潮流类藏品的品质和轮廓",
+          "cast_type": [
+            100105
+          ],
+          "hero_tag": 105,
+          "hero_task_group": [
+            1010501,
+            1010502
+          ]
+        },
+        {
+          "hero_id": 106,
+          "localized_name": "娜奥米",
+          "localized_description": "拍卖开始时，所有时尚潮流与数码电子类藏品的轮廓，和其中金色和红色品质数量之和",
+          "cast_type": [
+            100106
+          ],
+          "hero_tag": 106,
+          "hero_task_group": [
+            1010601,
+            1010602
+          ]
+        },
+        {
+          "hero_id": 107,
+          "localized_name": "索菲",
+          "localized_description": "拍卖开始时，随机显示5件藏品的品质，之后每回合揭示2个品质未知藏品的品质。",
+          "cast_type": [
+            100107,
+            1001071,
+            1001072,
+            1001073,
+            1001074
+          ],
+          "hero_tag": 107,
+          "hero_task_group": [
+            1010701,
+            1010702
+          ]
+        },
+        {
+          "hero_id": 108,
+          "localized_name": "玛丽亚",
+          "localized_description": "拍卖开始时，显示白色、绿色、蓝色品质藏品的总价值和品质",
+          "cast_type": [
+            100108
+          ],
+          "hero_tag": 108,
+          "hero_task_group": [
+            1010801,
+            1010802
+          ]
+        },
+        {
+          "hero_id": 109,
+          "localized_name": "海琳娜",
+          "localized_description": "拍卖开始时，显示所有医疗药品类藏品的品质。之后每回合显示 2 个轮廓未知的医疗类藏品的轮廓",
+          "cast_type": [
+            100109,
+            1001091,
+            1001092,
+            1001093,
+            1001094
+          ],
+          "hero_tag": 109,
+          "hero_task_group": [
+            1010901,
+            1010902
+          ]
+        },
+        {
+          "hero_id": 110,
+          "localized_name": "伊莎贝拉",
+          "localized_description": "拍卖开始时，显示本场竞品质最高的1件藏品和4个珠宝矿藏的轮廓",
+          "cast_type": [
+            100110
+          ],
+          "hero_tag": 110,
+          "hero_task_group": [
+            1011001,
+            1011002
+          ]
+        },
+        {
+          "hero_id": 201,
+          "localized_name": "乔治",
+          "localized_description": "拍卖开始时，显示所有武器装备类藏品的品质和轮廓",
+          "cast_type": [
+            100201
+          ],
+          "hero_tag": 201,
+          "hero_task_group": [
+            1020101,
+            1020102
+          ]
+        },
+        {
+          "hero_id": 202,
+          "localized_name": "卡洛斯",
+          "localized_description": "拍卖开始时，显示所有家居日用与数码电子类藏品的轮廓。之后每回合随机显示 2 件品质未知的家居日用或数码电子类藏品的品质。",
+          "cast_type": [
+            100202,
+            1002021,
+            1002022,
+            1002023,
+            1002024
+          ],
+          "hero_tag": 202,
+          "hero_task_group": [
+            1020201,
+            1020202
+          ]
+        },
+        {
+          "hero_id": 203,
+          "localized_name": "莱昂纳德",
+          "localized_description": "拍卖开始时，显示所有食品烹饪类藏品的品质，及2个文玩古董类藏品的品质",
+          "cast_type": [
+            100203
+          ],
+          "hero_tag": 203,
+          "hero_task_group": [
+            1020301,
+            1020302
+          ]
+        },
+        {
+          "hero_id": 204,
+          "localized_name": "艾哈迈德",
+          "localized_description": "拍卖开始时，显示本场竞拍的总藏品数量。第二回合：显示橙色藏品平均格数；第三回合：显示紫色藏品的平均格数；第四回合：显示蓝色藏品的平均格数；第五回合：显示绿色白色藏品的总数量。",
+          "cast_type": [
+            100204,
+            1002041,
+            1002042,
+            1002043,
+            1002044
+          ],
+          "hero_tag": 204,
+          "hero_task_group": [
+            1020401,
+            1020402
+          ]
+        },
+        {
+          "hero_id": 205,
+          "localized_name": "伊万",
+          "localized_description": "拍卖开始时，显示所有武器装备和能源交通类藏品的轮廓",
+          "cast_type": [
+            100205
+          ],
+          "hero_tag": 205,
+          "hero_task_group": [
+            1020501,
+            1020502
+          ]
+        },
+        {
+          "hero_id": 206,
+          "localized_name": "武田宏志",
+          "localized_description": "显示所有书籍绘画类商品的轮廓。每个回合开始时，随机显示2件品质未知的书籍绘画类藏品的品质",
+          "cast_type": [
+            100206,
+            1002062,
+            1002063,
+            1002064,
+            1002065
+          ],
+          "hero_tag": 206,
+          "hero_task_group": [
+            1020601,
+            1020602
+          ]
+        },
+        {
+          "hero_id": 207,
+          "localized_name": "吴起灵",
+          "localized_description": "每个回合开始时依次显示文玩古董类藏品的数量、轮廓、品质、随机显示1/3文玩古董类藏品的完整信息",
+          "cast_type": [
+            100207,
+            10002071,
+            10002072,
+            10002073
+          ],
+          "hero_tag": 207,
+          "hero_task_group": [
+            1020701,
+            1020702
+          ]
+        },
+        {
+          "hero_id": 208,
+          "localized_name": "伊森",
+          "localized_description": "拍卖开始时显示5种随机类型藏品的轮廓，之后每个回合显示所有品质已知的商品的轮廓，在游戏第5回合显示所有物品的轮廓",
+          "cast_type": [
+            1002081,
+            1002082,
+            1002083,
+            1002084,
+            1002085
+          ],
+          "hero_tag": 208,
+          "hero_task_group": [
+            1020801,
+            1020802,
+            1020803
+          ]
+        },
+        {
+          "hero_id": 209,
+          "localized_name": "维克托",
+          "localized_description": "拍卖开始时，显示本次竞拍紫色、金色品质藏品的数量之和",
+          "cast_type": [
+            100209
+          ],
+          "hero_tag": 209,
+          "hero_task_group": [
+            1020901,
+            1020902
+          ]
+        },
+        {
+          "hero_id": 301,
+          "localized_name": "拉文",
+          "localized_description": "当拍卖到第五回合开始时，显示所有藏品的品质",
+          "cast_type": [
+            0,
+            0,
+            0,
+            0,
+            100301
+          ],
+          "hero_tag": 301,
+          "hero_task_group": [
+            1030101,
+            1030102
+          ]
+        }
+      ]
+    },
+    "rank_ai_index": {
+      "rank_ai_row_count": 120,
+      "role_count": 20,
+      "item_use_probability_stats": {
+        "count": 120,
+        "min": 0,
+        "p50": 400,
+        "p90": 700,
+        "max": 700
+      },
+      "role_samples": [
+        {
+          "role_id": 101,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 102,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 103,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 104,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 105,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 106,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 107,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 108,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 109,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 110,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 201,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 202,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 203,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 204,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 205,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 206,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 207,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 208,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 209,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        },
+        {
+          "role_id": 301,
+          "row_count": 6,
+          "round_counts": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1
+          },
+          "min_bid_ratio_summary": {
+            "range_count": 36,
+            "total_weight": 1879,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                100
+              ],
+              [
+                1001,
+                1200,
+                100
+              ]
+            ]
+          },
+          "bid_time_summary": {
+            "range_count": 24,
+            "total_weight": 1830,
+            "min_low": 11,
+            "max_high": 39,
+            "top_ranges": [
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                11,
+                15,
+                200
+              ],
+              [
+                16,
+                20,
+                50
+              ],
+              [
+                21,
+                30,
+                50
+              ]
+            ]
+          },
+          "bid_pk_summary": {
+            "range_count": 36,
+            "total_weight": 4200,
+            "min_low": 100,
+            "max_high": 2000,
+            "top_ranges": [
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ],
+              [
+                701,
+                1000,
+                200
+              ],
+              [
+                1001,
+                1200,
+                200
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "sim_and_constant_index": {
+      "sim_row_count": 101,
+      "sim_success_interval_stats": {
+        "count": 202,
+        "min": 750,
+        "p50": 1050,
+        "p90": 1210,
+        "max": 1250
+      },
+      "sim_drop_group_count": 1,
+      "constant_row_count": 83,
+      "strategy_constant_count": 51,
+      "strategy_constant_samples": [
+        {
+          "Id": "init_items",
+          "Name": "初始道具",
+          "Type": "int[][]",
+          "Value": [
+            [
+              6,
+              6001,
+              1
+            ],
+            [
+              1,
+              7,
+              1
+            ],
+            [
+              2,
+              101,
+              10
+            ],
+            [
+              101,
+              1091001,
+              1
+            ],
+            [
+              101,
+              1101002,
+              1
+            ],
+            [
+              101,
+              1083007,
+              1
+            ],
+            [
+              101,
+              1072001,
+              1
+            ],
+            [
+              101,
+              1073007,
+              1
+            ],
+            [
+              101,
+              1072009,
+              1
+            ],
+            [
+              101,
+              1073002,
+              1
+            ],
+            [
+              101,
+              1074001,
+              1
+            ],
+            [
+              101,
+              1075004,
+              1
+            ],
+            [
+              101,
+              1074009,
+              1
+            ],
+            [
+              101,
+              1072005,
+              1
+            ],
+            [
+              101,
+              1073007,
+              1
+            ],
+            [
+              101,
+              1072010,
+              1
+            ],
+            [
+              101,
+              1071002,
+              1
+            ],
+            [
+              101,
+              1013003,
+              1
+            ],
+            [
+              101,
+              1042010,
+              1
+            ],
+            [
+              101,
+              1042009,
+              1
+            ],
+            [
+              101,
+              1012008,
+              1
+            ],
+            [
+              101,
+              1012009,
+              1
+            ],
+            [
+              101,
+              1012010,
+              1
+            ],
+            [
+              101,
+              1013002,
+              1
+            ],
+            [
+              101,
+              1022008,
+              1
+            ],
+            [
+              101,
+              1013004,
+              1
+            ],
+            [
+              101,
+              1071001,
+              1
+            ],
+            [
+              101,
+              1031005,
+              1
+            ],
+            [
+              7,
+              150104,
+              1
+            ],
+            [
+              7,
+              150107,
+              1
+            ],
+            [
+              7,
+              150108,
+              1
+            ],
+            [
+              17,
+              171001,
+              1
+            ],
+            [
+              17,
+              171002,
+              1
+            ],
+            [
+              17,
+              171003,
+              1
+            ],
+            [
+              17,
+              171004,
+              1
+            ],
+            [
+              17,
+              171005,
+              1
+            ],
+            [
+              17,
+              171006,
+              1
+            ],
+            [
+              17,
+              171007,
+              1
+            ],
+            [
+              17,
+              171008,
+              1
+            ],
+            [
+              17,
+              172001,
+              1
+            ],
+            [
+              17,
+              172002,
+              1
+            ],
+            [
+              17,
+              172003,
+              1
+            ],
+            [
+              17,
+              172004,
+              1
+            ],
+            [
+              17,
+              172005,
+              1
+            ],
+            [
+              17,
+              172006,
+              1
+            ],
+            [
+              17,
+              172007,
+              1
+            ],
+            [
+              17,
+              172008,
+              1
+            ],
+            [
+              12,
+              120000,
+              1
+            ],
+            [
+              5,
+              7101,
+              1
+            ],
+            [
+              19,
+              8101,
+              5
+            ],
+            [
+              19,
+              8102,
+              5
+            ],
+            [
+              19,
+              8103,
+              5
+            ],
+            [
+              19,
+              8105,
+              5
+            ],
+            [
+              19,
+              8106,
+              5
+            ],
+            [
+              19,
+              8109,
+              5
+            ],
+            [
+              19,
+              8110,
+              5
+            ],
+            [
+              19,
+              8111,
+              5
+            ],
+            [
+              19,
+              8112,
+              5
+            ],
+            [
+              19,
+              8113,
+              5
+            ],
+            [
+              19,
+              8114,
+              5
+            ],
+            [
+              19,
+              8115,
+              5
+            ],
+            [
+              19,
+              8116,
+              5
+            ],
+            [
+              19,
+              8117,
+              5
+            ],
+            [
+              19,
+              8118,
+              5
+            ],
+            [
+              19,
+              8119,
+              5
+            ],
+            [
+              19,
+              8120,
+              5
+            ],
+            [
+              1,
+              1,
+              2000000
+            ]
+          ]
+        },
+        {
+          "Id": "init_item_type",
+          "Name": "道具类型",
+          "Type": "int[]",
+          "Value": [
+            7,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110
+          ]
+        },
+        {
+          "Id": "init_item_quality",
+          "Name": "道具品质",
+          "Type": "int[]",
+          "Value": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "Id": "item_fee_rate",
+          "Name": "道具上架手续费（千分比）",
+          "Type": "int",
+          "Value": "5"
+        },
+        {
+          "Id": "guide_bidmaps",
+          "Name": "新手引导地图ID",
+          "Type": "int[]",
+          "Value": [
+            2301,
+            2303
+          ]
+        },
+        {
+          "Id": "guide_heros",
+          "Name": "新手引导的英雄ID",
+          "Type": "int[]",
+          "Value": [
+            107,
+            209,
+            207,
+            201
+          ]
+        },
+        {
+          "Id": "guide_myitems",
+          "Name": "新手引导自己拥有的道具",
+          "Type": "int[]",
+          "Value": [
+            100102
+          ]
+        },
+        {
+          "Id": "guide_firstround_useitem",
+          "Name": "新手引导第一轮每个人使用的道具",
+          "Type": "int[]",
+          "Value": [
+            0,
+            100112,
+            0,
+            0
+          ]
+        },
+        {
+          "Id": "guide_firstround_price",
+          "Name": "新手引导第一轮每个人d的出价",
+          "Type": "int[]",
+          "Value": [
+            20000,
+            23000,
+            15000,
+            18000
+          ]
+        },
+        {
+          "Id": "guide_second_useitem",
+          "Name": "新手引导第2轮每个人使用的道具",
+          "Type": "int[]",
+          "Value": [
+            100102,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "Id": "guide_second_price",
+          "Name": "新手引导第2轮每个人d的出价",
+          "Type": "int[]",
+          "Value": [
+            45000,
+            25000,
+            20000,
+            23000
+          ]
+        },
+        {
+          "Id": "guide_items",
+          "Name": "新手引导关卡道具",
+          "Type": "int[]",
+          "Value": [
+            1091001,
+            1101002,
+            1083007,
+            1072001,
+            1073007,
+            1072009,
+            1073002,
+            1074001,
+            1075004,
+            1074009,
+            1072005,
+            1073007,
+            1072010,
+            1071002,
+            1013003,
+            1042010,
+            1042009,
+            1012008,
+            1012009,
+            1012010,
+            1013002,
+            1022008,
+            1013004,
+            1071001,
+            1031005
+          ]
+        },
+        {
+          "Id": "guide_skill1_trigger",
+          "Name": "新手引导第一回合角色技能影响的道具ID",
+          "Type": "int[]",
+          "Value": [
+            1072001,
+            1072009,
+            1075004,
+            1072005,
+            1042010
+          ]
+        },
+        {
+          "Id": "guide_skill2_trigger",
+          "Name": "新手引导第二回合道具技能影响的道具ID",
+          "Type": "int[]",
+          "Value": [
+            1091001,
+            1083007,
+            1073007,
+            1072009,
+            1075004,
+            1072005,
+            1072010,
+            1013003,
+            1042009,
+            1012008
+          ]
+        },
+        {
+          "Id": "guide_mapskill",
+          "Name": "新手引导地图技能",
+          "Type": "int",
+          "Value": "200052"
+        },
+        {
+          "Id": "guide_mapskill_trigger",
+          "Name": "新手引导地图技能影响的道具ID",
+          "Type": "int[]",
+          "Value": [
+            1075004
+          ]
+        },
+        {
+          "Id": "rank7change",
+          "Name": "变化为品质7",
+          "Type": "int[][]",
+          "Value": [
+            [
+              1,
+              1,
+              999999999
+            ],
+            [
+              2,
+              1,
+              99999999
+            ],
+            [
+              3,
+              1,
+              49999999
+            ],
+            [
+              4,
+              1,
+              49999999
+            ],
+            [
+              5,
+              1,
+              99999999
+            ],
+            [
+              6,
+              1,
+              99999999
+            ]
+          ]
+        },
+        {
+          "Id": "grids_fullwarning_count",
+          "Name": "临时仓库满时通知",
+          "Type": "int",
+          "Value": "20"
+        },
+        {
+          "Id": "bid_game_count_chooses",
+          "Name": "竞拍轮数限制最小和最大",
+          "Type": "int[]",
+          "Value": [
+            5,
+            10,
+            15,
+            20
+          ]
+        },
+        {
+          "Id": "bid_map_chooses",
+          "Name": "竞拍地图可选择",
+          "Type": "int[]",
+          "Value": [
+            101,
+            102,
+            103,
+            104,
+            105
+          ]
+        },
+        {
+          "Id": "item_budget_chooses",
+          "Name": "道具预算可选择",
+          "Type": "int[]",
+          "Value": [
+            10000,
+            50000,
+            100000,
+            200000,
+            500000,
+            1000000
+          ]
+        },
+        {
+          "Id": "round_time_chooses",
+          "Name": "每回合时间最低与最高",
+          "Type": "int[]",
+          "Value": [
+            40,
+            60,
+            120
+          ]
+        },
+        {
+          "Id": "heros_chooses",
+          "Name": "可选择角色",
+          "Type": "int[]",
+          "Value": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            301
+          ]
+        },
+        {
+          "Id": "items_chooses",
+          "Name": "可选择道具",
+          "Type": "int[]",
+          "Value": [
+            100100,
+            100101,
+            100102,
+            100103,
+            100104,
+            100105,
+            100106,
+            100107,
+            100108,
+            100110,
+            100111,
+            100112,
+            100113,
+            100114,
+            100115,
+            100116,
+            100117,
+            100118,
+            100119,
+            100120,
+            100121,
+            100122,
+            100123,
+            100124,
+            100125,
+            100126,
+            100127,
+            100128,
+            100129,
+            100130,
+            100131,
+            100132,
+            100133,
+            100134,
+            100135,
+            100136,
+            100137,
+            100138,
+            100139,
+            100140,
+            100151,
+            100152,
+            100153,
+            100154,
+            100155,
+            100156,
+            100157,
+            100158,
+            100159,
+            100160,
+            100161,
+            100162,
+            100163,
+            100164,
+            100165,
+            100166,
+            100167,
+            100168,
+            100169,
+            100170,
+            100171,
+            100172,
+            100173
+          ]
+        },
+        {
+          "Id": "bid_rate_chooses",
+          "Name": "成交倍率可选择",
+          "Type": "int[]",
+          "Value": [
+            2000,
+            1800,
+            1600,
+            1400,
+            1200,
+            1100,
+            0
+          ]
+        },
+        {
+          "Id": "training_init_item_slots",
+          "Name": "训练模式初始道具格子数量",
+          "Type": "int",
+          "Value": "5"
+        },
+        {
+          "Id": "grid_sizes",
+          "Name": "格子的大小",
+          "Type": "int[]",
+          "Value": [
+            60,
+            70,
+            75
+          ]
+        },
+        {
+          "Id": "bid_verification",
+          "Name": "拍卖行验资（货币低于配置则不可进入拍卖行）",
+          "Type": "int",
+          "Value": "0"
+        },
+        {
+          "Id": "bid_map_limit",
+          "Name": "进入关卡限制[[mapid,max,cd(s)]]",
+          "Type": "int[][]",
+          "Value": [
+            [
+              101,
+              10,
+              3600
+            ]
+          ]
+        },
+        {
+          "Id": "bid_map_preset",
+          "Name": "玩家保存道具保存方案[默认数量,最大值]",
+          "Type": "int[]",
+          "Value": [
+            3,
+            10
+          ]
+        }
+      ]
+    }
+  },
+  "next_allowed_lane": [
+    "manual_mechanics_review_results",
+    "table_backed_shadow_simulator",
+    "same_battle_shadow_replay_gate",
+    "authority_handoff_gate"
+  ],
+  "hard_blocks_before_algorithm_change": [
+    "current map alignment must be manually approved",
+    "schema parse order must be manually approved",
+    "same-battle replay samples must be attached",
+    "shadow replay must beat or match baseline before any default config update"
+  ],
+  "source_artifacts": {
+    "schema_backed_table_report": "<repo>/docs/research/2026-04-29-bidking-schema-backed-table-report.json",
+    "dodrop_semantics_report": "<repo>/docs/research/2026-04-29-bidking-dodrop-semantics-report.json",
+    "drop_helper_semantics_report": "<repo>/docs/research/2026-04-29-bidking-drop-helper-semantics-report.json",
+    "method_metadata_report": "<repo>/docs/research/2026-04-29-bidking-method-metadata-report.json",
+    "method_callgraph_report": "<repo>/docs/research/2026-04-29-bidking-method-callgraph-report.json",
+    "focused_il_report": "<repo>/docs/research/2026-04-29-bidking-focused-il-report.json",
+    "strategy_comparison_report": "<repo>/docs/research/2026-04-29-bidking-strategy-comparison-report.json"
+  }
+}

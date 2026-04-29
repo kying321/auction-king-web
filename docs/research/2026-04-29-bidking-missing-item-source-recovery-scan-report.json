@@ -1,0 +1,807 @@
+{
+  "schema_version": "ak_bidking_missing_item_source_recovery_scan_v1",
+  "generated_at": "2026-04-29T05:00:00.000+08:00",
+  "mode": "source_first_implementation",
+  "change_class": "SIM_ONLY",
+  "recommended_change_class": "SIM_ONLY",
+  "live_path_touched": false,
+  "inputs": {
+    "missing_item_candidate_report": "<repo>/docs/research/2026-04-29-bidking-missing-item-resolution-candidate-report.json",
+    "scan_sources": [
+      "<local-bidking-extract>",
+      "<local-bidking.zip>",
+      "<local-bidking>"
+    ]
+  },
+  "summary": {
+    "scanned_source_count": 3,
+    "project_relevant_missing_item_ids": [
+      1106013
+    ],
+    "source_item_row_recovered_count": 0,
+    "source_item_row_recovered_item_ids": [],
+    "source_item_row_recovered_for_project_scope": false,
+    "reference_hit_count": 2,
+    "path_hint_hit_count": 0,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "promotion_allowed": false,
+    "recommended_next_action": "acquire_additional_client_or_authoritative_capture_for_missing_item_rows",
+    "blockers": [
+      "source_item_rows_not_found_in_local_candidates"
+    ],
+    "warnings": [
+      "reference hits prove the missing item is referenced, not recovered",
+      "path hints and neighboring rows are not authoritative item rows"
+    ]
+  },
+  "gates": {
+    "source_item_row_recovered_for_project_scope": false,
+    "recovered_rows_ingested": false,
+    "table_reference_integrity_clean_after_recovery": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false
+  },
+  "item_recovery": [
+    {
+      "item_id": 1106013,
+      "source_item_row_recovered": false,
+      "source_recovery_status": "not_found_in_local_source_candidates",
+      "source_item_row_hit_count": 0,
+      "reference_hit_count": 2,
+      "path_hint_hit_count": 0,
+      "source_item_row_hits": [],
+      "reference_hits": [
+        {
+          "source_path": "<local-bidking-extract>",
+          "source_type": "directory",
+          "file_path": "<local-bidking-extract>/Tables/Drop.txt",
+          "member_path": null,
+          "relative_path": "Tables/Drop.txt",
+          "line_number": 56,
+          "hit_type": "drop_reference",
+          "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+        },
+        {
+          "source_path": "<local-bidking.zip>",
+          "source_type": "zip",
+          "file_path": null,
+          "member_path": "BidKing/BidKing_Data/StreamingAssets/Tables/Drop.txt",
+          "relative_path": null,
+          "line_number": 56,
+          "hit_type": "drop_reference",
+          "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+        }
+      ],
+      "path_hint_hits": [],
+      "source_results": [
+        {
+          "source_path": "<local-bidking-extract>",
+          "source_type": "directory",
+          "exists": true,
+          "source_item_row_hits": [],
+          "reference_hits": [
+            {
+              "source_path": "<local-bidking-extract>",
+              "source_type": "directory",
+              "file_path": "<local-bidking-extract>/Tables/Drop.txt",
+              "member_path": null,
+              "relative_path": "Tables/Drop.txt",
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            }
+          ],
+          "path_hint_hits": []
+        },
+        {
+          "source_path": "<local-bidking.zip>",
+          "source_type": "zip",
+          "exists": true,
+          "source_item_row_hits": [],
+          "reference_hits": [
+            {
+              "source_path": "<local-bidking.zip>",
+              "source_type": "zip",
+              "file_path": null,
+              "member_path": "BidKing/BidKing_Data/StreamingAssets/Tables/Drop.txt",
+              "relative_path": null,
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            }
+          ],
+          "path_hint_hits": []
+        },
+        {
+          "source_path": "<local-bidking>",
+          "source_type": "directory",
+          "exists": true,
+          "source_item_row_hits": [],
+          "reference_hits": [],
+          "path_hint_hits": []
+        }
+      ],
+      "authority_action_allowed": false
+    }
+  ],
+  "source_scans": [
+    {
+      "source_path": "<local-bidking-extract>",
+      "source_type": "directory",
+      "exists": true,
+      "scanned_file_count": 62,
+      "skipped_file_count": 5,
+      "item_scans": {
+        "1106013": {
+          "source_path": "<local-bidking-extract>",
+          "source_type": "directory",
+          "exists": true,
+          "scanned_file_count": 62,
+          "skipped_file_count": 5,
+          "path_hint_hits": [],
+          "skipped_files": [
+            {
+              "file_path": "<local-bidking-extract>/Assembly-CSharp.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 283648
+            },
+            {
+              "file_path": "<local-bidking-extract>/HybridCLR.Runtime.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 5120
+            },
+            {
+              "file_path": "<local-bidking-extract>/HybridCLRGenerate.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4096
+            },
+            {
+              "file_path": "<local-bidking-extract>/NotHotUpdate.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 50688
+            },
+            {
+              "file_path": "<local-bidking-extract>/global-metadata.dat",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 6947184
+            }
+          ],
+          "source_item_row_hits": [],
+          "reference_hits": [
+            {
+              "source_path": "<local-bidking-extract>",
+              "source_type": "directory",
+              "file_path": "<local-bidking-extract>/Tables/Drop.txt",
+              "member_path": null,
+              "relative_path": "Tables/Drop.txt",
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            }
+          ],
+          "all_text_hits": [
+            {
+              "source_path": "<local-bidking-extract>",
+              "source_type": "directory",
+              "file_path": "<local-bidking-extract>/Tables/Drop.txt",
+              "member_path": null,
+              "relative_path": "Tables/Drop.txt",
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_path": "<local-bidking.zip>",
+      "source_type": "zip",
+      "exists": true,
+      "scanned_file_count": 8240,
+      "skipped_file_count": 4284,
+      "item_scans": {
+        "1106013": {
+          "source_path": "<local-bidking.zip>",
+          "source_type": "zip",
+          "exists": true,
+          "scanned_file_count": 8240,
+          "skipped_file_count": 4284,
+          "path_hint_hits": [],
+          "skipped_files": [
+            {
+              "member_path": "BidKing/BidKing.exe",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 653824
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/Assembly-CSharp.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 283648
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/Coffee.UIParticle.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 35328
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/DOTween.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 177664
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/DotweenModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 42496
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/Google.Protobuf.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 429056
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/HybridCLR.Runtime.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 5120
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/HybridCLRGenerate.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4096
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/LitJson.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 51200
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/Mono.Security.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 123904
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/Newtonsoft.Json.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 360448
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/NotHotUpdate.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 50688
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/Steam.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 40960
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/StompyRobot.SRDebugger.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 139776
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/StompyRobot.SRF.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 78848
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/System.Configuration.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4608
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/System.Core.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 413696
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/System.Numerics.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 25600
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/System.Runtime.CompilerServices.Unsafe.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 5120
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/System.Runtime.Serialization.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 5632
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/System.Xml.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 6656
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/System.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 874496
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/Unity.TextMeshPro.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 369152
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.AIModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 10240
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.AndroidJNIModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 54272
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.AnimationModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 54272
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.AssetBundleModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 21504
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.AudioModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 26112
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.CoreModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 633856
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.DirectorModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 10240
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.GridModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 9728
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.IMGUIModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 98816
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.ImageConversionModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 10752
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.InputLegacyModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 21504
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.InputModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 11264
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.JSONSerializeModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 11264
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.ParticleSystemModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 28160
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.Physics2DModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 17920
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.PhysicsModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 56832
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.SharedInternalsModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 16896
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.SpriteShapeModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 9728
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.SubsystemsModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 13824
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.TerrainModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 17920
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.TextCoreFontEngineModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 27136
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.TextCoreTextEngineModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 168960
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.TextRenderingModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 22016
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.TilemapModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 16384
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.UI.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 246784
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.UIElementsModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 926720
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.UIElementsNativeModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 34816
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.UIModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 23040
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.UnityAnalyticsModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 12288
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 10752
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.UnityWebRequestModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 41984
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.UnityWebRequestTextureModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 11264
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.UnityWebRequestWWWModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 18944
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.VFXModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 15360
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.VRModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 9728
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.VideoModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 14336
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.XRModule.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 20992
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/UnityEngine.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 60416
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/VInspector.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 7168
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/com.rlabrecque.steamworks.net.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 399872
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/Managed/mscorlib.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 2539520
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1497956
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 431108
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__1.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1467956
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__2.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1415776
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__3.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1427964
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__4.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 762455
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Coffee.UIParticle.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 775793
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Coffee.UIParticle_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 46963
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1838493
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 387136
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween__1.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1293239
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween__2.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 659098
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DotweenModule.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1152995
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DotweenModule_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 110636
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 2400920
+            },
+            {
+              "member_path": "BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods__1.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1409591
+            }
+          ],
+          "source_item_row_hits": [],
+          "reference_hits": [
+            {
+              "source_path": "<local-bidking.zip>",
+              "source_type": "zip",
+              "file_path": null,
+              "member_path": "BidKing/BidKing_Data/StreamingAssets/Tables/Drop.txt",
+              "relative_path": null,
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            }
+          ],
+          "all_text_hits": [
+            {
+              "source_path": "<local-bidking.zip>",
+              "source_type": "zip",
+              "file_path": null,
+              "member_path": "BidKing/BidKing_Data/StreamingAssets/Tables/Drop.txt",
+              "relative_path": null,
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_path": "<local-bidking>",
+      "source_type": "directory",
+      "exists": true,
+      "scanned_file_count": 28,
+      "skipped_file_count": 27,
+      "item_scans": {
+        "1106013": {
+          "source_path": "<local-bidking>",
+          "source_type": "directory",
+          "exists": true,
+          "scanned_file_count": 28,
+          "skipped_file_count": 27,
+          "path_hint_hits": [],
+          "skipped_files": [
+            {
+              "file_path": "<local-bidking>/.DS_Store",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 6148
+            },
+            {
+              "file_path": "<local-bidking>/BidKing.exe",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 653824
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/.DS_Store",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 6148
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1497956
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 431108
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__1.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1467956
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__2.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1415776
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__3.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1427964
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__4.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 762455
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Coffee.UIParticle.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 775793
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Coffee.UIParticle_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 46963
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1838493
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 387136
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween__1.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1293239
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween__2.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 659098
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DotweenModule.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1152995
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DotweenModule_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 110636
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 2400920
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods__1.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1409591
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods__10.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 2255510
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods__11.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1818069
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods__12.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1663596
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/com.rlabrecque.steamworks.net.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 2247565
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/com.rlabrecque.steamworks.net_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1084469
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/com.rlabrecque.steamworks.net__1.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4463875
+            },
+            {
+              "file_path": "<local-bidking>/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/com.rlabrecque.steamworks.net__2.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 584244
+            },
+            {
+              "file_path": "<local-bidking>/baselib.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 405016
+            }
+          ],
+          "source_item_row_hits": [],
+          "reference_hits": [],
+          "all_text_hits": []
+        }
+      }
+    }
+  ],
+  "notes": [
+    "This scan searches local candidate sources only and does not mutate source tables.",
+    "A source Item row must be ingested and table-reference integrity rerun before any replay promotion.",
+    "Default estimator config and authority handoff remain closed."
+  ]
+}

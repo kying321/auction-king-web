@@ -1,0 +1,57 @@
+{
+    "fields": {
+        "items": [
+            { "id": "total_items", "label": "总数量", "short_help": "本局拍品总件数", "family": "aggregate", "metric": "count", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "total_storage_cells", "label": "总格数", "short_help": "本局仓储总占格", "family": "aggregate", "metric": "total_cells", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "total_value", "label": "总价值", "family": "aggregate", "metric": "total_value", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": false },
+            { "id": "system_avg_value_type_count", "label": "系统均价类型数", "short_help": "系统均价提示覆盖的藏品类型数量，仅作为回放证据保留", "family": "aggregate", "metric": "type_count", "input_mode": "integer", "participates_in_solver": false, "participates_in_valuation": false },
+            { "id": "system_avg_value_per_cell", "label": "系统每格均价", "short_help": "系统提示的本场占位每格均价，数值为四舍五入近似值", "family": "aggregate", "metric": "avg_value", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": true },
+            { "id": "bid", "label": "出价", "family": "aggregate", "metric": "bid", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": true },
+
+            { "id": "white_count", "label": "白色数量", "family": "quality", "quality": "w", "metric": "count", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "white_avg_cells", "label": "白色均格", "family": "quality", "quality": "w", "metric": "avg_cells", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": false },
+            { "id": "white_total_cells", "label": "白色总格", "family": "quality", "quality": "w", "metric": "total_cells", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "white_avg_value", "label": "白色平均价值", "family": "quality", "quality": "w", "metric": "avg_value", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": false },
+            { "id": "white_total_value", "label": "白色全部价值", "family": "quality", "quality": "w", "metric": "total_value", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": false },
+
+            { "id": "green_count", "label": "绿色数量", "family": "quality", "quality": "g", "metric": "count", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "green_avg_cells", "label": "绿色均格", "family": "quality", "quality": "g", "metric": "avg_cells", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": false },
+            { "id": "green_total_cells", "label": "绿色总格", "family": "quality", "quality": "g", "metric": "total_cells", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "green_avg_value", "label": "绿色平均价值", "family": "quality", "quality": "g", "metric": "avg_value", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": false },
+            { "id": "green_total_value", "label": "绿色全部价值", "family": "quality", "quality": "g", "metric": "total_value", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": false },
+
+            { "id": "blue_count", "label": "蓝色数量", "short_help": "已观测到的蓝色件数", "family": "quality", "quality": "b", "metric": "count", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "blue_avg_cells", "label": "蓝色均格", "short_help": "蓝色拍品平均占格", "family": "quality", "quality": "b", "metric": "avg_cells", "input_mode": "decimal", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "blue_total_cells", "label": "蓝色总格", "family": "quality", "quality": "b", "metric": "total_cells", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "blue_avg_value", "label": "蓝色平均价值", "family": "quality", "quality": "b", "metric": "avg_value", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": false },
+            { "id": "blue_total_value", "label": "蓝色全部价值", "family": "quality", "quality": "b", "metric": "total_value", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": false },
+
+            { "id": "purple_count", "label": "紫色数量", "family": "quality", "quality": "p", "metric": "count", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "purple_avg_cells", "label": "紫色均格", "short_help": "紫色拍品平均占格", "family": "quality", "quality": "p", "metric": "avg_cells", "input_mode": "decimal", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "purple_total_cells", "label": "紫色总格", "family": "quality", "quality": "p", "metric": "total_cells", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "purple_avg_value", "label": "紫色平均价值", "family": "quality", "quality": "p", "metric": "avg_value", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": true },
+            { "id": "purple_total_value", "label": "紫色全部价值", "family": "quality", "quality": "p", "metric": "total_value", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": false },
+
+            { "id": "orange_count", "label": "金色数量", "family": "quality", "quality": "o", "metric": "count", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "orange_avg_cells", "label": "金色均格", "short_help": "金色拍品平均占格", "family": "quality", "quality": "o", "metric": "avg_cells", "input_mode": "decimal", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "orange_total_cells", "label": "金色总格", "family": "quality", "quality": "o", "metric": "total_cells", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "orange_avg_value", "label": "金色平均价值", "family": "quality", "quality": "o", "metric": "avg_value", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": true },
+            { "id": "orange_total_value", "label": "金色全部价值", "family": "quality", "quality": "o", "metric": "total_value", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": false },
+
+            { "id": "red_count", "label": "红色数量", "family": "quality", "quality": "r", "metric": "count", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "red_avg_cells", "label": "红色均格", "family": "quality", "quality": "r", "metric": "avg_cells", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": false },
+            { "id": "red_total_cells", "label": "红色总格", "family": "quality", "quality": "r", "metric": "total_cells", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "red_avg_value", "label": "红色平均价值", "family": "quality", "quality": "r", "metric": "avg_value", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": true },
+            { "id": "red_total_value", "label": "红色全部价值", "family": "quality", "quality": "r", "metric": "total_value", "input_mode": "decimal", "participates_in_solver": false, "participates_in_valuation": false },
+
+            { "id": "white_green_total_cells", "label": "绿白总格数", "short_help": "绿色与白色合计占格", "family": "combo", "metric": "total_cells", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "white_green_avg_cells", "label": "绿白均格", "short_help": "绿白拍品平均占格", "family": "combo", "metric": "avg_cells", "input_mode": "decimal", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "white_green_total_count", "label": "绿白总数量", "family": "combo", "metric": "count", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+
+            { "id": "orange_count_min", "label": "金色数量下界", "family": "constraint", "metric": "min_count", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "orange_count_max", "label": "金色数量上界", "family": "constraint", "metric": "max_count", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "red_count_min", "label": "红色数量下界", "family": "constraint", "metric": "min_count", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false },
+            { "id": "red_count_max", "label": "红色数量上界", "family": "constraint", "metric": "max_count", "input_mode": "integer", "participates_in_solver": true, "participates_in_valuation": false }
+        ]
+    }
+}

@@ -1,0 +1,61 @@
+{
+  "manifest_id": "thread_image_backup_manifest_2026-04-23",
+  "created_from": "thread_attachments",
+  "notes": [
+    "当前工具链无法直接导出线程附件二进制原图。",
+    "已将用户在会话中发送的图像内容转录成 manual catalog 批次，并用该 manifest 记录来源与面板数量。",
+    "如果用户后续提供本地文件路径或更高清原图，可再补真实二进制备份。"
+  ],
+  "batches": [
+    {
+      "batch_id": "white_quality_items_batch_2026-04-23",
+      "quality": "w",
+      "reported_average_value": 267,
+      "panel_image_count": 25,
+      "derived_backup_file": "data/manual_catalog/white_quality_items_batch_2026-04-23.json",
+      "binary_backup_status": "thread_only"
+    },
+    {
+      "batch_id": "green_quality_items_batch_2026-04-23",
+      "quality": "g",
+      "reported_average_value": 872,
+      "panel_image_count": 22,
+      "derived_backup_file": "data/manual_catalog/green_quality_items_batch_2026-04-23.json",
+      "binary_backup_status": "thread_only"
+    },
+    {
+      "batch_id": "blue_quality_items_batch_2026-04-23",
+      "quality": "b",
+      "reported_average_value": 3126,
+      "panel_image_count": 26,
+      "derived_backup_file": "data/manual_catalog/blue_quality_items_batch_2026-04-23.json",
+      "binary_backup_status": "thread_only"
+    },
+    {
+      "batch_id": "purple_quality_items_batch_2026-04-23",
+      "quality": "p",
+      "reported_average_value": 9492,
+      "panel_image_count": 26,
+      "derived_backup_file": "data/manual_catalog/purple_quality_items_batch_2026-04-23.json",
+      "binary_backup_status": "thread_only"
+    },
+    {
+      "batch_id": "orange_quality_items_batch_2026-04-23",
+      "quality": "o",
+      "reported_average_value": 46325,
+      "panel_image_count": 26,
+      "derived_backup_file": "data/manual_catalog/orange_quality_items_batch_2026-04-23.json",
+      "binary_backup_status": "thread_only",
+      "validation_status": "mean_closed"
+    },
+    {
+      "batch_id": "red_quality_items_batch_2026-04-23",
+      "quality": "r",
+      "reported_average_value": 822956,
+      "panel_image_count": 23,
+      "derived_backup_file": "data/manual_catalog/red_quality_items_batch_2026-04-23.json",
+      "binary_backup_status": "thread_only",
+      "validation_status": "mean_closed"
+    }
+  ]
+}

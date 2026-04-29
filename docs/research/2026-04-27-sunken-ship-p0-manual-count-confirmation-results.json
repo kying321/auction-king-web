@@ -1,0 +1,32 @@
+{
+  "schema_version": "ak_count_fit_sample_review_results_v1",
+  "generated_at": "2026-04-27T13:22:34.422Z",
+  "mode": "source_first_implementation",
+  "change_class": "RESEARCH_ONLY",
+  "source_template_schema_version": "ak_count_fit_sample_review_template_v1",
+  "source_template_generated_at": "2026-04-27T13:22:34.422Z",
+  "inputs": {
+    "codex_visual_review_results": "<repo>/docs/research/2026-04-27-sunken-ship-latest-capture-review-queue-template.json",
+    "red_residual_review_pack": "<repo>/docs/research/2026-04-27-red-residual-review-pack.json"
+  },
+  "notes": [
+    "User-editable manual confirmation draft generated from Codex visual candidates or capture review templates.",
+    "Counts are draft fields and are not authority until a human reviews the image.",
+    "Importer should block this draft until status is changed to approved_count_fit_sample after human review.",
+    "Keep actual_counts_source=manual_review only if the human has actually verified or corrected the counts."
+  ],
+  "summary": {
+    "manual_confirmation_draft_count": 0,
+    "fresh_capture_template_count": 0,
+    "map_counts": {},
+    "priority_filter": [
+      "P0"
+    ],
+    "priority_counts": {},
+    "red_residual_review_hint_count": 0,
+    "pixel_training_label_allowed_count": 0,
+    "import_ready_without_human_action": false
+  },
+  "review_results": [],
+  "fresh_capture_templates": []
+}

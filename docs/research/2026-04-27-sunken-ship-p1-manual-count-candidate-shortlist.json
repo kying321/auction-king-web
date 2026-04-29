@@ -1,0 +1,348 @@
+{
+  "schema_version": "ak_p1_manual_count_candidate_shortlist_v1",
+  "generated_at": "2026-04-27T13:22:34.422Z",
+  "change_class": "RESEARCH_ONLY",
+  "authority_policy": {
+    "training_label_allowed": false,
+    "authority_merge_allowed": false,
+    "default_weight_update_allowed": false,
+    "human_confirmation_required": true
+  },
+  "inputs": {
+    "confirmation": "<repo>/docs/research/2026-04-27-sunken-ship-p1-manual-count-confirmation-results.json"
+  },
+  "summary": {
+    "sample_count": 1,
+    "candidate_count": 143,
+    "blocked_sample_count": 0,
+    "top_rank_counts": [
+      {
+        "w": 5,
+        "g": 5,
+        "b": 17,
+        "p": 9,
+        "o": 8,
+        "r": 4
+      }
+    ],
+    "recommended_next_action": "use_shortlist_for_manual_visual_confirmation_only"
+  },
+  "sample_shortlists": [
+    {
+      "source_task_id": "capture_full_count_sunken_ship_2026_04_26T12_39_48_135Z",
+      "map_id": "sunken_ship",
+      "event_timestamp": "2026-04-26T12:39:48.135Z",
+      "review_priority": "P1",
+      "sample_status": "needs_human_confirmation",
+      "authority_status": "non_authority_review_assist_only",
+      "training_label_allowed": false,
+      "import_ready_without_human_action": false,
+      "constraints": {
+        "total": 48,
+        "fixed": {
+          "b": 17,
+          "p": 9
+        },
+        "pools": {
+          "w_g": 10,
+          "o_r": 12
+        },
+        "current_model": {
+          "red_count_mean": 3.7133,
+          "red_cell_mean": 9.6705,
+          "orange_count_mean": 8.2867,
+          "purple_count_mean": 9,
+          "q25_value_w": 66.902,
+          "q50_value_w": 77.0104,
+          "mean_value_w": 90.1761
+        },
+        "diagnostics": {
+          "total_items": 48,
+          "blue_count": 17,
+          "purple_count": 9,
+          "orange_count": null,
+          "inferred_white_green_count": 10,
+          "orange_avg_cells": 12,
+          "orange_red_unknown_pool": 12,
+          "known_count_balance_complete": true,
+          "orange_count_missing": true
+        }
+      },
+      "candidate_count": 143,
+      "top_candidate_count": 12,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "counts": {
+            "w": 5,
+            "g": 5,
+            "b": 17,
+            "p": 9,
+            "o": 8,
+            "r": 4
+          },
+          "quality_sum": 48,
+          "total_items": 48,
+          "constraints_satisfied": true,
+          "score": {
+            "score": 0.77409,
+            "red_distance": 0.2867,
+            "orange_distance": 0.2867,
+            "purple_distance": 0,
+            "wg_balance_distance": 0,
+            "basis": "model_mean_distance_plus_weak_wg_balance_heuristic_non_authority"
+          }
+        },
+        {
+          "rank": 2,
+          "counts": {
+            "w": 4,
+            "g": 6,
+            "b": 17,
+            "p": 9,
+            "o": 8,
+            "r": 4
+          },
+          "quality_sum": 48,
+          "total_items": 48,
+          "constraints_satisfied": true,
+          "score": {
+            "score": 0.80409,
+            "red_distance": 0.2867,
+            "orange_distance": 0.2867,
+            "purple_distance": 0,
+            "wg_balance_distance": 0.2,
+            "basis": "model_mean_distance_plus_weak_wg_balance_heuristic_non_authority"
+          }
+        },
+        {
+          "rank": 3,
+          "counts": {
+            "w": 6,
+            "g": 4,
+            "b": 17,
+            "p": 9,
+            "o": 8,
+            "r": 4
+          },
+          "quality_sum": 48,
+          "total_items": 48,
+          "constraints_satisfied": true,
+          "score": {
+            "score": 0.80409,
+            "red_distance": 0.2867,
+            "orange_distance": 0.2867,
+            "purple_distance": 0,
+            "wg_balance_distance": 0.2,
+            "basis": "model_mean_distance_plus_weak_wg_balance_heuristic_non_authority"
+          }
+        },
+        {
+          "rank": 4,
+          "counts": {
+            "w": 3,
+            "g": 7,
+            "b": 17,
+            "p": 9,
+            "o": 8,
+            "r": 4
+          },
+          "quality_sum": 48,
+          "total_items": 48,
+          "constraints_satisfied": true,
+          "score": {
+            "score": 0.83409,
+            "red_distance": 0.2867,
+            "orange_distance": 0.2867,
+            "purple_distance": 0,
+            "wg_balance_distance": 0.4,
+            "basis": "model_mean_distance_plus_weak_wg_balance_heuristic_non_authority"
+          }
+        },
+        {
+          "rank": 5,
+          "counts": {
+            "w": 7,
+            "g": 3,
+            "b": 17,
+            "p": 9,
+            "o": 8,
+            "r": 4
+          },
+          "quality_sum": 48,
+          "total_items": 48,
+          "constraints_satisfied": true,
+          "score": {
+            "score": 0.83409,
+            "red_distance": 0.2867,
+            "orange_distance": 0.2867,
+            "purple_distance": 0,
+            "wg_balance_distance": 0.4,
+            "basis": "model_mean_distance_plus_weak_wg_balance_heuristic_non_authority"
+          }
+        },
+        {
+          "rank": 6,
+          "counts": {
+            "w": 2,
+            "g": 8,
+            "b": 17,
+            "p": 9,
+            "o": 8,
+            "r": 4
+          },
+          "quality_sum": 48,
+          "total_items": 48,
+          "constraints_satisfied": true,
+          "score": {
+            "score": 0.86409,
+            "red_distance": 0.2867,
+            "orange_distance": 0.2867,
+            "purple_distance": 0,
+            "wg_balance_distance": 0.6,
+            "basis": "model_mean_distance_plus_weak_wg_balance_heuristic_non_authority"
+          }
+        },
+        {
+          "rank": 7,
+          "counts": {
+            "w": 8,
+            "g": 2,
+            "b": 17,
+            "p": 9,
+            "o": 8,
+            "r": 4
+          },
+          "quality_sum": 48,
+          "total_items": 48,
+          "constraints_satisfied": true,
+          "score": {
+            "score": 0.86409,
+            "red_distance": 0.2867,
+            "orange_distance": 0.2867,
+            "purple_distance": 0,
+            "wg_balance_distance": 0.6,
+            "basis": "model_mean_distance_plus_weak_wg_balance_heuristic_non_authority"
+          }
+        },
+        {
+          "rank": 8,
+          "counts": {
+            "w": 1,
+            "g": 9,
+            "b": 17,
+            "p": 9,
+            "o": 8,
+            "r": 4
+          },
+          "quality_sum": 48,
+          "total_items": 48,
+          "constraints_satisfied": true,
+          "score": {
+            "score": 0.89409,
+            "red_distance": 0.2867,
+            "orange_distance": 0.2867,
+            "purple_distance": 0,
+            "wg_balance_distance": 0.8,
+            "basis": "model_mean_distance_plus_weak_wg_balance_heuristic_non_authority"
+          }
+        },
+        {
+          "rank": 9,
+          "counts": {
+            "w": 9,
+            "g": 1,
+            "b": 17,
+            "p": 9,
+            "o": 8,
+            "r": 4
+          },
+          "quality_sum": 48,
+          "total_items": 48,
+          "constraints_satisfied": true,
+          "score": {
+            "score": 0.89409,
+            "red_distance": 0.2867,
+            "orange_distance": 0.2867,
+            "purple_distance": 0,
+            "wg_balance_distance": 0.8,
+            "basis": "model_mean_distance_plus_weak_wg_balance_heuristic_non_authority"
+          }
+        },
+        {
+          "rank": 10,
+          "counts": {
+            "w": 0,
+            "g": 10,
+            "b": 17,
+            "p": 9,
+            "o": 8,
+            "r": 4
+          },
+          "quality_sum": 48,
+          "total_items": 48,
+          "constraints_satisfied": true,
+          "score": {
+            "score": 0.92409,
+            "red_distance": 0.2867,
+            "orange_distance": 0.2867,
+            "purple_distance": 0,
+            "wg_balance_distance": 1,
+            "basis": "model_mean_distance_plus_weak_wg_balance_heuristic_non_authority"
+          }
+        },
+        {
+          "rank": 11,
+          "counts": {
+            "w": 10,
+            "g": 0,
+            "b": 17,
+            "p": 9,
+            "o": 8,
+            "r": 4
+          },
+          "quality_sum": 48,
+          "total_items": 48,
+          "constraints_satisfied": true,
+          "score": {
+            "score": 0.92409,
+            "red_distance": 0.2867,
+            "orange_distance": 0.2867,
+            "purple_distance": 0,
+            "wg_balance_distance": 1,
+            "basis": "model_mean_distance_plus_weak_wg_balance_heuristic_non_authority"
+          }
+        },
+        {
+          "rank": 12,
+          "counts": {
+            "w": 5,
+            "g": 5,
+            "b": 17,
+            "p": 9,
+            "o": 9,
+            "r": 3
+          },
+          "quality_sum": 48,
+          "total_items": 48,
+          "constraints_satisfied": true,
+          "score": {
+            "score": 1.92591,
+            "red_distance": 0.7133,
+            "orange_distance": 0.7133,
+            "purple_distance": 0,
+            "wg_balance_distance": 0,
+            "basis": "model_mean_distance_plus_weak_wg_balance_heuristic_non_authority"
+          }
+        }
+      ],
+      "blockers": [],
+      "warnings": [
+        "shortlist_scores_are_model_heuristics_not_manual_counts",
+        "human_must_verify_against_review_image_before_approval"
+      ],
+      "recommended_next_action": "human_select_matching_wg_or_candidate_then_approve_in_confirmation_page"
+    }
+  ],
+  "blockers": []
+}

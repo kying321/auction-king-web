@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞拍之王｜沉船竞拍决策台</title>
+    <meta name="description" content="竞拍之王沉船决策台用于手填总量、均格、颜色计数与出价，快速查看后验分布、估值判断和本地模板配置。">
+    <link rel="canonical" href="https://ak.fuuu.fun/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ak.fuuu.fun/">
+    <meta property="og:title" content="竞拍之王｜沉船竞拍决策台">
+    <meta property="og:description" content="手填观测并即时生成后验、估值和出价判断的沉船竞拍工作台。">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="竞拍之王｜沉船竞拍决策台">
+    <meta name="twitter:description" content="手填观测并即时生成后验、估值和出价判断的沉船竞拍工作台。">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "竞拍之王｜沉船竞拍决策台",
+        "url": "https://ak.fuuu.fun/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web",
+        "description": "竞拍之王沉船决策台用于手填总量、均格、颜色计数与出价，快速查看后验分布、估值判断和本地模板配置。"
+    }
+    </script>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="style.css?v=20260428232030">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-background"></div>
+    <div class="app-container workspace-shell">
+        <header class="app-header workspace-header workspace-command-header">
+            <div class="workspace-title-block">
+                <p class="workspace-kicker">本地决策工作台</p>
+                <h1>竞拍决策台</h1>
+                <p class="workspace-subtitle">手填观测，立即得到后验与估值判断。</p>
+            </div>
+            <div class="workspace-context-strip">
+                <section class="workspace-header-brief-panel workspace-brief-strip" aria-label="Workbench Brief">
+                    <p class="workspace-brief-kicker">WORKBENCH BRIEF</p>
+                    <p class="workspace-brief-copy">观测链路：总量 / 均格 / 颜色计数 → 后验 → 出价。</p>
+                    <div class="workspace-brief-pills" aria-label="工作台约束">
+                        <span>本地缓存</span>
+                        <span>自动重算</span>
+                    </div>
+                </section>
+                <div class="workspace-context-controls" aria-label="当前局配置">
+                    <div class="workspace-header-nav">
+                        <label class="input-group input-group-compact">
+                            <span>模板</span>
+                            <select id="template_select"></select>
+                        </label>
+                        <label class="input-group input-group-compact">
+                            <span>地图</span>
+                            <select id="map_select"></select>
+                        </label>
+                    </div>
+                </div>
+                <div class="workspace-utility-actions">
+                    <div class="header-status workspace-header-status">
+                        <span class="status-dot"></span><span id="status-text">等待输入完成</span>
+                    </div>
+                    <button class="btn secondary small-btn" id="btn-theme-toggle" type="button" aria-pressed="false">夜间</button>
+                    <a class="btn secondary small-btn" id="btn-config" href="tools.html" data-config-page="tools.html">高级</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard workspace-dashboard">
+            <section class="sequence-panel workspace-input-panel">
+                <div class="workspace-panel-heading">
+                    <div>
+                        <p class="workspace-panel-kicker">Input Rail</p>
+                        <h2>观测输入</h2>
+                    </div>
+                    <p>模板控制核心链路，更多字段只在需要时展开。</p>
+                </div>
+                <div class="glass workspace-toolbar">
+                    <div class="workspace-toolbar-topline">
+                        <p class="workspace-toolbar-kicker">Editing Context</p>
+                        <p class="workspace-toolbar-note">按模板链路补观测；本页只保留核心输入、后验与估值，不再堆叠无关说明。</p>
+                    </div>
+                    <div class="workspace-toolbar-actions">
+                        <button class="btn secondary small-btn" id="btn-clone-template" type="button">克隆模板</button>
+                        <button class="btn secondary small-btn" id="btn-new-template" type="button">新建模板</button>
+                        <button class="btn secondary small-btn" id="btn-delete-template" type="button">删除本地模板</button>
+                        <button class="btn secondary small-btn" id="btn-clear" type="button">清空所有输入</button>
+                        <button class="btn primary small-btn" id="btn-save-clipboard-screenshot" type="button">截图后保存</button>
+                        <button class="btn secondary small-btn" id="btn-organize-chain" type="button" aria-pressed="false">整理链路</button>
+                    </div>
+                    <div class="compute-actions workspace-compute-meta">
+                        <div class="compute-meta">
+                            <div class="compute-kicker" id="compute-status-label">等待总数量</div>
+                            <div class="compute-hint" id="compute-hint">先填入总数量，离开输入框后自动重算。</div>
+                        </div>
+                        <div class="workspace-persist-note" id="workspace-save-status">模板、配置和上次表单都只保存在当前浏览器。</div>
+                    </div>
+                </div>
+
+                <form id="workspace-form" class="workspace-form">
+                    <div id="template-groups" class="template-groups"></div>
+                    <details id="more-fields-panel" class="glass more-fields-panel">
+                        <summary>
+                            <span>更多字段</span>
+                            <span class="more-fields-summary-meta" id="more-fields-summary-meta">0 项备用观测</span>
+                        </summary>
+                        <div class="more-fields-toolbar">
+                            <input id="more-fields-search" class="more-fields-search" type="search" placeholder="搜索字段 / 出价 / 约束">
+                            <div class="more-fields-filter-row">
+                                <button class="filter-chip active" id="more-fields-filter-all" type="button">全部</button>
+                                <button class="filter-chip" id="more-fields-filter-aggregate" type="button">聚合</button>
+                                <button class="filter-chip" id="more-fields-filter-quality" type="button">品质</button>
+                                <button class="filter-chip" id="more-fields-filter-combo" type="button">组合</button>
+                                <button class="filter-chip" id="more-fields-filter-constraint" type="button">约束</button>
+                            </div>
+                        </div>
+                        <div id="more-fields" class="more-fields-grid"></div>
+                    </details>
+                </form>
+            </section>
+
+            <section class="report-panel workspace-result-panel">
+                <div class="workspace-panel-heading workspace-result-shell">
+                    <div>
+                        <p class="workspace-panel-kicker">Result Rail</p>
+                        <h2>后验与判断</h2>
+                    </div>
+                    <p>只保留数量后验、估值判断和格数摘要，不再显示低价值旁支信息。</p>
+                </div>
+                <div id="error-box" class="hidden error-box glass"></div>
+                <div class="workspace-report-stack">
+                    <div class="mega-card glass fade-in" id="probability-section">
+                        <h2 class="mega-title">核心后验</h2>
+                        <p class="subtitle">先看最可能的橙色与红色数量，再决定是否继续补充观测。</p>
+                        <div class="mega-distributions">
+                            <div class="mega-dist-col">
+                                <h3 class="orange-text">橙色数量后验</h3>
+                                <p class="posterior-confidence-note" id="orange-confidence-note">等待总数量与约束字段。</p>
+                                <ul id="list-orange" class="posterior-bar-list">
+                                    <li class="waiting-data">等待总数量与约束字段。</li>
+                                </ul>
+                            </div>
+                            <div class="mega-dist-col">
+                                <h3 class="red-text">红色数量后验</h3>
+                                <p class="posterior-confidence-note" id="red-confidence-note">等待求解后验。</p>
+                                <ul id="list-red" class="posterior-bar-list">
+                                    <li class="waiting-data">等待求解后验。</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="posterior-risk-note hidden" id="posterior-risk-note"></div>
+                    </div>
+
+                    <div id="valuation-section" class="valuation-card glass fade-in hidden">
+                        <h3>出价判断</h3>
+                        <p class="valuation-headline" id="val-decision-headline">等待填写出价与关键观测。</p>
+                        <p class="valuation-summary" id="val-decision-summary">先填写总数量与出价，再看 EV 和收益判断。</p>
+                        <div class="valuation-support-grid">
+                            <div class="valuation-support-item primary">
+                                <div class="val-label">期望估值 (EV)</div>
+                                <div class="val-number text-gradient" id="val-ev">0</div>
+                            </div>
+                            <div class="valuation-support-item">
+                                <div class="val-label">盈利概率</div>
+                                <div class="val-number compact" id="val-prob">0%</div>
+                            </div>
+                            <div class="valuation-support-item">
+                                <div class="val-label">EV ROI</div>
+                                <div class="val-number compact" id="val-roi">0%</div>
+                            </div>
+                        </div>
+                        <div class="valuation-band-grid">
+                            <div class="valuation-band-item safe">
+                                <div class="tier-name">5% 分位</div>
+                                <div class="tier-val" id="val-q05">0</div>
+                            </div>
+                            <div class="valuation-band-item normal">
+                                <div class="tier-name">25% 分位</div>
+                                <div class="tier-val" id="val-q25">0</div>
+                            </div>
+                            <div class="valuation-band-item greedy">
+                                <div class="tier-name">75% 分位</div>
+                                <div class="tier-val" id="val-q75">0</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="visual-section glass fade-in hidden" id="grid-section">
+                        <h3>格数摘要</h3>
+                        <table class="grid-table">
+                            <thead>
+                                <tr>
+                                    <th>品质 / 组合</th>
+                                    <th>件数期望</th>
+                                    <th>总格均值</th>
+                                    <th>10%-90%区间</th>
+                                </tr>
+                            </thead>
+                            <tbody id="grid-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="workspace_runtime.js?v=20260428232030"></script>
+    <script type="module" src="source_data_runtime.js?v=20260428232030"></script>
+    <script type="module" src="authority_calibration_runtime.js?v=20260428232030"></script>
+    <script type="module" src="estimator.js?v=20260428232030"></script>
+    <script type="module" src="default_config_bundle.js?v=20260428232030"></script>
+    <script type="module" src="config_modal_state.js?v=20260428232030"></script>
+    <script type="module" src="numeric_input_runtime.js?v=20260428232030"></script>
+    <script type="module" src="dashboard_runtime.js?v=20260428232030"></script>
+    <script type="module" src="coarse_estimator.js?v=20260428232030"></script>
+    <script type="module" src="full_solver_runtime.js?v=20260428232030"></script>
+    <script type="module" src="config_editor_controls.js?v=20260428232030"></script>
+    <script type="module" src="config_editor_runtime.js?v=20260428232030"></script>
+    <script type="module" src="field_panel_runtime.js?v=20260428232030"></script>
+    <script type="module" src="result_panel_runtime.js?v=20260428232030"></script>
+    <script type="module" src="sample_dataset.js?v=20260428232030"></script>
+    <script type="module" src="app.js?v=20260428232030"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+    "app": {
+        "title": "竞拍之王 | 手填模板工作台",
+        "default_map_id": "sunken_ship",
+        "default_template_id": "ahmed_default",
+        "config_source_version": "ak_workspace_v2_20260428_sunken_red_tail_refit_v2"
+    }
+}

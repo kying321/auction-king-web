@@ -1,0 +1,91 @@
+{
+  "schema_version": "ak_manual_image_overlay_count_replay_v1",
+  "generated_at": "2026-04-24T07:36:20Z",
+  "source_dir": "<local-path>",
+  "source_audit": "<repo>/docs/research/2026-04-24-downloads-image-audit.json",
+  "notes": [
+    "Only estimator-visible observations are placed in field_values.",
+    "Post-game exact quality counts visible in the overlay are held out as actual_counts.",
+    "Fields that would leak the answer, such as exact orange/red count constraints from the post-game overlay, are recorded only in metadata.excluded_overlay_fields."
+  ],
+  "samples": [
+    {
+      "id": "downloads_2026_04_24_95b7_overlay_clean",
+      "record_type": "settlement_sample",
+      "source_kind": "manual_image_overlay_clean_replay",
+      "source_image_path": "<local-path>",
+      "map_id": "villa",
+      "map_variant_id": "luxury_retirement_home",
+      "map_variant_label": "奢华养老院",
+      "bid_price": 423500,
+      "loot_value": 7934829,
+      "profit": 7511329,
+      "field_values": {
+        "total_items": 40,
+        "blue_count": 11,
+        "orange_avg_cells": 4,
+        "purple_avg_cells": 2.61,
+        "white_green_total_cells": 22,
+        "white_green_avg_cells": 2.2,
+        "bid": 423500
+      },
+      "actual_counts": {
+        "o": 1
+      },
+      "actual_value": 7934829,
+      "metadata": {
+        "manual_review_status": "clean_replay_partial",
+        "actual_count_notes": "Overlay candidate set leaves red ambiguous, so only orange actual count is used.",
+        "excluded_overlay_fields": {
+          "orange_count": 1,
+          "orange_count_max": 24,
+          "red_count_min": 0,
+          "red_count_max": 10,
+          "candidate_red_counts": [0, 5],
+          "white_green_total_count": 10,
+          "blue_avg_cells": 1.81
+        }
+      }
+    },
+    {
+      "id": "downloads_2026_04_24_9814_overlay_clean",
+      "record_type": "settlement_sample",
+      "source_kind": "manual_image_overlay_clean_replay",
+      "source_image_path": "<local-path>",
+      "map_id": "sunken_ship",
+      "map_variant_id": "unlisted_privateer_armory",
+      "map_variant_label": "私掠船军火舱",
+      "bid_price": 1000000,
+      "loot_value": 2147553,
+      "profit": 1147553,
+      "field_values": {
+        "total_items": 43,
+        "blue_count": 11,
+        "orange_avg_cells": 1,
+        "purple_avg_cells": 2.66,
+        "white_green_total_cells": 38,
+        "white_green_avg_cells": 2.23,
+        "bid": 1000000
+      },
+      "actual_counts": {
+        "o": 2,
+        "r": 4
+      },
+      "actual_value": 2147553,
+      "metadata": {
+        "manual_review_status": "clean_replay_ready",
+        "actual_count_notes": "Overlay candidate set is unique for orange/red counts.",
+        "excluded_overlay_fields": {
+          "orange_count": 2,
+          "orange_count_max": 24,
+          "red_count_min": 0,
+          "red_count_max": 10,
+          "red_count": 4,
+          "white_green_total_count": 17,
+          "purple_count": 9,
+          "blue_avg_cells": 2.36
+        }
+      }
+    }
+  ]
+}

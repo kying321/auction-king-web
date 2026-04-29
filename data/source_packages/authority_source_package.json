@@ -1,0 +1,6606 @@
+{
+  "schema_version": "ak_authority_source_v1",
+  "generated_at": "2026-04-29T10:05:16.500Z",
+  "catalog_batches": [
+    {
+      "record_type": "catalog_batch",
+      "batch_id": "blue_quality_items_batch_2026-04-23",
+      "quality": "b",
+      "reported_average_value": 3126,
+      "cells_status": "pending_high_res",
+      "name_status": "mostly_manual_ocr",
+      "source_kind": "manual_thread_images",
+      "notes": [
+        "用户提供的蓝色品质图鉴截图。",
+        "当前会话中原始图片为线程附件，已将内容转录为可复用数据批次。",
+        "右下角占格仍不可稳定识别，cells 暂留空。"
+      ],
+      "items": [
+        {
+          "name": "小型面包车",
+          "quality": "b",
+          "value": 14659,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "石狮子",
+          "quality": "b",
+          "value": 9168,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "墙面涂鸦墙",
+          "quality": "b",
+          "value": 8880,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电竞显示器",
+          "quality": "b",
+          "value": 7644,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "琥珀",
+          "quality": "b",
+          "value": 6710,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电动踏板",
+          "quality": "b",
+          "value": 6258,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "绣挂毯",
+          "quality": "b",
+          "value": 6174,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "岫岩玉原石",
+          "quality": "b",
+          "value": 5970,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "大理石",
+          "quality": "b",
+          "value": 5885,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "银咖啡具",
+          "quality": "b",
+          "value": 5733,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "高岭土",
+          "quality": "b",
+          "value": 5730,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "东陵玉原石",
+          "quality": "b",
+          "value": 5280,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "熟成火腿",
+          "quality": "b",
+          "value": 5261,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "无菌手术衣",
+          "quality": "b",
+          "value": 5040,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "铜矿石",
+          "quality": "b",
+          "value": 5040,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "越野轮胎",
+          "quality": "b",
+          "value": 4915,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "大宝剑",
+          "quality": "b",
+          "value": 4840,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "便携式冰箱",
+          "quality": "b",
+          "value": 4761,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "蓝纹奶酪",
+          "quality": "b",
+          "value": 4578,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "小型汽油发电机",
+          "quality": "b",
+          "value": 4410,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "水浒传连环画本",
+          "quality": "b",
+          "value": 4388,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "手绘写实人像画",
+          "quality": "b",
+          "value": 4343,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "战术背心",
+          "quality": "b",
+          "value": 4316,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "进气歧管",
+          "quality": "b",
+          "value": 4208,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电动滑板车",
+          "quality": "b",
+          "value": 4118,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "同人画册",
+          "quality": "b",
+          "value": 3960,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "螺钿盒",
+          "quality": "b",
+          "value": 3938,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "摩托车骑行服",
+          "quality": "b",
+          "value": 3906,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "绘图数位板",
+          "quality": "b",
+          "value": 3893,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "JK制服",
+          "quality": "b",
+          "value": 3875,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "等身抱枕",
+          "quality": "b",
+          "value": 3870,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "烧烤架",
+          "quality": "b",
+          "value": 3855,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "UZI冲锋枪",
+          "quality": "b",
+          "value": 3851,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "家用急救医用箱",
+          "quality": "b",
+          "value": 3798,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电脑桌",
+          "quality": "b",
+          "value": 3791,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "红楼梦连环画本",
+          "quality": "b",
+          "value": 3690,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "铜镇纸",
+          "quality": "b",
+          "value": 3623,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "卡宾枪",
+          "quality": "b",
+          "value": 3600,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "便携式手提箱",
+          "quality": "b",
+          "value": 3551,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "倒车雷达",
+          "quality": "b",
+          "value": 3488,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "合金弩枪",
+          "quality": "b",
+          "value": 3339,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "腰椎固定带",
+          "quality": "b",
+          "value": 3294,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "MP5冲锋枪",
+          "quality": "b",
+          "value": 3294,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "十年花雕酒",
+          "quality": "b",
+          "value": 3285,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "绘画墨水集合",
+          "quality": "b",
+          "value": 3240,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "桶装汽油",
+          "quality": "b",
+          "value": 3173,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "医用缝合包",
+          "quality": "b",
+          "value": 3083,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "纺织地毯",
+          "quality": "b",
+          "value": 2858,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "三国演义连环画本",
+          "quality": "b",
+          "value": 2768,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "游戏概念设定集",
+          "quality": "b",
+          "value": 2700,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "机械键盘",
+          "quality": "b",
+          "value": 2588,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "军用望远镜",
+          "quality": "b",
+          "value": 2565,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "手办原型设计图",
+          "quality": "b",
+          "value": 2565,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "骨笛",
+          "quality": "b",
+          "value": 2552,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "游戏耳机",
+          "quality": "b",
+          "value": 2541,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "单一麦芽威士忌",
+          "quality": "b",
+          "value": 2484,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "便携式心电图仪",
+          "quality": "b",
+          "value": 2385,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "C4吸塑炸药",
+          "quality": "b",
+          "value": 2363,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电子输液架",
+          "quality": "b",
+          "value": 2322,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "银烛台",
+          "quality": "b",
+          "value": 2318,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "兔兔背包",
+          "quality": "b",
+          "value": 2214,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "二次元痛包",
+          "quality": "b",
+          "value": 2214,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "便携游戏机",
+          "quality": "b",
+          "value": 2133,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "檀香折扇",
+          "quality": "b",
+          "value": 2079,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "呼吸湿化器",
+          "quality": "b",
+          "value": 2052,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "沙漠之鹰",
+          "quality": "b",
+          "value": 2052,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "筋膜枪",
+          "quality": "b",
+          "value": 2045,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "银丝笔筒",
+          "quality": "b",
+          "value": 1985,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "手磨咖啡豆",
+          "quality": "b",
+          "value": 1863,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "西游记连环画本",
+          "quality": "b",
+          "value": 1796,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "人造非洲之心",
+          "quality": "b",
+          "value": 1780,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电动剃须刀",
+          "quality": "b",
+          "value": 1767,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "真皮钱包",
+          "quality": "b",
+          "value": 1661,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "运动球鞋",
+          "quality": "b",
+          "value": 1661,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "公仔玩偶",
+          "quality": "b",
+          "value": 1661,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "蓝牙音箱",
+          "quality": "b",
+          "value": 1651,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "月光石",
+          "quality": "b",
+          "value": 1530,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "拖车钩",
+          "quality": "b",
+          "value": 1470,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电动牙刷",
+          "quality": "b",
+          "value": 1461,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "云母碎片",
+          "quality": "b",
+          "value": 1450,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电子体温计",
+          "quality": "b",
+          "value": 1433,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "氙气大灯",
+          "quality": "b",
+          "value": 1388,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "多功能军刀",
+          "quality": "b",
+          "value": 1373,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "雪水云绿茶",
+          "quality": "b",
+          "value": 1350,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "静脉注射用人免疫球蛋白",
+          "quality": "b",
+          "value": 1313,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "石榴石",
+          "quality": "b",
+          "value": 1300,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "琉璃盏",
+          "quality": "b",
+          "value": 1260,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "网络摄像头",
+          "quality": "b",
+          "value": 1178,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "BB机",
+          "quality": "b",
+          "value": 1175,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "帕玛森奶酪",
+          "quality": "b",
+          "value": 1125,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "景泰蓝镯",
+          "quality": "b",
+          "value": 1050,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电子阅读器",
+          "quality": "b",
+          "value": 1005,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "鱼子酱",
+          "quality": "b",
+          "value": 983,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "夜视仪",
+          "quality": "b",
+          "value": 968,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "意大利黑醋",
+          "quality": "b",
+          "value": 938,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "银制耳饰",
+          "quality": "b",
+          "value": 923,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "时尚腕饰",
+          "quality": "b",
+          "value": 923,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "水雾唇釉",
+          "quality": "b",
+          "value": 923,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "录音笔",
+          "quality": "b",
+          "value": 923,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "胰岛素笔",
+          "quality": "b",
+          "value": 855,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "苹果白兰地",
+          "quality": "b",
+          "value": 848,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "数位笔",
+          "quality": "b",
+          "value": 810,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "联名钥匙挂扣",
+          "quality": "b",
+          "value": 711,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "blue_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "record_type": "catalog_batch",
+      "batch_id": "green_quality_items_batch_2026-04-23",
+      "quality": "g",
+      "reported_average_value": 872,
+      "cells_status": "pending_high_res",
+      "name_status": "mostly_manual_ocr",
+      "source_kind": "manual_thread_images",
+      "notes": [
+        "用户提供的绿色品质图鉴截图。",
+        "当前会话中原始图片为线程附件，已将内容转录为可复用数据批次。",
+        "右下角占格仍不可稳定识别，cells 暂留空。"
+      ],
+      "items": [
+        {
+          "name": "电动三轮车",
+          "quality": "g",
+          "value": 5129,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "折叠床",
+          "quality": "g",
+          "value": 2415,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "车衣",
+          "quality": "g",
+          "value": 2297,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "印刷山水画壁纸",
+          "quality": "g",
+          "value": 2016,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "绞盘",
+          "quality": "g",
+          "value": 1835,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "羽毛球拍",
+          "quality": "g",
+          "value": 1776,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "篮球",
+          "quality": "g",
+          "value": 1481,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "足球",
+          "quality": "g",
+          "value": 1480,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "长枪",
+          "quality": "g",
+          "value": 1452,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "辅助轮儿童自行车",
+          "quality": "g",
+          "value": 1440,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "医药整理盒",
+          "quality": "g",
+          "value": 1433,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "皮箭囊",
+          "quality": "g",
+          "value": 1426,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "备胎",
+          "quality": "g",
+          "value": 1426,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "键盘保护膜",
+          "quality": "g",
+          "value": 1411,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "双截棍",
+          "quality": "g",
+          "value": 1375,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "笔记本散热器",
+          "quality": "g",
+          "value": 1346,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "蜡染方巾",
+          "quality": "g",
+          "value": 1274,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "工地用头盔",
+          "quality": "g",
+          "value": 1267,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "抱枕",
+          "quality": "g",
+          "value": 1258,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "大本盗印网络小说",
+          "quality": "g",
+          "value": 1246,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "连帽卫衣",
+          "quality": "g",
+          "value": 1240,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "手推货运车",
+          "quality": "g",
+          "value": 1210,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "补光灯",
+          "quality": "g",
+          "value": 1166,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "儿童安全座椅",
+          "quality": "g",
+          "value": 1130,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "水写毛笔练字帖",
+          "quality": "g",
+          "value": 1119,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电水壶",
+          "quality": "g",
+          "value": 1106,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "书法用卷轴",
+          "quality": "g",
+          "value": 1089,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "饮水机",
+          "quality": "g",
+          "value": 1045,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "药碾子",
+          "quality": "g",
+          "value": 1044,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "土制硝酸甘油炸弹",
+          "quality": "g",
+          "value": 1044,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "行车记录仪",
+          "quality": "g",
+          "value": 979,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "蓝牙触控板",
+          "quality": "g",
+          "value": 914,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "贝雕画",
+          "quality": "g",
+          "value": 907,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "帆布背包",
+          "quality": "g",
+          "value": 886,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "沙袋背心",
+          "quality": "g",
+          "value": 878,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "USB氛围灯",
+          "quality": "g",
+          "value": 870,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "普通匕首",
+          "quality": "g",
+          "value": 859,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "蓄电池",
+          "quality": "g",
+          "value": 806,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "车载充气泵",
+          "quality": "g",
+          "value": 804,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "竹节笔",
+          "quality": "g",
+          "value": 794,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "连载漫画一",
+          "quality": "g",
+          "value": 786,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "急救毯",
+          "quality": "g",
+          "value": 770,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "连载漫画二",
+          "quality": "g",
+          "value": 760,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "HDIM高清线",
+          "quality": "g",
+          "value": 755,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "时尚杂志",
+          "quality": "g",
+          "value": 738,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "锡制酒壶",
+          "quality": "g",
+          "value": 734,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "练字用描红本",
+          "quality": "g",
+          "value": 734,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "连载漫画四",
+          "quality": "g",
+          "value": 721,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "百搭丝巾",
+          "quality": "g",
+          "value": 718,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "印花雨伞",
+          "quality": "g",
+          "value": 708,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "雾化器",
+          "quality": "g",
+          "value": 661,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "宝宝降热贴",
+          "quality": "g",
+          "value": 654,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "风干香肠",
+          "quality": "g",
+          "value": 635,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "遥控器",
+          "quality": "g",
+          "value": 619,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "手机VR眼镜",
+          "quality": "g",
+          "value": 613,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "连载漫画三",
+          "quality": "g",
+          "value": 536,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "裸靴",
+          "quality": "g",
+          "value": 532,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "木梭子",
+          "quality": "g",
+          "value": 514,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "有线游戏手柄",
+          "quality": "g",
+          "value": 505,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "手打鱼丸",
+          "quality": "g",
+          "value": 480,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "桂皮",
+          "quality": "g",
+          "value": 475,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "烟熏辣椒粉",
+          "quality": "g",
+          "value": 473,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "快充数据线",
+          "quality": "g",
+          "value": 466,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "安全锤",
+          "quality": "g",
+          "value": 466,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "烟雾弹",
+          "quality": "g",
+          "value": 462,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "玛瑙棋",
+          "quality": "g",
+          "value": 458,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "古法红糖",
+          "quality": "g",
+          "value": 458,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "糯米酒",
+          "quality": "g",
+          "value": 446,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电子手表",
+          "quality": "g",
+          "value": 445,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "印刷画折扇",
+          "quality": "g",
+          "value": 441,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "芝麻香油",
+          "quality": "g",
+          "value": 430,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "生理盐水",
+          "quality": "g",
+          "value": 422,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "贴膜工具包",
+          "quality": "g",
+          "value": 420,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "拔罐器",
+          "quality": "g",
+          "value": 403,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "多功能读卡器",
+          "quality": "g",
+          "value": 401,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "127子弹",
+          "quality": "g",
+          "value": 367,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "海盐",
+          "quality": "g",
+          "value": 360,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "精酿啤酒",
+          "quality": "g",
+          "value": 346,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "玉扣",
+          "quality": "g",
+          "value": 319,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "经典棒球帽",
+          "quality": "g",
+          "value": 315,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "血糖仪",
+          "quality": "g",
+          "value": 312,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "手雷",
+          "quality": "g",
+          "value": 312,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "充气玩具手枪",
+          "quality": "g",
+          "value": 301,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "潮流手机壳",
+          "quality": "g",
+          "value": 295,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "墨镜",
+          "quality": "g",
+          "value": 295,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "Six god",
+          "quality": "g",
+          "value": 293,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "亚克力钥匙扣",
+          "quality": "g",
+          "value": 288,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "医用酒精",
+          "quality": "g",
+          "value": 277,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "陶埙",
+          "quality": "g",
+          "value": 269,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "黑巧克力",
+          "quality": "g",
+          "value": 262,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "珊瑚珠",
+          "quality": "g",
+          "value": 252,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "green_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "record_type": "catalog_batch",
+      "batch_id": "orange_quality_items_batch_2026-04-23",
+      "quality": "o",
+      "reported_average_value": 46325,
+      "cells_status": "pending_high_res",
+      "name_status": "manual_ocr_calibrated",
+      "source_kind": "manual_thread_images",
+      "notes": [
+        "用户提供的橙色品质图鉴截图。",
+        "当前会话中原始图片为线程附件，已转录为正式批次。",
+        "用户后续补充了漏掉的两件条目：植物水彩图、章丘铁锅。",
+        "右下角占格仍不可稳定识别，cells 暂留空。",
+        "当前人工转录 100 件，实测均价 46325.17，与图中均价 46325 已基本闭环。"
+      ],
+      "items": [
+        {
+          "name": "轻量化锂电池",
+          "quality": "o",
+          "value": 199900,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "单人郊游快艇",
+          "quality": "o",
+          "value": 106500,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "氢燃料电池堆栈",
+          "quality": "o",
+          "value": 101400,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "服务器机柜",
+          "quality": "o",
+          "value": 97382,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "孔雀石雕件",
+          "quality": "o",
+          "value": 96768,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "无人作战车",
+          "quality": "o",
+          "value": 93753,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "大圣残缺石像",
+          "quality": "o",
+          "value": 89461,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "刺绣《千里江山图》",
+          "quality": "o",
+          "value": 88473,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "全自动生化分析仪",
+          "quality": "o",
+          "value": 86130,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "波斯毯",
+          "quality": "o",
+          "value": 85800,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "蜘蛛型自走机器人",
+          "quality": "o",
+          "value": 82740,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "现代书法家题字",
+          "quality": "o",
+          "value": 79825,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "错金铜鼎",
+          "quality": "o",
+          "value": 78540,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "移动工作站",
+          "quality": "o",
+          "value": 78120,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "豪华旅行摩托车",
+          "quality": "o",
+          "value": 77700,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "病理监护仪",
+          "quality": "o",
+          "value": 76233,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "重型全生态作战防弹衣",
+          "quality": "o",
+          "value": 74745,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "大展宏图",
+          "quality": "o",
+          "value": 73682,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "财神爷摆件",
+          "quality": "o",
+          "value": 71499,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "数字调音台",
+          "quality": "o",
+          "value": 70140,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "反器材狙击步枪",
+          "quality": "o",
+          "value": 67600,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "中古牛皮沙发",
+          "quality": "o",
+          "value": 65610,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "便携式超声诊断仪",
+          "quality": "o",
+          "value": 62055,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "智能冰箱",
+          "quality": "o",
+          "value": 61143,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "缂丝袍",
+          "quality": "o",
+          "value": 60600,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "医用负压吸引器",
+          "quality": "o",
+          "value": 60342,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "洛可可风格沙龙速写",
+          "quality": "o",
+          "value": 58395,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "芒画派肖像油画",
+          "quality": "o",
+          "value": 57540,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "翡翠观音",
+          "quality": "o",
+          "value": 56700,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "模块化电磁突击步枪试用型",
+          "quality": "o",
+          "value": 55770,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "《赞虚经》卷仿本",
+          "quality": "o",
+          "value": 55440,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "曲面带鱼屏显示器",
+          "quality": "o",
+          "value": 54495,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "伊比利亚橡果火腿",
+          "quality": "o",
+          "value": 54180,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "宗教壁画残片",
+          "quality": "o",
+          "value": 53550,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "锦绣山河靠山石",
+          "quality": "o",
+          "value": 51801,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "高端VR套装",
+          "quality": "o",
+          "value": 51660,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "竞技避震套装",
+          "quality": "o",
+          "value": 51240,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "航空碳纤维鱼竿",
+          "quality": "o",
+          "value": 50604,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "手术用显微镜",
+          "quality": "o",
+          "value": 49920,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "金芽普洱茶",
+          "quality": "o",
+          "value": 49200,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "发财树",
+          "quality": "o",
+          "value": 48703,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "乌木椅",
+          "quality": "o",
+          "value": 48300,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "枝状珊瑚",
+          "quality": "o",
+          "value": 48096,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "隆中牌气压盘式制动器",
+          "quality": "o",
+          "value": 45231,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "金佛塔",
+          "quality": "o",
+          "value": 43650,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "蓝鳍金枪鱼腹",
+          "quality": "o",
+          "value": 42975,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "背挂式无线电干扰发生器",
+          "quality": "o",
+          "value": 42525,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "行业无人机",
+          "quality": "o",
+          "value": 41850,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "心脏支架",
+          "quality": "o",
+          "value": 40385,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "可调式尾翼",
+          "quality": "o",
+          "value": 39690,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "手作羊奶酪",
+          "quality": "o",
+          "value": 39600,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "海蓝宝晶体",
+          "quality": "o",
+          "value": 39168,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "定制晚礼服",
+          "quality": "o",
+          "value": 38745,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "亲签球衣",
+          "quality": "o",
+          "value": 38745,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "《营造法式》彩画作制度图样仿本",
+          "quality": "o",
+          "value": 37920,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "全画幅微单",
+          "quality": "o",
+          "value": 37800,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "单兵水下推进器",
+          "quality": "o",
+          "value": 37350,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "满分斯诺克纪念球杆",
+          "quality": "o",
+          "value": 36511,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "《敦煌遗书》唐代写经卷仿制卷",
+          "quality": "o",
+          "value": 35200,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "单兵战场信息系统终端",
+          "quality": "o",
+          "value": 34490,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "竞技离合器套件",
+          "quality": "o",
+          "value": 34425,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "托帕石原石",
+          "quality": "o",
+          "value": 34408,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "西瓜碧玺",
+          "quality": "o",
+          "value": 34344,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "白松露",
+          "quality": "o",
+          "value": 33000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "碳纤维轮毂",
+          "quality": "o",
+          "value": 31950,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "唐刀",
+          "quality": "o",
+          "value": 30600,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "智能温控空调",
+          "quality": "o",
+          "value": 30159,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "浪漫主义风景素描原作",
+          "quality": "o",
+          "value": 29700,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "便携式军用雷达",
+          "quality": "o",
+          "value": 29500,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "银法典",
+          "quality": "o",
+          "value": 29025,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "野生大红袍",
+          "quality": "o",
+          "value": 29025,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "限量时尚杂志",
+          "quality": "o",
+          "value": 28450,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "顶级化妆礼盒",
+          "quality": "o",
+          "value": 27675,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "羊脂玉璧",
+          "quality": "o",
+          "value": 27450,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "亲签球鞋",
+          "quality": "o",
+          "value": 26605,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "植物水彩图",
+          "quality": "o",
+          "value": 25875,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "赛车方向盘",
+          "quality": "o",
+          "value": 25875,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "章丘铁锅",
+          "quality": "o",
+          "value": 24969,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "祈祷书彩绘插页",
+          "quality": "o",
+          "value": 24435,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "伯纳普斯球场VIP赛季票",
+          "quality": "o",
+          "value": 24332,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "变彩欧泊",
+          "quality": "o",
+          "value": 21840,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "黄金打火机",
+          "quality": "o",
+          "value": 21201,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "专业声卡",
+          "quality": "o",
+          "value": 19845,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "康帝葡萄酒",
+          "quality": "o",
+          "value": 19600,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "三十年茅台",
+          "quality": "o",
+          "value": 18600,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "个性化肿瘤疫苗",
+          "quality": "o",
+          "value": 16200,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "水晶杯",
+          "quality": "o",
+          "value": 15542,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "貔貅茶宠",
+          "quality": "o",
+          "value": 15345,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "铂金胸针",
+          "quality": "o",
+          "value": 15325,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电影定焦镜头",
+          "quality": "o",
+          "value": 14850,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "南洋金珠",
+          "quality": "o",
+          "value": 14520,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "狗头金",
+          "quality": "o",
+          "value": 13332,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "西湖龙井明前",
+          "quality": "o",
+          "value": 12825,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "长焦镜头",
+          "quality": "o",
+          "value": 12675,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "野生皇冠鱼子酱",
+          "quality": "o",
+          "value": 12600,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "高浓缩磁暴刺旋手雷",
+          "quality": "o",
+          "value": 12400,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "限定球星收藏卡",
+          "quality": "o",
+          "value": 12225,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "私人飞机租赁证明",
+          "quality": "o",
+          "value": 11175,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "机械腕表",
+          "quality": "o",
+          "value": 9245,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "旗舰手机",
+          "quality": "o",
+          "value": 7800,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "orange_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "record_type": "catalog_batch",
+      "batch_id": "purple_quality_items_batch_2026-04-23",
+      "quality": "p",
+      "reported_average_value": 9492,
+      "cells_status": "pending_high_res",
+      "name_status": "mostly_manual_ocr",
+      "source_kind": "manual_thread_images",
+      "notes": [
+        "用户提供的紫色品质图鉴截图。",
+        "当前会话中原始图片为线程附件，已将内容转录为可复用数据批次。",
+        "右下角占格仍不可稳定识别，cells 暂留空。"
+      ],
+      "items": [
+        {
+          "name": "加特林重机枪",
+          "quality": "p",
+          "value": 31688,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "限定真人展示牌",
+          "quality": "p",
+          "value": 25000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "黑曜石原石",
+          "quality": "p",
+          "value": 23760,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "全地形卡丁车",
+          "quality": "p",
+          "value": 22064,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "翡翠原石",
+          "quality": "p",
+          "value": 21000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "可拆叠高韧性防护盾",
+          "quality": "p",
+          "value": 20082,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "显卡扩展坞",
+          "quality": "p",
+          "value": 19096,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "赛车座椅",
+          "quality": "p",
+          "value": 18872,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "和田玉原石",
+          "quality": "p",
+          "value": 18240,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "铜矿堆",
+          "quality": "p",
+          "value": 16520,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "AWM狙击步枪",
+          "quality": "p",
+          "value": 16310,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "伊比利亚火腿",
+          "quality": "p",
+          "value": 16212,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "混合动力单元",
+          "quality": "p",
+          "value": 15680,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "玉山子",
+          "quality": "p",
+          "value": 15456,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "彩色打印机",
+          "quality": "p",
+          "value": 14364,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "家用制氧呼吸机",
+          "quality": "p",
+          "value": 14240,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "《淳化阁帖》宋拓本仿制册页",
+          "quality": "p",
+          "value": 14112,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "手办展示架",
+          "quality": "p",
+          "value": 13251,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "1克拉钻石",
+          "quality": "p",
+          "value": 13000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "除颤仪",
+          "quality": "p",
+          "value": 12976,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "M249轻机枪",
+          "quality": "p",
+          "value": 12584,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "超声波治疗仪",
+          "quality": "p",
+          "value": 12581,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "超级电动车电池组",
+          "quality": "p",
+          "value": 12296,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "铜钟",
+          "quality": "p",
+          "value": 12045,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "VR头显",
+          "quality": "p",
+          "value": 12000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "高级驾驶辅助系统",
+          "quality": "p",
+          "value": 11940,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电脑主板",
+          "quality": "p",
+          "value": 11880,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "牙雕船",
+          "quality": "p",
+          "value": 11768,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "限量画集",
+          "quality": "p",
+          "value": 11760,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "M系列自动步枪",
+          "quality": "p",
+          "value": 11752,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "蝉翼拓片宣纸",
+          "quality": "p",
+          "value": 11520,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "针灸人模型",
+          "quality": "p",
+          "value": 11424,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "三十年汾酒",
+          "quality": "p",
+          "value": 11280,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "青金石",
+          "quality": "p",
+          "value": 10960,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "竞技级复合弓",
+          "quality": "p",
+          "value": 10920,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "专业级充气泵",
+          "quality": "p",
+          "value": 10620,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "智能马桶",
+          "quality": "p",
+          "value": 10542,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "数位屏",
+          "quality": "p",
+          "value": 10500,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "青金石盒",
+          "quality": "p",
+          "value": 10380,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "汉元素汉服",
+          "quality": "p",
+          "value": 10332,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "金粟山藏经纸",
+          "quality": "p",
+          "value": 10260,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电动摩托车",
+          "quality": "p",
+          "value": 10080,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "铜香炉",
+          "quality": "p",
+          "value": 9960,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "输液泵",
+          "quality": "p",
+          "value": 9880,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "洛丽塔小裙子",
+          "quality": "p",
+          "value": 9749,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "赛车方向盘",
+          "quality": "p",
+          "value": 9604,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "青花瓷瓶",
+          "quality": "p",
+          "value": 9600,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "螺钿妆匣",
+          "quality": "p",
+          "value": 9440,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "壁挂式空调",
+          "quality": "p",
+          "value": 9115,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "RPG火箭筒",
+          "quality": "p",
+          "value": 8976,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "宝宝哄睡椅",
+          "quality": "p",
+          "value": 8974,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "现代画家手稿",
+          "quality": "p",
+          "value": 8940,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "机动型水路两用气动靴",
+          "quality": "p",
+          "value": 8830,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "沉香木镂空笔架",
+          "quality": "p",
+          "value": 8700,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "萤石晶体簇",
+          "quality": "p",
+          "value": 8680,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "孔雀石原石",
+          "quality": "p",
+          "value": 8440,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "名牌挎包",
+          "quality": "p",
+          "value": 8380,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "平板电脑",
+          "quality": "p",
+          "value": 8360,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "蕉叶白端砚",
+          "quality": "p",
+          "value": 8240,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "扫地机器人",
+          "quality": "p",
+          "value": 8115,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "按摩椅",
+          "quality": "p",
+          "value": 7758,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "隆中牌制动间隙自动调整臂",
+          "quality": "p",
+          "value": 7655,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "《心经》高僧手抄卷",
+          "quality": "p",
+          "value": 7472,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "激光剑仿真玩具",
+          "quality": "p",
+          "value": 7380,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "自爆式无人机",
+          "quality": "p",
+          "value": 7140,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "蓝龙虾",
+          "quality": "p",
+          "value": 6960,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "临摹版清明上河图",
+          "quality": "p",
+          "value": 6824,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "气腿机",
+          "quality": "p",
+          "value": 6780,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "古韵镇纸",
+          "quality": "p",
+          "value": 6624,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "罗盘仪",
+          "quality": "p",
+          "value": 6620,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "吸尘器",
+          "quality": "p",
+          "value": 6554,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "熟成和牛",
+          "quality": "p",
+          "value": 6540,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "虎睛石",
+          "quality": "p",
+          "value": 6152,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "单克隆抗体药物",
+          "quality": "p",
+          "value": 6012,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "特级鹿茸",
+          "quality": "p",
+          "value": 5724,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "琥珀",
+          "quality": "p",
+          "value": 5160,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "特级初榨茶油",
+          "quality": "p",
+          "value": 5076,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "蓝山咖啡豆",
+          "quality": "p",
+          "value": 5040,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "琥珀挂坠",
+          "quality": "p",
+          "value": 4828,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "冰酒",
+          "quality": "p",
+          "value": 4788,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "大哥大电话",
+          "quality": "p",
+          "value": 4624,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "名牌球鞋",
+          "quality": "p",
+          "value": 4428,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "限量手办",
+          "quality": "p",
+          "value": 4428,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "合金机器人模型",
+          "quality": "p",
+          "value": 4428,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "珍珠",
+          "quality": "p",
+          "value": 4240,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "智能手表",
+          "quality": "p",
+          "value": 3960,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "车辆定位器",
+          "quality": "p",
+          "value": 3940,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "猫屎咖啡",
+          "quality": "p",
+          "value": 3920,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "长白山野山参",
+          "quality": "p",
+          "value": 3780,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "唐卡",
+          "quality": "p",
+          "value": 3650,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "龙涎香",
+          "quality": "p",
+          "value": 3640,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "除湿器",
+          "quality": "p",
+          "value": 3454,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "热感应夜视防护头盔",
+          "quality": "p",
+          "value": 3180,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "视频采集卡",
+          "quality": "p",
+          "value": 3120,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "无线CarPlay盒子",
+          "quality": "p",
+          "value": 3040,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "全天候激光瞄准镜",
+          "quality": "p",
+          "value": 2720,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "隐藏式行车记录仪",
+          "quality": "p",
+          "value": 2600,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "8848镀金手机壳",
+          "quality": "p",
+          "value": 2560,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "金丝眼镜",
+          "quality": "p",
+          "value": 2514,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "轻奢腕表",
+          "quality": "p",
+          "value": 2460,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "运动相机",
+          "quality": "p",
+          "value": 2400,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "西班牙藏红花",
+          "quality": "p",
+          "value": 2160,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "黑钻松露",
+          "quality": "p",
+          "value": 2100,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "purple_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "record_type": "catalog_batch",
+      "batch_id": "red_quality_items_batch_2026-04-23",
+      "quality": "r",
+      "reported_average_value": 822956,
+      "cells_status": "pending_high_res",
+      "name_status": "manual_ocr_calibrated",
+      "source_kind": "manual_thread_images",
+      "notes": [
+        "用户提供的红色品质图鉴截图，当前轮次已全部上传完毕。",
+        "当前会话中原始图片为线程附件，已转录为正式批次。",
+        "右下角占格仍不可稳定识别，cells 暂留空。",
+        "当前人工转录 92 件，实测均价 822956.57，与图中均价 822956 已基本闭环。"
+      ],
+      "items": [
+        {
+          "name": "金陵折扇",
+          "quality": "r",
+          "value": 19371213,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "非洲之心",
+          "quality": "r",
+          "value": 13145200,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "豪宅管理用黑盒",
+          "quality": "r",
+          "value": 7402320,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "黑王子红宝石",
+          "quality": "r",
+          "value": 3000000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "羊脂白玉籽和田玉",
+          "quality": "r",
+          "value": 2516000,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "私人直升机黑匣子",
+          "quality": "r",
+          "value": 1688400,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "永乐大典残本二",
+          "quality": "r",
+          "value": 1553900,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "蓝鳍金枪鱼",
+          "quality": "r",
+          "value": 1552500,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "超级跑车钥匙",
+          "quality": "r",
+          "value": 1495000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "永乐大典残本一",
+          "quality": "r",
+          "value": 1491800,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "《富春山居图》",
+          "quality": "r",
+          "value": 1236666,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "复苏呼吸机",
+          "quality": "r",
+          "value": 1089660,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "百年人参",
+          "quality": "r",
+          "value": 1039000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "相控阵雷达",
+          "quality": "r",
+          "value": 1003000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "翡翠屏风",
+          "quality": "r",
+          "value": 844000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "双羊尊",
+          "quality": "r",
+          "value": 567900,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "高斯振动匕首",
+          "quality": "r",
+          "value": 531000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "钻石原石（巨粒）",
+          "quality": "r",
+          "value": 512000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "超声波诊断仪",
+          "quality": "r",
+          "value": 475000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "AI服务器",
+          "quality": "r",
+          "value": 470400,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "宝斯终身VIP会员卡",
+          "quality": "r",
+          "value": 465000,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "火焰欧泊",
+          "quality": "r",
+          "value": 457200,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "民用垂直起降飞行器",
+          "quality": "r",
+          "value": 452800,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "碳纤维单体壳车身",
+          "quality": "r",
+          "value": 444000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "扶桑古太刀",
+          "quality": "r",
+          "value": 422002,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "武夷山母树大红袍",
+          "quality": "r",
+          "value": 390000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "GPU计算柜",
+          "quality": "r",
+          "value": 375000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "可控核聚变电池包",
+          "quality": "r",
+          "value": 362400,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "红木屏风",
+          "quality": "r",
+          "value": 361000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "重型巡航摩托车",
+          "quality": "r",
+          "value": 357040,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "金编钟",
+          "quality": "r",
+          "value": 322560,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "星光红宝石",
+          "quality": "r",
+          "value": 316000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "单兵外骨骼助力系统",
+          "quality": "r",
+          "value": 305920,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "黑欧泊",
+          "quality": "r",
+          "value": 295500,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "大目金枪鱼",
+          "quality": "r",
+          "value": 294000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "时尚轿跑",
+          "quality": "r",
+          "value": 293400,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "青铜神树",
+          "quality": "r",
+          "value": 287280,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "《般若神掌》秘籍",
+          "quality": "r",
+          "value": 284519,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "《亚维农少女》",
+          "quality": "r",
+          "value": 282240,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "金缕玉衣",
+          "quality": "r",
+          "value": 281600,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "永恒时尚指南",
+          "quality": "r",
+          "value": 266050,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "医用外骨骼",
+          "quality": "r",
+          "value": 259165,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电影级摄影机",
+          "quality": "r",
+          "value": 258760,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "敦煌绢画",
+          "quality": "r",
+          "value": 255840,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "云端100寸液晶电视",
+          "quality": "r",
+          "value": 255115,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "陈年干邑",
+          "quality": "r",
+          "value": 249000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "清明上河图复刻",
+          "quality": "r",
+          "value": 240660,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "全息雷达无人机",
+          "quality": "r",
+          "value": 226800,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "007同款防弹西装",
+          "quality": "r",
+          "value": 199080,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "环球小姐冠军皇冠",
+          "quality": "r",
+          "value": 195154,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "黄唇鱼鱼胶",
+          "quality": "r",
+          "value": 193200,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "《自由引导人民》",
+          "quality": "r",
+          "value": 191800,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "双螺纳宝",
+          "quality": "r",
+          "value": 188888,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "金丝楠木椅",
+          "quality": "r",
+          "value": 187812,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "全画幅相机",
+          "quality": "r",
+          "value": 186900,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "冰种飘花翡翠",
+          "quality": "r",
+          "value": 180000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "金丝冠",
+          "quality": "r",
+          "value": 179100,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "《凯尔经》",
+          "quality": "r",
+          "value": 175500,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "全智能扫地机器人",
+          "quality": "r",
+          "value": 170362,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "《星空》",
+          "quality": "r",
+          "value": 170200,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "奥斯卡小金人",
+          "quality": "r",
+          "value": 168000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "藏区冬虫夏草",
+          "quality": "r",
+          "value": 168000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "拜占庭冠",
+          "quality": "r",
+          "value": 167800,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "法贝热蛋",
+          "quality": "r",
+          "value": 160200,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "《戴珍珠耳环的少女》",
+          "quality": "r",
+          "value": 160200,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "古医书《伤寒论》",
+          "quality": "r",
+          "value": 158940,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "《天工开物》",
+          "quality": "r",
+          "value": 148840,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "古剑",
+          "quality": "r",
+          "value": 143100,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "黄金权杖",
+          "quality": "r",
+          "value": 141300,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "触摸感应仿生手",
+          "quality": "r",
+          "value": 130296,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "亚历山大变石",
+          "quality": "r",
+          "value": 128000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "野生大黄鱼",
+          "quality": "r",
+          "value": 127260,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "中画幅相机",
+          "quality": "r",
+          "value": 122600,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "《岩间圣母》",
+          "quality": "r",
+          "value": 120600,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "紫檀木金针灸套装",
+          "quality": "r",
+          "value": 112896,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "曜变天目盏",
+          "quality": "r",
+          "value": 112500,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "激光手枪",
+          "quality": "r",
+          "value": 104400,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "金绿猫眼石",
+          "quality": "r",
+          "value": 94500,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "罗曼尼康帝",
+          "quality": "r",
+          "value": 92880,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "美容中心终身会员金卡",
+          "quality": "r",
+          "value": 88888,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "祖母绿宝石",
+          "quality": "r",
+          "value": 87000,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "黄金水龙头",
+          "quality": "r",
+          "value": 85623,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "鸽血红宝石",
+          "quality": "r",
+          "value": 75500,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "大溪地黑珍珠",
+          "quality": "r",
+          "value": 71500,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "全集成AI自动驾驶系统",
+          "quality": "r",
+          "value": 68800,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "玉化砗磲",
+          "quality": "r",
+          "value": 68400,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "佛跳墙",
+          "quality": "r",
+          "value": 68100,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "维纳斯级澳洲白珠",
+          "quality": "r",
+          "value": 56000,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "安宫牛黄丸",
+          "quality": "r",
+          "value": 54675,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "麒麟处理器芯片",
+          "quality": "r",
+          "value": 54600,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "刺猬猫·全息阅读终端",
+          "quality": "r",
+          "value": 54300,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "帕拉伊巴碧玺",
+          "quality": "r",
+          "value": 52500,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "red_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "record_type": "catalog_batch",
+      "batch_id": "white_quality_items_batch_2026-04-23",
+      "quality": "w",
+      "reported_average_value": 267,
+      "cells_status": "pending_high_res",
+      "name_status": "mostly_manual_ocr",
+      "source_kind": "manual_thread_images",
+      "notes": [
+        "用户提供的白色品质全量图鉴截图。",
+        "右下角占格图标在当前会话分辨率下不可稳定识别，cells 先留空。",
+        "个别模糊名称已用 medium 置信度标记，待更高清原图复核。"
+      ],
+      "items": [
+        {
+          "name": "花岗岩（毛料）",
+          "quality": "w",
+          "value": 902,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "废旧纸箱",
+          "quality": "w",
+          "value": 885,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "遮阳挡",
+          "quality": "w",
+          "value": 754,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "木板车",
+          "quality": "w",
+          "value": 609,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "晾衣杆",
+          "quality": "w",
+          "value": 602,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "披萨盒",
+          "quality": "w",
+          "value": 599,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "铁矿渣",
+          "quality": "w",
+          "value": 507,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "老坛酸菜",
+          "quality": "w",
+          "value": 486,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "捕兽夹",
+          "quality": "w",
+          "value": 483,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "电子体重秤",
+          "quality": "w",
+          "value": 470,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "圆润的木杆",
+          "quality": "w",
+          "value": 438,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "阳光小麦粉",
+          "quality": "w",
+          "value": 437,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "医用橡胶坐垫",
+          "quality": "w",
+          "value": 414,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "石灰岩",
+          "quality": "w",
+          "value": 414,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "编绳网兜",
+          "quality": "w",
+          "value": 411,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "麦穗",
+          "quality": "w",
+          "value": 388,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "医用拐杖",
+          "quality": "w",
+          "value": 386,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "桦树皮盒",
+          "quality": "w",
+          "value": 384,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "窗花剪纸",
+          "quality": "w",
+          "value": 377,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "印花T恤",
+          "quality": "w",
+          "value": 369,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "3D观影镜",
+          "quality": "w",
+          "value": 360,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "素描用画板",
+          "quality": "w",
+          "value": 360,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "弹性绷带",
+          "quality": "w",
+          "value": 346,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "玩具木剑",
+          "quality": "w",
+          "value": 346,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "铝土矿石",
+          "quality": "w",
+          "value": 345,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "初榨菜籽油",
+          "quality": "w",
+          "value": 344,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "中国新年春联一",
+          "quality": "w",
+          "value": 341,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "挪车牌",
+          "quality": "w",
+          "value": 340,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "自拍杆",
+          "quality": "w",
+          "value": 338,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "艾条",
+          "quality": "w",
+          "value": 331,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "风干腊肉",
+          "quality": "w",
+          "value": 320,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "中国新年春联二",
+          "quality": "w",
+          "value": 317,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "棕榈叶篮",
+          "quality": "w",
+          "value": 315,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "车用毛巾",
+          "quality": "w",
+          "value": 315,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "喷灌类墨水",
+          "quality": "w",
+          "value": 308,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "园林修理剪",
+          "quality": "w",
+          "value": 305,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "竹木弹弓",
+          "quality": "w",
+          "value": 304,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "应援灯牌",
+          "quality": "w",
+          "value": 299,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "车用拖车绳",
+          "quality": "w",
+          "value": 277,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "绳索",
+          "quality": "w",
+          "value": 276,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "人造玻璃",
+          "quality": "w",
+          "value": 265,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "A4印刷用纸",
+          "quality": "w",
+          "value": 257,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "防晒冰袖",
+          "quality": "w",
+          "value": 248,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "应援棒",
+          "quality": "w",
+          "value": 248,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "复古游戏机",
+          "quality": "w",
+          "value": 247,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "泡泡水弹",
+          "quality": "w",
+          "value": 221,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "印刷广告卡通圆扇",
+          "quality": "w",
+          "value": 221,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "中国新年春联横幅",
+          "quality": "w",
+          "value": 218,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "快递单",
+          "quality": "w",
+          "value": 209,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "医用一次性口罩",
+          "quality": "w",
+          "value": 207,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "草编鲤鱼",
+          "quality": "w",
+          "value": 205,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "插座",
+          "quality": "w",
+          "value": 200,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "临时停车牌",
+          "quality": "w",
+          "value": 200,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "苹果",
+          "quality": "w",
+          "value": 200,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "马克杯",
+          "quality": "w",
+          "value": 198,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "煤块",
+          "quality": "w",
+          "value": 192,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "白砂糖",
+          "quality": "w",
+          "value": 192,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "图案徽章",
+          "quality": "w",
+          "value": 189,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "淀粉肠",
+          "quality": "w",
+          "value": 186,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "玻璃水",
+          "quality": "w",
+          "value": 185,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "飞镖",
+          "quality": "w",
+          "value": 184,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "沙砾",
+          "quality": "w",
+          "value": 184,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "0.38MM中性笔",
+          "quality": "w",
+          "value": 179,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "游戏纪念币",
+          "quality": "w",
+          "value": 178,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "空气滤芯",
+          "quality": "w",
+          "value": 170,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "消毒棉签",
+          "quality": "w",
+          "value": 169,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "玩具美甲",
+          "quality": "w",
+          "value": 169,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "点卡充值",
+          "quality": "w",
+          "value": 168,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "反光贴纸",
+          "quality": "w",
+          "value": 168,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "卡带保护壳",
+          "quality": "w",
+          "value": 161,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "数据线",
+          "quality": "w",
+          "value": 160,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "骨针锥",
+          "quality": "w",
+          "value": 156,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "花椒",
+          "quality": "w",
+          "value": 150,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "木雕小鱼",
+          "quality": "w",
+          "value": 149,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "创可贴",
+          "quality": "w",
+          "value": 146,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "一次性纹身贴",
+          "quality": "w",
+          "value": 146,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "钥匙挂坠",
+          "quality": "w",
+          "value": 146,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "鹅卵石",
+          "quality": "w",
+          "value": 146,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "留置针",
+          "quality": "w",
+          "value": 143,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "贝币串",
+          "quality": "w",
+          "value": 142,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "瓶胡椒粉",
+          "quality": "w",
+          "value": 139,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "556子弹",
+          "quality": "w",
+          "value": 138,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "耳机防尘塞",
+          "quality": "w",
+          "value": 137,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "印刷风景明信片",
+          "quality": "w",
+          "value": 137,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "骑士哨笛",
+          "quality": "w",
+          "value": 135,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "医用剪刀",
+          "quality": "w",
+          "value": 134,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "设备装饰贴",
+          "quality": "w",
+          "value": 127,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "卡牌入门包",
+          "quality": "w",
+          "value": 126,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "乳白弹珠",
+          "quality": "w",
+          "value": 125,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "注射用针",
+          "quality": "w",
+          "value": 123,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "塑料发箍",
+          "quality": "w",
+          "value": 123,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "石块",
+          "quality": "w",
+          "value": 123,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "沥青",
+          "quality": "w",
+          "value": 123,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "手机支架",
+          "quality": "w",
+          "value": 120,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "素描铅笔",
+          "quality": "w",
+          "value": 117,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "卡贴",
+          "quality": "w",
+          "value": 115,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "生日贺卡",
+          "quality": "w",
+          "value": 114,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "雨刮胶条",
+          "quality": "w",
+          "value": 112,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "粗陶泥偶",
+          "quality": "w",
+          "value": 107,
+          "cells": null,
+          "name_confidence": "medium",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        },
+        {
+          "name": "农家土鸡蛋",
+          "quality": "w",
+          "value": 107,
+          "cells": null,
+          "name_confidence": "high",
+          "metadata": {
+            "source_batch_id": "white_quality_items_batch_2026-04-23",
+            "source_kind": "manual_thread_images"
+          }
+        }
+      ],
+      "metadata": {}
+    }
+  ],
+  "battle_samples": [],
+  "battle_sample_import_context": null,
+  "summary": {
+    "catalog_batch_count": 6,
+    "battle_sample_count": 0,
+    "catalog_qualities": [
+      "b",
+      "g",
+      "o",
+      "p",
+      "r",
+      "w"
+    ],
+    "maps_with_battle_samples": [],
+    "battle_sample_import_context": null
+  }
+}

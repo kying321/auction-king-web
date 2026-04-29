@@ -1,0 +1,90 @@
+{
+  "collection_families": {
+    "relics": {
+      "label": "文物",
+      "prior": 1.35,
+      "value_bias": 1.18,
+      "red_type_bias": {
+        "big_red": 1.18,
+        "gold_red": 1.28
+      },
+      "notes": [
+        "沉船高价值红件优先候选",
+        "如果你的样本里金件偏多，继续抬 gold_red"
+      ]
+    },
+    "books": {
+      "label": "书籍/书画",
+      "prior": 1.15,
+      "value_bias": 1.15,
+      "red_type_bias": {
+        "big_red": 1.08,
+        "gold_red": 1.18
+      },
+      "notes": [
+        "适合高均值但波动略低于文物的样本"
+      ]
+    },
+    "jewelry": {
+      "label": "珠宝",
+      "prior": 0.95,
+      "value_bias": 1.12,
+      "red_type_bias": {
+        "big_red": 1.08,
+        "gold_red": 1.32
+      },
+      "notes": [
+        "如果你的局里金件更像珠宝而不是文物，优先调这一类"
+      ]
+    },
+    "cargo": {
+      "label": "货物/航运",
+      "prior": 1.0,
+      "value_bias": 1.1,
+      "red_type_bias": {
+        "big_red": 1.12,
+        "gold_red": 1.22
+      },
+      "notes": [
+        "适合航运图或大件偏多的图层"
+      ]
+    },
+    "medicine": {
+      "label": "医药",
+      "prior": 1.0,
+      "value_bias": 1.03,
+      "red_type_bias": {
+        "small_red": 1.08
+      },
+      "notes": [
+        "偏中性，适合先当过渡类"
+      ]
+    },
+    "household": {
+      "label": "家居",
+      "prior": 1.0,
+      "value_bias": 0.88,
+      "red_type_bias": {
+        "small_red": 1.18,
+        "big_red": 0.82,
+        "gold_red": 0.68
+      },
+      "notes": [
+        "如果红件常常偏小、偏稳，可以把样本往这里压"
+      ]
+    },
+    "trendy": {
+      "label": "潮流藏品",
+      "prior": 0.9,
+      "value_bias": 0.95,
+      "red_type_bias": {
+        "small_red": 1.16,
+        "big_red": 0.92,
+        "gold_red": 0.84
+      },
+      "notes": [
+        "适合偏轻量高频但不够顶值的红件池"
+      ]
+    }
+  }
+}

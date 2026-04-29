@@ -1,0 +1,1239 @@
+{
+    "calibration": {
+        "artifact_version": "ak_authority_calibration_v1",
+        "generated_at": "2026-04-29T10:05:16.500Z",
+        "source_summary": {
+            "catalog_batch_count": 6,
+            "battle_sample_count": 0,
+            "catalog_qualities": [
+                "b",
+                "g",
+                "o",
+                "p",
+                "r",
+                "w"
+            ],
+            "maps_with_battle_samples": [],
+            "battle_sample_import_context": null
+        },
+        "quality_status": {
+            "alpha_counts": "fallback_only",
+            "value_model_base_items": "catalog_backed",
+            "cells_per_item": "pending",
+            "collection_families": "ignored_phase1"
+        },
+        "manifest": {
+            "adopted_fields": [
+                "alpha_counts",
+                "value_model.base_item_mean",
+                "value_model.base_item_sd",
+                "value_model.per_cell_mean",
+                "value_model.per_cell_sd"
+            ],
+            "pending_fields": [
+                "cells_per_item"
+            ],
+            "ignored_fields": [
+                "collection_families"
+            ],
+            "source_inputs": {
+                "catalog_batch_count": 6,
+                "battle_sample_count": 0,
+                "battle_sample_import_context": null
+            }
+        },
+        "maps": {
+            "sunken_ship": {
+                "count_prior_calibration": {
+                    "battle_sample_count": 0,
+                    "authority_status": "fallback_only",
+                    "alpha_counts": {
+                        "w": 5.2,
+                        "g": 6.62,
+                        "b": 8.5,
+                        "p": 2.95,
+                        "o": 1.25,
+                        "r": 0.8
+                    },
+                    "observed_qualities": [],
+                    "fallback_qualities": [
+                        "w",
+                        "g",
+                        "b",
+                        "p",
+                        "o",
+                        "r"
+                    ],
+                    "notes": [
+                        "no_battle_samples_using_current_map_defaults"
+                    ]
+                },
+                "value_model_calibration": {
+                    "catalog_batch_count": 6,
+                    "authority_status": "catalog_backed",
+                    "quality_sample_counts": {
+                        "b": 103,
+                        "g": 91,
+                        "o": 100,
+                        "p": 103,
+                        "r": 92,
+                        "w": 100
+                    },
+                    "missing_qualities": [],
+                    "value_model": {
+                        "w": {
+                            "base_item_mean": 267,
+                            "base_item_sd": 160,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_reported_item_mean"
+                        },
+                        "g": {
+                            "base_item_mean": 872,
+                            "base_item_sd": 658,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_reported_item_mean"
+                        },
+                        "b": {
+                            "base_item_mean": 3126,
+                            "base_item_sd": 2134,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_reported_item_mean"
+                        },
+                        "p": {
+                            "base_item_mean": 9492,
+                            "base_item_sd": 5520,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_reported_item_mean"
+                        },
+                        "o": {
+                            "base_item_mean": 46325,
+                            "base_item_sd": 29002,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_reported_item_mean"
+                        },
+                        "r": {
+                            "base_item_mean": 128777,
+                            "base_item_sd": 48360,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_tail_aware_common_item_mean",
+                            "tail_model": {
+                                "threshold": 200000,
+                                "battle_probability": 0.05,
+                                "catalog_tail_rate": 0.521739,
+                                "catalog_tail_sample_count": 48,
+                                "replacement_item_mean": 128777,
+                                "values": [
+                                    226800,
+                                    240660,
+                                    249000,
+                                    255115,
+                                    255840,
+                                    258760,
+                                    259165,
+                                    266050,
+                                    281600,
+                                    282240,
+                                    284519,
+                                    287280,
+                                    293400,
+                                    294000,
+                                    295500,
+                                    305920,
+                                    316000,
+                                    322560,
+                                    357040,
+                                    361000,
+                                    362400,
+                                    375000,
+                                    390000,
+                                    422002,
+                                    444000,
+                                    452800,
+                                    457200,
+                                    465000,
+                                    470400,
+                                    475000,
+                                    512000,
+                                    531000,
+                                    567900,
+                                    844000,
+                                    1003000,
+                                    1039000,
+                                    1089660,
+                                    1236666,
+                                    1491800,
+                                    1495000,
+                                    1552500,
+                                    1553900,
+                                    1688400,
+                                    2516000,
+                                    3000000,
+                                    7402320,
+                                    13145200,
+                                    19371213
+                                ],
+                                "weighted_values": [
+                                    {
+                                        "value": 226800,
+                                        "z_score": 0.114464,
+                                        "probability": 0.03161865
+                                    },
+                                    {
+                                        "value": 240660,
+                                        "z_score": 0.168456,
+                                        "probability": 0.03137808
+                                    },
+                                    {
+                                        "value": 249000,
+                                        "z_score": 0.199466,
+                                        "probability": 0.03119959
+                                    },
+                                    {
+                                        "value": 255115,
+                                        "z_score": 0.22155,
+                                        "probability": 0.03105488
+                                    },
+                                    {
+                                        "value": 255840,
+                                        "z_score": 0.224133,
+                                        "probability": 0.03103701
+                                    },
+                                    {
+                                        "value": 258760,
+                                        "z_score": 0.234463,
+                                        "probability": 0.03096358
+                                    },
+                                    {
+                                        "value": 259165,
+                                        "z_score": 0.235886,
+                                        "probability": 0.03095322
+                                    },
+                                    {
+                                        "value": 266050,
+                                        "z_score": 0.259752,
+                                        "probability": 0.03077069
+                                    },
+                                    {
+                                        "value": 281600,
+                                        "z_score": 0.311457,
+                                        "probability": 0.03031963
+                                    },
+                                    {
+                                        "value": 282240,
+                                        "z_score": 0.313523,
+                                        "probability": 0.03030006
+                                    },
+                                    {
+                                        "value": 284519,
+                                        "z_score": 0.320844,
+                                        "probability": 0.03022979
+                                    },
+                                    {
+                                        "value": 287280,
+                                        "z_score": 0.329634,
+                                        "probability": 0.03014349
+                                    },
+                                    {
+                                        "value": 293400,
+                                        "z_score": 0.348821,
+                                        "probability": 0.02994792
+                                    },
+                                    {
+                                        "value": 294000,
+                                        "z_score": 0.350681,
+                                        "probability": 0.02992845
+                                    },
+                                    {
+                                        "value": 295500,
+                                        "z_score": 0.355313,
+                                        "probability": 0.02987955
+                                    },
+                                    {
+                                        "value": 305920,
+                                        "z_score": 0.386857,
+                                        "probability": 0.02953183
+                                    },
+                                    {
+                                        "value": 316000,
+                                        "z_score": 0.416366,
+                                        "probability": 0.02918392
+                                    },
+                                    {
+                                        "value": 322560,
+                                        "z_score": 0.435069,
+                                        "probability": 0.02895248
+                                    },
+                                    {
+                                        "value": 357040,
+                                        "z_score": 0.527511,
+                                        "probability": 0.02769257
+                                    },
+                                    {
+                                        "value": 361000,
+                                        "z_score": 0.537551,
+                                        "probability": 0.0275449
+                                    },
+                                    {
+                                        "value": 362400,
+                                        "z_score": 0.541075,
+                                        "probability": 0.02749261
+                                    },
+                                    {
+                                        "value": 375000,
+                                        "z_score": 0.572184,
+                                        "probability": 0.02702063
+                                    },
+                                    {
+                                        "value": 390000,
+                                        "z_score": 0.607884,
+                                        "probability": 0.02645741
+                                    },
+                                    {
+                                        "value": 422002,
+                                        "z_score": 0.679669,
+                                        "probability": 0.02526255
+                                    },
+                                    {
+                                        "value": 444000,
+                                        "z_score": 0.725922,
+                                        "probability": 0.02445456
+                                    },
+                                    {
+                                        "value": 452800,
+                                        "z_score": 0.743787,
+                                        "probability": 0.02413562
+                                    },
+                                    {
+                                        "value": 457200,
+                                        "z_score": 0.752589,
+                                        "probability": 0.02397719
+                                    },
+                                    {
+                                        "value": 465000,
+                                        "z_score": 0.767987,
+                                        "probability": 0.02369813
+                                    },
+                                    {
+                                        "value": 470400,
+                                        "z_score": 0.778497,
+                                        "probability": 0.02350633
+                                    },
+                                    {
+                                        "value": 475000,
+                                        "z_score": 0.787355,
+                                        "probability": 0.02334387
+                                    },
+                                    {
+                                        "value": 512000,
+                                        "z_score": 0.855631,
+                                        "probability": 0.02207058
+                                    },
+                                    {
+                                        "value": 531000,
+                                        "z_score": 0.888798,
+                                        "probability": 0.02144126
+                                    },
+                                    {
+                                        "value": 567900,
+                                        "z_score": 0.949951,
+                                        "probability": 0.02026904
+                                    },
+                                    {
+                                        "value": 844000,
+                                        "z_score": 1.310594,
+                                        "probability": 0.01348353
+                                    },
+                                    {
+                                        "value": 1003000,
+                                        "z_score": 1.4677,
+                                        "probability": 0.01083982
+                                    },
+                                    {
+                                        "value": 1039000,
+                                        "z_score": 1.499798,
+                                        "probability": 0.01033567
+                                    },
+                                    {
+                                        "value": 1089660,
+                                        "z_score": 1.543132,
+                                        "probability": 0.00967621
+                                    },
+                                    {
+                                        "value": 1236666,
+                                        "z_score": 1.658326,
+                                        "probability": 0.00804681
+                                    },
+                                    {
+                                        "value": 1491800,
+                                        "z_score": 1.829054,
+                                        "probability": 0.00597497
+                                    },
+                                    {
+                                        "value": 1495000,
+                                        "z_score": 1.831005,
+                                        "probability": 0.00595368
+                                    },
+                                    {
+                                        "value": 1552500,
+                                        "z_score": 1.865357,
+                                        "probability": 0.00558743
+                                    },
+                                    {
+                                        "value": 1553900,
+                                        "z_score": 1.866178,
+                                        "probability": 0.00557888
+                                    },
+                                    {
+                                        "value": 1688400,
+                                        "z_score": 1.94174,
+                                        "probability": 0.00483133
+                                    },
+                                    {
+                                        "value": 2516000,
+                                        "z_score": 2.304824,
+                                        "probability": 0.00223489
+                                    },
+                                    {
+                                        "value": 3000000,
+                                        "z_score": 2.464974,
+                                        "probability": 0.00152539
+                                    },
+                                    {
+                                        "value": 7402320,
+                                        "z_score": 3.287084,
+                                        "probability": 0.00014339
+                                    },
+                                    {
+                                        "value": 13145200,
+                                        "z_score": 3.809801,
+                                        "probability": 0.00002244
+                                    },
+                                    {
+                                        "value": 19371213,
+                                        "z_score": 4.16273,
+                                        "probability": 0.0000055
+                                    }
+                                ],
+                                "tail_weight_basis": "log_price_normal_tail",
+                                "tail_log_sigma_base": 3,
+                                "value_basis": "catalog_over_threshold_downweighted_battle_tail"
+                            }
+                        }
+                    }
+                },
+                "cells_per_item_status": {
+                    "adopted_fields": [],
+                    "pending_fields": [
+                        "cells_per_item"
+                    ],
+                    "ignored_fields": [
+                        "collection_families"
+                    ],
+                    "notes": [
+                        "phase1_keeps_existing_map_cells_per_item"
+                    ]
+                }
+            },
+            "villa": {
+                "count_prior_calibration": {
+                    "battle_sample_count": 0,
+                    "authority_status": "fallback_only",
+                    "alpha_counts": {
+                        "w": 8.5,
+                        "g": 7.6,
+                        "b": 3.9,
+                        "p": 3.2,
+                        "o": 4,
+                        "r": 0.12
+                    },
+                    "observed_qualities": [],
+                    "fallback_qualities": [
+                        "w",
+                        "g",
+                        "b",
+                        "p",
+                        "o",
+                        "r"
+                    ],
+                    "notes": [
+                        "no_battle_samples_using_current_map_defaults"
+                    ]
+                },
+                "value_model_calibration": {
+                    "catalog_batch_count": 6,
+                    "authority_status": "catalog_backed",
+                    "quality_sample_counts": {
+                        "b": 103,
+                        "g": 91,
+                        "o": 100,
+                        "p": 103,
+                        "r": 92,
+                        "w": 100
+                    },
+                    "missing_qualities": [],
+                    "value_model": {
+                        "w": {
+                            "base_item_mean": 267,
+                            "base_item_sd": 160,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_reported_item_mean"
+                        },
+                        "g": {
+                            "base_item_mean": 872,
+                            "base_item_sd": 658,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_reported_item_mean"
+                        },
+                        "b": {
+                            "base_item_mean": 3126,
+                            "base_item_sd": 2134,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_reported_item_mean"
+                        },
+                        "p": {
+                            "base_item_mean": 9492,
+                            "base_item_sd": 5520,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_reported_item_mean"
+                        },
+                        "o": {
+                            "base_item_mean": 46325,
+                            "base_item_sd": 29002,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_reported_item_mean"
+                        },
+                        "r": {
+                            "base_item_mean": 128777,
+                            "base_item_sd": 48360,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_tail_aware_common_item_mean",
+                            "tail_model": {
+                                "threshold": 200000,
+                                "battle_probability": 0.05,
+                                "catalog_tail_rate": 0.521739,
+                                "catalog_tail_sample_count": 48,
+                                "replacement_item_mean": 128777,
+                                "values": [
+                                    226800,
+                                    240660,
+                                    249000,
+                                    255115,
+                                    255840,
+                                    258760,
+                                    259165,
+                                    266050,
+                                    281600,
+                                    282240,
+                                    284519,
+                                    287280,
+                                    293400,
+                                    294000,
+                                    295500,
+                                    305920,
+                                    316000,
+                                    322560,
+                                    357040,
+                                    361000,
+                                    362400,
+                                    375000,
+                                    390000,
+                                    422002,
+                                    444000,
+                                    452800,
+                                    457200,
+                                    465000,
+                                    470400,
+                                    475000,
+                                    512000,
+                                    531000,
+                                    567900,
+                                    844000,
+                                    1003000,
+                                    1039000,
+                                    1089660,
+                                    1236666,
+                                    1491800,
+                                    1495000,
+                                    1552500,
+                                    1553900,
+                                    1688400,
+                                    2516000,
+                                    3000000,
+                                    7402320,
+                                    13145200,
+                                    19371213
+                                ],
+                                "weighted_values": [
+                                    {
+                                        "value": 226800,
+                                        "z_score": 0.114464,
+                                        "probability": 0.03161865
+                                    },
+                                    {
+                                        "value": 240660,
+                                        "z_score": 0.168456,
+                                        "probability": 0.03137808
+                                    },
+                                    {
+                                        "value": 249000,
+                                        "z_score": 0.199466,
+                                        "probability": 0.03119959
+                                    },
+                                    {
+                                        "value": 255115,
+                                        "z_score": 0.22155,
+                                        "probability": 0.03105488
+                                    },
+                                    {
+                                        "value": 255840,
+                                        "z_score": 0.224133,
+                                        "probability": 0.03103701
+                                    },
+                                    {
+                                        "value": 258760,
+                                        "z_score": 0.234463,
+                                        "probability": 0.03096358
+                                    },
+                                    {
+                                        "value": 259165,
+                                        "z_score": 0.235886,
+                                        "probability": 0.03095322
+                                    },
+                                    {
+                                        "value": 266050,
+                                        "z_score": 0.259752,
+                                        "probability": 0.03077069
+                                    },
+                                    {
+                                        "value": 281600,
+                                        "z_score": 0.311457,
+                                        "probability": 0.03031963
+                                    },
+                                    {
+                                        "value": 282240,
+                                        "z_score": 0.313523,
+                                        "probability": 0.03030006
+                                    },
+                                    {
+                                        "value": 284519,
+                                        "z_score": 0.320844,
+                                        "probability": 0.03022979
+                                    },
+                                    {
+                                        "value": 287280,
+                                        "z_score": 0.329634,
+                                        "probability": 0.03014349
+                                    },
+                                    {
+                                        "value": 293400,
+                                        "z_score": 0.348821,
+                                        "probability": 0.02994792
+                                    },
+                                    {
+                                        "value": 294000,
+                                        "z_score": 0.350681,
+                                        "probability": 0.02992845
+                                    },
+                                    {
+                                        "value": 295500,
+                                        "z_score": 0.355313,
+                                        "probability": 0.02987955
+                                    },
+                                    {
+                                        "value": 305920,
+                                        "z_score": 0.386857,
+                                        "probability": 0.02953183
+                                    },
+                                    {
+                                        "value": 316000,
+                                        "z_score": 0.416366,
+                                        "probability": 0.02918392
+                                    },
+                                    {
+                                        "value": 322560,
+                                        "z_score": 0.435069,
+                                        "probability": 0.02895248
+                                    },
+                                    {
+                                        "value": 357040,
+                                        "z_score": 0.527511,
+                                        "probability": 0.02769257
+                                    },
+                                    {
+                                        "value": 361000,
+                                        "z_score": 0.537551,
+                                        "probability": 0.0275449
+                                    },
+                                    {
+                                        "value": 362400,
+                                        "z_score": 0.541075,
+                                        "probability": 0.02749261
+                                    },
+                                    {
+                                        "value": 375000,
+                                        "z_score": 0.572184,
+                                        "probability": 0.02702063
+                                    },
+                                    {
+                                        "value": 390000,
+                                        "z_score": 0.607884,
+                                        "probability": 0.02645741
+                                    },
+                                    {
+                                        "value": 422002,
+                                        "z_score": 0.679669,
+                                        "probability": 0.02526255
+                                    },
+                                    {
+                                        "value": 444000,
+                                        "z_score": 0.725922,
+                                        "probability": 0.02445456
+                                    },
+                                    {
+                                        "value": 452800,
+                                        "z_score": 0.743787,
+                                        "probability": 0.02413562
+                                    },
+                                    {
+                                        "value": 457200,
+                                        "z_score": 0.752589,
+                                        "probability": 0.02397719
+                                    },
+                                    {
+                                        "value": 465000,
+                                        "z_score": 0.767987,
+                                        "probability": 0.02369813
+                                    },
+                                    {
+                                        "value": 470400,
+                                        "z_score": 0.778497,
+                                        "probability": 0.02350633
+                                    },
+                                    {
+                                        "value": 475000,
+                                        "z_score": 0.787355,
+                                        "probability": 0.02334387
+                                    },
+                                    {
+                                        "value": 512000,
+                                        "z_score": 0.855631,
+                                        "probability": 0.02207058
+                                    },
+                                    {
+                                        "value": 531000,
+                                        "z_score": 0.888798,
+                                        "probability": 0.02144126
+                                    },
+                                    {
+                                        "value": 567900,
+                                        "z_score": 0.949951,
+                                        "probability": 0.02026904
+                                    },
+                                    {
+                                        "value": 844000,
+                                        "z_score": 1.310594,
+                                        "probability": 0.01348353
+                                    },
+                                    {
+                                        "value": 1003000,
+                                        "z_score": 1.4677,
+                                        "probability": 0.01083982
+                                    },
+                                    {
+                                        "value": 1039000,
+                                        "z_score": 1.499798,
+                                        "probability": 0.01033567
+                                    },
+                                    {
+                                        "value": 1089660,
+                                        "z_score": 1.543132,
+                                        "probability": 0.00967621
+                                    },
+                                    {
+                                        "value": 1236666,
+                                        "z_score": 1.658326,
+                                        "probability": 0.00804681
+                                    },
+                                    {
+                                        "value": 1491800,
+                                        "z_score": 1.829054,
+                                        "probability": 0.00597497
+                                    },
+                                    {
+                                        "value": 1495000,
+                                        "z_score": 1.831005,
+                                        "probability": 0.00595368
+                                    },
+                                    {
+                                        "value": 1552500,
+                                        "z_score": 1.865357,
+                                        "probability": 0.00558743
+                                    },
+                                    {
+                                        "value": 1553900,
+                                        "z_score": 1.866178,
+                                        "probability": 0.00557888
+                                    },
+                                    {
+                                        "value": 1688400,
+                                        "z_score": 1.94174,
+                                        "probability": 0.00483133
+                                    },
+                                    {
+                                        "value": 2516000,
+                                        "z_score": 2.304824,
+                                        "probability": 0.00223489
+                                    },
+                                    {
+                                        "value": 3000000,
+                                        "z_score": 2.464974,
+                                        "probability": 0.00152539
+                                    },
+                                    {
+                                        "value": 7402320,
+                                        "z_score": 3.287084,
+                                        "probability": 0.00014339
+                                    },
+                                    {
+                                        "value": 13145200,
+                                        "z_score": 3.809801,
+                                        "probability": 0.00002244
+                                    },
+                                    {
+                                        "value": 19371213,
+                                        "z_score": 4.16273,
+                                        "probability": 0.0000055
+                                    }
+                                ],
+                                "tail_weight_basis": "log_price_normal_tail",
+                                "tail_log_sigma_base": 3,
+                                "value_basis": "catalog_over_threshold_downweighted_battle_tail"
+                            }
+                        }
+                    }
+                },
+                "cells_per_item_status": {
+                    "adopted_fields": [],
+                    "pending_fields": [
+                        "cells_per_item"
+                    ],
+                    "ignored_fields": [
+                        "collection_families"
+                    ],
+                    "notes": [
+                        "phase1_keeps_existing_map_cells_per_item"
+                    ]
+                }
+            },
+            "shipping": {
+                "count_prior_calibration": {
+                    "battle_sample_count": 0,
+                    "authority_status": "fallback_only",
+                    "alpha_counts": {
+                        "w": 4.5,
+                        "g": 4.4,
+                        "b": 3.6,
+                        "p": 2.9,
+                        "o": 2.2,
+                        "r": 0.9
+                    },
+                    "observed_qualities": [],
+                    "fallback_qualities": [
+                        "w",
+                        "g",
+                        "b",
+                        "p",
+                        "o",
+                        "r"
+                    ],
+                    "notes": [
+                        "no_battle_samples_using_current_map_defaults"
+                    ]
+                },
+                "value_model_calibration": {
+                    "catalog_batch_count": 6,
+                    "authority_status": "catalog_backed",
+                    "quality_sample_counts": {
+                        "b": 103,
+                        "g": 91,
+                        "o": 100,
+                        "p": 103,
+                        "r": 92,
+                        "w": 100
+                    },
+                    "missing_qualities": [],
+                    "value_model": {
+                        "w": {
+                            "base_item_mean": 267,
+                            "base_item_sd": 160,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_reported_item_mean"
+                        },
+                        "g": {
+                            "base_item_mean": 872,
+                            "base_item_sd": 658,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_reported_item_mean"
+                        },
+                        "b": {
+                            "base_item_mean": 3126,
+                            "base_item_sd": 2134,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_reported_item_mean"
+                        },
+                        "p": {
+                            "base_item_mean": 9492,
+                            "base_item_sd": 5520,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_reported_item_mean"
+                        },
+                        "o": {
+                            "base_item_mean": 46325,
+                            "base_item_sd": 29002,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_reported_item_mean"
+                        },
+                        "r": {
+                            "base_item_mean": 128777,
+                            "base_item_sd": 48360,
+                            "per_cell_mean": 0,
+                            "per_cell_sd": 0,
+                            "value_basis": "catalog_tail_aware_common_item_mean",
+                            "tail_model": {
+                                "threshold": 200000,
+                                "battle_probability": 0.05,
+                                "catalog_tail_rate": 0.521739,
+                                "catalog_tail_sample_count": 48,
+                                "replacement_item_mean": 128777,
+                                "values": [
+                                    226800,
+                                    240660,
+                                    249000,
+                                    255115,
+                                    255840,
+                                    258760,
+                                    259165,
+                                    266050,
+                                    281600,
+                                    282240,
+                                    284519,
+                                    287280,
+                                    293400,
+                                    294000,
+                                    295500,
+                                    305920,
+                                    316000,
+                                    322560,
+                                    357040,
+                                    361000,
+                                    362400,
+                                    375000,
+                                    390000,
+                                    422002,
+                                    444000,
+                                    452800,
+                                    457200,
+                                    465000,
+                                    470400,
+                                    475000,
+                                    512000,
+                                    531000,
+                                    567900,
+                                    844000,
+                                    1003000,
+                                    1039000,
+                                    1089660,
+                                    1236666,
+                                    1491800,
+                                    1495000,
+                                    1552500,
+                                    1553900,
+                                    1688400,
+                                    2516000,
+                                    3000000,
+                                    7402320,
+                                    13145200,
+                                    19371213
+                                ],
+                                "weighted_values": [
+                                    {
+                                        "value": 226800,
+                                        "z_score": 0.114464,
+                                        "probability": 0.03161865
+                                    },
+                                    {
+                                        "value": 240660,
+                                        "z_score": 0.168456,
+                                        "probability": 0.03137808
+                                    },
+                                    {
+                                        "value": 249000,
+                                        "z_score": 0.199466,
+                                        "probability": 0.03119959
+                                    },
+                                    {
+                                        "value": 255115,
+                                        "z_score": 0.22155,
+                                        "probability": 0.03105488
+                                    },
+                                    {
+                                        "value": 255840,
+                                        "z_score": 0.224133,
+                                        "probability": 0.03103701
+                                    },
+                                    {
+                                        "value": 258760,
+                                        "z_score": 0.234463,
+                                        "probability": 0.03096358
+                                    },
+                                    {
+                                        "value": 259165,
+                                        "z_score": 0.235886,
+                                        "probability": 0.03095322
+                                    },
+                                    {
+                                        "value": 266050,
+                                        "z_score": 0.259752,
+                                        "probability": 0.03077069
+                                    },
+                                    {
+                                        "value": 281600,
+                                        "z_score": 0.311457,
+                                        "probability": 0.03031963
+                                    },
+                                    {
+                                        "value": 282240,
+                                        "z_score": 0.313523,
+                                        "probability": 0.03030006
+                                    },
+                                    {
+                                        "value": 284519,
+                                        "z_score": 0.320844,
+                                        "probability": 0.03022979
+                                    },
+                                    {
+                                        "value": 287280,
+                                        "z_score": 0.329634,
+                                        "probability": 0.03014349
+                                    },
+                                    {
+                                        "value": 293400,
+                                        "z_score": 0.348821,
+                                        "probability": 0.02994792
+                                    },
+                                    {
+                                        "value": 294000,
+                                        "z_score": 0.350681,
+                                        "probability": 0.02992845
+                                    },
+                                    {
+                                        "value": 295500,
+                                        "z_score": 0.355313,
+                                        "probability": 0.02987955
+                                    },
+                                    {
+                                        "value": 305920,
+                                        "z_score": 0.386857,
+                                        "probability": 0.02953183
+                                    },
+                                    {
+                                        "value": 316000,
+                                        "z_score": 0.416366,
+                                        "probability": 0.02918392
+                                    },
+                                    {
+                                        "value": 322560,
+                                        "z_score": 0.435069,
+                                        "probability": 0.02895248
+                                    },
+                                    {
+                                        "value": 357040,
+                                        "z_score": 0.527511,
+                                        "probability": 0.02769257
+                                    },
+                                    {
+                                        "value": 361000,
+                                        "z_score": 0.537551,
+                                        "probability": 0.0275449
+                                    },
+                                    {
+                                        "value": 362400,
+                                        "z_score": 0.541075,
+                                        "probability": 0.02749261
+                                    },
+                                    {
+                                        "value": 375000,
+                                        "z_score": 0.572184,
+                                        "probability": 0.02702063
+                                    },
+                                    {
+                                        "value": 390000,
+                                        "z_score": 0.607884,
+                                        "probability": 0.02645741
+                                    },
+                                    {
+                                        "value": 422002,
+                                        "z_score": 0.679669,
+                                        "probability": 0.02526255
+                                    },
+                                    {
+                                        "value": 444000,
+                                        "z_score": 0.725922,
+                                        "probability": 0.02445456
+                                    },
+                                    {
+                                        "value": 452800,
+                                        "z_score": 0.743787,
+                                        "probability": 0.02413562
+                                    },
+                                    {
+                                        "value": 457200,
+                                        "z_score": 0.752589,
+                                        "probability": 0.02397719
+                                    },
+                                    {
+                                        "value": 465000,
+                                        "z_score": 0.767987,
+                                        "probability": 0.02369813
+                                    },
+                                    {
+                                        "value": 470400,
+                                        "z_score": 0.778497,
+                                        "probability": 0.02350633
+                                    },
+                                    {
+                                        "value": 475000,
+                                        "z_score": 0.787355,
+                                        "probability": 0.02334387
+                                    },
+                                    {
+                                        "value": 512000,
+                                        "z_score": 0.855631,
+                                        "probability": 0.02207058
+                                    },
+                                    {
+                                        "value": 531000,
+                                        "z_score": 0.888798,
+                                        "probability": 0.02144126
+                                    },
+                                    {
+                                        "value": 567900,
+                                        "z_score": 0.949951,
+                                        "probability": 0.02026904
+                                    },
+                                    {
+                                        "value": 844000,
+                                        "z_score": 1.310594,
+                                        "probability": 0.01348353
+                                    },
+                                    {
+                                        "value": 1003000,
+                                        "z_score": 1.4677,
+                                        "probability": 0.01083982
+                                    },
+                                    {
+                                        "value": 1039000,
+                                        "z_score": 1.499798,
+                                        "probability": 0.01033567
+                                    },
+                                    {
+                                        "value": 1089660,
+                                        "z_score": 1.543132,
+                                        "probability": 0.00967621
+                                    },
+                                    {
+                                        "value": 1236666,
+                                        "z_score": 1.658326,
+                                        "probability": 0.00804681
+                                    },
+                                    {
+                                        "value": 1491800,
+                                        "z_score": 1.829054,
+                                        "probability": 0.00597497
+                                    },
+                                    {
+                                        "value": 1495000,
+                                        "z_score": 1.831005,
+                                        "probability": 0.00595368
+                                    },
+                                    {
+                                        "value": 1552500,
+                                        "z_score": 1.865357,
+                                        "probability": 0.00558743
+                                    },
+                                    {
+                                        "value": 1553900,
+                                        "z_score": 1.866178,
+                                        "probability": 0.00557888
+                                    },
+                                    {
+                                        "value": 1688400,
+                                        "z_score": 1.94174,
+                                        "probability": 0.00483133
+                                    },
+                                    {
+                                        "value": 2516000,
+                                        "z_score": 2.304824,
+                                        "probability": 0.00223489
+                                    },
+                                    {
+                                        "value": 3000000,
+                                        "z_score": 2.464974,
+                                        "probability": 0.00152539
+                                    },
+                                    {
+                                        "value": 7402320,
+                                        "z_score": 3.287084,
+                                        "probability": 0.00014339
+                                    },
+                                    {
+                                        "value": 13145200,
+                                        "z_score": 3.809801,
+                                        "probability": 0.00002244
+                                    },
+                                    {
+                                        "value": 19371213,
+                                        "z_score": 4.16273,
+                                        "probability": 0.0000055
+                                    }
+                                ],
+                                "tail_weight_basis": "log_price_normal_tail",
+                                "tail_log_sigma_base": 3,
+                                "value_basis": "catalog_over_threshold_downweighted_battle_tail"
+                            }
+                        }
+                    }
+                },
+                "cells_per_item_status": {
+                    "adopted_fields": [],
+                    "pending_fields": [
+                        "cells_per_item"
+                    ],
+                    "ignored_fields": [
+                        "collection_families"
+                    ],
+                    "notes": [
+                        "phase1_keeps_existing_map_cells_per_item"
+                    ]
+                }
+            }
+        }
+    }
+}

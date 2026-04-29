@@ -1,0 +1,61 @@
+{
+  "schema_version": "ak_count_fit_sample_review_import_v1",
+  "generated_at": "2026-04-29T03:26:27.578Z",
+  "mode": "research_backtest",
+  "change_class": "RESEARCH_ONLY",
+  "export_kind": "count_fit_same_battle_samples",
+  "inputs": {
+    "count_fit_sample_review_template": "<local-downloads>/2026-04-27-sunken-ship-p1-manual-count-confirmation-results.json",
+    "count_fit_sample_review_source": "<local-downloads>/2026-04-27-sunken-ship-p1-manual-count-confirmation-results.json"
+  },
+  "source_template_schema_version": "ak_count_fit_sample_review_results_v1",
+  "source_template_generated_at": "2026-04-27T13:08:35.055Z",
+  "export_context": {
+    "source_artifact_version": "ak_count_fit_sample_review_results_v1",
+    "exported_at": "2026-04-29T03:26:27.578Z",
+    "sample_count": 0,
+    "selected_sample_count": 0,
+    "skipped_sample_count": 1
+  },
+  "sample_quality_summary": {
+    "sample_count": 0
+  },
+  "notes": [
+    "Only approved same-battle entries with manual_review actual counts are exported.",
+    "Pixel/OCR/system hints remain review context and are blocked from count-fit labels.",
+    "Every exported sample has one event_timestamp, observed_state, and full six-quality actual_counts."
+  ],
+  "summary": {
+    "review_entry_count": 1,
+    "accepted_sample_count": 0,
+    "blocked_entry_count": 1,
+    "blocker_reason_counts": {
+      "status_not_approved_for_import": 1
+    },
+    "warning_reason_counts": {},
+    "map_counts": {},
+    "review_image_quality_flagged_entry_count": 0,
+    "pixel_training_label_allowed_count": 0
+  },
+  "entries": [
+    {
+      "source_task_id": "capture_full_count_sunken_ship_2026_04_26T12_39_48_135Z",
+      "source_queue_id": null,
+      "source_entry_kind": "fresh_capture_sample",
+      "map_id": "sunken_ship",
+      "status": "needs_human_confirmation",
+      "audit_status": "blocked",
+      "blockers": [
+        "status_not_approved_for_import"
+      ],
+      "warnings": [],
+      "review_image_quality_flags": [],
+      "review_image_quality_override": null,
+      "actual_counts_source": "manual_review",
+      "event_timestamp": "2026-04-26T12:39:48.135Z",
+      "actual_counts_quality_sum": 48,
+      "actual_counts_total_items": 48
+    }
+  ],
+  "samples": []
+}

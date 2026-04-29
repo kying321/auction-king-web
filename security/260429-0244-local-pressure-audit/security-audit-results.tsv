@@ -1,0 +1,6 @@
+id	severity	status	stride	owasp	location	summary
+F-001	medium	fixed	information_disclosure/elevation_of_privilege	A05	_headers;dist/_headers	Missing static security headers.
+F-002	medium	fixed	denial_of_service	A04	estimator.js	Imported config could inflate solver CPU budget.
+F-003	medium	fixed	denial_of_service	A04	app.js	Worker timeout fell back to main-thread recompute.
+F-004	low	fixed	denial_of_service	A04	catalog_ocr_contour_runtime.js	OCR subprocess had no timeout.
+R-001	low-medium	residual	denial_of_service	A04	app.js	Browser-local JSON and screenshot imports still lack pre-read byte caps.

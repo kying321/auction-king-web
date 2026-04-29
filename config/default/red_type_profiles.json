@@ -1,0 +1,36 @@
+{
+    "red_type_profiles": {
+        "profiles": {
+            "small_red": {
+                "label": "小红",
+                "prior": 0.74,
+                "mean_cells_per_item": 2.6,
+                "sd_cells_per_item": 0.7,
+                "base_item_mean": 70000,
+                "base_item_sd": 24000,
+                "per_cell_mean": 12000,
+                "per_cell_sd": 3600
+            },
+            "big_red": {
+                "label": "大红",
+                "prior": 0.22,
+                "mean_cells_per_item": 4.4,
+                "sd_cells_per_item": 0.9,
+                "base_item_mean": 110000,
+                "base_item_sd": 42000,
+                "per_cell_mean": 14500,
+                "per_cell_sd": 4600
+            },
+            "gold_red": {
+                "label": "金",
+                "prior": 0.04,
+                "mean_cells_per_item": 3.6,
+                "sd_cells_per_item": 0.8,
+                "base_item_mean": 140000,
+                "base_item_sd": 52000,
+                "per_cell_mean": 16000,
+                "per_cell_sd": 5200
+            }
+        }
+    }
+}

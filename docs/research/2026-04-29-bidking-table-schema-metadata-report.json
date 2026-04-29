@@ -1,0 +1,1491 @@
+{
+  "schema_version": "ak_bidking_table_schema_metadata_v1",
+  "generated_at": "2026-04-28T16:35:29.326Z",
+  "mode": "architecture_review",
+  "change_class": "RESEARCH_ONLY",
+  "recommended_change_class": "RESEARCH_ONLY",
+  "inputs": {
+    "assembly_path": "<local-bidking-extract>/dll/Scripts.dll.bytes",
+    "tables_dir": "<local-bidking-extract>/Tables"
+  },
+  "summary": {
+    "metadata_parse_status": "parsed",
+    "evidence_confidence": "medium_high",
+    "authority_adoption_allowed": false,
+    "reverse_engineering_source_allowed": true,
+    "default_config_update_allowed": false,
+    "core_refactor_recommended_now": false,
+    "schema_handoff_candidate": true,
+    "metadata_type_count": 2625,
+    "target_table_type_count": 12,
+    "target_table_types_with_column_count_match": 1,
+    "target_table_types_with_schema_or_localized_column_match": 12,
+    "target_table_types_missing": []
+  },
+  "metadata_inventory": {
+    "assembly_path": "<local-bidking-extract>/dll/Scripts.dll.bytes",
+    "metadata_size": 1584744,
+    "stream_names": [
+      "#~",
+      "#Strings",
+      "#US",
+      "#GUID",
+      "#Blob"
+    ],
+    "table_row_counts": {
+      "Module": 1,
+      "TypeRef": 411,
+      "TypeDef": 2625,
+      "Field": 11552,
+      "MethodDef": 19244,
+      "Param": 9798,
+      "InterfaceImpl": 2635,
+      "MemberRef": 5103,
+      "Constant": 2027,
+      "CustomAttribute": 20093,
+      "ClassLayout": 4,
+      "StandAloneSig": 1871,
+      "PropertyMap": 611,
+      "Property": 2912,
+      "MethodSemantics": 4109,
+      "MethodImpl": 2022,
+      "TypeSpec": 3267,
+      "FieldRVA": 5,
+      "Assembly": 1,
+      "AssemblyRef": 27,
+      "NestedClass": 1385,
+      "GenericParam": 146,
+      "MethodSpec": 1753,
+      "GenericParamConstraint": 57
+    }
+  },
+  "table_type_schemas": [
+    {
+      "type_name": "Table_Map",
+      "namespace": "",
+      "full_name": "Table_Map",
+      "extends": "ITable",
+      "table_file": "Map.txt",
+      "table_row_count": 8,
+      "table_column_distribution": {
+        "17": 8
+      },
+      "field_count": 16,
+      "public_instance_field_count": 15,
+      "non_data_field_count": 1,
+      "property_count": 0,
+      "method_count": 5,
+      "schema_member_count": 15,
+      "schema_member_source": "public_instance_field",
+      "schema_member_count_matches_table_columns": false,
+      "schema_member_count_plus_two_matches_table_columns": true,
+      "likely_leading_non_schema_column_count": 2,
+      "field_count_matches_table_columns": false,
+      "property_count_matches_table_columns": false,
+      "schema_members": [
+        {
+          "name": "id",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "map_name",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "map_desc",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "map_position",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "map_icon",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "auction_limit_notify",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "entrust_value",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "entrust_bidmap",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "entrust_cost",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "entrust_prob",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "type",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "entrust_num",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "is_open",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "mapgroup",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "world_process",
+          "type": "int",
+          "source": "public_instance_field"
+        }
+      ],
+      "property_samples": [],
+      "method_samples": [
+        "Load",
+        "getByid",
+        "getMap",
+        ".ctor",
+        ".cctor"
+      ],
+      "accessor_samples": [],
+      "first_row_sample": [
+        "101",
+        "",
+        "",
+        "map_name_101",
+        "map_desc_101",
+        "[-502,164]",
+        "ui_map_pic_jianzhu_1",
+        "100000",
+        "20000",
+        "2101",
+        "[1,1,1000]",
+        "500",
+        "0",
+        "[15,20]",
+        "1",
+        "101",
+        "0"
+      ]
+    },
+    {
+      "type_name": "Table_BidMap",
+      "namespace": "",
+      "full_name": "Table_BidMap",
+      "extends": "ITable",
+      "table_file": "BidMap.txt",
+      "table_row_count": 104,
+      "table_column_distribution": {
+        "21": 104
+      },
+      "field_count": 24,
+      "public_instance_field_count": 19,
+      "non_data_field_count": 5,
+      "property_count": 4,
+      "method_count": 12,
+      "schema_member_count": 19,
+      "schema_member_source": "public_instance_field",
+      "schema_member_count_matches_table_columns": false,
+      "schema_member_count_plus_two_matches_table_columns": true,
+      "likely_leading_non_schema_column_count": 2,
+      "field_count_matches_table_columns": false,
+      "property_count_matches_table_columns": false,
+      "schema_members": [
+        {
+          "name": "id",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "s_map_name",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "s_map_logo",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "s_map_togname",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "s_map_desc",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "parent_map_id",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "map_group",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "map_income",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "map_cell",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "currency_cost",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "item_cost",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "map_time",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "required_items",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "special_output_items",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "drop_group_id",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "bidder_number",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "auction_rounds_rate",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "map_random_skill",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "map_resource",
+          "type": "string",
+          "source": "public_instance_field"
+        }
+      ],
+      "property_samples": [
+        "RandomMaps",
+        "Costs",
+        "Requires",
+        "Type"
+      ],
+      "method_samples": [
+        "Load",
+        "getByid",
+        "getMap",
+        "getListByparent_map_id",
+        "IsRandomMap",
+        "GetLoadingMapId",
+        ".ctor",
+        ".cctor"
+      ],
+      "accessor_samples": [
+        "get_RandomMaps",
+        "get_Costs",
+        "get_Requires",
+        "get_Type"
+      ],
+      "first_row_sample": [
+        "2101",
+        "未知快递",
+        "这是一批真正的“无主之物”，物流信息完全丢失，源头成谜。每一个包裹都像一个等待被揭示的命运盲盒，充满了无限可能与意外。",
+        "bid_map_N_2101",
+        "ui_map_icon_area_01",
+        "bid_map_N_2101",
+        "bid_map_D_2101",
+        "101",
+        "[[2101,100],[2102,20],[2103,20],[2104,20],[2105,20],[2106,20],[2107,20]]",
+        "ui_value_low",
+        "10",
+        "[1,1,0]",
+        "[[1,101,1]]",
+        "[40,40,40,40,40]",
+        "[[1,1,10000]]",
+        "[[]]",
+        "[9999,2101,16,32]",
+        "2",
+        "[2000,1600,1300,1100,0]",
+        "[102,103,103,104,105]"
+      ]
+    },
+    {
+      "type_name": "Table_RankMap",
+      "namespace": "",
+      "full_name": "Table_RankMap",
+      "extends": "ITable",
+      "table_file": "RankMap.txt",
+      "table_row_count": 62,
+      "table_column_distribution": {
+        "7": 62
+      },
+      "field_count": 6,
+      "public_instance_field_count": 5,
+      "non_data_field_count": 1,
+      "property_count": 0,
+      "method_count": 5,
+      "schema_member_count": 5,
+      "schema_member_source": "public_instance_field",
+      "schema_member_count_matches_table_columns": false,
+      "schema_member_count_plus_two_matches_table_columns": true,
+      "likely_leading_non_schema_column_count": 2,
+      "field_count_matches_table_columns": false,
+      "property_count_matches_table_columns": false,
+      "schema_members": [
+        {
+          "name": "id",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "match_time",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "role_spawn",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "min_bid_range",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "bid_type",
+          "type": "int[]",
+          "source": "public_instance_field"
+        }
+      ],
+      "property_samples": [],
+      "method_samples": [
+        "Load",
+        "getByid",
+        "getMap",
+        ".ctor",
+        ".cctor"
+      ],
+      "accessor_samples": [],
+      "first_row_sample": [
+        "2101",
+        "未知快递",
+        "这是一批真正的“无主之物”，物流信息完全丢失，源头成谜。每一个包裹都像一个等待被揭示的命运盲盒，充满了无限可能与意外。",
+        "[[11,15,1000],[16,20,1000],[21,25,50],[26,30,50]]",
+        "[[101,50],[102,50],[103,50],[104,100],[105,20],[106,50],[107,200],[108,150],[109,50],[110,150],[201,100],[202,50],[203,150],[204,100],[205,50],[206,50],[207,100],[208,50],[209,300],[301,100]]",
+        "[[1000,2000,200],[2001,5000,200],[5001,10000,20]]",
+        "[10,1,100,1,1000,500,10000,200]"
+      ]
+    },
+    {
+      "type_name": "Table_RankAi",
+      "namespace": "",
+      "full_name": "Table_RankAi",
+      "extends": "ITable",
+      "table_file": "RankAi.txt",
+      "table_row_count": 120,
+      "table_column_distribution": {
+        "10": 120
+      },
+      "field_count": 9,
+      "public_instance_field_count": 8,
+      "non_data_field_count": 1,
+      "property_count": 0,
+      "method_count": 5,
+      "schema_member_count": 8,
+      "schema_member_source": "public_instance_field",
+      "schema_member_count_matches_table_columns": false,
+      "schema_member_count_plus_two_matches_table_columns": true,
+      "likely_leading_non_schema_column_count": 2,
+      "field_count_matches_table_columns": false,
+      "property_count_matches_table_columns": false,
+      "schema_members": [
+        {
+          "name": "id",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "role_id",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "round_count",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "min_bid_ratio",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "item_use_probability",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "item_usage_group",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "bid_time",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "bid_pk",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        }
+      ],
+      "property_samples": [],
+      "method_samples": [
+        "Load",
+        "getByid",
+        "getMap",
+        ".ctor",
+        ".cctor"
+      ],
+      "accessor_samples": [],
+      "first_row_sample": [
+        "1011",
+        "",
+        "",
+        "101",
+        "1",
+        "[[100,400,5],[401,700,10],[701,1000,200],[1001,1200,100],[1201,1500,50],[1501,2000,20]]",
+        "700",
+        "[[101,201011],[102,201012],[103,201013],[104,201014],[105,201015]]",
+        "[[11,15,200],[16,20,50],[21,30,50],[31,39,5]]",
+        "[[100,300,50],[301,700,50],[701,1000,200],[1001,1200,200],[1201,1500,150],[1501,2000,50]]"
+      ]
+    },
+    {
+      "type_name": "Table_Drop",
+      "namespace": "",
+      "full_name": "Table_Drop",
+      "extends": "ITable",
+      "table_file": "Drop.txt",
+      "table_row_count": 594,
+      "table_column_distribution": {
+        "5": 594
+      },
+      "field_count": 4,
+      "public_instance_field_count": 3,
+      "non_data_field_count": 1,
+      "property_count": 0,
+      "method_count": 5,
+      "schema_member_count": 3,
+      "schema_member_source": "public_instance_field",
+      "schema_member_count_matches_table_columns": false,
+      "schema_member_count_plus_two_matches_table_columns": true,
+      "likely_leading_non_schema_column_count": 2,
+      "field_count_matches_table_columns": false,
+      "property_count_matches_table_columns": false,
+      "schema_members": [
+        {
+          "name": "group_id",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "weight_type",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "items_list",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        }
+      ],
+      "property_samples": [],
+      "method_samples": [
+        "Load",
+        "getBygroup_id",
+        "getMap",
+        ".ctor",
+        ".cctor"
+      ],
+      "accessor_samples": [],
+      "first_row_sample": [
+        "801",
+        "",
+        "个人模拟测试",
+        "2",
+        "[[8,8001,1,1,10],[8,8002,1,1,10],[8,8003,1,1,10],[8,8004,1,1,10],[8,8005,1,1,10],[8,8006,1,1,10],[8,8007,1,1,10],[8,8008,1,1,10],[8,8009,1,1,10],[8,8010,1,1,10],[8,8011,1,1,10],[8,8012,1,1,10],[8,8013,1,1,10],[8,8014,1,1,10],[8,8015,1,1,10],[8,8016,1,1,10],[8,8017,1,1,10],[8,8018,1,1,10],[8,8019,1,1,10],[8,8020,1,1,10],[8,8021,1,1,10],[8,8022,1,1,10],[8,8023,1,1,10],[8,8024,1,1,10],[8,8025,1,1,10],[8,8026,1,1,10],[8,8027,1,1,10],[8,8028,1,1,10],[8,8029,1,1,10],[8,8030,1,1,10],[8,8031,1,1,10],[8,8032,1,1,10],[8,8033,1,1,10],[8,8034,1,1,10],[8,8035,1,1,10],[8,8036,1,1,10],[8,8037,1,1,10],[8,8038,1,1,10],[8,8039,1,1,10],[8,8040,1,1,10],[8,8041,1,1,10],[8,8042,1,1,10],[8,8043,1,1,10],[8,8044,1,1,10],[8,8046,1,1,10],[8,8047,1,1,10],[8,8051,1,1,10],[8,8052,1,1,10],[8,8053,1,1,10],[8,8054,1,1,10],[8,8055,1,1,10],[8,8056,1,1,10],[8,8057,1,1,10],[8,8058,1,1,10],[8,8059,1,1,10],[8,8060,1,1,10],[8,8061,1,1,10],[8,8062,1,1,10],[8,8063,1,1,10],[8,8064,1,1,10],[8,8065,1,1,10],[8,8066,1,1,10],[8,8067,1,1,10],[8,8068,1,1,10]]"
+      ]
+    },
+    {
+      "type_name": "Table_Item",
+      "namespace": "",
+      "full_name": "Table_Item",
+      "extends": "ITable",
+      "table_file": "Item.txt",
+      "table_row_count": 1128,
+      "table_column_distribution": {
+        "38": 1128
+      },
+      "field_count": 41,
+      "public_instance_field_count": 36,
+      "non_data_field_count": 5,
+      "property_count": 7,
+      "method_count": 21,
+      "schema_member_count": 36,
+      "schema_member_source": "public_instance_field",
+      "schema_member_count_matches_table_columns": false,
+      "schema_member_count_plus_two_matches_table_columns": true,
+      "likely_leading_non_schema_column_count": 2,
+      "field_count_matches_table_columns": false,
+      "property_count_matches_table_columns": false,
+      "schema_members": [
+        {
+          "name": "id",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "item_name",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "item_nm",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "item_desc",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "item_type_id",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "slot_type",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "item_quality",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "base_value",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "in_case",
+          "type": "bool",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "is_tradable",
+          "type": "bool",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "binds_on_purchase",
+          "type": "bool",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "is_auction",
+          "type": "bool",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "auction_baseprice",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "grid_count",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "transaction_tax_rate",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "max_stack_size",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "max_per_listing",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "collectible_item_type_id",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skills",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "specified_obtain",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "drop_group_id",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "show_item",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "icon_path",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "icon_atlas",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "collection",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "rank7count",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "item_access",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "collection_coin",
+          "type": "float",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "number",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "number_weight",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "cost",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "model_3D",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "is_show",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "exchangeId",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "is_sale",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "room_price",
+          "type": "int",
+          "source": "public_instance_field"
+        }
+      ],
+      "property_samples": [
+        "Size",
+        "SizeCount",
+        "CanRotate",
+        "SalePrice",
+        "SalePrice2",
+        "ItemType",
+        "ItemTypeValue"
+      ],
+      "method_samples": [
+        "Load",
+        "getByid",
+        "getMap",
+        "SizeEquals",
+        "OnLoaded",
+        "GetItemsBySlotType",
+        "GetItemsByType",
+        "GetItemsByType",
+        "GetAllBattleItems",
+        "GetAllActivieyItems",
+        "GetItemsBuyAttributes",
+        "GetHero",
+        ".ctor",
+        ".cctor"
+      ],
+      "accessor_samples": [
+        "get_Size",
+        "get_SizeCount",
+        "get_CanRotate",
+        "get_SalePrice",
+        "get_SalePrice2",
+        "get_ItemType",
+        "get_ItemTypeValue"
+      ],
+      "first_row_sample": [
+        "1",
+        "银币",
+        "普通货币",
+        "itemName_1",
+        "itemName_1",
+        "itemDesc_1",
+        "[1]",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "[10,5]",
+        "0",
+        "[[0]]",
+        "1",
+        "0",
+        "[0]"
+      ]
+    },
+    {
+      "type_name": "Table_Skill",
+      "namespace": "",
+      "full_name": "Table_Skill",
+      "extends": "ITable",
+      "table_file": "Skill.txt",
+      "table_row_count": 256,
+      "table_column_distribution": {
+        "27": 256
+      },
+      "field_count": 27,
+      "public_instance_field_count": 25,
+      "non_data_field_count": 2,
+      "property_count": 0,
+      "method_count": 6,
+      "schema_member_count": 25,
+      "schema_member_source": "public_instance_field",
+      "schema_member_count_matches_table_columns": false,
+      "schema_member_count_plus_two_matches_table_columns": true,
+      "likely_leading_non_schema_column_count": 2,
+      "field_count_matches_table_columns": true,
+      "property_count_matches_table_columns": false,
+      "schema_members": [
+        {
+          "name": "id",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skill_group",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skill_name",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skilldesc",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skill_textshow",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skill_type",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skilltarget",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skilltargetvalue",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skilltarget2",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skilltargetvalue2",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skilltarget3",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skilltargetvalue3",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skill_count_type",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skill_count",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skilleffect_position",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skill_icon",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skill_value",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skill_active_type",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skill_opt",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skill_opt_param1",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skill_opt_param2",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skill_cast",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skill_round",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "skill_CD",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "show_type",
+          "type": "int",
+          "source": "public_instance_field"
+        }
+      ],
+      "property_samples": [],
+      "method_samples": [
+        "Load",
+        "getByid",
+        "getMap",
+        "getListByskill_group",
+        ".ctor",
+        ".cctor"
+      ],
+      "accessor_samples": [],
+      "first_row_sample": [
+        "100",
+        "全库透视",
+        "显示所有藏品的轮廓",
+        "",
+        "itemName_100100",
+        "skillDesc_100",
+        "",
+        "2",
+        "0",
+        "[0]",
+        "0",
+        "[0]",
+        "0",
+        "[0]",
+        "1",
+        "0",
+        "[1000]",
+        "5",
+        "[]",
+        "1"
+      ]
+    },
+    {
+      "type_name": "Table_Hero",
+      "namespace": "",
+      "full_name": "Table_Hero",
+      "extends": "ITable",
+      "table_file": "Hero.txt",
+      "table_row_count": 20,
+      "table_column_distribution": {
+        "21": 20
+      },
+      "field_count": 20,
+      "public_instance_field_count": 19,
+      "non_data_field_count": 1,
+      "property_count": 6,
+      "method_count": 11,
+      "schema_member_count": 19,
+      "schema_member_source": "public_instance_field",
+      "schema_member_count_matches_table_columns": false,
+      "schema_member_count_plus_two_matches_table_columns": true,
+      "likely_leading_non_schema_column_count": 2,
+      "field_count_matches_table_columns": false,
+      "property_count_matches_table_columns": false,
+      "schema_members": [
+        {
+          "name": "id",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "gender",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "hero_class",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "background",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "hero_skill_name",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "hero_skill_description",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "hero_effect_description",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "cast_type",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "icon_path",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "icon_path2",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "icon_path3",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "illustration_path",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "bg_path",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "access",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "voices",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "battleBgm",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "hero_tag",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "hero_task_group",
+          "type": "int[]",
+          "source": "public_instance_field"
+        }
+      ],
+      "property_samples": [
+        "voice_pick",
+        "voice_cast_skill",
+        "voice_victory",
+        "voice_pei",
+        "voice_zhuan",
+        "voice_choose"
+      ],
+      "method_samples": [
+        "Load",
+        "getByid",
+        "getMap",
+        ".ctor",
+        ".cctor"
+      ],
+      "accessor_samples": [
+        "get_voice_pick",
+        "get_voice_cast_skill",
+        "get_voice_victory",
+        "get_voice_pei",
+        "get_voice_zhuan",
+        "get_voice_choose"
+      ],
+      "first_row_sample": [
+        "101",
+        "法蒂玛",
+        "拍卖开始时，显示 1 件本场价值最高的文玩古董类藏品的轮廓和品质。第二回合：随机显示 3 件轮廓未知文玩古董类藏品的轮廓；第三回合：随机显示 3 件品质未知文玩古董类藏品的品质；第四回合：随机显示 3 件轮廓未知文玩古董类藏品的轮廓；第五回合：随机显示 3 件品质未知文玩古董类藏品的品质。",
+        "hero_n_101",
+        "1",
+        "hero_c_101",
+        "hero_b_101",
+        "hero_skill_101",
+        "hero_dec_101",
+        "hero_effect_101",
+        "[100101,1001011,1001012,1001013,1001014]",
+        "hero_xq_101",
+        "hero_xq_101",
+        "hero_bs_101_1",
+        "hero_xq_101",
+        "hero_bg_101",
+        "[2,380]",
+        "[1101101,1101110,1101111,1101112,1101113,1101109]",
+        "[101]",
+        "101"
+      ]
+    },
+    {
+      "type_name": "Table_BattleItem",
+      "namespace": "",
+      "full_name": "Table_BattleItem",
+      "extends": "ITable",
+      "table_file": "BattleItem.txt",
+      "table_row_count": 64,
+      "table_column_distribution": {
+        "6": 64
+      },
+      "field_count": 5,
+      "public_instance_field_count": 4,
+      "non_data_field_count": 1,
+      "property_count": 0,
+      "method_count": 5,
+      "schema_member_count": 4,
+      "schema_member_source": "public_instance_field",
+      "schema_member_count_matches_table_columns": false,
+      "schema_member_count_plus_two_matches_table_columns": true,
+      "likely_leading_non_schema_column_count": 2,
+      "field_count_matches_table_columns": false,
+      "property_count_matches_table_columns": false,
+      "schema_members": [
+        {
+          "name": "id",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "item_type_id",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "item_quality",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "battle_item_type",
+          "type": "int",
+          "source": "public_instance_field"
+        }
+      ],
+      "property_samples": [],
+      "method_samples": [
+        "Load",
+        "getByid",
+        "getMap",
+        ".ctor",
+        ".cctor"
+      ],
+      "accessor_samples": [],
+      "first_row_sample": [
+        "100100",
+        "全库透视",
+        "显示所有藏品的轮廓",
+        "[11]",
+        "5",
+        "2"
+      ]
+    },
+    {
+      "type_name": "Table_Condition",
+      "namespace": "",
+      "full_name": "Table_Condition",
+      "extends": "ITable",
+      "table_file": "Condition.txt",
+      "table_row_count": 206,
+      "table_column_distribution": {
+        "13": 206
+      },
+      "field_count": 13,
+      "public_instance_field_count": 11,
+      "non_data_field_count": 2,
+      "property_count": 0,
+      "method_count": 6,
+      "schema_member_count": 11,
+      "schema_member_source": "public_instance_field",
+      "schema_member_count_matches_table_columns": false,
+      "schema_member_count_plus_two_matches_table_columns": true,
+      "likely_leading_non_schema_column_count": 2,
+      "field_count_matches_table_columns": true,
+      "property_count_matches_table_columns": false,
+      "schema_members": [
+        {
+          "name": "id",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "type",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "preorconditions",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "preorconditionsparam",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "preconditions",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "preconditionsparam",
+          "type": "int[][]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "condition",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "conditionparams",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "divided",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "maxvalue",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "desc",
+          "type": "string",
+          "source": "public_instance_field"
+        }
+      ],
+      "property_samples": [],
+      "method_samples": [
+        "Load",
+        "getByid",
+        "getMap",
+        "getListBycondition",
+        ".ctor",
+        ".cctor"
+      ],
+      "accessor_samples": [],
+      "first_row_sample": [
+        "1",
+        "前置条件",
+        "",
+        "0",
+        "[]",
+        "[[]]",
+        "[]",
+        "[[]]",
+        "1",
+        "[0]",
+        "1",
+        "0",
+        "condition_desc_1"
+      ]
+    },
+    {
+      "type_name": "Table_Sim",
+      "namespace": "",
+      "full_name": "Table_Sim",
+      "extends": "ITable",
+      "table_file": "Sim.txt",
+      "table_row_count": 101,
+      "table_column_distribution": {
+        "8": 101
+      },
+      "field_count": 7,
+      "public_instance_field_count": 6,
+      "non_data_field_count": 1,
+      "property_count": 0,
+      "method_count": 5,
+      "schema_member_count": 6,
+      "schema_member_source": "public_instance_field",
+      "schema_member_count_matches_table_columns": false,
+      "schema_member_count_plus_two_matches_table_columns": true,
+      "likely_leading_non_schema_column_count": 2,
+      "field_count_matches_table_columns": false,
+      "property_count_matches_table_columns": false,
+      "schema_members": [
+        {
+          "name": "id",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "success_interval",
+          "type": "int[]",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "simgold",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "simdorp",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "simshop",
+          "type": "int",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "roudtime",
+          "type": "int",
+          "source": "public_instance_field"
+        }
+      ],
+      "property_samples": [],
+      "method_samples": [
+        "Load",
+        "getByid",
+        "getMap",
+        ".ctor",
+        ".cctor"
+      ],
+      "accessor_samples": [],
+      "first_row_sample": [
+        "1",
+        "",
+        "",
+        "[750,1250]",
+        "100",
+        "801",
+        "6",
+        "5"
+      ]
+    },
+    {
+      "type_name": "Table_Constant",
+      "namespace": "",
+      "full_name": "Table_Constant",
+      "extends": "ITable",
+      "table_file": "Constant.txt",
+      "table_row_count": 83,
+      "table_column_distribution": {
+        "4": 83
+      },
+      "field_count": 5,
+      "public_instance_field_count": 4,
+      "non_data_field_count": 1,
+      "property_count": 0,
+      "method_count": 6,
+      "schema_member_count": 4,
+      "schema_member_source": "public_instance_field",
+      "schema_member_count_matches_table_columns": true,
+      "schema_member_count_plus_two_matches_table_columns": false,
+      "likely_leading_non_schema_column_count": 0,
+      "field_count_matches_table_columns": false,
+      "property_count_matches_table_columns": false,
+      "schema_members": [
+        {
+          "name": "Id",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "Name",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "Type",
+          "type": "string",
+          "source": "public_instance_field"
+        },
+        {
+          "name": "Value",
+          "type": "string",
+          "source": "public_instance_field"
+        }
+      ],
+      "property_samples": [],
+      "method_samples": [
+        "Load",
+        "getById",
+        "getMap",
+        "OnLoaded",
+        ".ctor",
+        ".cctor"
+      ],
+      "accessor_samples": [],
+      "first_row_sample": [
+        "init_items",
+        "初始道具",
+        "int[][]",
+        "[[6,6001,1],[1,7,1],[2,101,10],[101,1091001,1],[101,1101002,1],[101,1083007,1],[101,1072001,1],[101,1073007,1],[101,1072009,1],[101,1073002,1],[101,1074001,1],[101,1075004,1],[101,1074009,1],[101,1072005,1],[101,1073007,1],[101,1072010,1],[101,1071002,1],[101,1013003,1],[101,1042010,1],[101,1042009,1],[101,1012008,1],[101,1012009,1],[101,1012010,1],[101,1013002,1],[101,1022008,1],[101,1013004,1],[101,1071001,1],[101,1031005,1],[7,150104,1],[7,150107,1],[7,150108,1],[17,171001,1],[17,171002,1],[17,171003,1],[17,171004,1],[17,171005,1],[17,171006,1],[17,171007,1],[17,171008,1],[17,172001,1],[17,172002,1],[17,172003,1],[17,172004,1],[17,172005,1],[17,172006,1],[17,172007,1],[17,172008,1],[12,120000,1],[5,7101,1],[19,8101,5],[19,8102,5],[19,8103,5],[19,8105,5],[19,8106,5],[19,8109,5],[19,8110,5],[19,8111,5],[19,8112,5],[19,8113,5],[19,8114,5],[19,8115,5],[19,8116,5],[19,8117,5],[19,8118,5],[19,8119,5],[19,8120,5],[1,1,2000000]]"
+      ]
+    }
+  ],
+  "refactor_impact": {
+    "recommended_change_class": "RESEARCH_ONLY",
+    "live_path_touched": false,
+    "useful_now": [
+      "Table_* type metadata can validate table column order candidates",
+      "schema names can replace anonymous column indexes in the next mechanics review artifact",
+      "schema evidence is still source-owned research until manual and replay gates pass"
+    ],
+    "blockers_before_model_change": [
+      "confirm whether table loader uses property order, field order, or generated parser order",
+      "align current app map ids to BidKing map and bidmap ids",
+      "turn schema-backed table mechanics into a candidate config under shadow replay",
+      "explicit human approval before default config or estimator changes"
+    ]
+  }
+}

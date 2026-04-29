@@ -1,0 +1,71 @@
+{
+  "schema_version": "ak_p0_manual_confirmation_intake_refresh_v1",
+  "generated_at": "2026-04-27T13:22:47.440Z",
+  "mode": "source_first_implementation",
+  "change_class": "RESEARCH_ONLY",
+  "focus_label": "P0",
+  "inputs": {
+    "manual_confirmation_results": null,
+    "downloads_dir": "<local-downloads>"
+  },
+  "outputs": {
+    "count_fit_sample_review_import": "<repo>/docs/research/2026-04-27-sunken-ship-p0-manual-count-confirmation-import.json",
+    "codex_visual_shadow_candidate_replay_gate": "<repo>/docs/research/2026-04-27-sunken-ship-p0-codex-visual-shadow-candidate-replay-gate.json",
+    "manual_count_prior_shadow_candidate_config": "<repo>/docs/research/2026-04-27-sunken-ship-p0-manual-count-prior-shadow-candidate-config.json",
+    "manual_count_prior_shadow_candidate_replay_gate": "<repo>/docs/research/2026-04-27-sunken-ship-p0-manual-count-prior-shadow-candidate-replay-gate.json",
+    "chain_refresh_report": "<repo>/docs/research/2026-04-27-sunken-ship-p0-manual-confirmation-chain-refresh.json",
+    "ingest_report": "<repo>/docs/research/2026-04-27-sunken-ship-p0-latest-manual-confirmation-ingest-report.json",
+    "authority_handoff_gate": "<repo>/docs/research/2026-04-27-sunken-ship-p0-manual-confirmation-authority-handoff-gate.json",
+    "intake_refresh_report": "<repo>/docs/research/2026-04-27-sunken-ship-p0-manual-confirmation-intake-refresh.json"
+  },
+  "summary": {
+    "ingest_status": "no_accepted_samples",
+    "accepted_sample_count": 0,
+    "blocked_entry_count": 2,
+    "authority_sample_merge_allowed": false,
+    "replay_candidate_ready": false,
+    "default_weight_update_allowed": false,
+    "recommended_next_action": "approve_manual_confirmation_counts_then_download_json"
+  },
+  "blockers": [
+    "missing_accepted_manual_count_fit_samples",
+    "manual_confirmation_import_contains_blocked_entries",
+    "manual_candidate_replay_gate_not_passed",
+    "manual_shadow_candidate_not_directly_deployable",
+    "missing_accepted_count_fit_samples",
+    "count_fit_import_contains_blocked_entries",
+    "status_not_approved_for_import",
+    "actual_counts_total_mismatch"
+  ],
+  "source_summaries": {
+    "ingest": {
+      "status": "no_accepted_samples",
+      "accepted_sample_count": 0,
+      "blocked_entry_count": 2,
+      "manual_candidate_replay_passed": false,
+      "manual_candidate_gate_blockers": [
+        "manual_shadow_candidate_not_directly_deployable",
+        "missing_accepted_count_fit_samples"
+      ],
+      "recommended_next_action": "collect_human_confirmed_count_fit_samples"
+    },
+    "handoff": {
+      "ingest_status": "no_accepted_samples",
+      "accepted_sample_count": 0,
+      "blocked_entry_count": 2,
+      "authority_sample_merge_allowed": false,
+      "replay_candidate_ready": false,
+      "default_weight_update_allowed": false,
+      "recommended_next_action": "approve_manual_confirmation_counts_then_download_json"
+    }
+  },
+  "captured_stdout": {
+    "ingest": "<repo>/docs/research/2026-04-27-sunken-ship-p0-manual-confirmation-chain-refresh.json\n<repo>/docs/research/2026-04-27-sunken-ship-p0-latest-manual-confirmation-ingest-report.json\n",
+    "handoff": "<repo>/docs/research/2026-04-27-sunken-ship-p0-manual-confirmation-authority-handoff-gate.json\n"
+  },
+  "commands": {
+    "next_human_step": "Open the P0 manual count confirmation HTML, fill counts, approve valid cards, then download JSON.",
+    "rerun_intake": "npm run intake:p0-manual-confirmation",
+    "authority_sample_merge": null
+  }
+}

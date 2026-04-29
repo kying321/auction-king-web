@@ -1,0 +1,12 @@
+{
+    "default_map_id": "sunken_ship",
+    "map_name": "沉船图-高难-实时滤波模板",
+    "alpha_counts": {
+        "w": 1,
+        "g": 1.9,
+        "b": 3,
+        "p": 2.9,
+        "o": 2.5,
+        "r": 1.7
+    }
+}

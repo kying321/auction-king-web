@@ -1,0 +1,40 @@
+{
+    "value_model": {
+        "w": {
+            "base_item_mean": 700,
+            "base_item_sd": 250,
+            "per_cell_mean": 260,
+            "per_cell_sd": 80
+        },
+        "g": {
+            "base_item_mean": 1800,
+            "base_item_sd": 600,
+            "per_cell_mean": 550,
+            "per_cell_sd": 170
+        },
+        "b": {
+            "base_item_mean": 4200,
+            "base_item_sd": 1400,
+            "per_cell_mean": 1200,
+            "per_cell_sd": 380
+        },
+        "p": {
+            "base_item_mean": 9000,
+            "base_item_sd": 3000,
+            "per_cell_mean": 2300,
+            "per_cell_sd": 700
+        },
+        "o": {
+            "base_item_mean": 16000,
+            "base_item_sd": 5200,
+            "per_cell_mean": 3400,
+            "per_cell_sd": 1000
+        },
+        "r": {
+            "base_item_mean": 128000,
+            "base_item_sd": 48000,
+            "per_cell_mean": 0,
+            "per_cell_sd": 0
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "map_name": "沉船图-高难-实时滤波模板",
+  "alpha_counts": {"w": 5.8, "g": 5.0, "b": 3.5, "p": 2.5, "o": 1.8, "r": 0.9},
+  "cells_per_item": {
+    "w": {"mean": 1.25, "sd": 0.55, "min": 1, "max": 3},
+    "g": {"mean": 1.50, "sd": 0.65, "min": 1, "max": 4},
+    "b": {"mean": 1.85, "sd": 0.75, "min": 1, "max": 5},
+    "p": {"mean": 2.20, "sd": 0.85, "min": 1, "max": 6},
+    "o": {"mean": 2.65, "sd": 0.95, "min": 1, "max": 8},
+    "r": {"mean": 3.25, "sd": 1.20, "min": 1, "max": 10}
+  },
+  "value_model": {
+    "w": {"base_item_mean": 80, "base_item_sd": 25, "per_cell_mean": 30, "per_cell_sd": 8},
+    "g": {"base_item_mean": 170, "base_item_sd": 55, "per_cell_mean": 60, "per_cell_sd": 18},
+    "b": {"base_item_mean": 420, "base_item_sd": 140, "per_cell_mean": 120, "per_cell_sd": 35},
+    "p": {"base_item_mean": 1050, "base_item_sd": 300, "per_cell_mean": 240, "per_cell_sd": 70},
+    "o": {"base_item_mean": 2500, "base_item_sd": 700, "per_cell_mean": 420, "per_cell_sd": 120},
+    "r": {"base_item_mean": 7000, "base_item_sd": 2000, "per_cell_mean": 900, "per_cell_sd": 250}
+  },
+  "solver": {"max_states": 500000, "posterior_print_k": 10, "mc_samples": 20000},
+  "report": {"orange_top_k": 8, "red_top_k": 8}
+}

@@ -1,0 +1,2450 @@
+{
+  "schema_version": "ak_bidking_manual_mechanics_review_template_v1",
+  "generated_at": "2026-04-28T16:35:29.353Z",
+  "mode": "architecture_review",
+  "change_class": "RESEARCH_ONLY",
+  "recommended_change_class": "RESEARCH_ONLY",
+  "inputs": {
+    "table_mechanics_report_path": "<repo>/docs/research/2026-04-29-bidking-table-mechanics-report.json",
+    "schema_metadata_report_path": "<repo>/docs/research/2026-04-29-bidking-table-schema-metadata-report.json"
+  },
+  "summary": {
+    "review_status": "pending_manual_validation",
+    "authority_adoption_allowed": false,
+    "default_config_update_allowed": false,
+    "shadow_candidate_allowed": false,
+    "live_path_touched": false,
+    "map_alignment_review_count": 3,
+    "table_schema_review_count": 12,
+    "mechanics_scope_review_count": 5,
+    "schema_handoff_candidate": true,
+    "table_mechanics_status": "table_mechanics_candidate_extracted"
+  },
+  "gates": {
+    "all_map_alignments_approved": false,
+    "all_table_schemas_approved": false,
+    "all_mechanics_scopes_approved": false,
+    "same_battle_replay_samples_attached": false,
+    "authority_handoff_allowed": false
+  },
+  "review_items": {
+    "map_alignment_reviews": [
+      {
+        "current_map_id": "villa",
+        "bidking_map_id_candidate": 104,
+        "bidking_bidmap_root_candidate": 2401,
+        "evidence_labels": [
+          "未知别墅",
+          "私人金库"
+        ],
+        "confidence": "medium",
+        "blocker": "manual confirmation required before config mapping",
+        "required_evidence": [
+          "confirm in-game or capture label maps to current app map_id",
+          "confirm bidmap root appears in the same battle family",
+          "confirm no alternate BidKing map id better matches current app naming"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "current_map_id": "sunken_ship",
+        "bidking_map_id_candidate": 105,
+        "bidking_bidmap_root_candidate": 2501,
+        "evidence_labels": [
+          "未知残骸",
+          "​皇家御用货舱​"
+        ],
+        "confidence": "medium",
+        "blocker": "manual confirmation required before config mapping",
+        "required_evidence": [
+          "confirm in-game or capture label maps to current app map_id",
+          "confirm bidmap root appears in the same battle family",
+          "confirm no alternate BidKing map id better matches current app naming"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "current_map_id": "shipping",
+        "bidking_map_id_candidate": 103,
+        "bidking_bidmap_root_candidate": 2301,
+        "evidence_labels": [
+          "杂货集装箱"
+        ],
+        "confidence": "low_medium",
+        "blocker": "label overlap is weaker than villa/sunken_ship; requires screenshot or manual label alignment",
+        "required_evidence": [
+          "confirm in-game or capture label maps to current app map_id",
+          "confirm bidmap root appears in the same battle family",
+          "confirm no alternate BidKing map id better matches current app naming"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      }
+    ],
+    "table_schema_reviews": [
+      {
+        "type_name": "Table_Map",
+        "table_file": "Map.txt",
+        "table_row_count": 8,
+        "table_column_distribution": {
+          "17": 8
+        },
+        "schema_member_count": 15,
+        "schema_member_source": "public_instance_field",
+        "likely_leading_non_schema_column_count": 2,
+        "schema_or_localized_count_match": true,
+        "first_schema_members": [
+          {
+            "name": "id",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "map_name",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "map_desc",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "map_position",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "map_icon",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "auction_limit_notify",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "entrust_value",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "entrust_bidmap",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "entrust_cost",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "entrust_prob",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "type",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "entrust_num",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "is_open",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "mapgroup",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "world_process",
+            "type": "int",
+            "source": "public_instance_field"
+          }
+        ],
+        "required_evidence": [
+          "confirm table loader skips leading localized/display columns when present",
+          "confirm public instance field order is the parse order",
+          "confirm cache/static fields are not serialized table columns"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "type_name": "Table_BidMap",
+        "table_file": "BidMap.txt",
+        "table_row_count": 104,
+        "table_column_distribution": {
+          "21": 104
+        },
+        "schema_member_count": 19,
+        "schema_member_source": "public_instance_field",
+        "likely_leading_non_schema_column_count": 2,
+        "schema_or_localized_count_match": true,
+        "first_schema_members": [
+          {
+            "name": "id",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "s_map_name",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "s_map_logo",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "s_map_togname",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "s_map_desc",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "parent_map_id",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "map_group",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "map_income",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "map_cell",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "currency_cost",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "item_cost",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "map_time",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "required_items",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "special_output_items",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "drop_group_id",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "bidder_number",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "auction_rounds_rate",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "map_random_skill",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "map_resource",
+            "type": "string",
+            "source": "public_instance_field"
+          }
+        ],
+        "required_evidence": [
+          "confirm table loader skips leading localized/display columns when present",
+          "confirm public instance field order is the parse order",
+          "confirm cache/static fields are not serialized table columns"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "type_name": "Table_RankMap",
+        "table_file": "RankMap.txt",
+        "table_row_count": 62,
+        "table_column_distribution": {
+          "7": 62
+        },
+        "schema_member_count": 5,
+        "schema_member_source": "public_instance_field",
+        "likely_leading_non_schema_column_count": 2,
+        "schema_or_localized_count_match": true,
+        "first_schema_members": [
+          {
+            "name": "id",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "match_time",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "role_spawn",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "min_bid_range",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "bid_type",
+            "type": "int[]",
+            "source": "public_instance_field"
+          }
+        ],
+        "required_evidence": [
+          "confirm table loader skips leading localized/display columns when present",
+          "confirm public instance field order is the parse order",
+          "confirm cache/static fields are not serialized table columns"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "type_name": "Table_RankAi",
+        "table_file": "RankAi.txt",
+        "table_row_count": 120,
+        "table_column_distribution": {
+          "10": 120
+        },
+        "schema_member_count": 8,
+        "schema_member_source": "public_instance_field",
+        "likely_leading_non_schema_column_count": 2,
+        "schema_or_localized_count_match": true,
+        "first_schema_members": [
+          {
+            "name": "id",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "role_id",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "round_count",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "min_bid_ratio",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "item_use_probability",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "item_usage_group",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "bid_time",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "bid_pk",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          }
+        ],
+        "required_evidence": [
+          "confirm table loader skips leading localized/display columns when present",
+          "confirm public instance field order is the parse order",
+          "confirm cache/static fields are not serialized table columns"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "type_name": "Table_Drop",
+        "table_file": "Drop.txt",
+        "table_row_count": 594,
+        "table_column_distribution": {
+          "5": 594
+        },
+        "schema_member_count": 3,
+        "schema_member_source": "public_instance_field",
+        "likely_leading_non_schema_column_count": 2,
+        "schema_or_localized_count_match": true,
+        "first_schema_members": [
+          {
+            "name": "group_id",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "weight_type",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "items_list",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          }
+        ],
+        "required_evidence": [
+          "confirm table loader skips leading localized/display columns when present",
+          "confirm public instance field order is the parse order",
+          "confirm cache/static fields are not serialized table columns"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "type_name": "Table_Item",
+        "table_file": "Item.txt",
+        "table_row_count": 1128,
+        "table_column_distribution": {
+          "38": 1128
+        },
+        "schema_member_count": 36,
+        "schema_member_source": "public_instance_field",
+        "likely_leading_non_schema_column_count": 2,
+        "schema_or_localized_count_match": true,
+        "first_schema_members": [
+          {
+            "name": "id",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "item_name",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "item_nm",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "item_desc",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "item_type_id",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "slot_type",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "item_quality",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "base_value",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "in_case",
+            "type": "bool",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "is_tradable",
+            "type": "bool",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "binds_on_purchase",
+            "type": "bool",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "is_auction",
+            "type": "bool",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "auction_baseprice",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "grid_count",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "transaction_tax_rate",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "max_stack_size",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "max_per_listing",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "collectible_item_type_id",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skills",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "specified_obtain",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          }
+        ],
+        "required_evidence": [
+          "confirm table loader skips leading localized/display columns when present",
+          "confirm public instance field order is the parse order",
+          "confirm cache/static fields are not serialized table columns"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "type_name": "Table_Skill",
+        "table_file": "Skill.txt",
+        "table_row_count": 256,
+        "table_column_distribution": {
+          "27": 256
+        },
+        "schema_member_count": 25,
+        "schema_member_source": "public_instance_field",
+        "likely_leading_non_schema_column_count": 2,
+        "schema_or_localized_count_match": true,
+        "first_schema_members": [
+          {
+            "name": "id",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skill_group",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skill_name",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skilldesc",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skill_textshow",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skill_type",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skilltarget",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skilltargetvalue",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skilltarget2",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skilltargetvalue2",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skilltarget3",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skilltargetvalue3",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skill_count_type",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skill_count",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skilleffect_position",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skill_icon",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skill_value",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skill_active_type",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skill_opt",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "skill_opt_param1",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          }
+        ],
+        "required_evidence": [
+          "confirm table loader skips leading localized/display columns when present",
+          "confirm public instance field order is the parse order",
+          "confirm cache/static fields are not serialized table columns"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "type_name": "Table_Hero",
+        "table_file": "Hero.txt",
+        "table_row_count": 20,
+        "table_column_distribution": {
+          "21": 20
+        },
+        "schema_member_count": 19,
+        "schema_member_source": "public_instance_field",
+        "likely_leading_non_schema_column_count": 2,
+        "schema_or_localized_count_match": true,
+        "first_schema_members": [
+          {
+            "name": "id",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "gender",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "hero_class",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "background",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "hero_skill_name",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "hero_skill_description",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "hero_effect_description",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "cast_type",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "icon_path",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "icon_path2",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "icon_path3",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "illustration_path",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "bg_path",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "access",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "voices",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "battleBgm",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "hero_tag",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "hero_task_group",
+            "type": "int[]",
+            "source": "public_instance_field"
+          }
+        ],
+        "required_evidence": [
+          "confirm table loader skips leading localized/display columns when present",
+          "confirm public instance field order is the parse order",
+          "confirm cache/static fields are not serialized table columns"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "type_name": "Table_BattleItem",
+        "table_file": "BattleItem.txt",
+        "table_row_count": 64,
+        "table_column_distribution": {
+          "6": 64
+        },
+        "schema_member_count": 4,
+        "schema_member_source": "public_instance_field",
+        "likely_leading_non_schema_column_count": 2,
+        "schema_or_localized_count_match": true,
+        "first_schema_members": [
+          {
+            "name": "id",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "item_type_id",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "item_quality",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "battle_item_type",
+            "type": "int",
+            "source": "public_instance_field"
+          }
+        ],
+        "required_evidence": [
+          "confirm table loader skips leading localized/display columns when present",
+          "confirm public instance field order is the parse order",
+          "confirm cache/static fields are not serialized table columns"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "type_name": "Table_Condition",
+        "table_file": "Condition.txt",
+        "table_row_count": 206,
+        "table_column_distribution": {
+          "13": 206
+        },
+        "schema_member_count": 11,
+        "schema_member_source": "public_instance_field",
+        "likely_leading_non_schema_column_count": 2,
+        "schema_or_localized_count_match": true,
+        "first_schema_members": [
+          {
+            "name": "id",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "type",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "preorconditions",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "preorconditionsparam",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "preconditions",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "preconditionsparam",
+            "type": "int[][]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "condition",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "conditionparams",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "divided",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "maxvalue",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "desc",
+            "type": "string",
+            "source": "public_instance_field"
+          }
+        ],
+        "required_evidence": [
+          "confirm table loader skips leading localized/display columns when present",
+          "confirm public instance field order is the parse order",
+          "confirm cache/static fields are not serialized table columns"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "type_name": "Table_Sim",
+        "table_file": "Sim.txt",
+        "table_row_count": 101,
+        "table_column_distribution": {
+          "8": 101
+        },
+        "schema_member_count": 6,
+        "schema_member_source": "public_instance_field",
+        "likely_leading_non_schema_column_count": 2,
+        "schema_or_localized_count_match": true,
+        "first_schema_members": [
+          {
+            "name": "id",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "success_interval",
+            "type": "int[]",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "simgold",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "simdorp",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "simshop",
+            "type": "int",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "roudtime",
+            "type": "int",
+            "source": "public_instance_field"
+          }
+        ],
+        "required_evidence": [
+          "confirm table loader skips leading localized/display columns when present",
+          "confirm public instance field order is the parse order",
+          "confirm cache/static fields are not serialized table columns"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "type_name": "Table_Constant",
+        "table_file": "Constant.txt",
+        "table_row_count": 83,
+        "table_column_distribution": {
+          "4": 83
+        },
+        "schema_member_count": 4,
+        "schema_member_source": "public_instance_field",
+        "likely_leading_non_schema_column_count": 0,
+        "schema_or_localized_count_match": true,
+        "first_schema_members": [
+          {
+            "name": "Id",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "Name",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "Type",
+            "type": "string",
+            "source": "public_instance_field"
+          },
+          {
+            "name": "Value",
+            "type": "string",
+            "source": "public_instance_field"
+          }
+        ],
+        "required_evidence": [
+          "confirm table loader skips leading localized/display columns when present",
+          "confirm public instance field order is the parse order",
+          "confirm cache/static fields are not serialized table columns"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      }
+    ],
+    "mechanics_scope_reviews": [
+      {
+        "bidking_map_id": 101,
+        "bidmap_root_id": 2101,
+        "item_count_range": [
+          15,
+          20
+        ],
+        "bidmap_count": 7,
+        "rank_ai_rank_count": 6,
+        "rank_map_count_distribution_samples": [
+          {
+            "bidmap_id": 2101,
+            "label": "未知快递",
+            "count_distribution": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ],
+            "count_distribution_summary": {
+              "total_weight": 2100,
+              "range_count": 4,
+              "min_low": 11,
+              "max_high": 30,
+              "top_ranges": [
+                [
+                  11,
+                  15,
+                  1000
+                ],
+                [
+                  16,
+                  20,
+                  1000
+                ],
+                [
+                  21,
+                  25,
+                  50
+                ],
+                [
+                  26,
+                  30,
+                  50
+                ]
+              ]
+            },
+            "value_distribution_summary": {
+              "total_weight": 420,
+              "range_count": 3,
+              "min_low": 1000,
+              "max_high": 10000,
+              "top_ranges": [
+                [
+                  1000,
+                  2000,
+                  200
+                ],
+                [
+                  2001,
+                  5000,
+                  200
+                ],
+                [
+                  5001,
+                  10000,
+                  20
+                ]
+              ]
+            }
+          },
+          {
+            "bidmap_id": 2102,
+            "label": "医院快递",
+            "count_distribution": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ],
+            "count_distribution_summary": {
+              "total_weight": 2100,
+              "range_count": 4,
+              "min_low": 11,
+              "max_high": 30,
+              "top_ranges": [
+                [
+                  11,
+                  15,
+                  1000
+                ],
+                [
+                  16,
+                  20,
+                  1000
+                ],
+                [
+                  21,
+                  25,
+                  50
+                ],
+                [
+                  26,
+                  30,
+                  50
+                ]
+              ]
+            },
+            "value_distribution_summary": {
+              "total_weight": 420,
+              "range_count": 3,
+              "min_low": 1000,
+              "max_high": 10000,
+              "top_ranges": [
+                [
+                  1000,
+                  2000,
+                  200
+                ],
+                [
+                  2001,
+                  5000,
+                  200
+                ],
+                [
+                  5001,
+                  10000,
+                  20
+                ]
+              ]
+            }
+          },
+          {
+            "bidmap_id": 2103,
+            "label": "超市快递",
+            "count_distribution": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ],
+            "count_distribution_summary": {
+              "total_weight": 2100,
+              "range_count": 4,
+              "min_low": 11,
+              "max_high": 30,
+              "top_ranges": [
+                [
+                  11,
+                  15,
+                  1000
+                ],
+                [
+                  16,
+                  20,
+                  1000
+                ],
+                [
+                  21,
+                  25,
+                  50
+                ],
+                [
+                  26,
+                  30,
+                  50
+                ]
+              ]
+            },
+            "value_distribution_summary": {
+              "total_weight": 420,
+              "range_count": 3,
+              "min_low": 1000,
+              "max_high": 10000,
+              "top_ranges": [
+                [
+                  1000,
+                  2000,
+                  200
+                ],
+                [
+                  2001,
+                  5000,
+                  200
+                ],
+                [
+                  5001,
+                  10000,
+                  20
+                ]
+              ]
+            }
+          }
+        ],
+        "required_evidence": [
+          "confirm count distribution should replace or only shadow current count prior",
+          "confirm value distribution should be map-family specific",
+          "confirm rank AI rows represent opponent behavior and not only UI rank labels"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "bidking_map_id": 102,
+        "bidmap_root_id": 2201,
+        "item_count_range": [
+          20,
+          25
+        ],
+        "bidmap_count": 5,
+        "rank_ai_rank_count": 6,
+        "rank_map_count_distribution_samples": [
+          {
+            "bidmap_id": 2201,
+            "label": "未知仓库",
+            "count_distribution": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ],
+            "count_distribution_summary": {
+              "total_weight": 2100,
+              "range_count": 4,
+              "min_low": 11,
+              "max_high": 30,
+              "top_ranges": [
+                [
+                  11,
+                  15,
+                  1000
+                ],
+                [
+                  16,
+                  20,
+                  1000
+                ],
+                [
+                  21,
+                  25,
+                  50
+                ],
+                [
+                  26,
+                  30,
+                  50
+                ]
+              ]
+            },
+            "value_distribution_summary": {
+              "total_weight": 90,
+              "range_count": 3,
+              "min_low": 2001,
+              "max_high": 20000,
+              "top_ranges": [
+                [
+                  5001,
+                  10000,
+                  50
+                ],
+                [
+                  2001,
+                  5000,
+                  20
+                ],
+                [
+                  10000,
+                  20000,
+                  20
+                ]
+              ]
+            }
+          },
+          {
+            "bidmap_id": 2202,
+            "label": "潮牌仓库",
+            "count_distribution": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ],
+            "count_distribution_summary": {
+              "total_weight": 2100,
+              "range_count": 4,
+              "min_low": 11,
+              "max_high": 30,
+              "top_ranges": [
+                [
+                  11,
+                  15,
+                  1000
+                ],
+                [
+                  16,
+                  20,
+                  1000
+                ],
+                [
+                  21,
+                  25,
+                  50
+                ],
+                [
+                  26,
+                  30,
+                  50
+                ]
+              ]
+            },
+            "value_distribution_summary": {
+              "total_weight": 90,
+              "range_count": 3,
+              "min_low": 2001,
+              "max_high": 20000,
+              "top_ranges": [
+                [
+                  5001,
+                  10000,
+                  50
+                ],
+                [
+                  2001,
+                  5000,
+                  20
+                ],
+                [
+                  10000,
+                  20000,
+                  20
+                ]
+              ]
+            }
+          },
+          {
+            "bidmap_id": 2203,
+            "label": "硬核资产仓库",
+            "count_distribution": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ],
+            "count_distribution_summary": {
+              "total_weight": 2100,
+              "range_count": 4,
+              "min_low": 11,
+              "max_high": 30,
+              "top_ranges": [
+                [
+                  11,
+                  15,
+                  1000
+                ],
+                [
+                  16,
+                  20,
+                  1000
+                ],
+                [
+                  21,
+                  25,
+                  50
+                ],
+                [
+                  26,
+                  30,
+                  50
+                ]
+              ]
+            },
+            "value_distribution_summary": {
+              "total_weight": 90,
+              "range_count": 3,
+              "min_low": 2001,
+              "max_high": 20000,
+              "top_ranges": [
+                [
+                  5001,
+                  10000,
+                  50
+                ],
+                [
+                  2001,
+                  5000,
+                  20
+                ],
+                [
+                  10000,
+                  20000,
+                  20
+                ]
+              ]
+            }
+          }
+        ],
+        "required_evidence": [
+          "confirm count distribution should replace or only shadow current count prior",
+          "confirm value distribution should be map-family specific",
+          "confirm rank AI rows represent opponent behavior and not only UI rank labels"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "bidking_map_id": 103,
+        "bidmap_root_id": 2301,
+        "item_count_range": [
+          20,
+          25
+        ],
+        "bidmap_count": 10,
+        "rank_ai_rank_count": 6,
+        "rank_map_count_distribution_samples": [
+          {
+            "bidmap_id": 2301,
+            "label": "杂货集装箱",
+            "count_distribution": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ],
+            "count_distribution_summary": {
+              "total_weight": 2100,
+              "range_count": 4,
+              "min_low": 11,
+              "max_high": 30,
+              "top_ranges": [
+                [
+                  11,
+                  15,
+                  1000
+                ],
+                [
+                  16,
+                  20,
+                  1000
+                ],
+                [
+                  21,
+                  25,
+                  50
+                ],
+                [
+                  26,
+                  30,
+                  50
+                ]
+              ]
+            },
+            "value_distribution_summary": {
+              "total_weight": 308,
+              "range_count": 5,
+              "min_low": 2001,
+              "max_high": 100000,
+              "top_ranges": [
+                [
+                  20001,
+                  50000,
+                  200
+                ],
+                [
+                  50001,
+                  100000,
+                  100
+                ],
+                [
+                  10000,
+                  20000,
+                  5
+                ],
+                [
+                  5001,
+                  10000,
+                  2
+                ],
+                [
+                  2001,
+                  5000,
+                  1
+                ]
+              ]
+            }
+          },
+          {
+            "bidmap_id": 2302,
+            "label": "家居集装箱",
+            "count_distribution": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ],
+            "count_distribution_summary": {
+              "total_weight": 2100,
+              "range_count": 4,
+              "min_low": 11,
+              "max_high": 30,
+              "top_ranges": [
+                [
+                  11,
+                  15,
+                  1000
+                ],
+                [
+                  16,
+                  20,
+                  1000
+                ],
+                [
+                  21,
+                  25,
+                  50
+                ],
+                [
+                  26,
+                  30,
+                  50
+                ]
+              ]
+            },
+            "value_distribution_summary": {
+              "total_weight": 308,
+              "range_count": 5,
+              "min_low": 2001,
+              "max_high": 100000,
+              "top_ranges": [
+                [
+                  20001,
+                  50000,
+                  200
+                ],
+                [
+                  50001,
+                  100000,
+                  100
+                ],
+                [
+                  10000,
+                  20000,
+                  5
+                ],
+                [
+                  5001,
+                  10000,
+                  2
+                ],
+                [
+                  2001,
+                  5000,
+                  1
+                ]
+              ]
+            }
+          },
+          {
+            "bidmap_id": 2303,
+            "label": "数码科技集装箱",
+            "count_distribution": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ],
+            "count_distribution_summary": {
+              "total_weight": 2100,
+              "range_count": 4,
+              "min_low": 11,
+              "max_high": 30,
+              "top_ranges": [
+                [
+                  11,
+                  15,
+                  1000
+                ],
+                [
+                  16,
+                  20,
+                  1000
+                ],
+                [
+                  21,
+                  25,
+                  50
+                ],
+                [
+                  26,
+                  30,
+                  50
+                ]
+              ]
+            },
+            "value_distribution_summary": {
+              "total_weight": 308,
+              "range_count": 5,
+              "min_low": 2001,
+              "max_high": 100000,
+              "top_ranges": [
+                [
+                  20001,
+                  50000,
+                  200
+                ],
+                [
+                  50001,
+                  100000,
+                  100
+                ],
+                [
+                  10000,
+                  20000,
+                  5
+                ],
+                [
+                  5001,
+                  10000,
+                  2
+                ],
+                [
+                  2001,
+                  5000,
+                  1
+                ]
+              ]
+            }
+          }
+        ],
+        "required_evidence": [
+          "confirm count distribution should replace or only shadow current count prior",
+          "confirm value distribution should be map-family specific",
+          "confirm rank AI rows represent opponent behavior and not only UI rank labels"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "bidking_map_id": 104,
+        "bidmap_root_id": 2401,
+        "item_count_range": [
+          25,
+          30
+        ],
+        "bidmap_count": 10,
+        "rank_ai_rank_count": 6,
+        "rank_map_count_distribution_samples": [
+          {
+            "bidmap_id": 2401,
+            "label": "未知别墅",
+            "count_distribution": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ],
+            "count_distribution_summary": {
+              "total_weight": 2100,
+              "range_count": 4,
+              "min_low": 11,
+              "max_high": 30,
+              "top_ranges": [
+                [
+                  11,
+                  15,
+                  1000
+                ],
+                [
+                  16,
+                  20,
+                  1000
+                ],
+                [
+                  21,
+                  25,
+                  50
+                ],
+                [
+                  26,
+                  30,
+                  50
+                ]
+              ]
+            },
+            "value_distribution_summary": {
+              "total_weight": 309,
+              "range_count": 6,
+              "min_low": 2001,
+              "max_high": 200000,
+              "top_ranges": [
+                [
+                  50001,
+                  100000,
+                  200
+                ],
+                [
+                  100001,
+                  200000,
+                  100
+                ],
+                [
+                  20001,
+                  50000,
+                  5
+                ],
+                [
+                  10000,
+                  20000,
+                  2
+                ],
+                [
+                  2001,
+                  5000,
+                  1
+                ],
+                [
+                  5001,
+                  10000,
+                  1
+                ]
+              ]
+            }
+          },
+          {
+            "bidmap_id": 2402,
+            "label": "设计师居所",
+            "count_distribution": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ],
+            "count_distribution_summary": {
+              "total_weight": 2100,
+              "range_count": 4,
+              "min_low": 11,
+              "max_high": 30,
+              "top_ranges": [
+                [
+                  11,
+                  15,
+                  1000
+                ],
+                [
+                  16,
+                  20,
+                  1000
+                ],
+                [
+                  21,
+                  25,
+                  50
+                ],
+                [
+                  26,
+                  30,
+                  50
+                ]
+              ]
+            },
+            "value_distribution_summary": {
+              "total_weight": 309,
+              "range_count": 6,
+              "min_low": 2001,
+              "max_high": 200000,
+              "top_ranges": [
+                [
+                  50001,
+                  100000,
+                  200
+                ],
+                [
+                  100001,
+                  200000,
+                  100
+                ],
+                [
+                  20001,
+                  50000,
+                  5
+                ],
+                [
+                  10000,
+                  20000,
+                  2
+                ],
+                [
+                  2001,
+                  5000,
+                  1
+                ],
+                [
+                  5001,
+                  10000,
+                  1
+                ]
+              ]
+            }
+          },
+          {
+            "bidmap_id": 2403,
+            "label": "科学家居所",
+            "count_distribution": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ],
+            "count_distribution_summary": {
+              "total_weight": 2100,
+              "range_count": 4,
+              "min_low": 11,
+              "max_high": 30,
+              "top_ranges": [
+                [
+                  11,
+                  15,
+                  1000
+                ],
+                [
+                  16,
+                  20,
+                  1000
+                ],
+                [
+                  21,
+                  25,
+                  50
+                ],
+                [
+                  26,
+                  30,
+                  50
+                ]
+              ]
+            },
+            "value_distribution_summary": {
+              "total_weight": 309,
+              "range_count": 6,
+              "min_low": 2001,
+              "max_high": 200000,
+              "top_ranges": [
+                [
+                  50001,
+                  100000,
+                  200
+                ],
+                [
+                  100001,
+                  200000,
+                  100
+                ],
+                [
+                  20001,
+                  50000,
+                  5
+                ],
+                [
+                  10000,
+                  20000,
+                  2
+                ],
+                [
+                  2001,
+                  5000,
+                  1
+                ],
+                [
+                  5001,
+                  10000,
+                  1
+                ]
+              ]
+            }
+          }
+        ],
+        "required_evidence": [
+          "confirm count distribution should replace or only shadow current count prior",
+          "confirm value distribution should be map-family specific",
+          "confirm rank AI rows represent opponent behavior and not only UI rank labels"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      },
+      {
+        "bidking_map_id": 105,
+        "bidmap_root_id": 2501,
+        "item_count_range": [
+          30,
+          35
+        ],
+        "bidmap_count": 10,
+        "rank_ai_rank_count": 6,
+        "rank_map_count_distribution_samples": [
+          {
+            "bidmap_id": 2501,
+            "label": "未知残骸",
+            "count_distribution": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ],
+            "count_distribution_summary": {
+              "total_weight": 2100,
+              "range_count": 4,
+              "min_low": 11,
+              "max_high": 30,
+              "top_ranges": [
+                [
+                  11,
+                  15,
+                  1000
+                ],
+                [
+                  16,
+                  20,
+                  1000
+                ],
+                [
+                  21,
+                  25,
+                  50
+                ],
+                [
+                  26,
+                  30,
+                  50
+                ]
+              ]
+            },
+            "value_distribution_summary": {
+              "total_weight": 554,
+              "range_count": 7,
+              "min_low": 2001,
+              "max_high": 300000,
+              "top_ranges": [
+                [
+                  100001,
+                  200000,
+                  300
+                ],
+                [
+                  200001,
+                  300000,
+                  200
+                ],
+                [
+                  50001,
+                  100000,
+                  50
+                ],
+                [
+                  2001,
+                  5000,
+                  1
+                ],
+                [
+                  5001,
+                  10000,
+                  1
+                ],
+                [
+                  10000,
+                  20000,
+                  1
+                ],
+                [
+                  20001,
+                  50000,
+                  1
+                ]
+              ]
+            }
+          },
+          {
+            "bidmap_id": 2502,
+            "label": "​远洋客轮舱房​",
+            "count_distribution": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ],
+            "count_distribution_summary": {
+              "total_weight": 2100,
+              "range_count": 4,
+              "min_low": 11,
+              "max_high": 30,
+              "top_ranges": [
+                [
+                  11,
+                  15,
+                  1000
+                ],
+                [
+                  16,
+                  20,
+                  1000
+                ],
+                [
+                  21,
+                  25,
+                  50
+                ],
+                [
+                  26,
+                  30,
+                  50
+                ]
+              ]
+            },
+            "value_distribution_summary": {
+              "total_weight": 554,
+              "range_count": 7,
+              "min_low": 2001,
+              "max_high": 300000,
+              "top_ranges": [
+                [
+                  100001,
+                  200000,
+                  300
+                ],
+                [
+                  200001,
+                  300000,
+                  200
+                ],
+                [
+                  50001,
+                  100000,
+                  50
+                ],
+                [
+                  2001,
+                  5000,
+                  1
+                ],
+                [
+                  5001,
+                  10000,
+                  1
+                ],
+                [
+                  10000,
+                  20000,
+                  1
+                ],
+                [
+                  20001,
+                  50000,
+                  1
+                ]
+              ]
+            }
+          },
+          {
+            "bidmap_id": 2503,
+            "label": "​军用舰艇保险库​",
+            "count_distribution": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ],
+            "count_distribution_summary": {
+              "total_weight": 2100,
+              "range_count": 4,
+              "min_low": 11,
+              "max_high": 30,
+              "top_ranges": [
+                [
+                  11,
+                  15,
+                  1000
+                ],
+                [
+                  16,
+                  20,
+                  1000
+                ],
+                [
+                  21,
+                  25,
+                  50
+                ],
+                [
+                  26,
+                  30,
+                  50
+                ]
+              ]
+            },
+            "value_distribution_summary": {
+              "total_weight": 554,
+              "range_count": 7,
+              "min_low": 2001,
+              "max_high": 300000,
+              "top_ranges": [
+                [
+                  100001,
+                  200000,
+                  300
+                ],
+                [
+                  200001,
+                  300000,
+                  200
+                ],
+                [
+                  50001,
+                  100000,
+                  50
+                ],
+                [
+                  2001,
+                  5000,
+                  1
+                ],
+                [
+                  5001,
+                  10000,
+                  1
+                ],
+                [
+                  10000,
+                  20000,
+                  1
+                ],
+                [
+                  20001,
+                  50000,
+                  1
+                ]
+              ]
+            }
+          }
+        ],
+        "required_evidence": [
+          "confirm count distribution should replace or only shadow current count prior",
+          "confirm value distribution should be map-family specific",
+          "confirm rank AI rows represent opponent behavior and not only UI rank labels"
+        ],
+        "review_decision": "pending",
+        "reviewer_notes": null,
+        "approved_for_shadow_candidate": false,
+        "approved_for_authority_handoff": false
+      }
+    ]
+  },
+  "next_source_lane": [
+    "manual_mechanics_review_results",
+    "schema_backed_shadow_candidate_config",
+    "shadow_replay_candidate",
+    "authority_handoff_gate"
+  ],
+  "hard_blocks_before_core_refactor": [
+    "manual review decisions must approve map alignment and schema parse order",
+    "candidate config must be generated as shadow-only first",
+    "same-battle replay must pass before any default weight update",
+    "authority handoff must remain blocked while any review item is pending"
+  ]
+}

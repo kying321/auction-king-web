@@ -1,0 +1,26 @@
+{
+    "solver": {
+        "max_states": 4000000,
+        "mc_samples": 180000,
+        "count_prior_strength": 1,
+        "average_observation": {
+            "rounding_mode": "truncate",
+            "relax_sparse_support": true,
+            "sparse_support_threshold": 1,
+            "fallback_slack_cells": 1,
+            "fallback_min_avg": 1
+        },
+        "staging": {
+            "refine_ratio": 0.45,
+            "refine_min_states": 50000,
+            "refine_min_samples": 4000,
+            "min_signals_for_full": 3,
+            "min_signals_for_full_sparse": 5,
+            "refine_timeout_ms_sparse": 1400,
+            "refine_timeout_ms_dense": 2200,
+            "full_timeout_ms_sparse": 2600,
+            "full_timeout_ms_dense": 4200
+        },
+        "unbounded_cell_max_per_item": 30
+    }
+}

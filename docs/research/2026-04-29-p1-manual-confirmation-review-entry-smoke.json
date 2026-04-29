@@ -1,0 +1,69 @@
+{
+  "schema_version": "ak_p1_manual_confirmation_review_entry_smoke_v1",
+  "generated_at": "2026-04-29T03:23:04Z",
+  "mode": "source_first_implementation",
+  "change_class": "RESEARCH_ONLY",
+  "inputs": {
+    "html": "<repo>/docs/research/2026-04-27-sunken-ship-p1-manual-count-confirmation-results.html",
+    "json": "<repo>/docs/research/2026-04-27-sunken-ship-p1-manual-count-confirmation-results.json",
+    "ingest_report": "<repo>/docs/research/2026-04-27-sunken-ship-p1-latest-manual-confirmation-ingest-report.json",
+    "review_image": "<repo>/tmp_capture_review/sunken_ship_2026-04-26T123948135Z_2026-04-26T123954089Z_review.png"
+  },
+  "browser_smoke": {
+    "url": "http://127.0.0.1:8789/docs/research/2026-04-27-sunken-ship-p1-manual-count-confirmation-results.html",
+    "title": "Codex Visual Manual Confirmation",
+    "sample_card_count": 1,
+    "priority_filter": "P1",
+    "priority_counts": {
+      "P1": 1
+    },
+    "review_image": {
+      "visible": true,
+      "complete": true,
+      "natural_width": 503,
+      "natural_height": 992,
+      "current_src": "http://127.0.0.1:8789/tmp_capture_review/sunken_ship_2026-04-26T123948135Z_2026-04-26T123954089Z_review.png"
+    },
+    "controls": {
+      "quality_input_count": 6,
+      "approve_checkbox_count": 1,
+      "download_button_count": 1,
+      "total_field_locked_initially": true,
+      "status_text": "status: needs_human_confirmation"
+    },
+    "summary_badges": {
+      "valid": "0 / 1",
+      "approved": "0 / 1",
+      "import_ready": "0 / 1",
+      "remaining": 1
+    },
+    "console": {
+      "error_count": 0,
+      "warning_count": 0
+    },
+    "screenshot": "<repo>/output/playwright/p1-manual-confirmation-review-smoke-2026-04-29.png"
+  },
+  "source_gate": {
+    "authority_sample_import_ready": false,
+    "replay_candidate_ready": false,
+    "default_weight_update_allowed": false,
+    "accepted_sample_count": 0,
+    "blocked_entry_count": 1,
+    "blockers": [
+      "missing_accepted_manual_count_fit_samples",
+      "manual_confirmation_import_contains_blocked_entries",
+      "manual_candidate_replay_gate_not_passed",
+      "manual_shadow_candidate_not_directly_deployable",
+      "missing_accepted_count_fit_samples"
+    ]
+  },
+  "next_human_action": {
+    "required": true,
+    "action": "Open the P1 review HTML, enter human-confirmed w/g/b/p/o/r counts, approve only if the sum matches total, then download the confirmation JSON.",
+    "do_not_do": [
+      "Do not infer counts from model vision.",
+      "Do not use the visual shadow candidate as source authority.",
+      "Do not update default weights before accepted manual samples and replay gates pass."
+    ]
+  }
+}

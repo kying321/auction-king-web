@@ -1,0 +1,128 @@
+{
+  "batch_id": "green_quality_items_batch_2026-04-23",
+  "source_kind": "manual_thread_images",
+  "quality": "g",
+  "reported_average_value": 872,
+  "cell_count_status": "pending_high_res",
+  "name_status": "mostly_manual_ocr",
+  "notes": [
+    "用户提供的绿色品质图鉴截图。",
+    "当前会话中原始图片为线程附件，已将内容转录为可复用数据批次。",
+    "右下角占格仍不可稳定识别，cells 暂留空。"
+  ],
+  "items": [
+    { "name": "电动三轮车", "value": 5129, "cells": null, "name_confidence": "high" },
+    { "name": "折叠床", "value": 2415, "cells": null, "name_confidence": "high" },
+    { "name": "车衣", "value": 2297, "cells": null, "name_confidence": "high" },
+    { "name": "印刷山水画壁纸", "value": 2016, "cells": null, "name_confidence": "high" },
+
+    { "name": "绞盘", "value": 1835, "cells": null, "name_confidence": "high" },
+    { "name": "羽毛球拍", "value": 1776, "cells": null, "name_confidence": "high" },
+    { "name": "篮球", "value": 1481, "cells": null, "name_confidence": "high" },
+    { "name": "足球", "value": 1480, "cells": null, "name_confidence": "high" },
+
+    { "name": "长枪", "value": 1452, "cells": null, "name_confidence": "high" },
+    { "name": "辅助轮儿童自行车", "value": 1440, "cells": null, "name_confidence": "high" },
+    { "name": "医药整理盒", "value": 1433, "cells": null, "name_confidence": "high" },
+    { "name": "皮箭囊", "value": 1426, "cells": null, "name_confidence": "medium" },
+
+    { "name": "备胎", "value": 1426, "cells": null, "name_confidence": "high" },
+    { "name": "键盘保护膜", "value": 1411, "cells": null, "name_confidence": "high" },
+    { "name": "双截棍", "value": 1375, "cells": null, "name_confidence": "high" },
+    { "name": "笔记本散热器", "value": 1346, "cells": null, "name_confidence": "high" },
+
+    { "name": "蜡染方巾", "value": 1274, "cells": null, "name_confidence": "high" },
+    { "name": "工地用头盔", "value": 1267, "cells": null, "name_confidence": "high" },
+    { "name": "抱枕", "value": 1258, "cells": null, "name_confidence": "high" },
+    { "name": "大本盗印网络小说", "value": 1246, "cells": null, "name_confidence": "high" },
+
+    { "name": "连帽卫衣", "value": 1240, "cells": null, "name_confidence": "high" },
+    { "name": "手推货运车", "value": 1210, "cells": null, "name_confidence": "high" },
+    { "name": "补光灯", "value": 1166, "cells": null, "name_confidence": "high" },
+    { "name": "儿童安全座椅", "value": 1130, "cells": null, "name_confidence": "high" },
+
+    { "name": "水写毛笔练字帖", "value": 1119, "cells": null, "name_confidence": "high" },
+    { "name": "电水壶", "value": 1106, "cells": null, "name_confidence": "high" },
+    { "name": "书法用卷轴", "value": 1089, "cells": null, "name_confidence": "high" },
+    { "name": "饮水机", "value": 1045, "cells": null, "name_confidence": "high" },
+
+    { "name": "药碾子", "value": 1044, "cells": null, "name_confidence": "medium" },
+    { "name": "土制硝酸甘油炸弹", "value": 1044, "cells": null, "name_confidence": "medium" },
+    { "name": "行车记录仪", "value": 979, "cells": null, "name_confidence": "high" },
+    { "name": "蓝牙触控板", "value": 914, "cells": null, "name_confidence": "high" },
+
+    { "name": "贝雕画", "value": 907, "cells": null, "name_confidence": "high" },
+    { "name": "帆布背包", "value": 886, "cells": null, "name_confidence": "high" },
+    { "name": "沙袋背心", "value": 878, "cells": null, "name_confidence": "high" },
+    { "name": "USB氛围灯", "value": 870, "cells": null, "name_confidence": "high" },
+
+    { "name": "普通匕首", "value": 859, "cells": null, "name_confidence": "high" },
+    { "name": "蓄电池", "value": 806, "cells": null, "name_confidence": "high" },
+    { "name": "车载充气泵", "value": 804, "cells": null, "name_confidence": "high" },
+    { "name": "竹节笔", "value": 794, "cells": null, "name_confidence": "high" },
+
+    { "name": "连载漫画一", "value": 786, "cells": null, "name_confidence": "high" },
+    { "name": "急救毯", "value": 770, "cells": null, "name_confidence": "high" },
+    { "name": "连载漫画二", "value": 760, "cells": null, "name_confidence": "high" },
+    { "name": "HDIM高清线", "value": 755, "cells": null, "name_confidence": "medium" },
+
+    { "name": "时尚杂志", "value": 738, "cells": null, "name_confidence": "high" },
+    { "name": "锡制酒壶", "value": 734, "cells": null, "name_confidence": "high" },
+    { "name": "练字用描红本", "value": 734, "cells": null, "name_confidence": "high" },
+    { "name": "连载漫画四", "value": 721, "cells": null, "name_confidence": "high" },
+
+    { "name": "百搭丝巾", "value": 718, "cells": null, "name_confidence": "high" },
+    { "name": "印花雨伞", "value": 708, "cells": null, "name_confidence": "high" },
+    { "name": "雾化器", "value": 661, "cells": null, "name_confidence": "high" },
+    { "name": "宝宝降热贴", "value": 654, "cells": null, "name_confidence": "high" },
+
+    { "name": "风干香肠", "value": 635, "cells": null, "name_confidence": "high" },
+    { "name": "遥控器", "value": 619, "cells": null, "name_confidence": "high" },
+    { "name": "手机VR眼镜", "value": 613, "cells": null, "name_confidence": "high" },
+    { "name": "连载漫画三", "value": 536, "cells": null, "name_confidence": "high" },
+
+    { "name": "裸靴", "value": 532, "cells": null, "name_confidence": "high" },
+    { "name": "木梭子", "value": 514, "cells": null, "name_confidence": "medium" },
+    { "name": "有线游戏手柄", "value": 505, "cells": null, "name_confidence": "high" },
+    { "name": "手打鱼丸", "value": 480, "cells": null, "name_confidence": "medium" },
+
+    { "name": "桂皮", "value": 475, "cells": null, "name_confidence": "high" },
+    { "name": "烟熏辣椒粉", "value": 473, "cells": null, "name_confidence": "high" },
+    { "name": "快充数据线", "value": 466, "cells": null, "name_confidence": "high" },
+    { "name": "安全锤", "value": 466, "cells": null, "name_confidence": "high" },
+
+    { "name": "烟雾弹", "value": 462, "cells": null, "name_confidence": "high" },
+    { "name": "玛瑙棋", "value": 458, "cells": null, "name_confidence": "medium" },
+    { "name": "古法红糖", "value": 458, "cells": null, "name_confidence": "high" },
+    { "name": "糯米酒", "value": 446, "cells": null, "name_confidence": "high" },
+
+    { "name": "电子手表", "value": 445, "cells": null, "name_confidence": "high" },
+    { "name": "印刷画折扇", "value": 441, "cells": null, "name_confidence": "medium" },
+    { "name": "芝麻香油", "value": 430, "cells": null, "name_confidence": "high" },
+    { "name": "生理盐水", "value": 422, "cells": null, "name_confidence": "high" },
+
+    { "name": "贴膜工具包", "value": 420, "cells": null, "name_confidence": "high" },
+    { "name": "拔罐器", "value": 403, "cells": null, "name_confidence": "high" },
+    { "name": "多功能读卡器", "value": 401, "cells": null, "name_confidence": "high" },
+    { "name": "127子弹", "value": 367, "cells": null, "name_confidence": "high" },
+
+    { "name": "海盐", "value": 360, "cells": null, "name_confidence": "high" },
+    { "name": "精酿啤酒", "value": 346, "cells": null, "name_confidence": "high" },
+    { "name": "玉扣", "value": 319, "cells": null, "name_confidence": "high" },
+    { "name": "经典棒球帽", "value": 315, "cells": null, "name_confidence": "high" },
+
+    { "name": "血糖仪", "value": 312, "cells": null, "name_confidence": "high" },
+    { "name": "手雷", "value": 312, "cells": null, "name_confidence": "high" },
+    { "name": "充气玩具手枪", "value": 301, "cells": null, "name_confidence": "high" },
+    { "name": "潮流手机壳", "value": 295, "cells": null, "name_confidence": "high" },
+
+    { "name": "墨镜", "value": 295, "cells": null, "name_confidence": "high" },
+    { "name": "Six god", "value": 293, "cells": null, "name_confidence": "medium" },
+    { "name": "亚克力钥匙扣", "value": 288, "cells": null, "name_confidence": "high" },
+    { "name": "医用酒精", "value": 277, "cells": null, "name_confidence": "high" },
+
+    { "name": "陶埙", "value": 269, "cells": null, "name_confidence": "high" },
+    { "name": "黑巧克力", "value": 262, "cells": null, "name_confidence": "high" },
+    { "name": "珊瑚珠", "value": 252, "cells": null, "name_confidence": "high" }
+  ]
+}

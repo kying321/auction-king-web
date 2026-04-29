@@ -1,0 +1,57 @@
+{
+  "schema_version": "ak_codex_visual_shadow_candidate_replay_gate_v1",
+  "generated_at": "2026-04-29T03:26:27.578Z",
+  "mode": "research_backtest",
+  "change_class": "RESEARCH_ONLY",
+  "inputs": {
+    "count_fit_sample_review_import": "<repo>/docs/research/2026-04-27-sunken-ship-p1-manual-count-confirmation-import.json",
+    "codex_visual_shadow_candidate_config": "<repo>/docs/research/2026-04-26-sunken-ship-codex-visual-shadow-candidate-config.json"
+  },
+  "summary": {
+    "accepted_sample_count": 0,
+    "evaluated_sample_count": 0,
+    "applied_maps": [
+      "sunken_ship"
+    ],
+    "selected_scenarios": {
+      "sunken_ship": {
+        "scenario_id": "blend_visual_50_alpha_strength_4",
+        "source_classification": "codex_visual_shadow_blend_not_adoptable",
+        "label": "50% visual-smoothed alpha blend, strength 4",
+        "alpha_counts": {
+          "w": 0.508361,
+          "g": 2.375738,
+          "b": 3.259181,
+          "p": 4.779672,
+          "o": 1.808524,
+          "r": 1.508525
+        },
+        "count_prior_strength": 4,
+        "total_abs_error": 8.1361,
+        "high_rarity_abs_error": 4.3818
+      }
+    },
+    "all_quality_abs_non_regression": false,
+    "promotion_allowed": false,
+    "promotion_status": "blocked_visual_shadow_source",
+    "recommended_next_action": "collect_human_confirmed_count_fit_samples",
+    "blockers": [
+      "visual_shadow_candidate_not_deployable",
+      "codex_visual_review_shadow_only",
+      "missing_human_confirmed_count_fit_sample",
+      "single_visual_candidate_overfit_risk",
+      "missing_accepted_count_fit_samples"
+    ],
+    "warnings": [
+      "review_import_contains_blocked_entries"
+    ]
+  },
+  "metric_deltas": {},
+  "sample_deltas": [],
+  "replay_report": null,
+  "notes": [
+    "Visual shadow candidates are replay comparators only.",
+    "Even if replay improves on future manual samples, generate a new manual-sample-backed candidate before default config adoption.",
+    "This gate must never set promotion_allowed=true for codex_visual_shadow_candidate configs."
+  ]
+}

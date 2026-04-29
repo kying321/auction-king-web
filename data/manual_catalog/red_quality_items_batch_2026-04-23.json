@@ -1,0 +1,133 @@
+{
+  "batch_id": "red_quality_items_batch_2026-04-23",
+  "source_kind": "manual_thread_images",
+  "quality": "r",
+  "reported_average_value": 822956,
+  "cell_count_status": "pending_high_res",
+  "name_status": "manual_ocr_calibrated",
+  "validation_status": "mean_closed",
+  "observed_average_value": 822956.57,
+  "observed_average_delta": 0.57,
+  "notes": [
+    "用户提供的红色品质图鉴截图，当前轮次已全部上传完毕。",
+    "当前会话中原始图片为线程附件，已转录为正式批次。",
+    "右下角占格仍不可稳定识别，cells 暂留空。",
+    "当前人工转录 92 件，实测均价 822956.57，与图中均价 822956 已基本闭环。"
+  ],
+  "items": [
+    { "name": "金陵折扇", "value": 19371213, "cells": null, "name_confidence": "high" },
+    { "name": "非洲之心", "value": 13145200, "cells": null, "name_confidence": "high" },
+    { "name": "豪宅管理用黑盒", "value": 7402320, "cells": null, "name_confidence": "high" },
+    { "name": "黑王子红宝石", "value": 3000000, "cells": null, "name_confidence": "high" },
+
+    { "name": "羊脂白玉籽和田玉", "value": 2516000, "cells": null, "name_confidence": "medium" },
+    { "name": "私人直升机黑匣子", "value": 1688400, "cells": null, "name_confidence": "high" },
+    { "name": "永乐大典残本二", "value": 1553900, "cells": null, "name_confidence": "high" },
+    { "name": "蓝鳍金枪鱼", "value": 1552500, "cells": null, "name_confidence": "high" },
+
+    { "name": "超级跑车钥匙", "value": 1495000, "cells": null, "name_confidence": "high" },
+    { "name": "永乐大典残本一", "value": 1491800, "cells": null, "name_confidence": "high" },
+    { "name": "《富春山居图》", "value": 1236666, "cells": null, "name_confidence": "high" },
+    { "name": "复苏呼吸机", "value": 1089660, "cells": null, "name_confidence": "high" },
+
+    { "name": "百年人参", "value": 1039000, "cells": null, "name_confidence": "high" },
+    { "name": "相控阵雷达", "value": 1003000, "cells": null, "name_confidence": "high" },
+    { "name": "翡翠屏风", "value": 844000, "cells": null, "name_confidence": "high" },
+    { "name": "双羊尊", "value": 567900, "cells": null, "name_confidence": "high" },
+
+    { "name": "高斯振动匕首", "value": 531000, "cells": null, "name_confidence": "high" },
+    { "name": "钻石原石（巨粒）", "value": 512000, "cells": null, "name_confidence": "high" },
+    { "name": "超声波诊断仪", "value": 475000, "cells": null, "name_confidence": "high" },
+    { "name": "AI服务器", "value": 470400, "cells": null, "name_confidence": "high" },
+
+    { "name": "宝斯终身VIP会员卡", "value": 465000, "cells": null, "name_confidence": "medium" },
+    { "name": "火焰欧泊", "value": 457200, "cells": null, "name_confidence": "high" },
+    { "name": "民用垂直起降飞行器", "value": 452800, "cells": null, "name_confidence": "high" },
+    { "name": "碳纤维单体壳车身", "value": 444000, "cells": null, "name_confidence": "high" },
+
+    { "name": "扶桑古太刀", "value": 422002, "cells": null, "name_confidence": "high" },
+    { "name": "武夷山母树大红袍", "value": 390000, "cells": null, "name_confidence": "high" },
+    { "name": "GPU计算柜", "value": 375000, "cells": null, "name_confidence": "high" },
+    { "name": "可控核聚变电池包", "value": 362400, "cells": null, "name_confidence": "high" },
+
+    { "name": "红木屏风", "value": 361000, "cells": null, "name_confidence": "high" },
+    { "name": "重型巡航摩托车", "value": 357040, "cells": null, "name_confidence": "high" },
+    { "name": "金编钟", "value": 322560, "cells": null, "name_confidence": "high" },
+    { "name": "星光红宝石", "value": 316000, "cells": null, "name_confidence": "high" },
+
+    { "name": "单兵外骨骼助力系统", "value": 305920, "cells": null, "name_confidence": "high" },
+    { "name": "黑欧泊", "value": 295500, "cells": null, "name_confidence": "high" },
+    { "name": "大目金枪鱼", "value": 294000, "cells": null, "name_confidence": "high" },
+    { "name": "时尚轿跑", "value": 293400, "cells": null, "name_confidence": "high" },
+
+    { "name": "青铜神树", "value": 287280, "cells": null, "name_confidence": "high" },
+    { "name": "《般若神掌》秘籍", "value": 284519, "cells": null, "name_confidence": "high" },
+    { "name": "《亚维农少女》", "value": 282240, "cells": null, "name_confidence": "high" },
+    { "name": "金缕玉衣", "value": 281600, "cells": null, "name_confidence": "high" },
+
+    { "name": "永恒时尚指南", "value": 266050, "cells": null, "name_confidence": "high" },
+    { "name": "医用外骨骼", "value": 259165, "cells": null, "name_confidence": "high" },
+    { "name": "电影级摄影机", "value": 258760, "cells": null, "name_confidence": "high" },
+    { "name": "敦煌绢画", "value": 255840, "cells": null, "name_confidence": "high" },
+
+    { "name": "云端100寸液晶电视", "value": 255115, "cells": null, "name_confidence": "high" },
+    { "name": "陈年干邑", "value": 249000, "cells": null, "name_confidence": "high" },
+    { "name": "清明上河图复刻", "value": 240660, "cells": null, "name_confidence": "high" },
+    { "name": "全息雷达无人机", "value": 226800, "cells": null, "name_confidence": "high" },
+
+    { "name": "007同款防弹西装", "value": 199080, "cells": null, "name_confidence": "high" },
+    { "name": "环球小姐冠军皇冠", "value": 195154, "cells": null, "name_confidence": "high" },
+    { "name": "黄唇鱼鱼胶", "value": 193200, "cells": null, "name_confidence": "high" },
+    { "name": "《自由引导人民》", "value": 191800, "cells": null, "name_confidence": "high" },
+
+    { "name": "双螺纳宝", "value": 188888, "cells": null, "name_confidence": "medium" },
+    { "name": "金丝楠木椅", "value": 187812, "cells": null, "name_confidence": "high" },
+    { "name": "全画幅相机", "value": 186900, "cells": null, "name_confidence": "high" },
+    { "name": "冰种飘花翡翠", "value": 180000, "cells": null, "name_confidence": "high" },
+
+    { "name": "金丝冠", "value": 179100, "cells": null, "name_confidence": "high" },
+    { "name": "《凯尔经》", "value": 175500, "cells": null, "name_confidence": "high" },
+    { "name": "全智能扫地机器人", "value": 170362, "cells": null, "name_confidence": "high" },
+    { "name": "《星空》", "value": 170200, "cells": null, "name_confidence": "high" },
+
+    { "name": "奥斯卡小金人", "value": 168000, "cells": null, "name_confidence": "high" },
+    { "name": "藏区冬虫夏草", "value": 168000, "cells": null, "name_confidence": "high" },
+    { "name": "拜占庭冠", "value": 167800, "cells": null, "name_confidence": "high" },
+    { "name": "法贝热蛋", "value": 160200, "cells": null, "name_confidence": "high" },
+
+    { "name": "《戴珍珠耳环的少女》", "value": 160200, "cells": null, "name_confidence": "high" },
+    { "name": "古医书《伤寒论》", "value": 158940, "cells": null, "name_confidence": "high" },
+    { "name": "《天工开物》", "value": 148840, "cells": null, "name_confidence": "high" },
+    { "name": "古剑", "value": 143100, "cells": null, "name_confidence": "high" },
+
+    { "name": "黄金权杖", "value": 141300, "cells": null, "name_confidence": "high" },
+    { "name": "触摸感应仿生手", "value": 130296, "cells": null, "name_confidence": "high" },
+    { "name": "亚历山大变石", "value": 128000, "cells": null, "name_confidence": "high" },
+    { "name": "野生大黄鱼", "value": 127260, "cells": null, "name_confidence": "high" },
+
+    { "name": "中画幅相机", "value": 122600, "cells": null, "name_confidence": "high" },
+    { "name": "《岩间圣母》", "value": 120600, "cells": null, "name_confidence": "high" },
+    { "name": "紫檀木金针灸套装", "value": 112896, "cells": null, "name_confidence": "high" },
+    { "name": "曜变天目盏", "value": 112500, "cells": null, "name_confidence": "high" },
+
+    { "name": "激光手枪", "value": 104400, "cells": null, "name_confidence": "high" },
+    { "name": "金绿猫眼石", "value": 94500, "cells": null, "name_confidence": "high" },
+    { "name": "罗曼尼康帝", "value": 92880, "cells": null, "name_confidence": "high" },
+    { "name": "美容中心终身会员金卡", "value": 88888, "cells": null, "name_confidence": "high" },
+
+    { "name": "祖母绿宝石", "value": 87000, "cells": null, "name_confidence": "high" },
+    { "name": "黄金水龙头", "value": 85623, "cells": null, "name_confidence": "high" },
+    { "name": "鸽血红宝石", "value": 75500, "cells": null, "name_confidence": "high" },
+    { "name": "大溪地黑珍珠", "value": 71500, "cells": null, "name_confidence": "high" },
+
+    { "name": "全集成AI自动驾驶系统", "value": 68800, "cells": null, "name_confidence": "high" },
+    { "name": "玉化砗磲", "value": 68400, "cells": null, "name_confidence": "high" },
+    { "name": "佛跳墙", "value": 68100, "cells": null, "name_confidence": "high" },
+    { "name": "维纳斯级澳洲白珠", "value": 56000, "cells": null, "name_confidence": "medium" },
+
+    { "name": "安宫牛黄丸", "value": 54675, "cells": null, "name_confidence": "high" },
+    { "name": "麒麟处理器芯片", "value": 54600, "cells": null, "name_confidence": "high" },
+    { "name": "刺猬猫·全息阅读终端", "value": 54300, "cells": null, "name_confidence": "high" },
+    { "name": "帕拉伊巴碧玺", "value": 52500, "cells": null, "name_confidence": "high" }
+  ]
+}

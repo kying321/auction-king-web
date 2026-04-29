@@ -1,0 +1,613 @@
+{
+  "schema_version": "ak_bidking_dodrop_semantics_v1",
+  "generated_at": "2026-04-28T17:58:28.698Z",
+  "mode": "architecture_review",
+  "change_class": "RESEARCH_ONLY",
+  "recommended_change_class": "RESEARCH_ONLY",
+  "inputs": {
+    "schema_backed_table_report_path": "<repo>/docs/research/2026-04-29-bidking-schema-backed-table-report.json",
+    "focused_il_report_path": "<repo>/docs/research/2026-04-29-bidking-focused-il-report.json"
+  },
+  "summary": {
+    "parse_status": "dodrop_semantics_candidate_built",
+    "evidence_confidence": "medium_high",
+    "authority_adoption_allowed": false,
+    "reverse_engineering_source_allowed": true,
+    "default_config_update_allowed": false,
+    "core_refactor_recommended_now": false,
+    "shadow_candidate_allowed": false,
+    "drop_group_count": 594,
+    "tuple_count": 8784,
+    "nested_group_tuple_count": 2994,
+    "weight_type_counts": {
+      "1": 47,
+      "2": 547
+    },
+    "tuple_width_counts": {
+      "0": 2,
+      "5": 8782
+    },
+    "il_signal_complete": true
+  },
+  "table_schema_binding": {
+    "table_type": "Table_Drop",
+    "schema_members": [
+      {
+        "name": "group_id",
+        "type": "int",
+        "source": "public_instance_field"
+      },
+      {
+        "name": "weight_type",
+        "type": "int",
+        "source": "public_instance_field"
+      },
+      {
+        "name": "items_list",
+        "type": "int[][]",
+        "source": "public_instance_field"
+      }
+    ],
+    "tuple_semantics_candidate": [
+      {
+        "tuple_index": 0,
+        "inferred_name": "kind_or_nested_group_marker",
+        "evidence": "compared with sentinel 9999 before recursive DoDrop"
+      },
+      {
+        "tuple_index": 1,
+        "inferred_name": "item_id_or_nested_group_id",
+        "evidence": "passed to AddItem or recursive DoDrop"
+      },
+      {
+        "tuple_index": 2,
+        "inferred_name": "min_count",
+        "evidence": "first argument to RandomCount"
+      },
+      {
+        "tuple_index": 3,
+        "inferred_name": "max_count",
+        "evidence": "second argument to RandomCount"
+      },
+      {
+        "tuple_index": 4,
+        "inferred_name": "weight_or_probability",
+        "evidence": "GetValues(items_list, 4, 10000)"
+      }
+    ],
+    "table_summary": {
+      "drop_group_count": 594,
+      "weight_type_counts": {
+        "1": 47,
+        "2": 547
+      },
+      "tuple_count": 8784,
+      "tuple_width_counts": {
+        "0": 2,
+        "5": 8782
+      },
+      "nested_group_tuple_count": 2994,
+      "nested_group_id_count": 398,
+      "nested_group_id_samples": [
+        1011,
+        1021,
+        1031,
+        1041,
+        1051,
+        1061,
+        1071,
+        1081,
+        1091,
+        1101,
+        1012,
+        1022,
+        1032,
+        1042,
+        1052,
+        1062,
+        1072,
+        1082,
+        1092,
+        1102,
+        1013,
+        1023,
+        1033,
+        1043,
+        1053,
+        1063,
+        1073,
+        1083,
+        1093,
+        1103,
+        1014,
+        1024,
+        1034,
+        1044,
+        1054,
+        1064,
+        1074,
+        1084,
+        1094,
+        1104
+      ],
+      "tuple_weight_or_probability_stats": {
+        "count": 8782,
+        "min": 1,
+        "p50": 120,
+        "p90": 1800,
+        "max": 38060
+      },
+      "samples": [
+        {
+          "group_id": 801,
+          "localized_description": "个人模拟测试",
+          "weight_type": 2,
+          "tuple_count": 64,
+          "tuple_samples": [
+            [
+              8,
+              8001,
+              1,
+              1,
+              10
+            ],
+            [
+              8,
+              8002,
+              1,
+              1,
+              10
+            ],
+            [
+              8,
+              8003,
+              1,
+              1,
+              10
+            ],
+            [
+              8,
+              8004,
+              1,
+              1,
+              10
+            ],
+            [
+              8,
+              8005,
+              1,
+              1,
+              10
+            ]
+          ]
+        },
+        {
+          "group_id": 1000,
+          "localized_description": "皮肤测试礼盒",
+          "weight_type": 1,
+          "tuple_count": 20,
+          "tuple_samples": [
+            [
+              14,
+              1410101,
+              1,
+              1,
+              10000
+            ],
+            [
+              14,
+              1410201,
+              1,
+              1,
+              10000
+            ],
+            [
+              14,
+              1410301,
+              1,
+              1,
+              10000
+            ],
+            [
+              14,
+              1410401,
+              1,
+              1,
+              10000
+            ],
+            [
+              14,
+              1410501,
+              1,
+              1,
+              10000
+            ]
+          ]
+        },
+        {
+          "group_id": 1001,
+          "localized_description": "头像测试礼盒",
+          "weight_type": 1,
+          "tuple_count": 21,
+          "tuple_samples": [
+            [
+              12,
+              120001,
+              1,
+              1,
+              10000
+            ],
+            [
+              12,
+              120002,
+              1,
+              1,
+              10000
+            ],
+            [
+              12,
+              120003,
+              1,
+              1,
+              10000
+            ],
+            [
+              12,
+              120004,
+              1,
+              1,
+              10000
+            ],
+            [
+              12,
+              120005,
+              1,
+              1,
+              10000
+            ]
+          ]
+        },
+        {
+          "group_id": 1002,
+          "localized_description": "收藏箱礼盒",
+          "weight_type": 1,
+          "tuple_count": 11,
+          "tuple_samples": [
+            [
+              7,
+              1003,
+              1,
+              1,
+              10000
+            ],
+            [
+              7,
+              1013,
+              1,
+              1,
+              10000
+            ],
+            [
+              7,
+              1023,
+              1,
+              1,
+              10000
+            ],
+            [
+              7,
+              1033,
+              1,
+              1,
+              10000
+            ],
+            [
+              7,
+              1043,
+              1,
+              1,
+              10000
+            ]
+          ]
+        },
+        {
+          "group_id": 1003,
+          "localized_description": "角色测试礼盒",
+          "weight_type": 1,
+          "tuple_count": 20,
+          "tuple_samples": [
+            [
+              15,
+              150101,
+              1,
+              1,
+              10000
+            ],
+            [
+              15,
+              150102,
+              1,
+              1,
+              10000
+            ],
+            [
+              15,
+              150103,
+              1,
+              1,
+              10000
+            ],
+            [
+              15,
+              150104,
+              1,
+              1,
+              10000
+            ],
+            [
+              15,
+              150105,
+              1,
+              1,
+              10000
+            ]
+          ]
+        },
+        {
+          "group_id": 1011,
+          "localized_description": "家具物品品质1",
+          "weight_type": 2,
+          "tuple_count": 52,
+          "tuple_samples": [
+            [
+              101,
+              1101006,
+              1,
+              1,
+              844
+            ],
+            [
+              101,
+              1031010,
+              1,
+              1,
+              831
+            ],
+            [
+              101,
+              1071002,
+              1,
+              1,
+              842
+            ],
+            [
+              101,
+              1031001,
+              1,
+              1,
+              802
+            ],
+            [
+              101,
+              1051010,
+              1,
+              1,
+              805
+            ]
+          ]
+        },
+        {
+          "group_id": 1012,
+          "localized_description": "家具物品品质2",
+          "weight_type": 2,
+          "tuple_count": 37,
+          "tuple_samples": [
+            [
+              101,
+              1062007,
+              1,
+              1,
+              382
+            ],
+            [
+              101,
+              1032010,
+              1,
+              1,
+              347
+            ],
+            [
+              101,
+              1022006,
+              1,
+              1,
+              331
+            ],
+            [
+              101,
+              1032002,
+              1,
+              1,
+              355
+            ],
+            [
+              101,
+              1042010,
+              1,
+              1,
+              339
+            ]
+          ]
+        },
+        {
+          "group_id": 1013,
+          "localized_description": "家具物品品质3",
+          "weight_type": 2,
+          "tuple_count": 35,
+          "tuple_samples": [
+            [
+              101,
+              1013007,
+              1,
+              1,
+              581
+            ],
+            [
+              101,
+              1073009,
+              1,
+              1,
+              830
+            ],
+            [
+              101,
+              1063005,
+              1,
+              1,
+              535
+            ],
+            [
+              101,
+              1043010,
+              1,
+              1,
+              732
+            ],
+            [
+              101,
+              1013002,
+              1,
+              1,
+              703
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "il_semantics_binding": {
+    "method_found": true,
+    "method_signature": {
+      "return_type": "System.Collections.Generic.Dictionary`2<int, int>",
+      "parameters": [
+        "int",
+        "int"
+      ]
+    },
+    "method_body": {
+      "parse_status": "parsed",
+      "header_kind": "fat",
+      "max_stack": 4,
+      "code_size": 223,
+      "instruction_count": 95,
+      "has_more_sections": false,
+      "local_var_sig_token": "0x11000535",
+      "instruction_kind_counts": {
+        "call": 16,
+        "other": 52,
+        "constant": 14,
+        "branch": 8,
+        "field": 4,
+        "exit": 1
+      },
+      "domain_counts": {
+        "table_lookup": 1,
+        "random_or_weight": 6
+      },
+      "branch_target_count": 8,
+      "token_reference_count": 20,
+      "unresolved_token_reference_count": 6
+    },
+    "critical_offsets": {
+      "table_lookup": 14,
+      "weight_type_branch": 27,
+      "probability_index_call": 53,
+      "weighted_index_call": 83,
+      "recursive_call": 161,
+      "add_range_call": 166,
+      "add_item_call": 189
+    },
+    "constants": [
+      9999,
+      10000
+    ],
+    "branch_offsets": [
+      {
+        "il_offset": 8,
+        "opcode_name": "br",
+        "target": 214
+      },
+      {
+        "il_offset": 33,
+        "opcode_name": "bne.un.s",
+        "target": 65
+      },
+      {
+        "il_offset": 63,
+        "opcode_name": "br.s",
+        "target": 93
+      },
+      {
+        "il_offset": 96,
+        "opcode_name": "br.s",
+        "target": 200
+      },
+      {
+        "il_offset": 143,
+        "opcode_name": "bne.un.s",
+        "target": 173
+      },
+      {
+        "il_offset": 171,
+        "opcode_name": "br.s",
+        "target": 194
+      },
+      {
+        "il_offset": 208,
+        "opcode_name": "blt.s",
+        "target": 98
+      },
+      {
+        "il_offset": 216,
+        "opcode_name": "blt",
+        "target": 13
+      }
+    ]
+  },
+  "pseudocode_candidate": [
+    "result = {}",
+    "for outerIndex in range(repeatCount):",
+    "  drop = Table_Drop.getBygroup_id(groupId)",
+    "  if drop.weight_type == 1:",
+    "    selectedIndexes = RandomProbabilityIndex(GetValues(drop.items_list, 4, 10000))",
+    "  else:",
+    "    selectedIndexes = [RandomWeightIndex(GetValues(drop.items_list, 4, 10000))]",
+    "  for selectedIndex in selectedIndexes:",
+    "    tuple = drop.items_list[selectedIndex]",
+    "    kindOrNestedMarker = tuple[0]",
+    "    itemOrNestedGroupId = tuple[1]",
+    "    minCount = tuple[2]",
+    "    maxCount = tuple[3]",
+    "    count = RandomCount(minCount, maxCount)",
+    "    if kindOrNestedMarker == 9999:",
+    "      AddRange(result, DoDrop(itemOrNestedGroupId, count))",
+    "    else:",
+    "      AddItem(result, itemOrNestedGroupId, count)",
+    "return result"
+  ],
+  "refactor_impact": {
+    "recommended_change_class": "RESEARCH_ONLY",
+    "live_path_touched": false,
+    "useful_now": [
+      "DoDrop can now be modeled as a table-backed drop resolver candidate",
+      "weight_type separates independent probability-index selection from single weighted-index selection",
+      "tuple[0] == 9999 is a nested drop group recursion marker"
+    ],
+    "blockers_before_model_change": [
+      "decode RandomProbabilityIndex, RandomWeightIndex, GetValues, RandomCount, AddRange, and AddItem bodies",
+      "validate tuple semantics against actual observed settlement samples",
+      "convert this semantics candidate into shadow-only replay before estimator/default config changes",
+      "manual authority handoff must remain closed until replay evidence passes"
+    ]
+  }
+}

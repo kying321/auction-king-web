@@ -1,0 +1,598 @@
+{
+  "schema_version": "ak_bidking_strategy_comparison_v1",
+  "generated_at": "2026-04-28T19:02:16.073Z",
+  "mode": "research_backtest",
+  "change_class": "SIM_ONLY",
+  "recommended_change_class": "SIM_ONLY",
+  "live_path_touched": false,
+  "summary": {
+    "comparison_status": "bidking_reverse_mechanics_compared_to_current_strategy",
+    "current_config_source_version": "ak_workspace_v2_20260428_sunken_red_tail_refit_v2",
+    "compared_map_count": 3,
+    "evidence_confidence": "medium",
+    "authority_adoption_allowed": false,
+    "default_config_update_allowed": false,
+    "shadow_candidate_allowed": false,
+    "reverse_engineering_source_allowed": true,
+    "helper_semantics_complete": true,
+    "dodrop_il_signal_complete": true,
+    "maps_with_alpha_total_below_bidking_range": 2,
+    "maps_with_red_value_above_bidking_value_range": 1,
+    "optimization_queue_count": 5
+  },
+  "gates": {
+    "manual_mechanics_review_approved": false,
+    "same_battle_replay_samples_attached": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false
+  },
+  "evidence": {
+    "decompile_status": "complete_package_table_and_hotupdate_evidence_ready",
+    "table_schema_status": "schema_backed_named_records_built",
+    "table_mechanics_status": "table_mechanics_candidate_extracted",
+    "dodrop_semantics_status": "dodrop_semantics_candidate_built",
+    "helper_semantics_status": "drop_helper_semantics_candidate_built",
+    "manual_review_status": "pending_manual_validation",
+    "producer_strategy_default_weight_status": "mismatch",
+    "reverse_engineering_source_allowed": true,
+    "all_reverse_default_update_gates_closed": true,
+    "all_reverse_authority_gates_closed": true,
+    "helper_semantics_complete": true,
+    "dodrop_il_signal_complete": true,
+    "unresolved_callgraph_edge_ratio": 0.4607,
+    "maps_ready_for_default_weight_update_before_bidking": 0
+  },
+  "algorithm_decision": {
+    "keep_current_default_weights": true,
+    "direct_bidking_weight_adoption_allowed": false,
+    "next_safe_algorithm_step": "table_backed_shadow_replay_after_manual_mechanics_review",
+    "reason": "Recovered mechanics are useful for shadow modeling, but map alignment, schema parse order, and replay evidence are still pending."
+  },
+  "maps": {
+    "shipping": {
+      "current": {
+        "map_id": "shipping",
+        "alpha_counts": {
+          "w": 4.5,
+          "g": 4.4,
+          "b": 3.6,
+          "p": 2.9,
+          "o": 2.2,
+          "r": 0.9
+        },
+        "alpha_total": 18.5,
+        "alpha_fractions": {
+          "w": 0.243243,
+          "g": 0.237838,
+          "b": 0.194595,
+          "p": 0.156757,
+          "o": 0.118919,
+          "r": 0.048649
+        },
+        "solver": {
+          "count_prior_strength": 1,
+          "open_high_orange_avg_threshold": null,
+          "open_high_orange_avg_count_prior_strength": null
+        },
+        "value_model_summary": {
+          "p": {
+            "base_item_mean": 9492,
+            "base_item_sd": 5520,
+            "per_cell_mean": 0,
+            "per_cell_sd": 0
+          },
+          "o": {
+            "base_item_mean": 46325,
+            "base_item_sd": 29002,
+            "per_cell_mean": 0,
+            "per_cell_sd": 0
+          },
+          "r": {
+            "base_item_mean": 128777,
+            "base_item_sd": 48360,
+            "per_cell_mean": 0,
+            "per_cell_sd": 0
+          }
+        }
+      },
+      "bidking_alignment_candidate": {
+        "bidking_map_id_candidate": 103,
+        "bidking_bidmap_root_candidate": 2301,
+        "evidence_labels": [
+          "杂货集装箱"
+        ],
+        "confidence": "low_medium",
+        "blocker": "label overlap is weaker than villa/sunken_ship; requires screenshot or manual label alignment"
+      },
+      "bidking_mechanics_candidate": {
+        "map_id": 103,
+        "bidmap_root_id": 2301,
+        "item_count_range": [
+          20,
+          25
+        ],
+        "bidmap_count": 10,
+        "rank_ai_rank_count": 6,
+        "root_rank_map_sample": {
+          "bidmap_id": 2301,
+          "label": "杂货集装箱",
+          "count_distribution_summary": {
+            "total_weight": 2100,
+            "range_count": 4,
+            "min_low": 11,
+            "max_high": 30,
+            "top_ranges": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ]
+          },
+          "value_distribution_summary": {
+            "total_weight": 308,
+            "range_count": 5,
+            "min_low": 2001,
+            "max_high": 100000,
+            "top_ranges": [
+              [
+                20001,
+                50000,
+                200
+              ],
+              [
+                50001,
+                100000,
+                100
+              ],
+              [
+                10000,
+                20000,
+                5
+              ],
+              [
+                5001,
+                10000,
+                2
+              ],
+              [
+                2001,
+                5000,
+                1
+              ]
+            ]
+          }
+        }
+      },
+      "comparison": {
+        "current_alpha_total_vs_bidking_item_count_range": {
+          "relation": "below_range",
+          "delta_to_low": -1.5,
+          "delta_to_high": -6.5
+        },
+        "current_red_base_item_mean_vs_bidking_value_range": {
+          "relation": "above_range",
+          "delta_to_low": 126776,
+          "delta_to_high": 28777,
+          "bidking_value_range": [
+            2001,
+            100000
+          ]
+        },
+        "default_weight_update_allowed": false,
+        "authority_adoption_allowed": false,
+        "shadow_candidate_allowed": false,
+        "correction_role": "shadow_sanity_check_only"
+      },
+      "recommended_next_evidence": [
+        "manual approve map alignment and table schema parse order",
+        "attach same-battle replay samples before changing defaults",
+        "run table-backed shadow replay before another Dirichlet weight fit"
+      ]
+    },
+    "sunken_ship": {
+      "current": {
+        "map_id": "sunken_ship",
+        "alpha_counts": {
+          "w": 5.2,
+          "g": 6.62,
+          "b": 8.5,
+          "p": 2.95,
+          "o": 1.25,
+          "r": 0.8
+        },
+        "alpha_total": 25.32,
+        "alpha_fractions": {
+          "w": 0.205371,
+          "g": 0.261453,
+          "b": 0.335703,
+          "p": 0.116509,
+          "o": 0.049368,
+          "r": 0.031596
+        },
+        "solver": {
+          "count_prior_strength": 2.4,
+          "open_high_orange_avg_threshold": 4,
+          "open_high_orange_avg_count_prior_strength": 1.4
+        },
+        "value_model_summary": {
+          "p": {
+            "base_item_mean": 10631,
+            "base_item_sd": 6182,
+            "per_cell_mean": 0,
+            "per_cell_sd": 0
+          },
+          "o": {
+            "base_item_mean": 53737,
+            "base_item_sd": 33642,
+            "per_cell_mean": 0,
+            "per_cell_sd": 0
+          },
+          "r": {
+            "base_item_mean": 149381,
+            "base_item_sd": 56098,
+            "per_cell_mean": 0,
+            "per_cell_sd": 0
+          }
+        }
+      },
+      "bidking_alignment_candidate": {
+        "bidking_map_id_candidate": 105,
+        "bidking_bidmap_root_candidate": 2501,
+        "evidence_labels": [
+          "未知残骸",
+          "​皇家御用货舱​"
+        ],
+        "confidence": "medium",
+        "blocker": "manual confirmation required before config mapping"
+      },
+      "bidking_mechanics_candidate": {
+        "map_id": 105,
+        "bidmap_root_id": 2501,
+        "item_count_range": [
+          30,
+          35
+        ],
+        "bidmap_count": 10,
+        "rank_ai_rank_count": 6,
+        "root_rank_map_sample": {
+          "bidmap_id": 2501,
+          "label": "未知残骸",
+          "count_distribution_summary": {
+            "total_weight": 2100,
+            "range_count": 4,
+            "min_low": 11,
+            "max_high": 30,
+            "top_ranges": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ]
+          },
+          "value_distribution_summary": {
+            "total_weight": 554,
+            "range_count": 7,
+            "min_low": 2001,
+            "max_high": 300000,
+            "top_ranges": [
+              [
+                100001,
+                200000,
+                300
+              ],
+              [
+                200001,
+                300000,
+                200
+              ],
+              [
+                50001,
+                100000,
+                50
+              ],
+              [
+                2001,
+                5000,
+                1
+              ],
+              [
+                5001,
+                10000,
+                1
+              ],
+              [
+                10000,
+                20000,
+                1
+              ],
+              [
+                20001,
+                50000,
+                1
+              ]
+            ]
+          }
+        }
+      },
+      "comparison": {
+        "current_alpha_total_vs_bidking_item_count_range": {
+          "relation": "below_range",
+          "delta_to_low": -4.68,
+          "delta_to_high": -9.68
+        },
+        "current_red_base_item_mean_vs_bidking_value_range": {
+          "relation": "inside_range",
+          "delta_to_low": 147380,
+          "delta_to_high": -150619,
+          "bidking_value_range": [
+            2001,
+            300000
+          ]
+        },
+        "default_weight_update_allowed": false,
+        "authority_adoption_allowed": false,
+        "shadow_candidate_allowed": false,
+        "correction_role": "shadow_sanity_check_only"
+      },
+      "recommended_next_evidence": [
+        "manual approve map alignment and table schema parse order",
+        "attach same-battle replay samples before changing defaults",
+        "run table-backed shadow replay before another Dirichlet weight fit"
+      ]
+    },
+    "villa": {
+      "current": {
+        "map_id": "villa",
+        "alpha_counts": {
+          "w": 8.5,
+          "g": 7.6,
+          "b": 3.9,
+          "p": 3.2,
+          "o": 4,
+          "r": 0.12
+        },
+        "alpha_total": 27.32,
+        "alpha_fractions": {
+          "w": 0.311127,
+          "g": 0.278184,
+          "b": 0.142753,
+          "p": 0.11713,
+          "o": 0.146413,
+          "r": 0.004392
+        },
+        "solver": {
+          "count_prior_strength": 8,
+          "open_high_orange_avg_threshold": null,
+          "open_high_orange_avg_count_prior_strength": null
+        },
+        "value_model_summary": {
+          "p": {
+            "base_item_mean": 9492,
+            "base_item_sd": 5520,
+            "per_cell_mean": 0,
+            "per_cell_sd": 0
+          },
+          "o": {
+            "base_item_mean": 46325,
+            "base_item_sd": 29002,
+            "per_cell_mean": 0,
+            "per_cell_sd": 0
+          },
+          "r": {
+            "base_item_mean": 128777,
+            "base_item_sd": 48360,
+            "per_cell_mean": 0,
+            "per_cell_sd": 0
+          }
+        }
+      },
+      "bidking_alignment_candidate": {
+        "bidking_map_id_candidate": 104,
+        "bidking_bidmap_root_candidate": 2401,
+        "evidence_labels": [
+          "未知别墅",
+          "私人金库"
+        ],
+        "confidence": "medium",
+        "blocker": "manual confirmation required before config mapping"
+      },
+      "bidking_mechanics_candidate": {
+        "map_id": 104,
+        "bidmap_root_id": 2401,
+        "item_count_range": [
+          25,
+          30
+        ],
+        "bidmap_count": 10,
+        "rank_ai_rank_count": 6,
+        "root_rank_map_sample": {
+          "bidmap_id": 2401,
+          "label": "未知别墅",
+          "count_distribution_summary": {
+            "total_weight": 2100,
+            "range_count": 4,
+            "min_low": 11,
+            "max_high": 30,
+            "top_ranges": [
+              [
+                11,
+                15,
+                1000
+              ],
+              [
+                16,
+                20,
+                1000
+              ],
+              [
+                21,
+                25,
+                50
+              ],
+              [
+                26,
+                30,
+                50
+              ]
+            ]
+          },
+          "value_distribution_summary": {
+            "total_weight": 309,
+            "range_count": 6,
+            "min_low": 2001,
+            "max_high": 200000,
+            "top_ranges": [
+              [
+                50001,
+                100000,
+                200
+              ],
+              [
+                100001,
+                200000,
+                100
+              ],
+              [
+                20001,
+                50000,
+                5
+              ],
+              [
+                10000,
+                20000,
+                2
+              ],
+              [
+                2001,
+                5000,
+                1
+              ],
+              [
+                5001,
+                10000,
+                1
+              ]
+            ]
+          }
+        }
+      },
+      "comparison": {
+        "current_alpha_total_vs_bidking_item_count_range": {
+          "relation": "inside_range",
+          "delta_to_low": 2.32,
+          "delta_to_high": -2.68
+        },
+        "current_red_base_item_mean_vs_bidking_value_range": {
+          "relation": "inside_range",
+          "delta_to_low": 126776,
+          "delta_to_high": -71223,
+          "bidking_value_range": [
+            2001,
+            200000
+          ]
+        },
+        "default_weight_update_allowed": false,
+        "authority_adoption_allowed": false,
+        "shadow_candidate_allowed": false,
+        "correction_role": "shadow_sanity_check_only"
+      },
+      "recommended_next_evidence": [
+        "manual approve map alignment and table schema parse order",
+        "attach same-battle replay samples before changing defaults",
+        "run table-backed shadow replay before another Dirichlet weight fit"
+      ]
+    }
+  },
+  "optimization_queue": [
+    {
+      "id": "keep_default_config_as_authority",
+      "priority": "P0",
+      "status": "applied_guard",
+      "current_gap": "Reverse-engineered mechanics are not source-authoritative for live defaults.",
+      "action": "Keep default_config_bundle.js unchanged until manual review and replay gates pass.",
+      "default_config_update_allowed": false
+    },
+    {
+      "id": "table_backed_shadow_replay_before_next_weight_fit",
+      "priority": "P0",
+      "status": "blocked_by_manual_review",
+      "current_gap": "Current strategy optimizes map-level quality priors, while BidKing evidence points to Map/RankMap/Drop table mechanics.",
+      "action": "Build the next candidate from schema-backed table/drop mechanics as shadow replay, then compare against current estimator outputs.",
+      "blockers": [
+        "manual_mechanics_review_pending",
+        "same_battle_replay_samples_missing",
+        "authority_handoff_gate_closed"
+      ]
+    },
+    {
+      "id": "item_count_range_shadow_sanity_check",
+      "priority": "P1",
+      "status": "ready_for_shadow_report",
+      "current_gap": "Current alpha_total is a count-prior shape, not a recovered table item-count contract.",
+      "action": "Use recovered item_count_range only as a sanity diagnostic beside user-entered total_items.",
+      "affected_maps": [
+        "shipping",
+        "sunken_ship"
+      ]
+    },
+    {
+      "id": "red_tail_value_band_alignment",
+      "priority": "P1",
+      "status": "needs_manual_alignment_review",
+      "current_gap": "Current red value model and BidKing RankMap value bands are different evidence families.",
+      "action": "Compare red-tail settlement fit against recovered RankMap value ranges before changing value_model.",
+      "affected_maps": [
+        "shipping"
+      ]
+    },
+    {
+      "id": "drop_helper_runtime_contract",
+      "priority": "P1",
+      "status": "semantics_recovered_not_adopted",
+      "current_gap": "DoDrop has independent Bernoulli groups, single weighted-choice groups, nested groups, and exclusive RandomCount upper bounds.",
+      "action": "Any future shadow simulator must preserve these four semantics exactly and remain blocked from default config adoption."
+    }
+  ],
+  "source_artifacts": {
+    "decompile_audit_report": "<repo>/docs/research/2026-04-29-bidking-zip-decompile-audit-report.json",
+    "schema_backed_table_report": "<repo>/docs/research/2026-04-29-bidking-schema-backed-table-report.json",
+    "table_mechanics_report": "<repo>/docs/research/2026-04-29-bidking-table-mechanics-report.json",
+    "dodrop_semantics_report": "<repo>/docs/research/2026-04-29-bidking-dodrop-semantics-report.json",
+    "drop_helper_semantics_report": "<repo>/docs/research/2026-04-29-bidking-drop-helper-semantics-report.json",
+    "manual_review_template": "<repo>/docs/research/2026-04-29-bidking-manual-mechanics-review-template.json",
+    "producer_strategy_chain_audit_report": "<repo>/docs/research/2026-04-25-producer-strategy-chain-audit-report.json"
+  }
+}

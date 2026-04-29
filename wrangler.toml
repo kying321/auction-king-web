@@ -1,0 +1,10 @@
+name = "auction-king-web"
+compatibility_date = "2026-04-21"
+workers_dev = true
+
+[assets]
+directory = "./dist"
+
+[[routes]]
+pattern = "ak.fuuu.fun"
+custom_domain = true

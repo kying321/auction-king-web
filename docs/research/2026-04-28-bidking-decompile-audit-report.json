@@ -1,0 +1,282 @@
+{
+  "schema_version": "ak_bidking_decompile_audit_v1",
+  "generated_at": "2026-04-28T16:10:05.814Z",
+  "mode": "architecture_review",
+  "change_class": "RESEARCH_ONLY",
+  "recommended_change_class": "RESEARCH_ONLY",
+  "inputs": {
+    "bidking_path": "<local-bidking>"
+  },
+  "summary": {
+    "mechanics_recovery_status": "insufficient_package_for_bid_mechanics",
+    "evidence_confidence": "low",
+    "authority_adoption_allowed": false,
+    "reverse_engineering_source_allowed": false,
+    "default_config_update_allowed": false,
+    "core_refactor_recommended_now": false,
+    "il2cpp_source_file_count": 5,
+    "gameplay_type_count": 0,
+    "missing_required_for_full_recovery": [
+      "missing_BidKing_Data",
+      "missing_global_metadata_dat",
+      "missing_GameAssembly_dll"
+    ]
+  },
+  "inventory": {
+    "source_path": "<local-bidking>",
+    "exists": true,
+    "file_count": 28,
+    "top_level_files": [
+      ".DS_Store",
+      "BidKing.exe",
+      "baselib.dll"
+    ],
+    "top_level_directories": [
+      "BidKing_BackUpThisFolder_ButDontShipItWithYourGame"
+    ],
+    "detected_files": {
+      "exe": "BidKing.exe",
+      "baselib": "baselib.dll",
+      "gameassembly": null,
+      "unityplayer": null,
+      "data_dir": null,
+      "global_metadata": null,
+      "il2cpp_output_dir": "BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput",
+      "analytics_json": "BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/analytics.json"
+    },
+    "pe_header_summary": {
+      "format": "PE32+",
+      "machine": "0x8664",
+      "timestamp": 1689667750,
+      "timestamp_iso": "2023-07-18T08:09:10.000Z",
+      "characteristics": "0x22",
+      "address_of_entry_point": 4704,
+      "image_base": 5368709120,
+      "size_of_image": 675840,
+      "subsystem": 2,
+      "section_count": 7,
+      "sections": [
+        {
+          "name": ".text",
+          "virtual_size": 41280,
+          "virtual_address": 4096,
+          "raw_size": 41472,
+          "raw_pointer": 1024,
+          "characteristics": "0x60000020"
+        },
+        {
+          "name": ".rdata",
+          "virtual_size": 36046,
+          "virtual_address": 49152,
+          "raw_size": 36352,
+          "raw_pointer": 42496,
+          "characteristics": "0x40000040"
+        },
+        {
+          "name": ".data",
+          "virtual_size": 7400,
+          "virtual_address": 86016,
+          "raw_size": 3072,
+          "raw_pointer": 78848,
+          "characteristics": "0xc0000040"
+        },
+        {
+          "name": ".pdata",
+          "virtual_size": 3156,
+          "virtual_address": 94208,
+          "raw_size": 3584,
+          "raw_pointer": 81920,
+          "characteristics": "0x40000040"
+        },
+        {
+          "name": "_RDATA",
+          "virtual_size": 148,
+          "virtual_address": 98304,
+          "raw_size": 512,
+          "raw_pointer": 85504,
+          "characteristics": "0x40000040"
+        },
+        {
+          "name": ".rsrc",
+          "virtual_size": 565656,
+          "virtual_address": 102400,
+          "raw_size": 565760,
+          "raw_pointer": 86016,
+          "characteristics": "0x40000040"
+        },
+        {
+          "name": ".reloc",
+          "virtual_size": 1592,
+          "virtual_address": 671744,
+          "raw_size": 2048,
+          "raw_pointer": 651776,
+          "characteristics": "0x42000040"
+        }
+      ]
+    },
+    "il2cpp_source_file_count": 5,
+    "il2cpp_source_files": [
+      "BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp.cpp",
+      "BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__1.cpp",
+      "BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__2.cpp",
+      "BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__3.cpp",
+      "BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__4.cpp"
+    ],
+    "byte_size": 32267716
+  },
+  "il2cpp_type_summary": {
+    "total_type_count": 735,
+    "plugin_or_noise_type_count": 706,
+    "non_plugin_type_count": 29,
+    "gameplay_type_count": 0,
+    "gameplay_type_samples": [],
+    "non_plugin_type_samples": [
+      "GiphyDemo",
+      "GiphyDemo/<>c",
+      "GiphyDemo/<>c__DisplayClass28_0",
+      "Microsoft.Win32.SafeHandles.SafeFileHandle",
+      "Mono.Net.Security.MobileTlsProvider",
+      "Mono.Security.Interface.MonoTlsSettings",
+      "OnEnableTrigger",
+      "PGif",
+      "PGif/<>c__DisplayClass31_0",
+      "PGif/<>c__DisplayClass39_0",
+      "PGif/<>c__DisplayClass43_0",
+      "PGif/<>c__DisplayClass44_0",
+      "PGif/<>c__DisplayClass45_0",
+      "PGif/<>c__DisplayClass46_0",
+      "PGif/<>c__DisplayClass47_0",
+      "PGif/<>c__DisplayClass48_0",
+      "PGif/<>c__DisplayClass49_0",
+      "PGif/<>c__DisplayClass50_0",
+      "SRDebugger.IncrementAttribute",
+      "SRDebugger.Internal.InternalOptionsRegistry",
+      "SRDebugger.NumberRangeAttribute",
+      "SRDebugger.SortAttribute",
+      "SROptions",
+      "SROptions/DisplayNameAttribute",
+      "SROptions/IncrementAttribute",
+      "SROptions/NumberRangeAttribute",
+      "SROptions/SortAttribute",
+      "SROptionsPropertyChanged",
+      "SetBytesDataDemo"
+    ],
+    "source_files": [
+      "BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp.cpp",
+      "BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__1.cpp",
+      "BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__2.cpp",
+      "BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__3.cpp",
+      "BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__4.cpp"
+    ]
+  },
+  "analytics": {
+    "DataTable": {
+      "attribute_total_count_eager_static_constructor": 9,
+      "attribute_total_count_set_option": 0,
+      "attribute_total_count_generate_into_own_cpp_file": 0,
+      "extra_types_total_count": 0,
+      "option_extra_types_file_count": 0,
+      "option_jobs": 36,
+      "option_debug_assembly_name_count": 0,
+      "option_additional_cpp_count": 0,
+      "option_emit_null_checks": true,
+      "option_enable_stacktrace": false,
+      "option_enable_deep_profiler": false,
+      "option_enable_stats": false,
+      "option_enable_array_bounds_check": true,
+      "option_enable_divide_by_zero_check": false,
+      "option_disable_generic_sharing": false,
+      "option_maximum_recursive_generic_depth": 7,
+      "option_generic_virtual_method_iterations": 1,
+      "option_code_generation_option": [
+        "EnableInlining"
+      ],
+      "option_file_generation_option": [],
+      "option_generics_option": [],
+      "option_feature": [],
+      "option_diagnostic_option": [],
+      "option_convert_to_cpp": true,
+      "option_compile_cpp": false,
+      "option_development_mode": false,
+      "option_enable_debugger": false,
+      "option_generate_usym_file": false
+    }
+  },
+  "assessment": {
+    "mechanics_recovery_status": "insufficient_package_for_bid_mechanics",
+    "authority_adoption_allowed": false,
+    "reverse_engineering_source_allowed": false,
+    "default_config_update_allowed": false,
+    "core_refactor_recommended_now": false,
+    "evidence_confidence": "low",
+    "missing_required_for_full_recovery": [
+      "missing_BidKing_Data",
+      "missing_global_metadata_dat",
+      "missing_GameAssembly_dll"
+    ],
+    "risk_flags": [
+      "il2cpp_cpp_output_not_compiled_binary_logic",
+      "no_detected_bid_or_auction_gameplay_types",
+      "package_looks_like_unity_player_shell_without_data",
+      "reverse_engineered_logic_is_not_authority_without_manual_validation"
+    ],
+    "keyword_summary": {
+      "scanned_bytes": 6572107,
+      "hits": {
+        "auction": 0,
+        "bid": 0,
+        "bidding": 0,
+        "bargain": 0,
+        "haggle": 0,
+        "pawn": 0,
+        "offer": 1,
+        "price": 0,
+        "value": 386,
+        "rarity": 0,
+        "item": 0,
+        "inventory": 0,
+        "loot": 0,
+        "round": 0,
+        "customer": 0,
+        "opponent": 0,
+        "profit": 0,
+        "sell": 0,
+        "buy": 0,
+        "market": 0,
+        "appraisal": 0,
+        "estimate": 0,
+        "reward": 0
+      },
+      "positive_keyword_count": 2,
+      "total_hit_count": 387
+    }
+  },
+  "architecture_impact": {
+    "recommended_change_class": "RESEARCH_ONLY",
+    "live_path_touched": false,
+    "useful_now": [
+      "negative evidence: current BidKing package is not enough to recover bidding mechanics",
+      "validation pressure: keep reverse-engineered findings as review-source artifacts, not default weights",
+      "architecture direction: external mechanics should enter through a source-owned evidence lane and shadow gates"
+    ],
+    "not_useful_now": [
+      "no safe basis to rewrite estimator.js, default_config_bundle.js, or authority calibration from this package",
+      "no recovered item rarity, bid timing, opponent, settlement, or value formulas",
+      "no executable Unity data folder or IL2CPP metadata for asset/game-state correlation"
+    ],
+    "refactor_position": "do not refactor core solver from this package; first acquire complete Unity data or authoritative samples",
+    "proposed_source_lane": [
+      "bidking_decompile_inventory",
+      "mechanics_candidate_extraction",
+      "manual_mechanics_review",
+      "shadow_replay_candidate",
+      "authority_handoff_gate"
+    ],
+    "hard_blocks_before_core_refactor": [
+      "complete package with BidKing_Data/global-metadata/GameAssembly or source assemblies",
+      "recovered gameplay classes/methods tied to bid/value/count state transitions",
+      "same-battle manual validation samples that pass existing replay gates",
+      "explicit human approval before authority merge"
+    ]
+  }
+}

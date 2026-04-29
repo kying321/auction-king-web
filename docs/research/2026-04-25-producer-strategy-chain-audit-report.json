@@ -1,0 +1,227 @@
+{
+  "schema_version": "ak_producer_strategy_chain_audit_v1",
+  "generated_at": "2026-04-25T09:31:57.153Z",
+  "mode": "research_backtest",
+  "change_class": "RESEARCH_ONLY",
+  "recommended_change_class": "RESEARCH_ONLY",
+  "status": "blocked",
+  "inputs": {
+    "candidate_config": "<repo>/docs/research/2026-04-25-producer-strategy-candidate-config.json",
+    "count_replay_report": "<repo>/docs/research/2026-04-25-producer-strategy-count-replay-report.json",
+    "replay_diagnostics_report": "<repo>/docs/research/2026-04-25-producer-strategy-replay-diagnostics-report.json",
+    "architecture_report": "<repo>/docs/research/2026-04-25-producer-strategy-architecture-report.json",
+    "default_weight_implementation_report": "<repo>/docs/research/2026-04-25-default-weight-implementation-report.json",
+    "count_fit_sample_acquisition_queue": "<repo>/docs/research/2026-04-25-count-fit-sample-acquisition-queue.json",
+    "count_fit_sample_acquisition_pack": "<repo>/docs/research/2026-04-25-count-fit-sample-acquisition-pack.json",
+    "count_fit_sample_review_template": "<repo>/docs/research/2026-04-25-count-fit-sample-review-template.json",
+    "count_fit_readiness_report": "<repo>/docs/research/2026-04-25-settlement-count-fit-readiness-report.json",
+    "count_fit_sample_review_import": "<repo>/docs/research/2026-04-25-count-fit-sample-review-import.json"
+  },
+  "summary": {
+    "check_count": 16,
+    "passed_check_count": 15,
+    "failed_check_count": 1,
+    "candidate_generated_at": "2026-04-25T09:10:00.000Z",
+    "replay_context_generated_at": "2026-04-25T09:10:00.000Z",
+    "diagnostics_context_generated_at": "2026-04-25T09:10:00.000Z",
+    "maps_ready_for_default_weight_update": 0,
+    "default_weight_implementation_status": "mismatch",
+    "default_weight_mismatched_map_count": 3,
+    "default_weight_selected_multiplier": 1.25,
+    "default_weight_authority_adoption_allowed": false,
+    "default_weight_authority_blocker_count": 3,
+    "count_fit_sample_acquisition_blocked_map_count": 3,
+    "count_fit_sample_acquisition_total_target_new_same_battle_samples": 90,
+    "count_fit_sample_acquisition_priority_counts": {
+      "P0": 1,
+      "P1": 1,
+      "P2": 1
+    },
+    "count_fit_sample_acquisition_blocked_maps": [
+      "shipping",
+      "sunken_ship",
+      "villa"
+    ],
+    "count_fit_sample_acquisition_pack_existing_candidate_task_count": 12,
+    "count_fit_sample_acquisition_pack_fresh_capture_map_count": 3,
+    "count_fit_sample_acquisition_pack_blocked_maps": [
+      "shipping",
+      "sunken_ship",
+      "villa"
+    ],
+    "count_fit_sample_review_template_existing_candidate_review_count": 12,
+    "count_fit_sample_review_template_fresh_capture_template_count": 3,
+    "count_fit_sample_review_template_pixel_training_label_allowed_count": 0,
+    "count_fit_sample_review_import_accepted_sample_count": 0,
+    "count_fit_sample_review_import_blocked_entry_count": 12,
+    "count_fit_readiness_review_import_sample_count": 0
+  },
+  "default_weight_authority_blockers": [
+    "red_label_sample_count_below_default_update_gate",
+    "fit_uses_partial_overlay_replay_samples",
+    "purple_multiplier_scan_is_shadow_only"
+  ],
+  "blockers": [
+    "default_weight_implementation_mismatch"
+  ],
+  "checks": [
+    {
+      "id": "candidate_source_report_points_to_architecture",
+      "passed": true,
+      "blocker": null,
+      "detail": {
+        "candidate_source_report": "<repo>/docs/research/2026-04-25-producer-strategy-architecture-report.json",
+        "architecture_report_path": "<repo>/docs/research/2026-04-25-producer-strategy-architecture-report.json"
+      }
+    },
+    {
+      "id": "count_replay_candidate_context_matches_candidate_config",
+      "passed": true,
+      "blocker": null,
+      "detail": {
+        "candidate_generated_at": "2026-04-25T09:10:00.000Z",
+        "replay_context_generated_at": "2026-04-25T09:10:00.000Z"
+      }
+    },
+    {
+      "id": "diagnostics_candidate_context_matches_count_replay",
+      "passed": true,
+      "blocker": null,
+      "detail": {
+        "replay_context_generated_at": "2026-04-25T09:10:00.000Z",
+        "diagnostics_context_generated_at": "2026-04-25T09:10:00.000Z"
+      }
+    },
+    {
+      "id": "count_fit_readiness_guard_present_in_replay_context",
+      "passed": true,
+      "blocker": null,
+      "detail": {
+        "replay_guard": "skip_count_fit_readiness_passed_false"
+      }
+    },
+    {
+      "id": "no_legacy_strategy_source_report_in_replay_context",
+      "passed": true,
+      "blocker": null,
+      "detail": {
+        "replay_source_report": "<repo>/docs/research/2026-04-25-producer-strategy-architecture-report.json"
+      }
+    },
+    {
+      "id": "architecture_report_schema_present",
+      "passed": true,
+      "blocker": null,
+      "detail": {
+        "architecture_schema_version": "ak_producer_strategy_architecture_v1"
+      }
+    },
+    {
+      "id": "default_weight_implementation_report_applied",
+      "passed": false,
+      "blocker": "default_weight_implementation_mismatch",
+      "detail": {
+        "implementation_status": "mismatch",
+        "mismatched_map_count": 3,
+        "selected_multiplier": 1.25
+      }
+    },
+    {
+      "id": "default_weight_authority_adoption_status_reported",
+      "passed": true,
+      "blocker": null,
+      "detail": {
+        "authority_adoption_allowed": false,
+        "authority_blocker_count": 3
+      }
+    },
+    {
+      "id": "count_fit_sample_acquisition_queue_schema_present",
+      "passed": true,
+      "blocker": null,
+      "detail": {
+        "queue_schema_version": "ak_count_fit_sample_acquisition_queue_v1"
+      }
+    },
+    {
+      "id": "count_fit_sample_acquisition_queue_covers_count_fit_blockers",
+      "passed": true,
+      "blocker": null,
+      "detail": {
+        "architecture_count_fit_blocked_maps": [
+          "shipping",
+          "sunken_ship",
+          "villa"
+        ],
+        "queue_blocked_maps": [
+          "shipping",
+          "sunken_ship",
+          "villa"
+        ]
+      }
+    },
+    {
+      "id": "count_fit_sample_acquisition_pack_schema_present",
+      "passed": true,
+      "blocker": null,
+      "detail": {
+        "pack_schema_version": "ak_count_fit_sample_acquisition_pack_v1"
+      }
+    },
+    {
+      "id": "count_fit_sample_acquisition_pack_covers_queue_blockers",
+      "passed": true,
+      "blocker": null,
+      "detail": {
+        "queue_blocked_maps": [
+          "shipping",
+          "sunken_ship",
+          "villa"
+        ],
+        "pack_blocked_maps": [
+          "shipping",
+          "sunken_ship",
+          "villa"
+        ]
+      }
+    },
+    {
+      "id": "count_fit_sample_review_template_schema_present",
+      "passed": true,
+      "blocker": null,
+      "detail": {
+        "review_template_schema_version": "ak_count_fit_sample_review_template_v1"
+      }
+    },
+    {
+      "id": "count_fit_sample_review_template_covers_acquisition_pack",
+      "passed": true,
+      "blocker": null,
+      "detail": {
+        "pack_existing_candidate_task_count": 12,
+        "review_existing_candidate_draft_count": 12,
+        "pack_fresh_capture_task_count": 3,
+        "review_fresh_capture_template_count": 3
+      }
+    },
+    {
+      "id": "count_fit_sample_review_import_schema_present",
+      "passed": true,
+      "blocker": null,
+      "detail": {
+        "review_import_schema_version": "ak_count_fit_sample_review_import_v1"
+      }
+    },
+    {
+      "id": "count_fit_readiness_consumes_review_import",
+      "passed": true,
+      "blocker": null,
+      "detail": {
+        "review_import_path": "<repo>/docs/research/2026-04-25-count-fit-sample-review-import.json",
+        "readiness_package_schema_version": "ak_count_fit_sample_review_import_v1",
+        "readiness_package_sample_count": 0,
+        "review_import_sample_count": 0
+      }
+    }
+  ]
+}

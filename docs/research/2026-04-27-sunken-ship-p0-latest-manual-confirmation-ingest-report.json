@@ -1,0 +1,48 @@
+{
+  "schema_version": "ak_latest_manual_confirmation_ingest_v1",
+  "generated_at": "2026-04-27T13:22:47.440Z",
+  "mode": "source_first_implementation",
+  "change_class": "RESEARCH_ONLY",
+  "inputs": {
+    "downloads_dir": "<local-downloads>",
+    "manual_confirmation_results": "<local-downloads>/2026-04-27-sunken-ship-p0-manual-count-confirmation-results (1).json",
+    "candidate_config": "<repo>/docs/research/2026-04-26-sunken-ship-codex-visual-shadow-candidate-config.json"
+  },
+  "outputs": {
+    "count_fit_sample_review_import": "<repo>/docs/research/2026-04-27-sunken-ship-p0-manual-count-confirmation-import.json",
+    "codex_visual_shadow_candidate_replay_gate": "<repo>/docs/research/2026-04-27-sunken-ship-p0-codex-visual-shadow-candidate-replay-gate.json",
+    "manual_count_prior_shadow_candidate_config": "<repo>/docs/research/2026-04-27-sunken-ship-p0-manual-count-prior-shadow-candidate-config.json",
+    "manual_count_prior_shadow_candidate_replay_gate": "<repo>/docs/research/2026-04-27-sunken-ship-p0-manual-count-prior-shadow-candidate-replay-gate.json",
+    "chain_refresh_report": "<repo>/docs/research/2026-04-27-sunken-ship-p0-manual-confirmation-chain-refresh.json",
+    "ingest_report": "<repo>/docs/research/2026-04-27-sunken-ship-p0-latest-manual-confirmation-ingest-report.json"
+  },
+  "source_summary": {
+    "sample_count": 2,
+    "valid_count": 1,
+    "approved_count": 0,
+    "import_ready_count": 0
+  },
+  "summary": {
+    "status": "no_accepted_samples",
+    "accepted_sample_count": 0,
+    "blocked_entry_count": 2,
+    "manual_candidate_replay_passed": false,
+    "manual_candidate_gate_blockers": [
+      "manual_shadow_candidate_not_directly_deployable",
+      "missing_accepted_count_fit_samples"
+    ],
+    "recommended_next_action": "collect_human_confirmed_count_fit_samples"
+  },
+  "readiness": {
+    "authority_sample_import_ready": false,
+    "replay_candidate_ready": false,
+    "default_weight_update_allowed": false
+  },
+  "blockers": [
+    "missing_accepted_manual_count_fit_samples",
+    "manual_confirmation_import_contains_blocked_entries",
+    "manual_candidate_replay_gate_not_passed",
+    "manual_shadow_candidate_not_directly_deployable",
+    "missing_accepted_count_fit_samples"
+  ]
+}

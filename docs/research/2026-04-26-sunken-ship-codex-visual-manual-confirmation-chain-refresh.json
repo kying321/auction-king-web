@@ -1,0 +1,60 @@
+{
+  "schema_version": "ak_codex_visual_manual_confirmation_chain_refresh_v1",
+  "generated_at": "2026-04-26T12:40:00.000+08:00",
+  "mode": "source_first_implementation",
+  "change_class": "RESEARCH_ONLY",
+  "inputs": {
+    "codex_visual_manual_confirmation_results": "/var/folders/dr/2wz304850ynflhw9qtp_6c_80000gn/T/ak-manual-priority-select-9L7frx/older-p1-manual-count-confirmation-results.json",
+    "codex_visual_shadow_candidate_config": "docs/research/2026-04-26-sunken-ship-codex-visual-shadow-candidate-config.json"
+  },
+  "outputs": {
+    "count_fit_sample_review_import": "docs/research/2026-04-26-sunken-ship-codex-visual-manual-confirmation-import.json",
+    "codex_visual_shadow_candidate_replay_gate": "docs/research/2026-04-26-sunken-ship-codex-visual-shadow-candidate-replay-gate.json",
+    "manual_count_prior_shadow_candidate_config": "docs/research/2026-04-26-manual-count-prior-shadow-candidate-config.json",
+    "manual_count_prior_shadow_candidate_replay_gate": "docs/research/2026-04-26-manual-count-prior-shadow-candidate-replay-gate.json",
+    "chain_refresh_report": "docs/research/2026-04-26-sunken-ship-codex-visual-manual-confirmation-chain-refresh.json"
+  },
+  "summary": {
+    "review_entry_count": 1,
+    "accepted_sample_count": 1,
+    "blocked_entry_count": 0,
+    "import_blocker_reason_counts": {},
+    "gate_evaluated_sample_count": 1,
+    "gate_all_quality_abs_non_regression": false,
+    "gate_promotion_allowed": false,
+    "gate_promotion_status": "blocked_visual_shadow_source",
+    "gate_recommended_next_action": "rebuild_manual_sample_backed_count_prior_candidate",
+    "gate_blockers": [
+      "visual_shadow_candidate_not_deployable",
+      "codex_visual_review_shadow_only",
+      "missing_human_confirmed_count_fit_sample",
+      "single_visual_candidate_overfit_risk"
+    ],
+    "gate_warnings": [],
+    "manual_candidate_applied_maps": [
+      "sunken_ship"
+    ],
+    "manual_candidate_low_sample_maps": [
+      "sunken_ship"
+    ],
+    "manual_candidate_adoption_blockers": [
+      "manual_count_prior_shadow_candidate_not_default",
+      "replay_gate_required_before_default_update",
+      "map_sample_count_below_minimum"
+    ],
+    "manual_candidate_gate_evaluated_sample_count": 1,
+    "manual_candidate_replay_passed": false,
+    "manual_candidate_gate_blockers": [
+      "manual_shadow_candidate_not_directly_deployable",
+      "accepted_sample_count_below_minimum",
+      "map_sample_count_below_minimum"
+    ],
+    "manual_candidate_gate_recommended_next_action": "collect_more_human_confirmed_count_fit_samples",
+    "ready_for_manual_sample_backed_candidate": true
+  },
+  "notes": [
+    "This refresh only chains manual confirmation import and visual shadow replay gate artifacts.",
+    "It does not change default weights and does not promote visual shadow configs.",
+    "Use approved manual_review samples to build the next manual-sample-backed candidate."
+  ]
+}

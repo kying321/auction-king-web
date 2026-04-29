@@ -1,0 +1,573 @@
+{
+    "maps": {
+        "sunken_ship": {
+            "label": "沉船图",
+            "map_name": "沉船图-高难-互联网校准v1",
+            "submaps": [
+                {
+                    "id": "unknown_wreck",
+                    "label": "未知残骸"
+                },
+                {
+                    "id": "ocean_liner_hold",
+                    "label": "远洋客轮仓房"
+                },
+                {
+                    "id": "military_vault",
+                    "label": "军用舰艇保险库"
+                },
+                {
+                    "id": "cold_chain_quarantine",
+                    "label": "冷链货船隔离舱"
+                },
+                {
+                    "id": "colonial_treasure_hold",
+                    "label": "殖民商船宝库"
+                },
+                {
+                    "id": "explorer_archive",
+                    "label": "探险家座舰资料库"
+                },
+                {
+                    "id": "royal_supply_hold",
+                    "label": "皇家御用货仓"
+                },
+                {
+                    "id": "biolab_sample_vault",
+                    "label": "生物实验室样本库"
+                }
+            ],
+            "alpha_counts": {
+                "w": 5.2,
+                "g": 6.62,
+                "b": 8.5,
+                "p": 2.95,
+                "o": 1.25,
+                "r": 0.8
+            },
+            "solver": {
+                "count_prior_strength": 2.4,
+                "open_high_orange_avg_threshold": 4,
+                "open_high_orange_avg_count_prior_strength": 1.4
+            },
+            "cells_per_item": {
+                "w": {
+                    "mean": 1.6338,
+                    "sd": 1.1307,
+                    "min": 1,
+                    "max": null
+                },
+                "g": {
+                    "mean": 2.0379,
+                    "sd": 1.333,
+                    "min": 1,
+                    "max": null
+                },
+                "b": {
+                    "mean": 2.5705,
+                    "sd": 1.8377,
+                    "min": 1,
+                    "max": null
+                },
+                "p": {
+                    "mean": 2.7773,
+                    "sd": 1.8794,
+                    "min": 1,
+                    "max": null
+                },
+                "o": {
+                    "mean": 3.1784,
+                    "sd": 2.3,
+                    "min": 1,
+                    "max": null
+                },
+                "r": {
+                    "mean": 2.5984,
+                    "sd": 2,
+                    "min": 1,
+                    "max": null
+                }
+            },
+            "value_model": {
+                "w": {
+                    "base_item_mean": 700,
+                    "base_item_sd": 220,
+                    "per_cell_mean": 260,
+                    "per_cell_sd": 70
+                },
+                "g": {
+                    "base_item_mean": 1700,
+                    "base_item_sd": 500,
+                    "per_cell_mean": 520,
+                    "per_cell_sd": 140
+                },
+                "b": {
+                    "base_item_mean": 3900,
+                    "base_item_sd": 1100,
+                    "per_cell_mean": 1100,
+                    "per_cell_sd": 300
+                },
+                "p": {
+                    "base_item_mean": 9000,
+                    "base_item_sd": 2200,
+                    "per_cell_mean": 2300,
+                    "per_cell_sd": 600
+                },
+                "o": {
+                    "base_item_mean": 20000,
+                    "base_item_sd": 4800,
+                    "per_cell_mean": 4300,
+                    "per_cell_sd": 950
+                },
+                "r": {
+                    "base_item_mean": 128000,
+                    "base_item_sd": 48000,
+                    "per_cell_mean": 0,
+                    "per_cell_sd": 0
+                }
+            },
+            "value_model_refit": {
+                "change_class": "SIM_ONLY",
+                "source": "docs/research/2026-04-28-sunken-red-tail-refit-v2-backtest.json",
+                "notes": [
+                    "2026-04-28 settlement screenshots showed systematic underpricing of compact and large red outcomes.",
+                    "Applied after catalog authority calibration so map-specific live defaults keep the red-tail pressure correction.",
+                    "v2 incorporates new 2026-04-28 settlement screenshots; red count pressure and red type means are pulled back while keeping a wide tail band."
+                ],
+                "value_model": {
+                    "p": {
+                        "base_item_mean": 10631,
+                        "base_item_sd": 6182,
+                        "per_cell_mean": 0,
+                        "per_cell_sd": 0,
+                        "value_basis": "catalog_reported_item_mean"
+                    },
+                    "o": {
+                        "base_item_mean": 53737,
+                        "base_item_sd": 33642,
+                        "per_cell_mean": 0,
+                        "per_cell_sd": 0,
+                        "value_basis": "catalog_reported_item_mean"
+                    },
+                    "r": {
+                        "base_item_mean": 149381,
+                        "base_item_sd": 56098,
+                        "per_cell_mean": 0,
+                        "per_cell_sd": 0,
+                        "value_basis": "catalog_tail_aware_common_item_mean",
+                        "tail_model": {
+                            "battle_probability": 0.14,
+                            "replacement_item_mean": 149381
+                        }
+                    }
+                }
+            },
+            "red_type_profiles": {
+                "profiles": {
+                    "small_red": {
+                        "label": "小红",
+                        "prior": 0.66,
+                        "mean_cells_per_item": 2.1,
+                        "sd_cells_per_item": 1.05,
+                        "base_item_mean": 77000,
+                        "base_item_sd": 65000,
+                        "per_cell_mean": 6300,
+                        "per_cell_sd": 3200
+                    },
+                    "big_red": {
+                        "label": "大红",
+                        "prior": 0.25,
+                        "mean_cells_per_item": 4,
+                        "sd_cells_per_item": 1.6,
+                        "base_item_mean": 252000,
+                        "base_item_sd": 240000,
+                        "per_cell_mean": 33600,
+                        "per_cell_sd": 15000
+                    },
+                    "gold_red": {
+                        "label": "金",
+                        "prior": 0.09,
+                        "mean_cells_per_item": 6.7,
+                        "sd_cells_per_item": 2.6,
+                        "base_item_mean": 644000,
+                        "base_item_sd": 760000,
+                        "per_cell_mean": 63000,
+                        "per_cell_sd": 30000
+                    }
+                }
+            },
+            "collection_families": {
+                "relics": {
+                    "prior": 1.25,
+                    "value_bias": 1.12,
+                    "red_type_bias": {
+                        "big_red": 1.1,
+                        "gold_red": 1.18
+                    }
+                },
+                "books": {
+                    "prior": 1.05,
+                    "value_bias": 1.06,
+                    "red_type_bias": {
+                        "big_red": 1.02,
+                        "gold_red": 1.08
+                    }
+                },
+                "furniture": {
+                    "prior": 0.85,
+                    "value_bias": 0.9,
+                    "red_type_bias": {
+                        "small_red": 1.06,
+                        "big_red": 0.86,
+                        "gold_red": 0.76
+                    }
+                }
+            }
+        },
+        "villa": {
+            "label": "别墅图",
+            "map_name": "别墅图-高难-实值校准模板",
+            "submaps": [
+                {
+                    "id": "unknown_villa",
+                    "label": "未知别墅"
+                },
+                {
+                    "id": "designer_residence",
+                    "label": "设计师居所"
+                },
+                {
+                    "id": "scientist_residence",
+                    "label": "科学家居所"
+                },
+                {
+                    "id": "wellness_residence",
+                    "label": "养生学家居所"
+                },
+                {
+                    "id": "noble_residence",
+                    "label": "望族居所"
+                },
+                {
+                    "id": "scholar_residence",
+                    "label": "学者居所"
+                },
+                {
+                    "id": "private_vault",
+                    "label": "私人金库"
+                },
+                {
+                    "id": "luxury_retirement_home",
+                    "label": "奢华养老院"
+                },
+                {
+                    "id": "doomsday_shelter",
+                    "label": "末日庇护所"
+                }
+            ],
+            "alpha_counts": {
+                "w": 8.5,
+                "g": 7.6,
+                "b": 3.9,
+                "p": 3.2,
+                "o": 4,
+                "r": 0.12
+            },
+            "solver": {
+                "count_prior_strength": 8
+            },
+            "cells_per_item": {
+                "w": {
+                    "mean": 1.8,
+                    "sd": 0.6,
+                    "min": 1,
+                    "max": null
+                },
+                "g": {
+                    "mean": 2.2,
+                    "sd": 0.7,
+                    "min": 1,
+                    "max": null
+                },
+                "b": {
+                    "mean": 2.7,
+                    "sd": 0.85,
+                    "min": 1,
+                    "max": null
+                },
+                "p": {
+                    "mean": 3.1,
+                    "sd": 1,
+                    "min": 1,
+                    "max": null
+                },
+                "o": {
+                    "mean": 3.6,
+                    "sd": 1.1,
+                    "min": 1,
+                    "max": null
+                },
+                "r": {
+                    "mean": 4.1,
+                    "sd": 1.2,
+                    "min": 1,
+                    "max": null
+                }
+            },
+            "value_model": {
+                "w": {
+                    "base_item_mean": 600,
+                    "base_item_sd": 250,
+                    "per_cell_mean": 300,
+                    "per_cell_sd": 80
+                },
+                "g": {
+                    "base_item_mean": 1600,
+                    "base_item_sd": 500,
+                    "per_cell_mean": 500,
+                    "per_cell_sd": 150
+                },
+                "b": {
+                    "base_item_mean": 3600,
+                    "base_item_sd": 1000,
+                    "per_cell_mean": 1000,
+                    "per_cell_sd": 280
+                },
+                "p": {
+                    "base_item_mean": 7000,
+                    "base_item_sd": 1800,
+                    "per_cell_mean": 1700,
+                    "per_cell_sd": 500
+                },
+                "o": {
+                    "base_item_mean": 11000,
+                    "base_item_sd": 2800,
+                    "per_cell_mean": 2200,
+                    "per_cell_sd": 800
+                },
+                "r": {
+                    "base_item_mean": 112000,
+                    "base_item_sd": 42000,
+                    "per_cell_mean": 0,
+                    "per_cell_sd": 0
+                }
+            },
+            "red_type_profiles": {
+                "profiles": {
+                    "small_red": {
+                        "prior": 0.78,
+                        "mean_cells_per_item": 2.2,
+                        "sd_cells_per_item": 0.6,
+                        "base_item_mean": 52000,
+                        "base_item_sd": 19000,
+                        "per_cell_mean": 8000,
+                        "per_cell_sd": 2800
+                    },
+                    "big_red": {
+                        "prior": 0.19,
+                        "mean_cells_per_item": 3.8,
+                        "sd_cells_per_item": 0.8,
+                        "base_item_mean": 90000,
+                        "base_item_sd": 36000,
+                        "per_cell_mean": 12000,
+                        "per_cell_sd": 4200
+                    },
+                    "gold_red": {
+                        "prior": 0.03,
+                        "mean_cells_per_item": 3,
+                        "sd_cells_per_item": 0.7,
+                        "base_item_mean": 130000,
+                        "base_item_sd": 48000,
+                        "per_cell_mean": 15000,
+                        "per_cell_sd": 5000
+                    }
+                }
+            },
+            "collection_families": {
+                "furniture": {
+                    "notes": [
+                        "别墅主家族"
+                    ],
+                    "prior": 2.25,
+                    "value_bias": 0.84,
+                    "red_type_bias": {
+                        "small_red": 1.22,
+                        "big_red": 0.78,
+                        "gold_red": 0.6
+                    }
+                },
+                "trendy": {
+                    "notes": [
+                        "别墅次主家族"
+                    ],
+                    "prior": 1.65,
+                    "value_bias": 0.9,
+                    "red_type_bias": {
+                        "small_red": 1.18,
+                        "big_red": 0.88,
+                        "gold_red": 0.7
+                    }
+                },
+                "relics": {
+                    "prior": 0.7,
+                    "value_bias": 1.02,
+                    "red_type_bias": {
+                        "big_red": 0.9,
+                        "gold_red": 0.82
+                    }
+                }
+            }
+        },
+        "shipping": {
+            "label": "航运区",
+            "map_name": "航运区-高难-实值校准模板",
+            "alpha_counts": {
+                "w": 4.5,
+                "g": 4.4,
+                "b": 3.6,
+                "p": 2.9,
+                "o": 2.2,
+                "r": 0.9
+            },
+            "cells_per_item": {
+                "w": {
+                    "mean": 1.3,
+                    "sd": 0.55,
+                    "min": 1,
+                    "max": null
+                },
+                "g": {
+                    "mean": 1.7,
+                    "sd": 0.7,
+                    "min": 1,
+                    "max": null
+                },
+                "b": {
+                    "mean": 2.1,
+                    "sd": 0.8,
+                    "min": 1,
+                    "max": null
+                },
+                "p": {
+                    "mean": 2.5,
+                    "sd": 0.95,
+                    "min": 1,
+                    "max": null
+                },
+                "o": {
+                    "mean": 3.1,
+                    "sd": 1.1,
+                    "min": 1,
+                    "max": null
+                },
+                "r": {
+                    "mean": 3.8,
+                    "sd": 1.25,
+                    "min": 1,
+                    "max": null
+                }
+            },
+            "value_model": {
+                "w": {
+                    "base_item_mean": 900,
+                    "base_item_sd": 300,
+                    "per_cell_mean": 320,
+                    "per_cell_sd": 90
+                },
+                "g": {
+                    "base_item_mean": 2200,
+                    "base_item_sd": 700,
+                    "per_cell_mean": 700,
+                    "per_cell_sd": 200
+                },
+                "b": {
+                    "base_item_mean": 5200,
+                    "base_item_sd": 1600,
+                    "per_cell_mean": 1500,
+                    "per_cell_sd": 450
+                },
+                "p": {
+                    "base_item_mean": 12000,
+                    "base_item_sd": 3600,
+                    "per_cell_mean": 3300,
+                    "per_cell_sd": 1000
+                },
+                "o": {
+                    "base_item_mean": 28000,
+                    "base_item_sd": 7000,
+                    "per_cell_mean": 6500,
+                    "per_cell_sd": 1700
+                },
+                "r": {
+                    "base_item_mean": 130000,
+                    "base_item_sd": 50000,
+                    "per_cell_mean": 0,
+                    "per_cell_sd": 0
+                }
+            },
+            "red_type_profiles": {
+                "profiles": {
+                    "small_red": {
+                        "prior": 0.68,
+                        "mean_cells_per_item": 2.8,
+                        "sd_cells_per_item": 0.7,
+                        "base_item_mean": 80000,
+                        "base_item_sd": 28000,
+                        "per_cell_mean": 13000,
+                        "per_cell_sd": 4200
+                    },
+                    "big_red": {
+                        "prior": 0.27,
+                        "mean_cells_per_item": 4.8,
+                        "sd_cells_per_item": 0.9,
+                        "base_item_mean": 120000,
+                        "base_item_sd": 48000,
+                        "per_cell_mean": 15000,
+                        "per_cell_sd": 5000
+                    },
+                    "gold_red": {
+                        "prior": 0.05,
+                        "mean_cells_per_item": 3.7,
+                        "sd_cells_per_item": 0.8,
+                        "base_item_mean": 140000,
+                        "base_item_sd": 54000,
+                        "per_cell_mean": 15000,
+                        "per_cell_sd": 5200
+                    }
+                }
+            },
+            "collection_families": {
+                "cargo": {
+                    "notes": [
+                        "航运主家族"
+                    ],
+                    "prior": 2.15,
+                    "value_bias": 1.14,
+                    "red_type_bias": {
+                        "big_red": 1.16,
+                        "gold_red": 1.22
+                    }
+                },
+                "jewelry": {
+                    "notes": [
+                        "航运高价值稀缺件"
+                    ],
+                    "prior": 1.75,
+                    "value_bias": 1.22,
+                    "red_type_bias": {
+                        "big_red": 1.08,
+                        "gold_red": 1.45
+                    }
+                },
+                "relics": {
+                    "prior": 0.8,
+                    "value_bias": 1.05,
+                    "red_type_bias": {
+                        "big_red": 0.92,
+                        "gold_red": 1.05
+                    }
+                }
+            }
+        }
+    }
+}

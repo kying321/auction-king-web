@@ -1,0 +1,38 @@
+{
+  "schema_version": "ak_manual_count_prior_shadow_candidate_replay_gate_v1",
+  "generated_at": "2026-04-29T03:26:27.578Z",
+  "mode": "research_backtest",
+  "change_class": "RESEARCH_ONLY",
+  "inputs": {
+    "count_fit_sample_review_import": "<repo>/docs/research/2026-04-27-sunken-ship-p1-manual-count-confirmation-import.json",
+    "manual_count_prior_shadow_candidate_config": "<repo>/docs/research/2026-04-27-sunken-ship-p1-manual-count-prior-shadow-candidate-config.json"
+  },
+  "summary": {
+    "accepted_sample_count": 0,
+    "evaluated_sample_count": 0,
+    "min_recommended_map_sample_count": 3,
+    "applied_maps": [],
+    "low_sample_maps": [],
+    "all_quality_abs_non_regression": false,
+    "regression_qualities": [],
+    "candidate_replay_passed": false,
+    "promotion_allowed": false,
+    "promotion_status": "blocked_manual_shadow_replay_gate",
+    "recommended_next_action": "collect_human_confirmed_count_fit_samples",
+    "blockers": [
+      "manual_shadow_candidate_not_directly_deployable",
+      "missing_accepted_count_fit_samples"
+    ],
+    "warnings": [
+      "review_import_contains_blocked_entries"
+    ]
+  },
+  "metric_deltas": {},
+  "sample_deltas": [],
+  "replay_report": null,
+  "notes": [
+    "Manual count-prior shadow candidates are replay comparators before any default update.",
+    "This gate checks baseline-vs-candidate replay deltas and sample-count sufficiency.",
+    "promotion_allowed stays false; a separate default update review must decide adoption."
+  ]
+}

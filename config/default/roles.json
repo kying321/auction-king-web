@@ -1,0 +1,63 @@
+{
+    "roles": {
+        "default_role_id": "ahmed",
+        "profiles": {
+            "ahmed": {
+                "id": "ahmed",
+                "label": "艾哈默德",
+                "archetype": "五回合情报链精算流",
+                "preferredRounds": [2, 3, 4, 5],
+                "factors": { "cold": 0.9, "steady": 1.0, "hot": 1.06 },
+                "sourceCue": "按当前项目约定，艾哈默德主链为：R1总数+蓝数，R2看橙均格并记录绿白总格，紫件/橙件属于高精度补充，R3看绿白均格与紫均格，R4看蓝均格并可选总仓储空间，R5再用白绿拆分补尾。"
+            },
+            "ethan": {
+                "id": "ethan",
+                "label": "伊森",
+                "archetype": "轮廓布局流",
+                "preferredRounds": [3, 4],
+                "factors": { "cold": 0.86, "steady": 0.94, "hot": 1.0 },
+                "sourceCue": "官网称其“构建空间矩阵，能够瞬间计算出布局轮廓”；B站已有“伊森沉船公式化打法”实战视频。"
+            },
+            "sophie": {
+                "id": "sophie",
+                "label": "索菲",
+                "archetype": "抽样均值流",
+                "preferredRounds": [3, 4],
+                "factors": { "cold": 0.9, "steady": 1.0, "hot": 1.08 },
+                "sourceCue": "官网强调其“精通各类珍品”；玩家实战反馈里，索菲常用“随机五个/四均”在第3-4轮秒仓。"
+            },
+            "raven": {
+                "id": "raven",
+                "label": "拉文",
+                "archetype": "终局定锤流",
+                "preferredRounds": [5],
+                "factors": { "cold": 0.84, "steady": 0.94, "hot": 1.02 },
+                "sourceCue": "官网写法是“静观全场博弈，于终局时刻一锤定音”；社区反馈也集中指出其前中期容易被做局。"
+            },
+            "aisha": {
+                "id": "aisha",
+                "label": "艾莎",
+                "archetype": "层级侦察流",
+                "preferredRounds": [1, 2, 3],
+                "factors": { "cold": 0.82, "steady": 0.9, "hot": 0.97 },
+                "sourceCue": "官网写其能发现低价值目标；开发者采访补充她更像“看仓深、看是否存在紫色以上”的层级侦察。"
+            },
+            "isabella": {
+                "id": "isabella",
+                "label": "伊莎贝拉",
+                "archetype": "见红捡漏流",
+                "preferredRounds": [1, 2, 3],
+                "factors": { "cold": 0.88, "steady": 0.97, "hot": 1.08 },
+                "sourceCue": "官网主打“稀缺性孤品”；社区帖提到她一度能“开局见红，还能看到是什么红”。"
+            },
+            "wuqiling": {
+                "id": "wuqiling",
+                "label": "吴起灵",
+                "archetype": "专精图谱流",
+                "preferredRounds": [2, 3, 4],
+                "factors": { "cold": 0.86, "steady": 0.95, "hot": 1.04 },
+                "sourceCue": "官网描述为“层层揭示文玩古董的信息”；采访点名吴起灵高价出手时容易把其他人拖进杀猪盘。"
+            }
+        }
+    }
+}

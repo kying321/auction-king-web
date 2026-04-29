@@ -1,0 +1,79 @@
+{
+    "templates": {
+        "allow_local_clone": true,
+        "builtins": [
+            {
+                "id": "ahmed_default",
+                "label": "Ahmed 默认模板",
+                "description": "按总数量 -> 金色均格 -> 蓝色数量 -> 紫色均格 -> 绿白总格数 -> 绿白均格 -> 蓝色均格 -> 总格数的手填链组织。",
+                "groups": [
+                    { "id": "core", "label": "核心链路" }
+                ],
+                "fields": [
+                    { "field_id": "total_items", "group_id": "core", "recommended": true, "default_visible": true },
+                    { "field_id": "orange_avg_cells", "group_id": "core", "recommended": true, "default_visible": true },
+                    { "field_id": "blue_count", "group_id": "core", "recommended": true, "default_visible": true },
+                    { "field_id": "purple_avg_cells", "group_id": "core", "recommended": true, "default_visible": true },
+                    { "field_id": "white_green_total_cells", "group_id": "core", "recommended": true, "default_visible": true },
+                    { "field_id": "white_green_avg_cells", "group_id": "core", "recommended": true, "default_visible": true },
+                    { "field_id": "blue_avg_cells", "group_id": "core", "recommended": true, "default_visible": true },
+                    { "field_id": "total_storage_cells", "group_id": "core", "recommended": true, "default_visible": true }
+                ]
+            },
+            {
+                "id": "generic_full_observation",
+                "label": "全观察模板",
+                "description": "展开更多数量/均格/总格字段，适合复盘和全量手填。",
+                "groups": [
+                    { "id": "counts", "label": "数量" },
+                    { "id": "cells", "label": "格数" },
+                    { "id": "value", "label": "价值" }
+                ],
+                "fields": [
+                    { "field_id": "total_items", "group_id": "counts", "recommended": true, "default_visible": true },
+                    { "field_id": "white_count", "group_id": "counts", "recommended": false, "default_visible": true },
+                    { "field_id": "green_count", "group_id": "counts", "recommended": false, "default_visible": true },
+                    { "field_id": "blue_count", "group_id": "counts", "recommended": true, "default_visible": true },
+                    { "field_id": "purple_count", "group_id": "counts", "recommended": true, "default_visible": true },
+                    { "field_id": "orange_count", "group_id": "counts", "recommended": false, "default_visible": true },
+                    { "field_id": "red_count", "group_id": "counts", "recommended": false, "default_visible": true },
+                    { "field_id": "white_green_total_count", "group_id": "counts", "recommended": true, "default_visible": true },
+                    { "field_id": "white_green_total_cells", "group_id": "cells", "recommended": true, "default_visible": true },
+                    { "field_id": "white_green_avg_cells", "group_id": "cells", "recommended": true, "default_visible": true },
+                    { "field_id": "blue_avg_cells", "group_id": "cells", "recommended": true, "default_visible": true },
+                    { "field_id": "purple_avg_cells", "group_id": "cells", "recommended": true, "default_visible": true },
+                    { "field_id": "orange_avg_cells", "group_id": "cells", "recommended": true, "default_visible": true },
+                    { "field_id": "total_storage_cells", "group_id": "cells", "recommended": true, "default_visible": true },
+                    { "field_id": "system_avg_value_per_cell", "group_id": "value", "recommended": true, "default_visible": true },
+                    { "field_id": "purple_avg_value", "group_id": "value", "recommended": false, "default_visible": true },
+                    { "field_id": "orange_avg_value", "group_id": "value", "recommended": false, "default_visible": true },
+                    { "field_id": "red_avg_value", "group_id": "value", "recommended": false, "default_visible": true },
+                    { "field_id": "total_value", "group_id": "value", "recommended": false, "default_visible": true },
+                    { "field_id": "bid", "group_id": "value", "recommended": true, "default_visible": true }
+                ]
+            },
+            {
+                "id": "value_focus",
+                "label": "价值观察模板",
+                "description": "把出价、各品质均价和总价值放在前面，适合高预算精细估值。",
+                "groups": [
+                    { "id": "solver", "label": "核心约束" },
+                    { "id": "value", "label": "价值观察" }
+                ],
+                "fields": [
+                    { "field_id": "total_items", "group_id": "solver", "recommended": true, "default_visible": true },
+                    { "field_id": "orange_avg_cells", "group_id": "solver", "recommended": true, "default_visible": true },
+                    { "field_id": "purple_avg_cells", "group_id": "solver", "recommended": true, "default_visible": true },
+                    { "field_id": "blue_count", "group_id": "solver", "recommended": true, "default_visible": true },
+                    { "field_id": "white_green_total_cells", "group_id": "solver", "recommended": true, "default_visible": true },
+                    { "field_id": "system_avg_value_per_cell", "group_id": "value", "recommended": true, "default_visible": true },
+                    { "field_id": "purple_avg_value", "group_id": "value", "recommended": true, "default_visible": true },
+                    { "field_id": "orange_avg_value", "group_id": "value", "recommended": true, "default_visible": true },
+                    { "field_id": "red_avg_value", "group_id": "value", "recommended": true, "default_visible": true },
+                    { "field_id": "total_value", "group_id": "value", "recommended": false, "default_visible": true },
+                    { "field_id": "bid", "group_id": "value", "recommended": true, "default_visible": true }
+                ]
+            }
+        ]
+    }
+}

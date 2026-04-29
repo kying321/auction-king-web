@@ -1,0 +1,139 @@
+{
+  "batch_id": "white_quality_items_batch_2026-04-23",
+  "source_kind": "manual_thread_images",
+  "quality": "w",
+  "reported_average_value": 267,
+  "cell_count_status": "pending_high_res",
+  "name_status": "mostly_manual_ocr",
+  "notes": [
+    "用户提供的白色品质全量图鉴截图。",
+    "右下角占格图标在当前会话分辨率下不可稳定识别，cells 先留空。",
+    "个别模糊名称已用 medium 置信度标记，待更高清原图复核。"
+  ],
+  "items": [
+    { "name": "花岗岩（毛料）", "value": 902, "cells": null, "name_confidence": "high" },
+    { "name": "废旧纸箱", "value": 885, "cells": null, "name_confidence": "high" },
+    { "name": "遮阳挡", "value": 754, "cells": null, "name_confidence": "high" },
+    { "name": "木板车", "value": 609, "cells": null, "name_confidence": "high" },
+
+    { "name": "晾衣杆", "value": 602, "cells": null, "name_confidence": "high" },
+    { "name": "披萨盒", "value": 599, "cells": null, "name_confidence": "medium" },
+    { "name": "铁矿渣", "value": 507, "cells": null, "name_confidence": "high" },
+    { "name": "老坛酸菜", "value": 486, "cells": null, "name_confidence": "high" },
+
+    { "name": "捕兽夹", "value": 483, "cells": null, "name_confidence": "high" },
+    { "name": "电子体重秤", "value": 470, "cells": null, "name_confidence": "high" },
+    { "name": "圆润的木杆", "value": 438, "cells": null, "name_confidence": "high" },
+    { "name": "阳光小麦粉", "value": 437, "cells": null, "name_confidence": "high" },
+
+    { "name": "医用橡胶坐垫", "value": 414, "cells": null, "name_confidence": "high" },
+    { "name": "石灰岩", "value": 414, "cells": null, "name_confidence": "high" },
+    { "name": "编绳网兜", "value": 411, "cells": null, "name_confidence": "high" },
+    { "name": "麦穗", "value": 388, "cells": null, "name_confidence": "medium" },
+
+    { "name": "医用拐杖", "value": 386, "cells": null, "name_confidence": "medium" },
+    { "name": "桦树皮盒", "value": 384, "cells": null, "name_confidence": "medium" },
+    { "name": "窗花剪纸", "value": 377, "cells": null, "name_confidence": "high" },
+    { "name": "印花T恤", "value": 369, "cells": null, "name_confidence": "high" },
+
+    { "name": "3D观影镜", "value": 360, "cells": null, "name_confidence": "high" },
+    { "name": "素描用画板", "value": 360, "cells": null, "name_confidence": "high" },
+    { "name": "弹性绷带", "value": 346, "cells": null, "name_confidence": "high" },
+    { "name": "玩具木剑", "value": 346, "cells": null, "name_confidence": "high" },
+
+    { "name": "铝土矿石", "value": 345, "cells": null, "name_confidence": "high" },
+    { "name": "初榨菜籽油", "value": 344, "cells": null, "name_confidence": "high" },
+    { "name": "中国新年春联一", "value": 341, "cells": null, "name_confidence": "high" },
+    { "name": "挪车牌", "value": 340, "cells": null, "name_confidence": "high" },
+
+    { "name": "自拍杆", "value": 338, "cells": null, "name_confidence": "high" },
+    { "name": "艾条", "value": 331, "cells": null, "name_confidence": "high" },
+    { "name": "风干腊肉", "value": 320, "cells": null, "name_confidence": "high" },
+    { "name": "中国新年春联二", "value": 317, "cells": null, "name_confidence": "high" },
+
+    { "name": "棕榈叶篮", "value": 315, "cells": null, "name_confidence": "high" },
+    { "name": "车用毛巾", "value": 315, "cells": null, "name_confidence": "high" },
+    { "name": "喷灌类墨水", "value": 308, "cells": null, "name_confidence": "medium" },
+    { "name": "园林修理剪", "value": 305, "cells": null, "name_confidence": "high" },
+
+    { "name": "竹木弹弓", "value": 304, "cells": null, "name_confidence": "high" },
+    { "name": "应援灯牌", "value": 299, "cells": null, "name_confidence": "high" },
+    { "name": "车用拖车绳", "value": 277, "cells": null, "name_confidence": "high" },
+    { "name": "绳索", "value": 276, "cells": null, "name_confidence": "high" },
+
+    { "name": "人造玻璃", "value": 265, "cells": null, "name_confidence": "high" },
+    { "name": "A4印刷用纸", "value": 257, "cells": null, "name_confidence": "high" },
+    { "name": "防晒冰袖", "value": 248, "cells": null, "name_confidence": "high" },
+    { "name": "应援棒", "value": 248, "cells": null, "name_confidence": "high" },
+
+    { "name": "复古游戏机", "value": 247, "cells": null, "name_confidence": "high" },
+    { "name": "泡泡水弹", "value": 221, "cells": null, "name_confidence": "high" },
+    { "name": "印刷广告卡通圆扇", "value": 221, "cells": null, "name_confidence": "medium" },
+    { "name": "中国新年春联横幅", "value": 218, "cells": null, "name_confidence": "high" },
+
+    { "name": "快递单", "value": 209, "cells": null, "name_confidence": "high" },
+    { "name": "医用一次性口罩", "value": 207, "cells": null, "name_confidence": "high" },
+    { "name": "草编鲤鱼", "value": 205, "cells": null, "name_confidence": "high" },
+    { "name": "插座", "value": 200, "cells": null, "name_confidence": "high" },
+
+    { "name": "临时停车牌", "value": 200, "cells": null, "name_confidence": "high" },
+    { "name": "苹果", "value": 200, "cells": null, "name_confidence": "high" },
+    { "name": "马克杯", "value": 198, "cells": null, "name_confidence": "high" },
+    { "name": "煤块", "value": 192, "cells": null, "name_confidence": "high" },
+
+    { "name": "白砂糖", "value": 192, "cells": null, "name_confidence": "high" },
+    { "name": "图案徽章", "value": 189, "cells": null, "name_confidence": "high" },
+    { "name": "淀粉肠", "value": 186, "cells": null, "name_confidence": "high" },
+    { "name": "玻璃水", "value": 185, "cells": null, "name_confidence": "high" },
+
+    { "name": "飞镖", "value": 184, "cells": null, "name_confidence": "high" },
+    { "name": "沙砾", "value": 184, "cells": null, "name_confidence": "high" },
+    { "name": "0.38MM中性笔", "value": 179, "cells": null, "name_confidence": "high" },
+    { "name": "游戏纪念币", "value": 178, "cells": null, "name_confidence": "high" },
+
+    { "name": "空气滤芯", "value": 170, "cells": null, "name_confidence": "high" },
+    { "name": "消毒棉签", "value": 169, "cells": null, "name_confidence": "high" },
+    { "name": "玩具美甲", "value": 169, "cells": null, "name_confidence": "medium" },
+    { "name": "点卡充值", "value": 168, "cells": null, "name_confidence": "medium" },
+
+    { "name": "反光贴纸", "value": 168, "cells": null, "name_confidence": "high" },
+    { "name": "卡带保护壳", "value": 161, "cells": null, "name_confidence": "high" },
+    { "name": "数据线", "value": 160, "cells": null, "name_confidence": "high" },
+    { "name": "骨针锥", "value": 156, "cells": null, "name_confidence": "medium" },
+
+    { "name": "花椒", "value": 150, "cells": null, "name_confidence": "high" },
+    { "name": "木雕小鱼", "value": 149, "cells": null, "name_confidence": "high" },
+    { "name": "创可贴", "value": 146, "cells": null, "name_confidence": "high" },
+    { "name": "一次性纹身贴", "value": 146, "cells": null, "name_confidence": "high" },
+
+    { "name": "钥匙挂坠", "value": 146, "cells": null, "name_confidence": "high" },
+    { "name": "鹅卵石", "value": 146, "cells": null, "name_confidence": "high" },
+    { "name": "留置针", "value": 143, "cells": null, "name_confidence": "high" },
+    { "name": "贝币串", "value": 142, "cells": null, "name_confidence": "medium" },
+
+    { "name": "瓶胡椒粉", "value": 139, "cells": null, "name_confidence": "medium" },
+    { "name": "556子弹", "value": 138, "cells": null, "name_confidence": "high" },
+    { "name": "耳机防尘塞", "value": 137, "cells": null, "name_confidence": "high" },
+    { "name": "印刷风景明信片", "value": 137, "cells": null, "name_confidence": "high" },
+
+    { "name": "骑士哨笛", "value": 135, "cells": null, "name_confidence": "medium" },
+    { "name": "医用剪刀", "value": 134, "cells": null, "name_confidence": "high" },
+    { "name": "设备装饰贴", "value": 127, "cells": null, "name_confidence": "medium" },
+    { "name": "卡牌入门包", "value": 126, "cells": null, "name_confidence": "high" },
+
+    { "name": "乳白弹珠", "value": 125, "cells": null, "name_confidence": "high" },
+    { "name": "注射用针", "value": 123, "cells": null, "name_confidence": "high" },
+    { "name": "塑料发箍", "value": 123, "cells": null, "name_confidence": "high" },
+    { "name": "石块", "value": 123, "cells": null, "name_confidence": "high" },
+
+    { "name": "沥青", "value": 123, "cells": null, "name_confidence": "high" },
+    { "name": "手机支架", "value": 120, "cells": null, "name_confidence": "high" },
+    { "name": "素描铅笔", "value": 117, "cells": null, "name_confidence": "high" },
+    { "name": "卡贴", "value": 115, "cells": null, "name_confidence": "high" },
+
+    { "name": "生日贺卡", "value": 114, "cells": null, "name_confidence": "high" },
+    { "name": "雨刮胶条", "value": 112, "cells": null, "name_confidence": "high" },
+    { "name": "粗陶泥偶", "value": 107, "cells": null, "name_confidence": "medium" },
+    { "name": "农家土鸡蛋", "value": 107, "cells": null, "name_confidence": "high" }
+  ]
+}

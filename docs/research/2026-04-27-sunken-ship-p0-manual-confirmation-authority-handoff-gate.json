@@ -1,0 +1,100 @@
+{
+  "schema_version": "ak_manual_confirmation_authority_handoff_gate_v1",
+  "generated_at": "2026-04-27T13:22:47.440Z",
+  "mode": "research_backtest",
+  "change_class": "RESEARCH_ONLY",
+  "inputs": {
+    "latest_manual_confirmation_ingest_report": "<repo>/docs/research/2026-04-27-sunken-ship-p0-latest-manual-confirmation-ingest-report.json",
+    "count_fit_sample_review_import": "<repo>/docs/research/2026-04-27-sunken-ship-p0-manual-count-confirmation-import.json",
+    "manual_count_prior_shadow_candidate_replay_gate": "<repo>/docs/research/2026-04-27-sunken-ship-p0-manual-count-prior-shadow-candidate-replay-gate.json"
+  },
+  "summary": {
+    "ingest_status": "no_accepted_samples",
+    "accepted_sample_count": 0,
+    "blocked_entry_count": 2,
+    "authority_sample_merge_allowed": false,
+    "replay_candidate_ready": false,
+    "default_weight_update_allowed": false,
+    "recommended_next_action": "approve_manual_confirmation_counts_then_download_json"
+  },
+  "readiness": {
+    "authority_sample_merge_allowed": false,
+    "replay_candidate_ready": false,
+    "default_weight_update_allowed": false
+  },
+  "commands": {
+    "authority_sample_merge": null,
+    "default_weight_update": null
+  },
+  "blockers": [
+    "missing_accepted_manual_count_fit_samples",
+    "manual_confirmation_import_contains_blocked_entries",
+    "missing_accepted_count_fit_samples",
+    "count_fit_import_contains_blocked_entries",
+    "status_not_approved_for_import",
+    "actual_counts_total_mismatch",
+    "manual_candidate_replay_gate_not_passed"
+  ],
+  "warnings": [],
+  "default_weight_update_blockers": [
+    "default_weight_update_requires_separate_promotion_gate",
+    "authority_sample_merge_not_allowed",
+    "manual_candidate_replay_gate_not_passed"
+  ],
+  "sample_audit": {
+    "sample_count": 0,
+    "blocker_reason_counts": {},
+    "entries": []
+  },
+  "source_summaries": {
+    "ingest": {
+      "status": "no_accepted_samples",
+      "accepted_sample_count": 0,
+      "blocked_entry_count": 2,
+      "manual_candidate_replay_passed": false,
+      "manual_candidate_gate_blockers": [
+        "manual_shadow_candidate_not_directly_deployable",
+        "missing_accepted_count_fit_samples"
+      ],
+      "recommended_next_action": "collect_human_confirmed_count_fit_samples"
+    },
+    "count_fit_import": {
+      "review_entry_count": 2,
+      "accepted_sample_count": 0,
+      "blocked_entry_count": 2,
+      "blocker_reason_counts": {
+        "status_not_approved_for_import": 2,
+        "actual_counts_total_mismatch": 1
+      },
+      "warning_reason_counts": {},
+      "map_counts": {},
+      "review_image_quality_flagged_entry_count": 0,
+      "pixel_training_label_allowed_count": 0
+    },
+    "manual_candidate_replay_gate": {
+      "accepted_sample_count": 0,
+      "evaluated_sample_count": 0,
+      "min_recommended_map_sample_count": 3,
+      "applied_maps": [],
+      "low_sample_maps": [],
+      "all_quality_abs_non_regression": false,
+      "regression_qualities": [],
+      "candidate_replay_passed": false,
+      "promotion_allowed": false,
+      "promotion_status": "blocked_manual_shadow_replay_gate",
+      "recommended_next_action": "collect_human_confirmed_count_fit_samples",
+      "blockers": [
+        "manual_shadow_candidate_not_directly_deployable",
+        "missing_accepted_count_fit_samples"
+      ],
+      "warnings": [
+        "review_import_contains_blocked_entries"
+      ]
+    }
+  },
+  "notes": [
+    "This gate is read-only and does not change default weights.",
+    "Authority sample merge can be allowed from clean human-approved manual samples even when replay is still low-sample blocked.",
+    "Default weight updates require a separate promotion gate after enough replay-backed samples exist."
+  ]
+}
