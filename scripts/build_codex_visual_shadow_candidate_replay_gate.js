@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
-const { buildSettlementCountReplayReport } = require("../sample_count_replay.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
+const { buildSettlementCountReplayReport } = require("../src/research/sample_count_replay.js");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const DEFAULT_REVIEW_IMPORT_PATH = path.join(

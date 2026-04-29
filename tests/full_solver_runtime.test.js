@@ -2,7 +2,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const {
     createFullSolveRuntime
-} = require("../full_solver_runtime.js");
+} = require("../src/browser/full_solver_runtime.js");
 
 function createMockWorker() {
     return {

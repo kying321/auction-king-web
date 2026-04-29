@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
-const { AuctionKingEstimator, resolveEstimatorConfig } = require("../estimator.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
+const { AuctionKingEstimator, resolveEstimatorConfig } = require("../src/core/estimator.js");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const DEFAULT_INPUT_PATH = path.join(

@@ -1,6 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const DEFAULT_GAP_REPORT_PATH = path.join(

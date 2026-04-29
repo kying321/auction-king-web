@@ -3,7 +3,7 @@ const assert = require("node:assert/strict");
 const {
     buildSystemHintCoverageReport,
     normalizeInputPayload
-} = require("../system_hint_coverage_report.js");
+} = require("../src/research/system_hint_coverage_report.js");
 
 test("normalizeInputPayload accepts wrapped replay packages and legacy arrays", () => {
     const samples = [{ id: "sample_a" }];

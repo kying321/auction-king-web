@@ -3,7 +3,7 @@ const path = require("path");
 const test = require("node:test");
 const assert = require("node:assert/strict");
 
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     DEFAULT_SAMPLES,
     buildAssetFreshnessCheck,
@@ -49,7 +49,7 @@ test("posterior smoke fails closed on single-count saturated posteriors", () => 
 });
 
 test("default config bundle evaluator accepts the generated browser bundle", () => {
-    const source = fs.readFileSync(path.join(__dirname, "..", "default_config_bundle.js"), "utf8");
+    const source = fs.readFileSync(path.join(__dirname, "..", "src", "core", "default_config_bundle.js"), "utf8");
     const evaluated = evaluateDefaultConfigBundle(source, "local-default-config-bundle.js");
     assert.equal(evaluated.app.config_source_version, defaultConfig.app.config_source_version);
     Object.entries(defaultConfig.maps.sunken_ship.alpha_counts).forEach(([quality, value]) => {
@@ -65,10 +65,10 @@ test("live posterior smoke argument parser keeps thresholds bounded", () => {
 
 test("live posterior smoke resolves the bundle from the actual page script reference", () => {
     const html = `
-        <script type="module" src="estimator.js?v=20260428173000"></script>
-        <script type="module" src="default_config_bundle.js?v=20260428173000"></script>
+        <script type="module" src="src/core/estimator.js?v=20260428173000"></script>
+        <script type="module" src="src/core/default_config_bundle.js?v=20260428173000"></script>
     `;
-    assert.equal(extractDefaultConfigBundlePath(html), "default_config_bundle.js?v=20260428173000");
+    assert.equal(extractDefaultConfigBundlePath(html), "src/core/default_config_bundle.js?v=20260428173000");
     const pageUrl = buildPageUrl(parseArgs(["--origin=https://ak.fuuu.fun", "--no-page-cache-bust"]));
     assert.equal(pageUrl, "https://ak.fuuu.fun/");
 });

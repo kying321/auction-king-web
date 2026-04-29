@@ -1,6 +1,6 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const { renderConfigEditorControls } = require("../config_editor_runtime.js");
+const { renderConfigEditorControls } = require("../src/browser/config_editor_runtime.js");
 
 class FakeClassList {
     constructor() {

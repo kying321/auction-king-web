@@ -1,4 +1,4 @@
-importScripts("estimator.js?v=20260428232030");
+importScripts("../core/estimator.js?v=20260428232030");
 
 self.onmessage = function onWorkerMessage(event) {
     const payload = event && event.data ? event.data : null;

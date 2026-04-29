@@ -108,7 +108,7 @@ test("main rebuilds battle samples, source package, calibration artifact, and de
     const battleSamplesPath = path.join(workspaceRoot, "data", "battle_samples", "authority_battle_samples.json");
     const sourcePackagePath = path.join(workspaceRoot, "data", "source_packages", "authority_source_package.json");
     const calibrationPath = path.join(workspaceRoot, "config", "default", "calibration.json");
-    const defaultBundlePath = path.join(workspaceRoot, "default_config_bundle.js");
+    const defaultBundlePath = path.join(workspaceRoot, "src", "core", "default_config_bundle.js");
 
     const battleSamples = JSON.parse(fs.readFileSync(battleSamplesPath, "utf8"));
     const sourcePackage = JSON.parse(fs.readFileSync(sourcePackagePath, "utf8"));

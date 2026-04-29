@@ -5,7 +5,7 @@ const {
     buildMultinomialTwoSigmaFit,
     buildProducerCountPriorModelReport,
     normalizeFractions
-} = require("../producer_count_prior_model.js");
+} = require("../src/core/producer_count_prior_model.js");
 
 test("normalizeFractions converts arbitrary positive weights into quality fractions", () => {
     assert.deepEqual(normalizeFractions({ w: 2, g: 2, r: 6 }), {

@@ -3,11 +3,11 @@
 
 ## 结构
 
-- `index.html` / `style.css` / `app.js`: 静态前端页面与交互。
-- `estimator.js`: 前端版求解器与估值逻辑，当前单元测试主要覆盖这里。
-- `role_strategy.js`: 基于联网攻略与社区反馈整理出的角色策略层。
-- `auction_king_sunken_ship_realtime.py`: 5 回合实时拟合 CLI 版本。
-- `auction_king_sunken_ship_estimator.py`: 更通用的离线估值脚本。
+- `index.html` / `style.css` / `src/browser/app.js`: 静态前端页面与交互。
+- `src/core/estimator.js`: 前端版求解器与估值逻辑，当前单元测试主要覆盖这里。
+- `src/browser/role_strategy.js`: 基于联网攻略与社区反馈整理出的角色策略层。
+- `legacy/python/auction_king_sunken_ship_realtime.py`: 5 回合实时拟合 CLI 版本。
+- `legacy/python/auction_king_sunken_ship_estimator.py`: 更通用的离线估值脚本。
 - `tests/`: Node 原生测试。
 
 ## Web 版使用
@@ -70,10 +70,9 @@ npm run build:static
 
 - `index.html`
 - `style.css`
-- `app.js`
-- `estimator.js`
-- `role_strategy.js`
-- `r2_purple_mode.js`
+- `src/browser/`
+- `src/core/`
+- `src/research/`
 
 仓库根目录已提供 `wrangler.toml`，默认按 Cloudflare Workers Static Assets 指向 `./dist`。
 等你确认子域名前缀和目标承载方式后，可以直接接 `ak.fuuu.fun` 这类自定义域名。
@@ -83,7 +82,7 @@ npm run build:static
 ### 启动
 
 ```bash
-python auction_king_sunken_ship_estimator.py
+python legacy/python/auction_king_sunken_ship_estimator.py
 ```
 
 当前离线 Python CLI 也已支持 `红件类型模板后验`，并且红格推断已改成显式离散质量，会把红区继续映射到 `小红 / 大红 / 金` 启动模板，再给估值区间。现在它还会额外输出 `家族后验`，并把 `collection_families.value_bias` 接进红件估值。
@@ -147,7 +146,7 @@ load_families my_families.json
 2. 至少积累 5 到 10 条同图样本后，执行：
 
 ```bash
-python suggest_family_calibration.py family_calibration_template.csv my_families.json my_families_suggested.json
+python legacy/python/suggest_family_calibration.py family_calibration_template.csv my_families.json my_families_suggested.json
 ```
 
 3. 用 `load_families my_families_suggested.json` 试跑。

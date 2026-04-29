@@ -2,7 +2,7 @@ const SETTLEMENT_SAMPLE_STORAGE_KEY = "ak_settlement_samples_v1";
 const QUALITY_ORDER = ["w", "g", "b", "p", "o", "r"];
 const DEFAULT_COUNT_FIT_TARGET_PER_MAP = 30;
 const sourceDataRuntime = typeof require === "function" && typeof module !== "undefined" && module.exports
-    ? require("./source_data_runtime.js")
+    ? require("../core/source_data_runtime.js")
     : (typeof AK_SOURCE_DATA_RUNTIME !== "undefined" ? AK_SOURCE_DATA_RUNTIME : (typeof window !== "undefined" ? window.AK_SOURCE_DATA_RUNTIME : {}));
 const workspaceRuntime = typeof require === "function" && typeof module !== "undefined" && module.exports
     ? require("./workspace_runtime.js")

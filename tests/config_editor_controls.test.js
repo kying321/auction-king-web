@@ -4,7 +4,7 @@ const {
     buildConfigEditorSections,
     applyConfigEditorValue,
     applyTemplateFieldMutation
-} = require("../config_editor_controls.js");
+} = require("../src/browser/config_editor_controls.js");
 
 function createConfig() {
     return {

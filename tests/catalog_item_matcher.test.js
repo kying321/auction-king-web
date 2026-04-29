@@ -8,7 +8,7 @@ const {
     matchCatalogItems,
     normalizeCatalogMatchName,
     normalizeQualityCode
-} = require("../catalog_item_matcher.js");
+} = require("../src/core/catalog_item_matcher.js");
 
 function fixtureBatches() {
     return [

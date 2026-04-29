@@ -4,7 +4,7 @@ const fs = require("node:fs");
 const os = require("node:os");
 const path = require("node:path");
 const packageJson = require("../package.json");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     DEFAULT_CHAIN_OUTPUT_PATH,
     buildCodexVisualManualConfirmationChain,

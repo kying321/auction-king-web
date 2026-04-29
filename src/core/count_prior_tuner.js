@@ -1,5 +1,5 @@
 const { resolveEstimatorConfig } = require("./estimator.js");
-const { buildSettlementCountReplayReport } = require("./sample_count_replay.js");
+const { buildSettlementCountReplayReport } = require("../research/sample_count_replay.js");
 const { createBattleSampleRecord } = require("./source_data_runtime.js");
 
 const QUALITIES = ["w", "g", "b", "p", "o", "r"];

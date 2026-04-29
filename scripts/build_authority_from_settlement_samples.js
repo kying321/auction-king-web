@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const { buildAuthoritySourcePackage } = require("../source_data_runtime.js");
-const { buildAuthorityCalibrationArtifacts } = require("../authority_calibration_runtime.js");
+const { buildAuthoritySourcePackage } = require("../src/core/source_data_runtime.js");
+const { buildAuthorityCalibrationArtifacts } = require("../src/core/authority_calibration_runtime.js");
 const {
     OUTPUT_PATH: DEFAULT_BATTLE_SAMPLE_OUTPUT_PATH,
     buildAndWriteAuthorityBattleSamples,
@@ -21,7 +21,7 @@ const {
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const SOURCE_PACKAGE_OUTPUT_PATH = path.join(ROOT_DIR, "data", "source_packages", "authority_source_package.json");
-const DEFAULT_BUNDLE_OUTPUT_PATH = path.join(ROOT_DIR, "default_config_bundle.js");
+const DEFAULT_BUNDLE_OUTPUT_PATH = path.join(ROOT_DIR, "src", "core", "default_config_bundle.js");
 
 function resolveArgs(argv = process.argv.slice(2)) {
     const positional = [];

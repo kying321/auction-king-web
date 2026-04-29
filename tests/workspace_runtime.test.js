@@ -9,7 +9,7 @@ const {
     cloneTemplateDefinition,
     upsertLocalTemplate,
     removeLocalTemplateById
-} = require("../workspace_runtime.js");
+} = require("../src/browser/workspace_runtime.js");
 
 function createConfig() {
     return {

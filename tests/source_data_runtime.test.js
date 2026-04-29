@@ -6,7 +6,7 @@ const {
     createBattleSampleRecord,
     normalizeBattleSampleRecords,
     loadCatalogBatchAsSourceRecord
-} = require("../source_data_runtime.js");
+} = require("../src/core/source_data_runtime.js");
 
 test("loadCatalogBatchAsSourceRecord migrates a legacy manual catalog batch into the unified source schema", () => {
     const record = loadCatalogBatchAsSourceRecord(

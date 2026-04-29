@@ -1,4 +1,4 @@
-const defaultConfig = require("./default_config_bundle.js");
+const defaultConfig = require("../core/default_config_bundle.js");
 const {
     resolveReplaySampleActualCellsWithSource,
     resolveReplaySampleActualLootValue

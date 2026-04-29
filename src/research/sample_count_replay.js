@@ -1,11 +1,11 @@
-const { AuctionKingEstimator, resolveEstimatorConfig } = require("./estimator.js");
+const { AuctionKingEstimator, resolveEstimatorConfig } = require("../core/estimator.js");
 const crypto = require("node:crypto");
-const { buildLegacyEstimatorStateFromFieldValues } = require("./workspace_runtime.js");
-const { createBattleSampleRecord } = require("./source_data_runtime.js");
+const { buildLegacyEstimatorStateFromFieldValues } = require("../browser/workspace_runtime.js");
+const { createBattleSampleRecord } = require("../core/source_data_runtime.js");
 const {
     extractAlphaCountOverrides,
     isStructuredWorkspaceConfig
-} = require("./calibration_override_runtime.js");
+} = require("../core/calibration_override_runtime.js");
 
 const QUALITY_ORDER = ["w", "g", "b", "p", "o", "r"];
 const COUNT_POSTERIOR_KEY_MAP = {

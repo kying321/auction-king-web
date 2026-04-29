@@ -23,7 +23,7 @@ const {
     markSettlementSamplesExported,
     removeSettlementSampleById,
     updateSettlementSampleById
-} = require("../sample_dataset.js");
+} = require("../src/browser/sample_dataset.js");
 
 function createMemoryStorage() {
     const store = new Map();

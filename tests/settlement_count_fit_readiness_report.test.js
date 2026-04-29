@@ -3,7 +3,7 @@ const assert = require("node:assert/strict");
 const {
     buildSettlementCountFitReadinessReport,
     normalizeInputPayload
-} = require("../settlement_count_fit_readiness_report.js");
+} = require("../src/research/settlement_count_fit_readiness_report.js");
 
 test("normalizeInputPayload accepts wrapped replay packages and legacy arrays", () => {
     const samples = [{ id: "sample_a" }];

@@ -4,8 +4,8 @@ const http = require("http");
 const https = require("https");
 const vm = require("vm");
 
-const { AuctionKingEstimator, resolveEstimatorConfig } = require("../estimator.js");
-const { buildLegacyEstimatorStateFromFieldValues } = require("../workspace_runtime.js");
+const { AuctionKingEstimator, resolveEstimatorConfig } = require("../src/core/estimator.js");
+const { buildLegacyEstimatorStateFromFieldValues } = require("../src/browser/workspace_runtime.js");
 
 const DEFAULT_ORIGIN = "https://ak.fuuu.fun";
 const DEFAULT_PAGE_PATH = "/";

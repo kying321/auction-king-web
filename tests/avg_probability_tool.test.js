@@ -1,6 +1,6 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const { buildAverageProbabilityToolResult } = require("../avg_probability_tool.js");
+const { buildAverageProbabilityToolResult } = require("../src/core/avg_probability_tool.js");
 
 test("buildAverageProbabilityToolResult returns count and total-cell distributions", () => {
     const result = buildAverageProbabilityToolResult({

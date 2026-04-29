@@ -1,8 +1,8 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const defaultConfig = require("../default_config_bundle.js");
-const { resolveEstimatorConfig } = require("../estimator.js");
-const { buildCalibrationReplayReport } = require("../calibration_replay_report.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
+const { resolveEstimatorConfig } = require("../src/core/estimator.js");
+const { buildCalibrationReplayReport } = require("../src/research/calibration_replay_report.js");
 
 test("buildCalibrationReplayReport combines authority artifact meta with count/value replay comparisons", () => {
     const candidateConfig = JSON.parse(JSON.stringify(defaultConfig));

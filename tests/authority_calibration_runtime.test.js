@@ -1,13 +1,13 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     applyAuthorityCalibration,
     buildAuthorityCalibrationArtifacts
-} = require("../authority_calibration_runtime.js");
-const { buildAuthoritySourcePackage } = require("../source_data_runtime.js");
-const { resolveEstimatorConfig } = require("../estimator.js");
+} = require("../src/core/authority_calibration_runtime.js");
+const { buildAuthoritySourcePackage } = require("../src/core/source_data_runtime.js");
+const { resolveEstimatorConfig } = require("../src/core/estimator.js");
 
 function buildSourcePackageWithBattleSample() {
     return buildAuthoritySourcePackage({

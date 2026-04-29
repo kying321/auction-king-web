@@ -2,11 +2,11 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     buildPurpleMultiplierCandidateConfig,
     buildPurpleWeightFitReport
-} = require("../purple_weight_fit_report.js");
+} = require("../src/research/purple_weight_fit_report.js");
 
 const SAMPLE_PATH = path.join(
     __dirname,

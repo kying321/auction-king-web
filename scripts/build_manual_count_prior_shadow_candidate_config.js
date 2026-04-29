@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
-const { createBattleSampleRecord } = require("../source_data_runtime.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
+const { createBattleSampleRecord } = require("../src/core/source_data_runtime.js");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const DEFAULT_REVIEW_IMPORT_PATH = path.join(

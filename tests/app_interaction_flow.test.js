@@ -2,11 +2,11 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
-const runtime = require("../dashboard_runtime.js");
-const configModalRuntime = require("../config_modal_state.js");
-const configEditorControlsRuntime = require("../config_editor_controls.js");
-const workspaceRuntime = require("../workspace_runtime.js");
-const sampleDatasetRuntime = require("../sample_dataset.js");
+const runtime = require("../src/browser/dashboard_runtime.js");
+const configModalRuntime = require("../src/browser/config_modal_state.js");
+const configEditorControlsRuntime = require("../src/browser/config_editor_controls.js");
+const workspaceRuntime = require("../src/browser/workspace_runtime.js");
+const sampleDatasetRuntime = require("../src/browser/sample_dataset.js");
 
 class FakeClassList {
     constructor() {
@@ -540,7 +540,7 @@ function installAppHarness(options = {}) {
         runtimeLog,
         storage,
         restore(previousGlobals) {
-            delete require.cache[require.resolve("../app.js")];
+            delete require.cache[require.resolve("../src/browser/app.js")];
             Object.keys(globals).forEach((key) => {
                 if (previousGlobals[key] === undefined) delete global[key];
                 else global[key] = previousGlobals[key];
@@ -583,8 +583,8 @@ test("theme toggle persists night mode and updates the page theme", () => {
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const toggle = harness.document.getElementById("btn-theme-toggle");
@@ -650,8 +650,8 @@ test("advanced tools page initializes without hidden main workspace support node
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         assert.doesNotThrow(() => harness.document.fireDOMContentLoaded());
 
         assert.ok(harness.document.getElementById("template_select").children.length > 0);
@@ -683,8 +683,8 @@ test("app restores the last workspace state and renders Ahmed default fields in 
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         assert.equal(harness.document.getElementById("template_select").value, "ahmed_default");
@@ -736,8 +736,8 @@ test("app clears persisted zero average cells before solving restored workspace 
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         assert.equal(harness.document.getElementById("field-input-purple_avg_cells").value, "");
@@ -778,8 +778,8 @@ test("engine error explains hidden solver constraints and can clear them", () =>
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const errorText = collectText(harness.document.getElementById("error-box"));
@@ -815,8 +815,8 @@ test("calibration panel keeps draft edits local until apply, then pushes applied
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const initialDispatchCount = harness.runtimeLog.dispatches.length;
@@ -869,8 +869,8 @@ test("calibration panel surfaces fallback-only alpha status when authority battl
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         assert.match(harness.document.getElementById("calibration-artifact-meta").innerText, /alpha_counts fallback_only/);
@@ -905,8 +905,8 @@ test("calibration panel can capture the current workspace into local settlement 
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-calibration-capture-sample").click();
@@ -951,8 +951,8 @@ test("calibration panel can review and complete missing actual counts for the la
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-calibration-capture-sample").click();
@@ -997,8 +997,8 @@ test("calibration panel can bind a settlement screenshot to the selected sample"
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-calibration-capture-sample").click();
@@ -1087,8 +1087,8 @@ test("front toolbar downloads current input with the clipboard screenshot withou
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-save-clipboard-screenshot").click();
@@ -1163,8 +1163,8 @@ test("front toolbar still downloads current input when clipboard screenshot is u
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-save-clipboard-screenshot").click();
@@ -1241,8 +1241,8 @@ test("front toolbar rejects tiny clipboard thumbnails as missing screenshots", a
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-save-clipboard-screenshot").click();
@@ -1295,8 +1295,8 @@ test("front toolbar exports public average metadata and rounded observed state",
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-save-clipboard-screenshot").click();
@@ -1365,8 +1365,8 @@ test("front toolbar capture package embeds the latest posterior and valuation sn
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const totalItems = harness.document.getElementById("field-input-total_items");
@@ -1473,8 +1473,8 @@ test("front toolbar capture package embeds posterior residual risk diagnostics",
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const totalItems = harness.document.getElementById("field-input-total_items");
@@ -1538,8 +1538,8 @@ test("front toolbar capture package does not export a stale analysis snapshot af
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const totalItems = harness.document.getElementById("field-input-total_items");
@@ -1601,8 +1601,8 @@ test("calibration panel can delete the selected current-map sample without clear
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-calibration-delete-sample-review").click();
@@ -1657,8 +1657,8 @@ test("calibration panel renders local settlement sample summary, supports import
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         assert.match(harness.document.getElementById("calibration-sample-meta").innerText, /本地结算样本 2/);
@@ -1771,8 +1771,8 @@ test("clearing local settlement samples downloads raw backup and current-map rep
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-calibration-clear-samples").click();
@@ -1852,8 +1852,8 @@ test("calibration panel separates global and current-map authority-ready sample 
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const metaText = harness.document.getElementById("calibration-sample-meta").innerText;
@@ -1901,8 +1901,8 @@ test("current-map authority export does not treat other maps' ready samples as e
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-calibration-export-current-map-authority-samples").click();
@@ -1956,8 +1956,8 @@ test("current-map authority export downloads a wrapped package with current_map 
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-calibration-export-current-map-authority-samples").click();
@@ -2023,8 +2023,8 @@ test("authority export marks current-map samples as exported and review edits ma
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         assert.match(harness.document.getElementById("calibration-sample-meta").innerText, /全局未导出 2/);
@@ -2105,8 +2105,8 @@ test("global authority export downloads a wrapped package with global context", 
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-calibration-export-authority-samples").click();
@@ -2203,8 +2203,8 @@ test("calibration sample review can filter current-map samples by pending export
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const filterSelect = harness.document.getElementById("calibration-review-batch-filter");
@@ -2330,8 +2330,8 @@ test("filtered replay export follows the current batch filter and does not rewri
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const filterSelect = harness.document.getElementById("calibration-review-batch-filter");
@@ -2385,8 +2385,8 @@ test("filtered replay export reports skipped non-replayable samples for the curr
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const filterSelect = harness.document.getElementById("calibration-review-batch-filter");
@@ -2467,8 +2467,8 @@ test("filtered authority export follows the current filter and marks only publis
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const filterSelect = harness.document.getElementById("calibration-review-batch-filter");
@@ -2502,8 +2502,8 @@ test("clear button resets compute state so the next blur can recompute immediate
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const totalItems = harness.document.getElementById("field-input-total_items");
@@ -2541,8 +2541,8 @@ test("switching templates rerenders visible fields and moves non-template fields
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const templateSelect = harness.document.getElementById("template_select");
@@ -2579,8 +2579,8 @@ test("more-fields panel stays collapsed by default and supports search and famil
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const moreFieldsPanel = harness.document.getElementById("more-fields-panel");
@@ -2630,8 +2630,8 @@ test("main field panel supports inline reordering and clones builtin templates b
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         assert.equal(harness.document.elements.has("field-action-move-down-total_items"), false);
@@ -2692,8 +2692,8 @@ test("template clone supports reordering and recommended toggle with local persi
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-clone-template").click();
@@ -2737,8 +2737,8 @@ test("structured config editor can reorder builtin template fields and persist o
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-config").click();
@@ -2778,8 +2778,8 @@ test("config modal opens JSON details automatically for raw comparison views", (
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-config").click();
@@ -2823,8 +2823,8 @@ test("structured config editor renders direct map and global value matrices", ()
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         harness.document.getElementById("btn-config").click();
@@ -2895,8 +2895,8 @@ test("valuation panel leads with a bid decision sentence and posterior bars stay
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const totalItems = harness.document.getElementById("field-input-total_items");
@@ -2972,8 +2972,8 @@ test("posterior risk note warns when missing orange count drives red residual", 
     });
 
     try {
-        delete require.cache[require.resolve("../app.js")];
-        require("../app.js");
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
         const values = {

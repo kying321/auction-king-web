@@ -3,7 +3,7 @@ const {
     DEFAULT_OUTPUT_PATH,
     buildCatalogOcrContourReport,
     normalizeInputPath
-} = require("../catalog_ocr_contour_runtime.js");
+} = require("../src/core/catalog_ocr_contour_runtime.js");
 
 function resolveArgs(argv = process.argv.slice(2)) {
     const positional = [];

@@ -6,7 +6,7 @@ const path = require("node:path");
 const packageJson = require("../package.json");
 const {
     buildCatalogStructuralPriorReport
-} = require("../catalog_structural_prior_runtime.js");
+} = require("../src/core/catalog_structural_prior_runtime.js");
 const {
     resolveArgs
 } = require("../scripts/build_catalog_structural_prior_report.js");

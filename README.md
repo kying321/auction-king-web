@@ -20,6 +20,8 @@ Open `index.html` directly for the local static workbench, or run `npm run build
 ## Research Scope
 
 - `scripts/` owns report builders, replay gates, manual confirmation ingest, and BidKing comparison analysis.
+- `src/browser/`, `src/core/`, and `src/research/` own browser runtime, estimator/catalog core, and research runtime modules.
+- `legacy/python/` retains the older local Python estimator and family-calibration helpers.
 - `tests/` owns deterministic regression coverage for source-owned gates and UI/static behavior.
 - `docs/research/` contains selected generated reports and public release handoff notes.
 - `data/source_packages/` and `data/battle_samples/` contain repo-owned source package snapshots used by builders.

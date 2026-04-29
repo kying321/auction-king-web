@@ -12,7 +12,7 @@ const {
     inferCatalogCardBounds,
     parseTesseractTsv,
     normalizeInputPath
-} = require("../catalog_ocr_contour_runtime.js");
+} = require("../src/core/catalog_ocr_contour_runtime.js");
 const {
     resolveArgs
 } = require("../scripts/build_catalog_ocr_contour_report.js");

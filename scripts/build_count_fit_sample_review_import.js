@@ -1,6 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const { createBattleSampleRecord } = require("../source_data_runtime.js");
+const { createBattleSampleRecord } = require("../src/core/source_data_runtime.js");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const DEFAULT_TEMPLATE_PATH = path.join(

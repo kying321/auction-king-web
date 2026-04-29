@@ -7,7 +7,7 @@ const {
     buildValueModelCalibrationFromManualCatalog,
     loadManualCatalogBatch,
     loadManualCatalogBatchesFromDirectory
-} = require("../manual_item_catalog.js");
+} = require("../src/core/manual_item_catalog.js");
 
 test("white quality manual catalog batch parses and preserves the provided average/value set", () => {
     const catalogPath = path.join(__dirname, "..", "data", "manual_catalog", "white_quality_items_batch_2026-04-23.json");

@@ -1,10 +1,10 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     TARGET_QUALITIES,
     buildProducerValueModelReport
-} = require("../producer_value_model.js");
+} = require("../src/core/producer_value_model.js");
 
 const DEFAULT_CATALOG_CALIBRATION_PATH = path.join(
     path.resolve(__dirname, ".."),

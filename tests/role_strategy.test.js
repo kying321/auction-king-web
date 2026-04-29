@@ -3,8 +3,8 @@ const assert = require("node:assert/strict");
 const {
     determineCurrentRound,
     buildRoleStrategy
-} = require("../role_strategy.js");
-const defaultConfig = require("../default_config_bundle.js");
+} = require("../src/browser/role_strategy.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 
 function createResult(overrides = {}) {
     return {

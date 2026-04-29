@@ -7,7 +7,7 @@ const packageJson = require("../package.json");
 const {
     buildCatalogStructuralPriorImpactReport,
     writeCatalogStructuralPriorImpactReport
-} = require("../catalog_structural_prior_impact_runtime.js");
+} = require("../src/core/catalog_structural_prior_impact_runtime.js");
 const {
     resolveArgs
 } = require("../scripts/build_catalog_structural_prior_impact_report.js");

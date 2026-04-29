@@ -1,10 +1,10 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
-const { buildSettlementCountReplayReport } = require("../sample_count_replay.js");
-const { buildDefaultWeightImplementationReport } = require("../default_weight_implementation_report.js");
-const { buildProducerStrategyArchitectureReport } = require("../producer_strategy_architecture_report.js");
-const { buildProducerStrategyReplayDiagnosticsReport } = require("../producer_strategy_replay_diagnostics.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
+const { buildSettlementCountReplayReport } = require("../src/research/sample_count_replay.js");
+const { buildDefaultWeightImplementationReport } = require("../src/research/default_weight_implementation_report.js");
+const { buildProducerStrategyArchitectureReport } = require("../src/research/producer_strategy_architecture_report.js");
+const { buildProducerStrategyReplayDiagnosticsReport } = require("../src/research/producer_strategy_replay_diagnostics.js");
 const {
     buildProducerStrategyCandidateConfig
 } = require("./build_producer_strategy_candidate_config.js");

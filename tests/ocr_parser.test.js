@@ -5,7 +5,7 @@ const {
     parseSettlementText,
     parseSettlementItemCandidates,
     setAuctionKingOcrConfig
-} = require("../ocr_parser.js");
+} = require("../src/core/ocr_parser.js");
 
 test("battle OCR parser extracts the new main-chain fields from normalized review text", () => {
     const parsed = parseBattleSnapshotText(`

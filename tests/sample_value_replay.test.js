@@ -1,13 +1,13 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     buildSettlementValueReplayReport,
     resolveReplaySampleActualLootValue,
     predictSettlementItemValue
-} = require("../sample_value_replay.js");
-const { createBattleSampleRecord } = require("../source_data_runtime.js");
-const { resolveEstimatorConfig } = require("../estimator.js");
+} = require("../src/research/sample_value_replay.js");
+const { createBattleSampleRecord } = require("../src/core/source_data_runtime.js");
+const { resolveEstimatorConfig } = require("../src/core/estimator.js");
 
 test("resolveReplaySampleActualLootValue prefers loot_value and falls back to summed items", () => {
     assert.equal(

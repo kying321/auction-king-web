@@ -1,7 +1,10 @@
 import copy
 import json
+import sys
 import unittest
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "legacy" / "python"))
 
 from auction_king_sunken_ship_estimator import CONFIG_DEFAULT as OFFLINE_CONFIG_DEFAULT
 from collection_family_config_io import (

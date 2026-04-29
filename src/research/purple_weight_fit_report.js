@@ -1,5 +1,5 @@
-const defaultConfig = require("./default_config_bundle.js");
-const { resolveEstimatorConfig } = require("./estimator.js");
+const defaultConfig = require("../core/default_config_bundle.js");
+const { resolveEstimatorConfig } = require("../core/estimator.js");
 const { buildSettlementCountReplayReport } = require("./sample_count_replay.js");
 
 const DEFAULT_MULTIPLIERS = [1, 1.25, 1.5, 1.75, 2, 2.25, 2.5];

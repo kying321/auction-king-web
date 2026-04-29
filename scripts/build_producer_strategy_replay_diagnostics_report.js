@@ -2,7 +2,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const {
     buildProducerStrategyReplayDiagnosticsReport
-} = require("../producer_strategy_replay_diagnostics.js");
+} = require("../src/research/producer_strategy_replay_diagnostics.js");
 
 const DEFAULT_REPLAY_REPORT_PATH = path.join(
     path.resolve(__dirname, ".."),

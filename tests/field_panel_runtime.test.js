@@ -1,7 +1,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 
-const { buildFieldCard } = require("../field_panel_runtime.js");
+const { buildFieldCard } = require("../src/browser/field_panel_runtime.js");
 
 class FakeElement {
     constructor(tagName = "div", ownerDocument = null) {

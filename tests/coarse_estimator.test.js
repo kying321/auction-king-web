@@ -1,8 +1,8 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const { resolveEstimatorConfig } = require("../estimator.js");
-const defaultConfig = require("../default_config_bundle.js");
-const { buildCoarseEngineResult } = require("../coarse_estimator.js");
+const { resolveEstimatorConfig } = require("../src/core/estimator.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
+const { buildCoarseEngineResult } = require("../src/core/coarse_estimator.js");
 
 test("buildCoarseEngineResult produces map-prior rough posterior before full solve", () => {
     const resolvedConfig = resolveEstimatorConfig(defaultConfig, "sunken_ship");

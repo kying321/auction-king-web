@@ -1,7 +1,7 @@
 const fs = typeof require === "function" && typeof module !== "undefined" && module.exports ? require("node:fs") : null;
 const path = typeof require === "function" && typeof module !== "undefined" && module.exports ? require("node:path") : null;
 const sourceWorkspaceRuntime = typeof require === "function" && typeof module !== "undefined" && module.exports
-    ? require("./workspace_runtime.js")
+    ? require("../browser/workspace_runtime.js")
     : (typeof window !== "undefined" ? window.AK_WORKSPACE_RUNTIME : {});
 const {
     buildLegacyEstimatorStateFromFieldValues

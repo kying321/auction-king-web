@@ -3,7 +3,7 @@ const assert = require("node:assert/strict");
 const {
     buildProducerStrategyArchitectureReport,
     summarizeReplayFits
-} = require("../producer_strategy_architecture_report.js");
+} = require("../src/research/producer_strategy_architecture_report.js");
 
 test("summarizeReplayFits keeps partial clean replay evidence as two-sigma review data", () => {
     const summary = summarizeReplayFits({

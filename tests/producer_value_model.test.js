@@ -4,7 +4,7 @@ const {
     buildProducerValueModelReport,
     buildRedTypeValueEnvelope,
     buildValueTwoSigmaFit
-} = require("../producer_value_model.js");
+} = require("../src/core/producer_value_model.js");
 
 test("buildValueTwoSigmaFit scores unit value against observed catalog two-sigma band", () => {
     const fit = buildValueTwoSigmaFit({

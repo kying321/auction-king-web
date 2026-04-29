@@ -6,16 +6,16 @@ global.AUCTION_KING_DEFAULT_CONFIG = {};
 global.document = {
     addEventListener() {}
 };
-delete require.cache[require.resolve("../app.js")];
+delete require.cache[require.resolve("../src/browser/app.js")];
 const {
     shouldFallbackToMainThreadFullSolve
-} = require("../app.js");
+} = require("../src/browser/app.js");
 const {
     deriveAdaptiveSolverBudget
-} = require("../estimator.js");
+} = require("../src/core/estimator.js");
 const {
     resolveTesseractTimeoutMs
-} = require("../catalog_ocr_contour_runtime.js");
+} = require("../src/core/catalog_ocr_contour_runtime.js");
 const {
     formatCodexVisualManualConfirmationResultsHtml
 } = require("../scripts/build_codex_visual_manual_confirmation_results.js");

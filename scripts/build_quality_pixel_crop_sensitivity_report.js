@@ -3,7 +3,7 @@ const path = require("node:path");
 const {
     analyzeQualityColorBlocksFromImageFile,
     summarizeQualityBlocks
-} = require("../pixel_quality_analyzer.js");
+} = require("../src/core/pixel_quality_analyzer.js");
 
 const DEFAULT_PIXEL_REPORT_PATH = path.join(
     process.cwd(),

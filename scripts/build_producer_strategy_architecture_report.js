@@ -2,7 +2,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const {
     buildProducerStrategyArchitectureReport
-} = require("../producer_strategy_architecture_report.js");
+} = require("../src/research/producer_strategy_architecture_report.js");
 
 const DEFAULT_COUNT_PRIOR_REPORT_PATH = path.join(
     path.resolve(__dirname, ".."),

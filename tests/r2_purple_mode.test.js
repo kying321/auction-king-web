@@ -6,7 +6,7 @@ const {
     normalizeR2PurpleCount,
     shouldDisableR2PurpleCount,
     syncR2PurpleCountInput
-} = require("../r2_purple_mode.js");
+} = require("../src/core/r2_purple_mode.js");
 
 test("getDefaultR2PurpleMode defaults Ahmed flow to orange-only probe", () => {
     assert.equal(getDefaultR2PurpleMode(), "orange_only");

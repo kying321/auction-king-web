@@ -1,6 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const { buildAuthorityCalibrationArtifacts } = require("../authority_calibration_runtime.js");
+const { buildAuthorityCalibrationArtifacts } = require("../src/core/authority_calibration_runtime.js");
 const { buildAndWriteAuthoritySourcePackage, OUTPUT_PATH: SOURCE_PACKAGE_PATH } = require("./build_authority_source_package.js");
 
 const ROOT_DIR = path.resolve(__dirname, "..");

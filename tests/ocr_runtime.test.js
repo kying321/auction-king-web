@@ -5,7 +5,7 @@ const {
     buildBattleRegionAttempts,
     buildTesseractParameters,
     mergeRecognitionResults
-} = require("../ocr_runtime.js");
+} = require("../src/core/ocr_runtime.js");
 
 test("buildRecognitionPlan uses multi-pass preprocessing for battle screenshots", () => {
     const battlePlan = buildRecognitionPlan("battle");

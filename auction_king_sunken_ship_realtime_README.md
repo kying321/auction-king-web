@@ -13,7 +13,7 @@ R5 现在支持两种方式：
 
 启动：
 ```bash
-python auction_king_sunken_ship_realtime.py
+python legacy/python/auction_king_sunken_ship_realtime.py
 ```
 
 常用命令：
@@ -52,7 +52,7 @@ load_families my_families.json
 - `load_families <path>` 只替换 `collection_families`
 - 仓库内现成样板： `my_families.json`
 - 样本记录模板： `family_calibration_template.csv`
-- 建议生成命令：`python suggest_family_calibration.py family_calibration_template.csv my_families.json my_families_suggested.json`
+- 建议生成命令：`python legacy/python/suggest_family_calibration.py family_calibration_template.csv my_families.json my_families_suggested.json`
 
 件数字段现在会做整数校验；像 `r1 12.5 2` 或 `set r2_purple_count 3.5` 这类输入会直接报错，而不是在枚举阶段崩掉。
 

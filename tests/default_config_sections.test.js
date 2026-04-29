@@ -1,7 +1,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const packageJson = require("../package.json");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     composeDefaultConfigFromSections,
     DEFAULT_CONFIG_SECTION_FILES

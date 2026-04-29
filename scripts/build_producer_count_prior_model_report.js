@@ -1,11 +1,11 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     QUALITIES,
     buildProducerCountPriorModelReport,
     normalizeInputPayload
-} = require("../producer_count_prior_model.js");
+} = require("../src/core/producer_count_prior_model.js");
 
 const DEFAULT_PIXEL_SHADOW_REPORT_PATH = path.join(
     path.resolve(__dirname, ".."),

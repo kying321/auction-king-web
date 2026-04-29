@@ -6,7 +6,7 @@ const {
     QUALITY_COLOR_PROFILES,
     analyzeQualityColorBlocksFromImageFile,
     summarizeQualityBlocks
-} = require("../pixel_quality_analyzer.js");
+} = require("../src/core/pixel_quality_analyzer.js");
 
 const DEFAULT_OUTPUT_PATH = path.join(process.cwd(), "docs", "research", "quality_pixel_report.json");
 const DEFAULT_CROP = {

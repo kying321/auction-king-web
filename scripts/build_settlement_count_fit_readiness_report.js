@@ -3,7 +3,7 @@ const path = require("node:path");
 const {
     DEFAULT_THRESHOLDS,
     buildSettlementCountFitReadinessReport
-} = require("../settlement_count_fit_readiness_report.js");
+} = require("../src/research/settlement_count_fit_readiness_report.js");
 
 const DEFAULT_INPUT_PATH = path.join(
     path.resolve(__dirname, ".."),

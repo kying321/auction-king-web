@@ -3,7 +3,7 @@ const path = require("node:path");
 const {
     DEFAULT_THRESHOLDS,
     buildSystemHintCoverageReport
-} = require("../system_hint_coverage_report.js");
+} = require("../src/research/system_hint_coverage_report.js");
 
 const DEFAULT_INPUT_PATH = path.join(
     path.resolve(__dirname, ".."),

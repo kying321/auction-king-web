@@ -1,7 +1,11 @@
 import copy
 import math
+import sys
 import unittest
+from pathlib import Path
 from unittest.mock import patch
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "legacy" / "python"))
 
 from auction_king_sunken_ship_estimator import (
     CONFIG_DEFAULT,
@@ -88,15 +92,15 @@ class OfflineEstimatorRedTemplateTests(unittest.TestCase):
         self.assertIn("o", estimator.config["value_models"])
         self.assertIn("grid_models", estimator.config)
 
-    def test_default_config_tracks_source_backed_sunken_ship_sections(self):
-        self.assertEqual(CONFIG_DEFAULT["map_name"], "沉船图-高难-互联网校准v1")
-        self.assertEqual(CONFIG_DEFAULT["alpha_counts"]["o"], 1)
-        self.assertEqual(CONFIG_DEFAULT["alpha_counts"]["r"], 0.6)
-        self.assertEqual(CONFIG_DEFAULT["grid_models"]["o"]["mean_cells"], 4.1)
-        self.assertIsNone(CONFIG_DEFAULT["grid_models"]["o"]["max_cells"])
-        self.assertEqual(CONFIG_DEFAULT["grid_models"]["p"]["mean_cells"], 2.55)
-        self.assertEqual(CONFIG_DEFAULT["value_models"]["r"]["base_item_mean"], 128777)
-        self.assertEqual(CONFIG_DEFAULT["value_models"]["r"]["per_cell_mean"], 0)
+    def test_default_config_tracks_current_legacy_offline_sections(self):
+        self.assertEqual(CONFIG_DEFAULT["map_name"], "沉船图-高难-占位先验")
+        self.assertEqual(CONFIG_DEFAULT["alpha_counts"]["o"], 2.4)
+        self.assertEqual(CONFIG_DEFAULT["alpha_counts"]["r"], 1.8)
+        self.assertEqual(CONFIG_DEFAULT["grid_models"]["o"]["mean_cells"], 2.8)
+        self.assertEqual(CONFIG_DEFAULT["grid_models"]["o"]["max_cells"], 8)
+        self.assertEqual(CONFIG_DEFAULT["grid_models"]["p"]["mean_cells"], 2.4)
+        self.assertEqual(CONFIG_DEFAULT["value_models"]["r"]["mean_value"], 9000)
+        self.assertEqual(CONFIG_DEFAULT["value_models"]["r"]["sd_value"], 2600)
 
     def test_score_count_prior_prefers_alpha_counts_over_legacy_count_probs(self):
         config = make_config()
@@ -342,7 +346,7 @@ class OfflineEstimatorRedTemplateTests(unittest.TestCase):
         support = [count for count, _ in posterior.mass]
         total_prob = sum(prob for _, prob in posterior.mass)
 
-        self.assertEqual(support, list(range(1, 31)))
+        self.assertEqual(support, list(range(1, 11)))
         self.assertAlmostEqual(total_prob, 1.0, places=9)
 
     def test_posterior_summary_prefers_explicit_red_mass_over_low_high_approximation(self):

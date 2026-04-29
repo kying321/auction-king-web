@@ -1,13 +1,13 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     AuctionKingEstimator,
     resolveEstimatorConfig,
     roundedAvgInterval,
     hasFeasibleAverageForCount,
     deriveAdaptiveSolverBudget
-} = require("../estimator.js");
+} = require("../src/core/estimator.js");
 
 function createConfig() {
     return {
@@ -894,7 +894,7 @@ test("summary exposes a normalized red cell distribution", () => {
 });
 
 test("average_observation relaxation avoids rigid high-avg locking in purple/orange ranges", () => {
-    const defaultConfig = require("../default_config_bundle.js");
+    const defaultConfig = require("../src/core/default_config_bundle.js");
     const resolvedConfig = resolveEstimatorConfig(defaultConfig, "sunken_ship");
     const estimator = new AuctionKingEstimator(
         resolvedConfig,

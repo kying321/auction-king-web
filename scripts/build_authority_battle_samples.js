@@ -1,6 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const { normalizeBattleSampleRecords } = require("../source_data_runtime.js");
+const { normalizeBattleSampleRecords } = require("../src/core/source_data_runtime.js");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const OUTPUT_PATH = path.join(ROOT_DIR, "data", "battle_samples", "authority_battle_samples.json");

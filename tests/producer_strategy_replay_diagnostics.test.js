@@ -3,7 +3,7 @@ const assert = require("node:assert/strict");
 const {
     buildProducerStrategyReplayDiagnosticsReport,
     compareReplayQuality
-} = require("../producer_strategy_replay_diagnostics.js");
+} = require("../src/research/producer_strategy_replay_diagnostics.js");
 
 test("compareReplayQuality marks candidate regression and count direction", () => {
     const result = compareReplayQuality({

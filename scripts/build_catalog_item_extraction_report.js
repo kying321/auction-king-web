@@ -4,7 +4,7 @@ const {
     DEFAULT_OUTPUT_PATH,
     DEFAULT_QUALITY_MANIFEST_PATH,
     buildCatalogItemExtractionReport
-} = require("../catalog_item_extraction_runtime.js");
+} = require("../src/core/catalog_item_extraction_runtime.js");
 
 function resolveArgs(argv = process.argv.slice(2)) {
     const positional = [];

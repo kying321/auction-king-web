@@ -1,11 +1,11 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     buildValueModelOverlayFromManualCatalog,
     loadManualCatalogBatchesFromDirectory
-} = require("../manual_item_catalog.js");
-const { buildSettlementValueReplayReport } = require("../sample_value_replay.js");
+} = require("../src/core/manual_item_catalog.js");
+const { buildSettlementValueReplayReport } = require("../src/research/sample_value_replay.js");
 
 function resolveArgs(argv = process.argv.slice(2)) {
     const inputPath = argv[0] ? path.resolve(argv[0]) : null;

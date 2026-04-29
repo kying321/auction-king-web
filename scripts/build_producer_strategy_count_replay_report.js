@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
-const { buildSettlementCountReplayReport } = require("../sample_count_replay.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
+const { buildSettlementCountReplayReport } = require("../src/research/sample_count_replay.js");
 const { normalizeInputSamples } = require("./build_settlement_sample_count_replay.js");
 
 const DEFAULT_SAMPLES_PATH = path.join(

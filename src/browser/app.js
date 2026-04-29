@@ -14,7 +14,7 @@ const sampleDatasetRuntime = typeof require === "function" && typeof module !== 
     ? require("./sample_dataset.js")
     : (typeof AK_SAMPLE_DATASET_RUNTIME !== "undefined" ? AK_SAMPLE_DATASET_RUNTIME : (typeof window !== "undefined" ? window.AK_SAMPLE_DATASET_RUNTIME : {}));
 const authorityCalibrationRuntime = typeof require === "function" && typeof module !== "undefined" && module.exports
-    ? require("./authority_calibration_runtime.js")
+    ? require("../core/authority_calibration_runtime.js")
     : (typeof AK_AUTHORITY_CALIBRATION_RUNTIME !== "undefined" ? AK_AUTHORITY_CALIBRATION_RUNTIME : (typeof window !== "undefined" ? window.AK_AUTHORITY_CALIBRATION_RUNTIME : {}));
 const numericInputRuntime = typeof require === "function" && typeof module !== "undefined" && module.exports
     ? require("./numeric_input_runtime.js")
@@ -2408,7 +2408,7 @@ if (typeof document !== "undefined" && typeof document.addEventListener === "fun
             if (typeof Worker === "undefined" || typeof createFullSolveRuntimeFromGlobal !== "function") return null;
             if (fullSolveRuntime) return fullSolveRuntime;
             fullSolveRuntime = createFullSolveRuntimeFromGlobal(
-                () => new Worker(`full_solver_worker.js?v=${FULL_SOLVER_WORKER_VERSION}`),
+                () => new Worker(`src/browser/full_solver_worker.js?v=${FULL_SOLVER_WORKER_VERSION}`),
                 {
                     onResult: (payload) => {
                         const context = pendingFullSolveContext;

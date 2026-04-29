@@ -1,10 +1,10 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     buildPurpleWeightFitReport,
     normalizeSamples
-} = require("../purple_weight_fit_report.js");
+} = require("../src/research/purple_weight_fit_report.js");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const DEFAULT_SAMPLES_PATH = path.join(

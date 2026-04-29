@@ -1,6 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const { buildAuthoritySourcePackage } = require("../source_data_runtime.js");
+const { buildAuthoritySourcePackage } = require("../src/core/source_data_runtime.js");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const MANUAL_CATALOG_DIR = path.join(ROOT_DIR, "data", "manual_catalog");

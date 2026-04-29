@@ -1,8 +1,8 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const defaultConfig = require("../default_config_bundle.js");
-const { AuctionKingEstimator, resolveEstimatorConfig } = require("../estimator.js");
-const { buildLegacyEstimatorStateFromFieldValues } = require("../workspace_runtime.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
+const { AuctionKingEstimator, resolveEstimatorConfig } = require("../src/core/estimator.js");
+const { buildLegacyEstimatorStateFromFieldValues } = require("../src/browser/workspace_runtime.js");
 
 test("bundled default config keeps global model defaults and per-map overrides separate", () => {
     assert.equal(defaultConfig.app.default_map_id, "sunken_ship");

@@ -3,9 +3,9 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 
-const defaultConfig = require("../default_config_bundle.js");
-const { AuctionKingEstimator, resolveEstimatorConfig } = require("../estimator.js");
-const { buildLegacyEstimatorStateFromFieldValues } = require("../workspace_runtime.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
+const { AuctionKingEstimator, resolveEstimatorConfig } = require("../src/core/estimator.js");
+const { buildLegacyEstimatorStateFromFieldValues } = require("../src/browser/workspace_runtime.js");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const SCHEMA_BACKED_TABLE_REPORT_PATH = path.join(

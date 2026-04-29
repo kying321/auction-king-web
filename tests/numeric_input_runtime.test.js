@@ -4,7 +4,7 @@ const {
     configureNumericInput,
     bindNumericWheelStepper,
     parseLooseNumber
-} = require("../numeric_input_runtime.js");
+} = require("../src/browser/numeric_input_runtime.js");
 
 class FakeElement {
     constructor() {

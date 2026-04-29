@@ -10,7 +10,7 @@ const {
     getComputeUiState,
     shouldAutoComputeOnFieldExit,
     getRoleGuideToggleLabel
-} = require("../dashboard_runtime.js");
+} = require("../src/browser/dashboard_runtime.js");
 
 test("createLruCache evicts the oldest entry after limit", () => {
     const cache = createLruCache(2);

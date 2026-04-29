@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
-const { buildCalibrationReplayReport } = require("../calibration_replay_report.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
+const { buildCalibrationReplayReport } = require("../src/research/calibration_replay_report.js");
 const DEFAULT_OUTPUT_PATH = path.join(process.cwd(), "docs", "research", "settlement_sample_calibration_replay_report.json");
 
 function sanitizeReplayFilterSlug(value) {

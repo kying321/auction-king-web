@@ -1,10 +1,10 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     buildManualCatalogStats,
     loadManualCatalogBatchesFromDirectory
-} = require("../manual_item_catalog.js");
+} = require("../src/core/manual_item_catalog.js");
 const {
     buildCaptureObservationPriorScanReport
 } = require("./build_capture_observation_prior_scan_report.js");

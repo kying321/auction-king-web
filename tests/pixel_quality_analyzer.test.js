@@ -6,7 +6,7 @@ const {
     analyzeQualityColorBlocksFromImageBuffer,
     classifyPixelQuality,
     summarizeQualityBlocks
-} = require("../pixel_quality_analyzer.js");
+} = require("../src/core/pixel_quality_analyzer.js");
 
 function svgFixture() {
     return Buffer.from(`

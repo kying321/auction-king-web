@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
-const { buildSettlementCountReplayReport } = require("../sample_count_replay.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
+const { buildSettlementCountReplayReport } = require("../src/research/sample_count_replay.js");
 
 function resolveArgs(argv = process.argv.slice(2)) {
     const inputPath = argv[0] ? path.resolve(argv[0]) : null;

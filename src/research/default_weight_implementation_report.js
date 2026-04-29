@@ -1,4 +1,4 @@
-const bundledDefaultConfig = require("./default_config_bundle.js");
+const bundledDefaultConfig = require("../core/default_config_bundle.js");
 
 function roundTo(value, digits = 6) {
     const numeric = Number(value);

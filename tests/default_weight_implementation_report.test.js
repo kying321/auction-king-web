@@ -1,9 +1,9 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     buildDefaultWeightImplementationReport
-} = require("../default_weight_implementation_report.js");
+} = require("../src/research/default_weight_implementation_report.js");
 
 function createPurpleFitEvidence() {
     return {

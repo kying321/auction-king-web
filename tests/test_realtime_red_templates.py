@@ -1,6 +1,10 @@
 import copy
+import sys
 import unittest
+from pathlib import Path
 from unittest.mock import patch
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "legacy" / "python"))
 
 from authority_source_runtime import export_realtime_internal_config_to_source
 from auction_king_sunken_ship_realtime import (
@@ -46,13 +50,13 @@ def point_red_posterior(cells):
 
 
 class RealtimeRedTemplateTests(unittest.TestCase):
-    def test_default_config_tracks_source_backed_sunken_ship_sections(self):
-        self.assertEqual(CONFIG_DEFAULT["map_name"], "沉船图-高难-互联网校准v1")
-        self.assertEqual(CONFIG_DEFAULT["alpha_counts"]["o"], 1)
-        self.assertEqual(CONFIG_DEFAULT["cells_per_item"]["p"]["mean"], 2.55)
-        self.assertIsNone(CONFIG_DEFAULT["cells_per_item"]["p"]["max"])
-        self.assertEqual(CONFIG_DEFAULT["value_model"]["p"]["base_item_mean"], 9492)
-        self.assertEqual(CONFIG_DEFAULT["value_model"]["p"]["per_cell_mean"], 0)
+    def test_default_config_tracks_current_legacy_realtime_sections(self):
+        self.assertEqual(CONFIG_DEFAULT["map_name"], "沉船图-高难-实时滤波模板")
+        self.assertEqual(CONFIG_DEFAULT["alpha_counts"]["o"], 1.8)
+        self.assertEqual(CONFIG_DEFAULT["cells_per_item"]["p"]["mean"], 2.2)
+        self.assertEqual(CONFIG_DEFAULT["cells_per_item"]["p"]["max"], 6)
+        self.assertEqual(CONFIG_DEFAULT["value_model"]["p"]["base_item_mean"], 1050)
+        self.assertEqual(CONFIG_DEFAULT["value_model"]["p"]["per_cell_mean"], 240)
 
     def test_partial_state_payload_merges_with_defaults_and_recomputes(self):
         est = RealtimeRoundEstimator(make_config(), make_state())
@@ -331,7 +335,7 @@ class RealtimeRedTemplateTests(unittest.TestCase):
         support = [count for count, _ in posterior.mass]
         total_prob = sum(prob for _, prob in posterior.mass)
 
-        self.assertEqual(support, list(range(1, 31)))
+        self.assertEqual(support, list(range(1, 11)))
         self.assertAlmostEqual(total_prob, 1.0, places=9)
 
     def test_summary_keeps_exact_red_cell_tail_support_from_candidate_posteriors(self):
@@ -348,7 +352,7 @@ class RealtimeRedTemplateTests(unittest.TestCase):
         support = sorted(entry["count"] for entry in summary["red_cell_probs"])
 
         self.assertEqual(support[0], 1)
-        self.assertEqual(support[-1], 30)
+        self.assertEqual(support[-1], 10)
 
     def test_summary_exposes_a_normalized_red_cell_distribution(self):
         state = {

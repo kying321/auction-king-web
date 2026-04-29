@@ -3,7 +3,7 @@ const assert = require("node:assert/strict");
 const {
     getPrimaryDistributionMarkup,
     applyPrimaryDistributionMarkup
-} = require("../primary_distribution_view.js");
+} = require("../src/core/primary_distribution_view.js");
 
 test("getPrimaryDistributionMarkup returns waiting placeholders", () => {
     assert.deepEqual(getPrimaryDistributionMarkup("waiting"), {

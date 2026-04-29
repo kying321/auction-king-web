@@ -1,10 +1,10 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     buildMapCountPriorCandidateConfig,
     buildMapCountPriorTuningReport
-} = require("../count_prior_tuner.js");
+} = require("../src/core/count_prior_tuner.js");
 
 function createVillaBaselineConfig() {
     const config = JSON.parse(JSON.stringify(defaultConfig));

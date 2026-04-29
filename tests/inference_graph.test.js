@@ -2,7 +2,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const {
     buildInferenceGraphModel
-} = require("../inference_graph.js");
+} = require("../src/core/inference_graph.js");
 
 test("buildInferenceGraphModel summarizes the posterior chain and active evidence", () => {
     const model = buildInferenceGraphModel(

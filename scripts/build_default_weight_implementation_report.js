@@ -1,9 +1,9 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     buildDefaultWeightImplementationReport
-} = require("../default_weight_implementation_report.js");
+} = require("../src/research/default_weight_implementation_report.js");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const DEFAULT_PURPLE_FIT_REPORT_PATH = path.join(

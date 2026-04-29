@@ -3,7 +3,7 @@ const {
     DEFAULT_INPUT_PATH,
     DEFAULT_OUTPUT_PATH,
     buildCatalogStructuralPriorReport
-} = require("../catalog_structural_prior_runtime.js");
+} = require("../src/core/catalog_structural_prior_runtime.js");
 
 function resolveArgs(argv = process.argv.slice(2)) {
     return {

@@ -1,13 +1,13 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     AuctionKingEstimator,
     resolveEstimatorConfig
-} = require("../estimator.js");
+} = require("../src/core/estimator.js");
 const {
     buildLegacyEstimatorStateFromFieldValues
-} = require("../workspace_runtime.js");
+} = require("../src/browser/workspace_runtime.js");
 
 function cloneValue(value) {
     return JSON.parse(JSON.stringify(value));

@@ -1,7 +1,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const path = require("node:path");
-const defaultConfig = require("../default_config_bundle.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
 const {
     buildExpectedCellMix,
     buildExpectedCountMix,
@@ -9,7 +9,7 @@ const {
     buildValueModelOverlayFromManualCatalog,
     computeDeterministicScenarioValue,
     loadManualCatalogBatchesFromDirectory
-} = require("../manual_item_catalog.js");
+} = require("../src/core/manual_item_catalog.js");
 
 test("expected count mix preserves the requested total via largest remainder allocation", () => {
     const counts = buildExpectedCountMix({ w: 1, g: 2, b: 3 }, 12);

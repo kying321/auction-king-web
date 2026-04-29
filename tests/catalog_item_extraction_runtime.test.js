@@ -7,7 +7,7 @@ const sharp = require("sharp");
 const packageJson = require("../package.json");
 const {
     buildCatalogItemExtractionReport
-} = require("../catalog_item_extraction_runtime.js");
+} = require("../src/core/catalog_item_extraction_runtime.js");
 const {
     resolveArgs
 } = require("../scripts/build_catalog_item_extraction_report.js");

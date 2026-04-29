@@ -1,12 +1,12 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const defaultConfig = require("../default_config_bundle.js");
-const { AuctionKingEstimator, resolveEstimatorConfig } = require("../estimator.js");
+const defaultConfig = require("../src/core/default_config_bundle.js");
+const { AuctionKingEstimator, resolveEstimatorConfig } = require("../src/core/estimator.js");
 const {
     buildSettlementCountReplayReport,
     createSettlementCountReplaySample
-} = require("../sample_count_replay.js");
-const { createBattleSampleRecord } = require("../source_data_runtime.js");
+} = require("../src/research/sample_count_replay.js");
+const { createBattleSampleRecord } = require("../src/core/source_data_runtime.js");
 
 function buildTopPosteriorStats(entries = [], actualCount) {
     const sorted = entries

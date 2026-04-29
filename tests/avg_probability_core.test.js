@@ -7,7 +7,7 @@ const {
     formatAverageDisplayFromTotalCells,
     summarizeProbabilityDistribution,
     getDistributionConfidence
-} = require("../avg_probability_core.js");
+} = require("../src/core/avg_probability_core.js");
 
 test("getAverageInterval uses truncate-two-decimal semantics by default", () => {
     assert.deepEqual(getAverageInterval(2.66, 3), { low: 8, high: 8 });

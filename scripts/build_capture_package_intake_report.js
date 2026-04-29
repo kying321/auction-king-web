@@ -9,10 +9,10 @@ const {
     getSettlementSampleAuthorityReadiness,
     getSettlementSampleCountFitReadiness,
     normalizeActualCounts
-} = require("../sample_dataset.js");
+} = require("../src/browser/sample_dataset.js");
 const {
     formatAverageDisplayFromTotalCells
-} = require("../estimator.js");
+} = require("../src/core/estimator.js");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const DEFAULT_OUTPUT_PATH = path.join(

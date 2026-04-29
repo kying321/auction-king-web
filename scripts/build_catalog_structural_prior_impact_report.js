@@ -4,7 +4,7 @@ const {
     DEFAULT_PRIOR_PATH,
     buildCatalogStructuralPriorImpactReport,
     writeCatalogStructuralPriorImpactReport
-} = require("../catalog_structural_prior_impact_runtime.js");
+} = require("../src/core/catalog_structural_prior_impact_runtime.js");
 
 function resolveArgs(argv = process.argv.slice(2)) {
     const positional = [];

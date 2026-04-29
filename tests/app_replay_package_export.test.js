@@ -6,7 +6,7 @@ const {
     buildReplayPackageFilename,
     buildReplayReportFilename,
     buildReplayPackageExportPayload
-} = require("../app.js");
+} = require("../src/browser/app.js");
 
 test("buildCalibrationReplayCandidateConfig maps panel calibration values into replay candidate config", () => {
     const payload = buildCalibrationReplayCandidateConfig("villa", {

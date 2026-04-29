@@ -5,7 +5,7 @@ const path = require("node:path");
 const {
     getConfigModalViewState,
     CONFIG_MODAL_VIEWS
-} = require("../config_modal_state.js");
+} = require("../src/browser/config_modal_state.js");
 
 test("structured config view is the primary editable mode and keeps advanced JSON read-only", () => {
     const currentConfig = { app: { default_map_id: "villa" }, solver: { max_states: 123 } };
