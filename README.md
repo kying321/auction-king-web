@@ -10,6 +10,7 @@ This public release intentionally excludes proprietary game binaries, local brow
 npm install
 npm test
 npm run check:js
+npm run build:repo-index
 npm run audit:public-release
 npm run build:static
 ```
@@ -22,6 +23,8 @@ Open `index.html` directly for the local static workbench, or run `npm run build
 - `tests/` owns deterministic regression coverage for source-owned gates and UI/static behavior.
 - `docs/research/` contains selected generated reports and public release handoff notes.
 - `data/source_packages/` and `data/battle_samples/` contain repo-owned source package snapshots used by builders.
+
+Start from `docs/INDEX.md` for the repository map, `docs/SCRIPTS_INDEX.md` for grouped command entrypoints, `docs/RESEARCH_INDEX.md` for generated evidence, and `docs/DEPRECATIONS.md` for removed or retained-legacy files.
 
 Generated folders such as `dist/`, `output/`, `tmp_capture_review/`, `backups/`, and `external/` are ignored by design.
 
