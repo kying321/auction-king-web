@@ -2,6 +2,7 @@ importScripts(
     "../core/average_observation_runtime.js?v=20260428232030",
     "../core/posterior_runtime.js?v=20260428232030",
     "../core/count_constraint_runtime.js?v=20260428232030",
+    "../core/valuation_runtime.js?v=20260428232030",
     "../core/estimator.js?v=20260428232030"
 );
 
