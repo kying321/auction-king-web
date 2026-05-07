@@ -1,0 +1,128 @@
+{
+  "schema_version": "ak_estimator_pipeline_audit_v1",
+  "generated_at": "2026-05-07T00:00:00.000+08:00",
+  "change_class": "SIM_ONLY",
+  "live_path_touched": false,
+  "default_parameter_update_allowed": false,
+  "source_ownership_rule": "source artifacts -> compact handoff/context -> UI/operator summaries -> chat/memory",
+  "module_ownership": {
+    "average_observation": {
+      "owner": "src/core/average_observation_runtime.js",
+      "compatibility_surface": [
+        "AuctionKingEstimator average-observation call sites"
+      ],
+      "owns": [
+        "average text normalization",
+        "average interval derivation",
+        "feasible average support"
+      ]
+    },
+    "posterior": {
+      "owner": "src/core/posterior_runtime.js",
+      "compatibility_surface": [
+        "AuctionKingEstimator posterior summarization call sites"
+      ],
+      "owns": [
+        "posterior mass normalization",
+        "posterior mass summaries",
+        "allowed total mass probability"
+      ]
+    },
+    "count_constraints": {
+      "owner": "src/core/count_constraint_runtime.js",
+      "compatibility_surface": [
+        "AuctionKingEstimator.enumerateCountStates"
+      ],
+      "owns": [
+        "quality count state enumeration",
+        "custom orange/red count bounds",
+        "average-feasibility pruning"
+      ]
+    },
+    "valuation": {
+      "owner": "src/core/valuation_runtime.js",
+      "compatibility_surface": [
+        "AuctionKingEstimator.valuationMc"
+      ],
+      "owns": [
+        "Monte Carlo valuation sampling",
+        "custom quality value override scaling",
+        "red tail value uplift sampling",
+        "bid profit metrics"
+      ]
+    },
+    "estimator_facade": {
+      "owner": "src/core/estimator.js",
+      "compatibility_surface": [
+        "AuctionKingEstimator",
+        "resolveEstimatorConfig"
+      ],
+      "owns": [
+        "public estimator facade",
+        "config resolution",
+        "runtime orchestration"
+      ]
+    }
+  },
+  "public_api_compatibility": {
+    "auction_king_estimator_methods_preserved": true,
+    "compatibility_wrappers": [
+      "AuctionKingEstimator.enumerateCountStates",
+      "AuctionKingEstimator.valuationMc"
+    ],
+    "browser_load_chain_updated": [
+      "index.html",
+      "src/browser/full_solver_worker.js"
+    ],
+    "commonjs_entrypoints_added": [
+      "src/core/average_observation_runtime.js",
+      "src/core/posterior_runtime.js",
+      "src/core/count_constraint_runtime.js",
+      "src/core/valuation_runtime.js"
+    ]
+  },
+  "parameter_policy": {
+    "changed_default_parameters": false,
+    "protected_parameters": [
+      "alpha_counts",
+      "cells_per_item",
+      "value_model",
+      "red_type_profiles",
+      "calibration adoption status",
+      "promotion gates"
+    ],
+    "reason": "This pipeline task is structural refactoring only; parameter promotion requires separate source-owned replay or shadow evidence."
+  },
+  "parameter_promotion_gates": {
+    "default_parameter_update_allowed": false,
+    "blockers": [
+      "default_parameter_update_out_of_scope",
+      "requires_separate_replay_or_shadow_evidence",
+      "requires_source_owned_authority_artifacts",
+      "requires_explicit_change_class_for_parameter_update"
+    ],
+    "allowed_next_classes": [
+      "RESEARCH_ONLY",
+      "SIM_ONLY"
+    ]
+  },
+  "required_verification": [
+    "node --test tests/average_observation_runtime.test.js tests/estimator.test.js",
+    "node --test tests/posterior_runtime.test.js tests/estimator.test.js",
+    "node --test tests/count_constraint_runtime.test.js tests/estimator.test.js",
+    "node --test tests/valuation_runtime.test.js tests/estimator.test.js",
+    "npm run check:js",
+    "npm test",
+    "npm run build:static",
+    "npm run audit:public-release",
+    "git diff --check"
+  ],
+  "rollback": {
+    "latest_task_strategy": "git revert the latest task commit",
+    "generated_drift_policy": "restore generated config/research artifacts unless the task explicitly owns them"
+  },
+  "residual_risk": [
+    "Monte Carlo output remains stochastic by default and must be characterized through deterministic injected-random tests where exact values matter.",
+    "Further algorithm or weight updates are blocked until replay/shadow evidence is source-owned and reviewed."
+  ]
+}
