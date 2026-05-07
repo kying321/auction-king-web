@@ -1,4 +1,7 @@
-importScripts("../core/estimator.js?v=20260428232030");
+importScripts(
+    "../core/average_observation_runtime.js?v=20260428232030",
+    "../core/estimator.js?v=20260428232030"
+);
 
 self.onmessage = function onWorkerMessage(event) {
     const payload = event && event.data ? event.data : null;
