@@ -7,23 +7,23 @@
 - Current full-client depot: `4128581`
 - Download attempted: `true`
 - DepotDownloader available: `true`
-- Steam account access blocked: `true`
-- Table files downloaded: `false`
+- Steam account access blocked: `false`
+- Table files downloaded: `true`
 - Source item row recovered: `false`
 - Authority intake allowed: `false`
 - Default config update allowed: `false`
 - Live/order/funds path touched: `false`
-- Recommended next action: `retry_with_owned_authenticated_steam_account_or_developer_export`
+- Recommended next action: `acquire_developer_or_server_side_table_export_for_1106013`
 
 ## Attempts
 
 | attempt | exit code | evidence |
 | --- | ---: | --- |
-| `anonymous_noauth_blocked` | `1` | Using filelist: '/tmp/ak_bidking_4128581_tables_filelist.txt'. No username given. Using anonymous account with dedicated server subscription. Connecting to Steam3... Done! Logging anonymously into Steam3... Done! Using S |
+| `-` | `-` | - |
 
 ## Blockers
 
-- `steam_depot_requires_owned_authenticated_account`
+- `downloaded_tables_missing_source_item_row_1106013`
 - `source_item_row_1106013_not_recovered`
 - `authority_handoff_gate_closed`
 
@@ -50,4 +50,4 @@ npm run build:bidking-missing-item-source-recovery-scan -- docs/research/2026-05
 
 ## Decision
 
-The current full-client depot path remains viable only with owned authenticated Steam access or an equivalent developer/server-side table export. Do not synthesize `1106013`, do not drop the `1066 -> 1106013` tuple, and do not update defaults from this attempt.
+Downloaded full-client tables only count as authority when the raw `Item.txt` row is present. If the downloaded tables still miss `1106013`, continue with developer/server-side table export or an independently sourced complete table package. Do not synthesize `1106013`, do not drop the `1066 -> 1106013` tuple, and do not update defaults from this attempt.

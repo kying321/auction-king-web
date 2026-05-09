@@ -81,6 +81,24 @@ test("directory scan distinguishes source Item rows from Drop references", () =>
     assert.equal(classifyTextHit({ filePath: path.join(tempDir, "Tables", "Item.txt"), line: "5003\tRecovered" }, 5003), "source_item_row");
 });
 
+test("directory scan decodes base64 encoded table files before classifying hits", () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "ak-bidking-base64-source-scan-"));
+    writeFixtureFile(
+        path.join(tempDir, "Tables", "Item.txt"),
+        Buffer.from("5003\tRecovered source row\titemName_5003\n", "utf8").toString("base64")
+    );
+    writeFixtureFile(
+        path.join(tempDir, "Tables", "Drop.txt"),
+        Buffer.from("10\tfixture\tfixture\t2\t[[50,5003,1,1,333]]\n", "utf8").toString("base64")
+    );
+
+    const result = scanDirectoryForItemId(tempDir, 5003);
+    assert.equal(result.source_item_row_hits.length, 1);
+    assert.equal(result.source_item_row_hits[0].content_encoding, "base64");
+    assert.equal(result.reference_hits.length, 1);
+    assert.equal(result.reference_hits[0].content_encoding, "base64");
+});
+
 test("source recovery report keeps recovered candidates non-authoritative until ingest and integrity rerun", () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "ak-bidking-source-found-"));
     writeFixtureFile(path.join(tempDir, "Tables", "Item.txt"), "5003\tRecovered source row\titemName_5003\n");

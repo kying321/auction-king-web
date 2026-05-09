@@ -5,7 +5,7 @@
 - Missing item ids: [1106013]
 - Source item row recovered: `false`
 - Recovered item row count: `0`
-- Reference hit count: `1`
+- Reference hit count: `2`
 - Default config update allowed: `false`
 - Live/order/funds path touched: `false`
 
@@ -13,13 +13,13 @@
 
 | item id | source row recovered | source row hits | reference hits | path hints | status |
 | --- | --- | --- | --- | --- | --- |
-| `1106013` | `false` | `0` | `1` | `0` | `not_found_in_local_source_candidates` |
+| `1106013` | `false` | `0` | `2` | `0` | `not_found_in_local_source_candidates` |
 
 ## Sources
 
 | source | type | exists | scanned files | skipped files |
 | --- | --- | --- | --- | --- |
-| /tmp/ak_bidking_depot_4128581_tables_owned | `directory` | `true` | `0` | `0` |
+| /tmp/ak_bidking_depot_4128581_tables_owned | `directory` | `true` | `5` | `2` |
 | <local>/BidKing_zip_extract_min | `directory` | `true` | `62` | `5` |
 | <local>/BidKing | `directory` | `true` | `28` | `27` |
 | <steam>/steamapps | `directory` | `true` | `10270` | `9323` |

@@ -213,7 +213,7 @@ function classifyTextHit({ filePath = "", memberPath = "", line = "" }, itemId) 
     return "text_reference";
 }
 
-function buildHit({ sourcePath, sourceType, filePath = null, memberPath = null, lineNumber = null, line = "", itemId }) {
+function buildHit({ sourcePath, sourceType, filePath = null, memberPath = null, lineNumber = null, line = "", itemId, contentEncoding = null }) {
     const classification = classifyTextHit({ filePath, memberPath, line }, itemId);
     return {
         source_path: sourcePath,
@@ -223,11 +223,12 @@ function buildHit({ sourcePath, sourceType, filePath = null, memberPath = null, 
         relative_path: filePath && sourceType === "directory" ? path.relative(sourcePath, filePath) : null,
         line_number: lineNumber,
         hit_type: classification,
+        content_encoding: contentEncoding,
         snippet: makeSnippet(line, itemId)
     };
 }
 
-function scanTextContent({ text, itemId, sourcePath, sourceType, filePath = null, memberPath = null }) {
+function scanTextContent({ text, itemId, sourcePath, sourceType, filePath = null, memberPath = null, contentEncoding = null }) {
     const token = String(itemId);
     const hits = [];
     String(text || "").split(/\r?\n/).forEach((line, index) => {
@@ -239,10 +240,45 @@ function scanTextContent({ text, itemId, sourcePath, sourceType, filePath = null
             memberPath,
             lineNumber: index + 1,
             line,
-            itemId
+            itemId,
+            contentEncoding
         }));
     });
     return hits;
+}
+
+function isLikelyBase64TableText(text) {
+    const trimmed = String(text || "").trim();
+    return trimmed.length > 0
+        && trimmed.length % 4 === 0
+        && /^[A-Za-z0-9+/=\s]+$/.test(trimmed)
+        && !/[\t\r\n]/.test(trimmed);
+}
+
+function decodeBase64TableText(text) {
+    if (!isLikelyBase64TableText(text)) return null;
+    try {
+        const decoded = Buffer.from(String(text).trim(), "base64").toString("utf8");
+        if (!decoded.includes("\t") || !/^\d+\t/m.test(decoded)) return null;
+        return decoded;
+    } catch (_error) {
+        return null;
+    }
+}
+
+function scanTextContentWithOptionalBase64Decode({ text, itemId, sourcePath, sourceType, filePath = null, memberPath = null }) {
+    const rawHits = scanTextContent({ text, itemId, sourcePath, sourceType, filePath, memberPath });
+    const decoded = decodeBase64TableText(text);
+    if (!decoded) return rawHits;
+    return rawHits.concat(scanTextContent({
+        text: decoded,
+        itemId,
+        sourcePath,
+        sourceType,
+        filePath,
+        memberPath,
+        contentEncoding: "base64"
+    }));
 }
 
 function partitionHits(hits) {
@@ -277,7 +313,7 @@ function scanDirectoryForItemId(sourcePath, itemId) {
         }
         try {
             const text = fs.readFileSync(filePath, "utf8");
-            textHits.push(...scanTextContent({
+            textHits.push(...scanTextContentWithOptionalBase64Decode({
                 text,
                 itemId,
                 sourcePath,
@@ -359,7 +395,7 @@ function scanZipForItemId(sourcePath, itemId) {
         }
         try {
             const text = readZipMember(sourcePath, entry.name);
-            textHits.push(...scanTextContent({
+            textHits.push(...scanTextContentWithOptionalBase64Decode({
                 text,
                 itemId,
                 sourcePath,

@@ -1,15 +1,15 @@
 {
   "schema_version": "ak_bidking_steam_depot_table_acquisition_attempt_v1",
-  "generated_at": "2026-05-08T00:10:00.000+08:00",
+  "generated_at": "2026-05-09T21:10:00.000+08:00",
   "mode": "research_backtest",
   "change_class": "RESEARCH_ONLY",
   "recommended_change_class": "SIM_ONLY",
   "live_path_touched": false,
   "inputs": {
     "source_search_report": "docs/research/2026-05-07-bidking-public-authority-source-search-refresh-report.json",
-    "download_dir": "/tmp/ak_bidking_depot_4128581_tables_noauth",
+    "download_dir": "/tmp/ak_bidking_depot_4128581_tables_owned",
     "depotdownloader_path": "/tmp/ak_depotdownloader_3_4_0_arm64/DepotDownloader",
-    "depotdownloader_version": "DepotDownloader v3.4.0+c553ef4d60c00a4f5fd16c9fe017f569001589ff"
+    "depotdownloader_version": "3.4.0"
   },
   "summary": {
     "target_item_id": 1106013,
@@ -18,18 +18,18 @@
     "current_full_client_manifest_id": "7599723101430486725",
     "download_attempted": true,
     "depotdownloader_available": true,
-    "steam_account_access_blocked": true,
-    "table_files_downloaded": false,
-    "item_txt_file_count": 0,
-    "drop_txt_file_count": 0,
+    "steam_account_access_blocked": false,
+    "table_files_downloaded": true,
+    "item_txt_file_count": 1,
+    "drop_txt_file_count": 1,
     "source_item_row_recovered": false,
     "authority_intake_allowed": false,
     "staging_item_ingest_allowed": false,
     "authority_handoff_allowed": false,
     "default_config_update_allowed": false,
-    "recommended_next_action": "retry_with_owned_authenticated_steam_account_or_developer_export",
+    "recommended_next_action": "acquire_developer_or_server_side_table_export_for_1106013",
     "blockers": [
-      "steam_depot_requires_owned_authenticated_account",
+      "downloaded_tables_missing_source_item_row_1106013",
       "source_item_row_1106013_not_recovered",
       "authority_handoff_gate_closed"
     ]
@@ -44,14 +44,7 @@
     "drop_tuple_exclusion_as_authority_allowed": false,
     "upstream_authority_intake_allowed": false
   },
-  "attempts": [
-    {
-      "id": "anonymous_noauth_blocked",
-      "exit_code": 1,
-      "log_path": "/tmp/ak_bidking_4128581_anonymous_noauth_attempt.log",
-      "output": "Using filelist: '/tmp/ak_bidking_4128581_tables_filelist.txt'.\nNo username given. Using anonymous account with dedicated server subscription.\nConnecting to Steam3... Done!\nLogging anonymously into Steam3... Done!\nUsing Steam3 suggested CellID: 197\nGot AppInfo for 4128580\nApp 4128580 (BidKing) is not available from this account.\nDisconnected from Steam\n"
-    }
-  ],
+  "attempts": [],
   "next_authenticated_commands": {
     "filelist_path": "/tmp/ak_bidking_4128581_tables_filelist.txt",
     "filelist_lines": [
@@ -64,9 +57,13 @@
     "credential_policy": "Do not write Steam password, 2FA code, refresh token, or access token into repository files or logs."
   },
   "table_scan": {
-    "download_dir": "/tmp/ak_bidking_depot_4128581_tables_noauth",
-    "item_files": [],
-    "drop_files": [],
+    "download_dir": "/tmp/ak_bidking_depot_4128581_tables_owned",
+    "item_files": [
+      "/tmp/ak_bidking_depot_4128581_tables_owned/BidKing_Data/StreamingAssets/Tables/Item.txt"
+    ],
+    "drop_files": [
+      "/tmp/ak_bidking_depot_4128581_tables_owned/BidKing_Data/StreamingAssets/Tables/Drop.txt"
+    ],
     "source_item_row": null
   },
   "notes": [

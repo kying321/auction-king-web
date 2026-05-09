@@ -135,6 +135,36 @@ test("attempt report scans downloaded table files without promoting recovered ro
     assert.match(report.summary.recommended_next_action, /run_missing_item_staging_intake/);
 });
 
+test("attempt report marks downloaded base64 tables as inspected when target item row is absent", () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "ak-steam-attempt-base64-missing-"));
+    const tablesDir = path.join(tempDir, "BidKing_Data", "StreamingAssets", "Tables");
+    fs.mkdirSync(tablesDir, { recursive: true });
+    fs.writeFileSync(
+        path.join(tablesDir, "Item.txt"),
+        Buffer.from("1106012\tNeighbor row\titemName_1106012\n", "utf8").toString("base64"),
+        "utf8"
+    );
+    fs.writeFileSync(
+        path.join(tablesDir, "Drop.txt"),
+        Buffer.from("1066\tfixture\tfixture\t[[106,1106013,1,1,3333]]\n", "utf8").toString("base64"),
+        "utf8"
+    );
+
+    const report = buildBidKingSteamDepotTableAcquisitionAttemptReport({
+        sourceSearchReport: sourceSearchReport(),
+        generatedAt: "2026-05-09T21:10:00.000+08:00",
+        downloadDir: tempDir,
+        attempts: []
+    });
+
+    assert.equal(report.summary.download_attempted, true);
+    assert.equal(report.summary.table_files_downloaded, true);
+    assert.equal(report.summary.source_item_row_recovered, false);
+    assert.match(report.summary.blockers.join(","), /downloaded_tables_missing_source_item_row_1106013/);
+    assert.doesNotMatch(report.summary.blockers.join(","), /steam_depot_tables_not_downloaded/);
+    assert.match(report.summary.recommended_next_action, /developer_or_server_side_table_export/);
+});
+
 test("redacts sensitive attempt log values", () => {
     assert.match(redactSensitiveText("password hunter2 access token abc"), /password <redacted>/);
     assert.doesNotMatch(redactSensitiveText("password hunter2 access token abc"), /hunter2/);

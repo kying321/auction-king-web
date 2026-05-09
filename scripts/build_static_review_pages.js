@@ -51,6 +51,12 @@ const DEFAULT_RESEARCH_ARTIFACTS = [
         outputName: "2026-05-07-bidking-authenticated-steam-table-download-runner-report.md"
     },
     {
+        label: "Steam depot table acquisition attempt",
+        description: "记录已认证下载的 full-client 表文件状态，以及 1106013 Item.txt 行仍缺失的阻塞。",
+        sourcePath: path.join(ROOT_DIR, "docs", "research", "2026-05-07-bidking-steam-depot-table-acquisition-attempt-report.md"),
+        outputName: "2026-05-07-bidking-steam-depot-table-acquisition-attempt-report.md"
+    },
+    {
         label: "样本补采队列",
         description: "列出当前仍需补采的 sunken_ship 与 villa 同战样本。",
         sourcePath: path.join(ROOT_DIR, "docs", "research", "2026-05-07-bidking-inverse-tail-sample-acquisition-queue.md"),

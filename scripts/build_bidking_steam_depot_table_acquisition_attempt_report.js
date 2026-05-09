@@ -182,7 +182,7 @@ function makeSnippet(line, token, radius = 120) {
 function scanItemRow(itemFiles, itemId) {
     for (const filePath of itemFiles) {
         if (!isFile(filePath)) continue;
-        const lines = fs.readFileSync(filePath, "utf8").split(/\r?\n/);
+        const lines = readPossiblyBase64TableFile(filePath).split(/\r?\n/);
         for (let index = 0; index < lines.length; index += 1) {
             if (new RegExp(`^\\s*${itemId}\\t`).test(lines[index])) {
                 return {
@@ -194,6 +194,25 @@ function scanItemRow(itemFiles, itemId) {
         }
     }
     return null;
+}
+
+function readPossiblyBase64TableFile(filePath) {
+    const text = fs.readFileSync(filePath, "utf8");
+    const trimmed = text.trim();
+    if (
+        trimmed.length > 0
+        && trimmed.length % 4 === 0
+        && /^[A-Za-z0-9+/=\s]+$/.test(trimmed)
+        && !/[\t\r\n]/.test(trimmed)
+    ) {
+        try {
+            const decoded = Buffer.from(trimmed, "base64").toString("utf8");
+            if (decoded.includes("\t") && /^\d+\t/m.test(decoded)) return decoded;
+        } catch (_error) {
+            return text;
+        }
+    }
+    return text;
 }
 
 function attemptBlockedByAccount(attempts) {
@@ -263,7 +282,14 @@ function buildBidKingSteamDepotTableAcquisitionAttemptReport({
         ? "run_missing_item_staging_intake_and_table_reference_integrity_before_any_handoff"
         : steamAccountAccessBlocked
             ? "retry_with_owned_authenticated_steam_account_or_developer_export"
-            : "run_selective_depot_table_download_then_rescan_1106013";
+            : tableFilesDownloaded
+                ? "acquire_developer_or_server_side_table_export_for_1106013"
+                : "run_selective_depot_table_download_then_rescan_1106013";
+    const unresolvedSourceBlocker = tableFilesDownloaded
+        ? "downloaded_tables_missing_source_item_row_1106013"
+        : steamAccountAccessBlocked
+            ? "steam_depot_requires_owned_authenticated_account"
+            : "steam_depot_tables_not_downloaded";
 
     return {
         schema_version: "ak_bidking_steam_depot_table_acquisition_attempt_v1",
@@ -283,7 +309,7 @@ function buildBidKingSteamDepotTableAcquisitionAttemptReport({
             current_full_client_depot_id: sourceSummary.current_full_client_depot_id || 4128581,
             current_full_client_build_id: sourceSummary.current_full_client_build_id || null,
             current_full_client_manifest_id: sourceSummary.current_full_client_manifest_id || null,
-            download_attempted: attempts.length > 0,
+            download_attempted: attempts.length > 0 || tableFilesDownloaded,
             depotdownloader_available: downloaderAvailable,
             steam_account_access_blocked: steamAccountAccessBlocked,
             table_files_downloaded: tableFilesDownloaded,
@@ -302,7 +328,7 @@ function buildBidKingSteamDepotTableAcquisitionAttemptReport({
                     "authority_handoff_gate_closed"
                 ]
                 : [
-                    steamAccountAccessBlocked ? "steam_depot_requires_owned_authenticated_account" : "steam_depot_tables_not_downloaded",
+                    unresolvedSourceBlocker,
                     "source_item_row_1106013_not_recovered",
                     "authority_handoff_gate_closed"
                 ]
@@ -404,7 +430,7 @@ ${report.next_authenticated_commands.post_download_scan_command}
 
 ## Decision
 
-The current full-client depot path remains viable only with owned authenticated Steam access or an equivalent developer/server-side table export. Do not synthesize \`1106013\`, do not drop the \`1066 -> 1106013\` tuple, and do not update defaults from this attempt.
+Downloaded full-client tables only count as authority when the raw \`Item.txt\` row is present. If the downloaded tables still miss \`1106013\`, continue with developer/server-side table export or an independently sourced complete table package. Do not synthesize \`1106013\`, do not drop the \`1066 -> 1106013\` tuple, and do not update defaults from this attempt.
 `;
 }
 

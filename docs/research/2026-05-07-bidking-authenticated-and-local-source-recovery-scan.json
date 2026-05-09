@@ -1,6 +1,6 @@
 {
   "schema_version": "ak_bidking_missing_item_source_recovery_scan_v1",
-  "generated_at": "2026-05-09T19:20:00.000+08:00",
+  "generated_at": "2026-05-09T21:10:00.000+08:00",
   "mode": "source_first_implementation",
   "change_class": "SIM_ONLY",
   "recommended_change_class": "SIM_ONLY",
@@ -22,7 +22,7 @@
     "source_item_row_recovered_count": 0,
     "source_item_row_recovered_item_ids": [],
     "source_item_row_recovered_for_project_scope": false,
-    "reference_hit_count": 1,
+    "reference_hit_count": 2,
     "path_hint_hit_count": 0,
     "table_backed_shadow_replay_allowed": false,
     "authority_handoff_allowed": false,
@@ -51,10 +51,21 @@
       "source_item_row_recovered": false,
       "source_recovery_status": "not_found_in_local_source_candidates",
       "source_item_row_hit_count": 0,
-      "reference_hit_count": 1,
+      "reference_hit_count": 2,
       "path_hint_hit_count": 0,
       "source_item_row_hits": [],
       "reference_hits": [
+        {
+          "source_path": "/tmp/ak_bidking_depot_4128581_tables_owned",
+          "source_type": "directory",
+          "file_path": "/tmp/ak_bidking_depot_4128581_tables_owned/BidKing_Data/StreamingAssets/Tables/Drop.txt",
+          "member_path": null,
+          "relative_path": "BidKing_Data/StreamingAssets/Tables/Drop.txt",
+          "line_number": 56,
+          "hit_type": "drop_reference",
+          "content_encoding": "base64",
+          "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+        },
         {
           "source_path": "<local>/BidKing_zip_extract_min",
           "source_type": "directory",
@@ -63,6 +74,7 @@
           "relative_path": "Tables/Drop.txt",
           "line_number": 56,
           "hit_type": "drop_reference",
+          "content_encoding": null,
           "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
         }
       ],
@@ -73,7 +85,19 @@
           "source_type": "directory",
           "exists": true,
           "source_item_row_hits": [],
-          "reference_hits": [],
+          "reference_hits": [
+            {
+              "source_path": "/tmp/ak_bidking_depot_4128581_tables_owned",
+              "source_type": "directory",
+              "file_path": "/tmp/ak_bidking_depot_4128581_tables_owned/BidKing_Data/StreamingAssets/Tables/Drop.txt",
+              "member_path": null,
+              "relative_path": "BidKing_Data/StreamingAssets/Tables/Drop.txt",
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "content_encoding": "base64",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            }
+          ],
           "path_hint_hits": []
         },
         {
@@ -90,6 +114,7 @@
               "relative_path": "Tables/Drop.txt",
               "line_number": 56,
               "hit_type": "drop_reference",
+              "content_encoding": null,
               "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
             }
           ],
@@ -120,20 +145,45 @@
       "source_path": "/tmp/ak_bidking_depot_4128581_tables_owned",
       "source_type": "directory",
       "exists": true,
-      "scanned_file_count": 0,
-      "skipped_file_count": 0,
+      "scanned_file_count": 5,
+      "skipped_file_count": 2,
       "item_scans": {
         "1106013": {
           "source_path": "/tmp/ak_bidking_depot_4128581_tables_owned",
           "source_type": "directory",
           "exists": true,
-          "scanned_file_count": 0,
-          "skipped_file_count": 0,
+          "scanned_file_count": 5,
+          "skipped_file_count": 2,
           "path_hint_hits": [],
           "skipped_files": [],
           "source_item_row_hits": [],
-          "reference_hits": [],
-          "all_text_hits": []
+          "reference_hits": [
+            {
+              "source_path": "/tmp/ak_bidking_depot_4128581_tables_owned",
+              "source_type": "directory",
+              "file_path": "/tmp/ak_bidking_depot_4128581_tables_owned/BidKing_Data/StreamingAssets/Tables/Drop.txt",
+              "member_path": null,
+              "relative_path": "BidKing_Data/StreamingAssets/Tables/Drop.txt",
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "content_encoding": "base64",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            }
+          ],
+          "all_text_hits": [
+            {
+              "source_path": "/tmp/ak_bidking_depot_4128581_tables_owned",
+              "source_type": "directory",
+              "file_path": "/tmp/ak_bidking_depot_4128581_tables_owned/BidKing_Data/StreamingAssets/Tables/Drop.txt",
+              "member_path": null,
+              "relative_path": "BidKing_Data/StreamingAssets/Tables/Drop.txt",
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "content_encoding": "base64",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            }
+          ],
+          "skipped_file_details_redacted": true
         }
       }
     },
@@ -162,6 +212,7 @@
               "relative_path": "Tables/Drop.txt",
               "line_number": 56,
               "hit_type": "drop_reference",
+              "content_encoding": null,
               "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
             }
           ],
@@ -174,6 +225,7 @@
               "relative_path": "Tables/Drop.txt",
               "line_number": 56,
               "hit_type": "drop_reference",
+              "content_encoding": null,
               "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
             }
           ],
