@@ -1,0 +1,1169 @@
+{
+  "schema_version": "ak_bidking_table_reference_integrity_v1",
+  "generated_at": "2026-05-09T19:06:54+08:00",
+  "mode": "source_first_implementation",
+  "change_class": "SIM_ONLY",
+  "recommended_change_class": "SIM_ONLY",
+  "live_path_touched": false,
+  "inputs": {
+    "project_relevant_parse_report": "<repo>/docs/research/2026-04-29-bidking-project-relevant-parse-report.json",
+    "schema_backed_table_report": "<repo>/docs/research/2026-05-09-bidking-authenticated-schema-backed-table-report.json",
+    "tables_dir": "<authenticated-steam-depot>/BidKing_Data/StreamingAssets/Tables"
+  },
+  "summary": {
+    "parse_status": "project_relevant_parse_complete",
+    "drop_group_count": 608,
+    "item_record_count": 1132,
+    "global_missing_terminal_reference_count": 17,
+    "global_missing_terminal_item_id_count": 17,
+    "project_relevant_map_count": 3,
+    "project_relevant_missing_terminal_reference_count": 2,
+    "project_relevant_missing_terminal_item_id_count": 1,
+    "project_relevant_missing_terminal_item_ids": [
+      1106013
+    ],
+    "skipped_irrelevant_missing_terminal_item_ids": [
+      120006,
+      120007,
+      120008,
+      120009,
+      120010,
+      120011,
+      120012,
+      120013,
+      120014,
+      120015,
+      120016,
+      120017,
+      120018,
+      120019,
+      120020,
+      120021
+    ],
+    "maps_blocked_by_missing_item_references": [
+      "sunken_ship",
+      "villa"
+    ],
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "promotion_allowed": false,
+    "recommended_next_action": "resolve_project_relevant_drop_item_reference_gap_before_algorithm_change",
+    "blockers": [
+      "table_reference_integrity_not_authoritative",
+      "project_relevant_missing_terminal_item_references",
+      "project_maps_blocked_by_missing_item_references"
+    ],
+    "warnings": [
+      "non_project_missing_terminal_item_references_exist"
+    ]
+  },
+  "gates": {
+    "table_reference_integrity_clean_for_project_scope": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false
+  },
+  "global_missing_terminal_item_references": [
+    {
+      "item_id": 120006,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 5,
+      "tuple": [
+        12,
+        120006,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 120007,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 6,
+      "tuple": [
+        12,
+        120007,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 120008,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 7,
+      "tuple": [
+        12,
+        120008,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 120009,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 8,
+      "tuple": [
+        12,
+        120009,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 120010,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 9,
+      "tuple": [
+        12,
+        120010,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 120011,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 10,
+      "tuple": [
+        12,
+        120011,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 120012,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 11,
+      "tuple": [
+        12,
+        120012,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 120013,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 12,
+      "tuple": [
+        12,
+        120013,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 120014,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 13,
+      "tuple": [
+        12,
+        120014,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 120015,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 14,
+      "tuple": [
+        12,
+        120015,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 120016,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 15,
+      "tuple": [
+        12,
+        120016,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 120017,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 16,
+      "tuple": [
+        12,
+        120017,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 120018,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 17,
+      "tuple": [
+        12,
+        120018,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 120019,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 18,
+      "tuple": [
+        12,
+        120019,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 120020,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 19,
+      "tuple": [
+        12,
+        120020,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 120021,
+      "drop_group_id": 1001,
+      "drop_localized_name": null,
+      "tuple_index": 20,
+      "tuple": [
+        12,
+        120021,
+        1,
+        1,
+        10000
+      ],
+      "parent_references": []
+    },
+    {
+      "item_id": 1106013,
+      "drop_group_id": 1066,
+      "drop_localized_name": "文物古董品质6",
+      "tuple_index": 33,
+      "tuple": [
+        106,
+        1106013,
+        1,
+        1,
+        3333
+      ],
+      "parent_references": [
+        {
+          "parent_drop_group_id": 104601,
+          "parent_localized_name": "​谜之公馆​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            20
+          ]
+        },
+        {
+          "parent_drop_group_id": 104602,
+          "parent_localized_name": "​设计师遗作​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        },
+        {
+          "parent_drop_group_id": 104603,
+          "parent_localized_name": "​科技新贵密室​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        },
+        {
+          "parent_drop_group_id": 104604,
+          "parent_localized_name": "​养生专家私邸​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        },
+        {
+          "parent_drop_group_id": 104605,
+          "parent_localized_name": "​世家望族故居​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            40
+          ]
+        },
+        {
+          "parent_drop_group_id": 104606,
+          "parent_localized_name": "​学者书斋​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        },
+        {
+          "parent_drop_group_id": 104607,
+          "parent_localized_name": "​隐秘金库​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        },
+        {
+          "parent_drop_group_id": 104608,
+          "parent_localized_name": "​私人疗养院​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        },
+        {
+          "parent_drop_group_id": 104609,
+          "parent_localized_name": "​安全狂宅邸​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        },
+        {
+          "parent_drop_group_id": 104610,
+          "parent_localized_name": "​极客梦幻屋​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        },
+        {
+          "parent_drop_group_id": 105601,
+          "parent_localized_name": "​混沌残骸​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            20
+          ]
+        },
+        {
+          "parent_drop_group_id": 105602,
+          "parent_localized_name": "​远洋客轮舱房​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        },
+        {
+          "parent_drop_group_id": 105603,
+          "parent_localized_name": "​军用舰艇保险库​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        },
+        {
+          "parent_drop_group_id": 105604,
+          "parent_localized_name": "​冷链货船隔离舱​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        },
+        {
+          "parent_drop_group_id": 105605,
+          "parent_localized_name": "​殖民商船宝库​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            40
+          ]
+        },
+        {
+          "parent_drop_group_id": 105606,
+          "parent_localized_name": "​探险家座舰资料库​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        },
+        {
+          "parent_drop_group_id": 105607,
+          "parent_localized_name": "​皇家御用货舱​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        },
+        {
+          "parent_drop_group_id": 105608,
+          "parent_localized_name": "​生物实验室样本库​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        },
+        {
+          "parent_drop_group_id": 105609,
+          "parent_localized_name": "​私掠船军火舱​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        },
+        {
+          "parent_drop_group_id": 105610,
+          "parent_localized_name": "​现代货轮娱乐库​6",
+          "child_drop_group_id": 1066,
+          "tuple_index": 5,
+          "tuple": [
+            9999,
+            1066,
+            1,
+            1,
+            10
+          ]
+        }
+      ]
+    }
+  ],
+  "project_map_integrity": {
+    "shipping": {
+      "current_map_id": "shipping",
+      "bidking_map_id": 103,
+      "bidking_root_bidmap_id": 2301,
+      "root_drop_group_id": 2301,
+      "reachable_drop_group_count": 68,
+      "missing_drop_group_ids": [],
+      "missing_terminal_item_reference_count": 0,
+      "missing_terminal_item_ids": [],
+      "missing_terminal_item_references": []
+    },
+    "sunken_ship": {
+      "current_map_id": "sunken_ship",
+      "bidking_map_id": 105,
+      "bidking_root_bidmap_id": 2501,
+      "root_drop_group_id": 2501,
+      "reachable_drop_group_count": 68,
+      "missing_drop_group_ids": [],
+      "missing_terminal_item_reference_count": 1,
+      "missing_terminal_item_ids": [
+        1106013
+      ],
+      "missing_terminal_item_references": [
+        {
+          "item_id": 1106013,
+          "drop_group_id": 1066,
+          "drop_localized_name": "文物古董品质6",
+          "tuple_index": 33,
+          "tuple": [
+            106,
+            1106013,
+            1,
+            1,
+            3333
+          ],
+          "parent_references": [
+            {
+              "parent_drop_group_id": 104601,
+              "parent_localized_name": "​谜之公馆​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                20
+              ]
+            },
+            {
+              "parent_drop_group_id": 104602,
+              "parent_localized_name": "​设计师遗作​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104603,
+              "parent_localized_name": "​科技新贵密室​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104604,
+              "parent_localized_name": "​养生专家私邸​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104605,
+              "parent_localized_name": "​世家望族故居​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                40
+              ]
+            },
+            {
+              "parent_drop_group_id": 104606,
+              "parent_localized_name": "​学者书斋​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104607,
+              "parent_localized_name": "​隐秘金库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104608,
+              "parent_localized_name": "​私人疗养院​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104609,
+              "parent_localized_name": "​安全狂宅邸​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104610,
+              "parent_localized_name": "​极客梦幻屋​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105601,
+              "parent_localized_name": "​混沌残骸​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                20
+              ]
+            },
+            {
+              "parent_drop_group_id": 105602,
+              "parent_localized_name": "​远洋客轮舱房​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105603,
+              "parent_localized_name": "​军用舰艇保险库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105604,
+              "parent_localized_name": "​冷链货船隔离舱​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105605,
+              "parent_localized_name": "​殖民商船宝库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                40
+              ]
+            },
+            {
+              "parent_drop_group_id": 105606,
+              "parent_localized_name": "​探险家座舰资料库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105607,
+              "parent_localized_name": "​皇家御用货舱​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105608,
+              "parent_localized_name": "​生物实验室样本库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105609,
+              "parent_localized_name": "​私掠船军火舱​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105610,
+              "parent_localized_name": "​现代货轮娱乐库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "villa": {
+      "current_map_id": "villa",
+      "bidking_map_id": 104,
+      "bidking_root_bidmap_id": 2401,
+      "root_drop_group_id": 2401,
+      "reachable_drop_group_count": 68,
+      "missing_drop_group_ids": [],
+      "missing_terminal_item_reference_count": 1,
+      "missing_terminal_item_ids": [
+        1106013
+      ],
+      "missing_terminal_item_references": [
+        {
+          "item_id": 1106013,
+          "drop_group_id": 1066,
+          "drop_localized_name": "文物古董品质6",
+          "tuple_index": 33,
+          "tuple": [
+            106,
+            1106013,
+            1,
+            1,
+            3333
+          ],
+          "parent_references": [
+            {
+              "parent_drop_group_id": 104601,
+              "parent_localized_name": "​谜之公馆​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                20
+              ]
+            },
+            {
+              "parent_drop_group_id": 104602,
+              "parent_localized_name": "​设计师遗作​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104603,
+              "parent_localized_name": "​科技新贵密室​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104604,
+              "parent_localized_name": "​养生专家私邸​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104605,
+              "parent_localized_name": "​世家望族故居​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                40
+              ]
+            },
+            {
+              "parent_drop_group_id": 104606,
+              "parent_localized_name": "​学者书斋​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104607,
+              "parent_localized_name": "​隐秘金库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104608,
+              "parent_localized_name": "​私人疗养院​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104609,
+              "parent_localized_name": "​安全狂宅邸​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104610,
+              "parent_localized_name": "​极客梦幻屋​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105601,
+              "parent_localized_name": "​混沌残骸​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                20
+              ]
+            },
+            {
+              "parent_drop_group_id": 105602,
+              "parent_localized_name": "​远洋客轮舱房​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105603,
+              "parent_localized_name": "​军用舰艇保险库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105604,
+              "parent_localized_name": "​冷链货船隔离舱​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105605,
+              "parent_localized_name": "​殖民商船宝库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                40
+              ]
+            },
+            {
+              "parent_drop_group_id": 105606,
+              "parent_localized_name": "​探险家座舰资料库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105607,
+              "parent_localized_name": "​皇家御用货舱​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105608,
+              "parent_localized_name": "​生物实验室样本库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105609,
+              "parent_localized_name": "​私掠船军火舱​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105610,
+              "parent_localized_name": "​现代货轮娱乐库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "skipped_irrelevant_scope": [
+    "missing item ids outside reachable project map drop graphs are retained as warnings only",
+    "empty drop tuples are ignored for terminal item integrity",
+    "nested drop-group marker 9999 is validated as group reference, not item reference"
+  ],
+  "notes": [
+    "This report audits table references only; it does not infer missing item values or patch source tables.",
+    "Project-relevant missing terminal item references block table-backed shadow replay promotion.",
+    "Default config and estimator logic remain unchanged."
+  ]
+}

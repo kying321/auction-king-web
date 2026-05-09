@@ -47,10 +47,49 @@ function fileExists(filePath) {
     return !!filePath && fs.existsSync(filePath);
 }
 
+function isWithinPath(basePath, candidatePath) {
+    const relative = path.relative(path.resolve(basePath), path.resolve(candidatePath));
+    return relative === "" || (!!relative && !relative.startsWith("..") && !path.isAbsolute(relative));
+}
+
+function formatReportPath(value) {
+    const text = String(value || "");
+    if (!path.isAbsolute(text)) return text;
+    const aliases = [
+        [ROOT_DIR, "<repo>"],
+        ["/tmp/ak_bidking_depot_4128581_tables_owned", "<authenticated-steam-depot>"]
+    ];
+    const match = aliases.find(([basePath]) => isWithinPath(basePath, text));
+    if (!match) return text;
+    const [basePath, alias] = match;
+    const relative = path.relative(path.resolve(basePath), path.resolve(text)).split(path.sep).join("/");
+    return relative ? `${alias}/${relative}` : alias;
+}
+
+function readPossiblyBase64TableFile(filePath) {
+    const text = fs.readFileSync(filePath, "utf8");
+    const trimmed = text.trim();
+    const compact = trimmed.replace(/\s+/g, "");
+    if (
+        compact.length > 0
+        && compact.length % 4 === 0
+        && /^[A-Za-z0-9+/=]+$/.test(compact)
+        && !text.includes("\t")
+    ) {
+        try {
+            const decoded = Buffer.from(compact, "base64").toString("utf8");
+            if (decoded.includes("\t") && /^\d+\t/m.test(decoded)) return decoded;
+        } catch (_error) {
+            return text;
+        }
+    }
+    return text;
+}
+
 function parseTableRows(tablesDir, tableFile) {
     const filePath = path.join(tablesDir, tableFile);
     if (!fileExists(filePath)) return [];
-    return fs.readFileSync(filePath, "utf8")
+    return readPossiblyBase64TableFile(filePath)
         .replace(/^\uFEFF/, "")
         .split(/\r?\n/)
         .filter((line) => line.trim() !== "")
@@ -351,8 +390,8 @@ function buildBidKingSchemaBackedTableReport({
         change_class: "RESEARCH_ONLY",
         recommended_change_class: "RESEARCH_ONLY",
         inputs: {
-            tables_dir: tablesDir,
-            schema_metadata_report_path: schemaMetadataReportPath
+            tables_dir: formatReportPath(tablesDir),
+            schema_metadata_report_path: formatReportPath(schemaMetadataReportPath)
         },
         summary: {
             parse_status: "schema_backed_named_records_built",
@@ -488,9 +527,11 @@ module.exports = {
     DEFAULT_TABLES_DIR,
     buildBidKingSchemaBackedTableReport,
     buildNamedTable,
+    formatReportPath,
     formatBidKingSchemaBackedTableMarkdown,
     main,
     mapRowWithSchema,
     parseBySchemaType,
+    readPossiblyBase64TableFile,
     resolveArgs
 };

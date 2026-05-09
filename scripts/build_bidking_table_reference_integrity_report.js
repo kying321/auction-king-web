@@ -63,6 +63,25 @@ function writeJson(filePath, payload) {
     writeText(filePath, `${JSON.stringify(payload, null, 2)}\n`);
 }
 
+function isWithinPath(basePath, candidatePath) {
+    const relative = path.relative(path.resolve(basePath), path.resolve(candidatePath));
+    return relative === "" || (!!relative && !relative.startsWith("..") && !path.isAbsolute(relative));
+}
+
+function formatReportPath(value) {
+    const text = String(value || "");
+    if (!path.isAbsolute(text)) return text;
+    const aliases = [
+        [ROOT_DIR, "<repo>"],
+        ["/tmp/ak_bidking_depot_4128581_tables_owned", "<authenticated-steam-depot>"]
+    ];
+    const match = aliases.find(([basePath]) => isWithinPath(basePath, text));
+    if (!match) return text;
+    const [basePath, alias] = match;
+    const relative = path.relative(path.resolve(basePath), path.resolve(text)).split(path.sep).join("/");
+    return relative ? `${alias}/${relative}` : alias;
+}
+
 function records(namedTables, tableName) {
     return namedTables && namedTables[tableName] && Array.isArray(namedTables[tableName].records)
         ? namedTables[tableName].records
@@ -213,9 +232,9 @@ function buildBidKingTableReferenceIntegrityReport({
         recommended_change_class: "SIM_ONLY",
         live_path_touched: false,
         inputs: {
-            project_relevant_parse_report: paths.projectRelevantParseReportPath || DEFAULT_PROJECT_RELEVANT_PARSE_REPORT_PATH,
-            schema_backed_table_report: paths.schemaBackedTableReportPath || DEFAULT_SCHEMA_BACKED_TABLE_REPORT_PATH,
-            tables_dir: schemaBackedTableReport.inputs ? schemaBackedTableReport.inputs.tables_dir : null
+            project_relevant_parse_report: formatReportPath(paths.projectRelevantParseReportPath || DEFAULT_PROJECT_RELEVANT_PARSE_REPORT_PATH),
+            schema_backed_table_report: formatReportPath(paths.schemaBackedTableReportPath || DEFAULT_SCHEMA_BACKED_TABLE_REPORT_PATH),
+            tables_dir: schemaBackedTableReport.inputs ? formatReportPath(schemaBackedTableReport.inputs.tables_dir) : null
         },
         summary: {
             parse_status: projectRelevantParseReport.summary ? projectRelevantParseReport.summary.parse_status : null,
@@ -344,6 +363,7 @@ module.exports = {
     DEFAULT_SCHEMA_BACKED_TABLE_REPORT_PATH,
     buildBidKingTableReferenceIntegrityReport,
     collectMissingTerminalItemReferences,
+    formatReportPath,
     formatBidKingTableReferenceIntegrityMarkdown,
     main,
     resolveArgs,

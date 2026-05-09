@@ -7,6 +7,7 @@ const {
     DEFAULT_TABLES_DIR,
     DEFAULT_SCHEMA_METADATA_REPORT_PATH,
     buildBidKingSchemaBackedTableReport,
+    formatReportPath,
     formatBidKingSchemaBackedTableMarkdown,
     mapRowWithSchema,
     parseBySchemaType
@@ -88,6 +89,72 @@ test("schema-backed table report builds named tables from schema metadata", () =
     } finally {
         fs.rmSync(tmpRoot, { recursive: true, force: true });
     }
+});
+
+test("schema-backed table report decodes whole-file Base64 tables before row mapping", () => {
+    const tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), "ak-bidking-schema-backed-b64-"));
+    const tablesDir = path.join(tmpRoot, "Tables");
+    const schemaPath = path.join(tmpRoot, "schema.json");
+    fs.mkdirSync(tablesDir, { recursive: true });
+    try {
+        writeJson(schemaPath, {
+            table_type_schemas: [
+                {
+                    type_name: "Table_Item",
+                    table_file: "Item.txt",
+                    schema_member_count_plus_two_matches_table_columns: true,
+                    schema_member_count_matches_table_columns: false,
+                    schema_members: [
+                        { name: "id", type: "int" },
+                        { name: "item_type_id", type: "int[]" },
+                        { name: "item_quality", type: "int" },
+                        { name: "base_value", type: "int" }
+                    ]
+                },
+                {
+                    type_name: "Table_Drop",
+                    table_file: "Drop.txt",
+                    schema_member_count_plus_two_matches_table_columns: true,
+                    schema_member_count_matches_table_columns: false,
+                    schema_members: [
+                        { name: "group_id", type: "int" },
+                        { name: "weight_type", type: "int" },
+                        { name: "items_list", type: "int[][]" }
+                    ]
+                }
+            ]
+        });
+        fs.writeFileSync(
+            path.join(tablesDir, "Item.txt"),
+            Buffer.from("1106012\t文物古董品质6\t描述\t[106]\t6\t5000\n", "utf8").toString("base64"),
+            "utf8"
+        );
+        fs.writeFileSync(
+            path.join(tablesDir, "Drop.txt"),
+            Buffer.from("1066\t文物古董品质6\t描述\t2\t[[106,1106013,1,1,3333]]\n", "utf8").toString("base64"),
+            "utf8"
+        );
+
+        const report = buildBidKingSchemaBackedTableReport({ tablesDir, schemaMetadataReportPath: schemaPath });
+
+        assert.equal(report.named_tables.Table_Item.records[0].id, 1106012);
+        assert.deepEqual(report.named_tables.Table_Item.records[0].item_type_id, [106]);
+        assert.equal(report.named_tables.Table_Drop.records[0].group_id, 1066);
+        assert.deepEqual(report.named_tables.Table_Drop.records[0].items_list, [[106, 1106013, 1, 1, 3333]]);
+    } finally {
+        fs.rmSync(tmpRoot, { recursive: true, force: true });
+    }
+});
+
+test("schema-backed table report sanitizes publishable source paths", () => {
+    assert.equal(
+        formatReportPath(path.join(__dirname, "..", "docs", "research", "schema.json")),
+        "<repo>/docs/research/schema.json"
+    );
+    assert.equal(
+        formatReportPath("/tmp/ak_bidking_depot_4128581_tables_owned/BidKing_Data/StreamingAssets/Tables"),
+        "<authenticated-steam-depot>/BidKing_Data/StreamingAssets/Tables"
+    );
 });
 
 test("package exposes BidKing schema-backed table entry", () => {

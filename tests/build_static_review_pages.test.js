@@ -121,6 +121,18 @@ test("default research artifacts include latest BidKing authenticated local gate
         )),
         true
     );
+    assert.equal(
+        DEFAULT_RESEARCH_ARTIFACTS.some((entry) => (
+            entry.outputName === "2026-05-09-bidking-authenticated-schema-backed-table-report.md"
+        )),
+        true
+    );
+    assert.equal(
+        DEFAULT_RESEARCH_ARTIFACTS.some((entry) => (
+            entry.outputName === "2026-05-09-bidking-authenticated-table-reference-integrity-report.md"
+        )),
+        true
+    );
 });
 
 test("buildStaticReviewPages clears stale published research artifacts before writing", () => {

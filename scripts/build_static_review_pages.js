@@ -57,6 +57,30 @@ const DEFAULT_RESEARCH_ARTIFACTS = [
         outputName: "2026-05-07-bidking-steam-depot-table-acquisition-attempt-report.md"
     },
     {
+        label: "Authenticated schema-backed table report",
+        description: "Base64 解码后的 authenticated Item/Drop 表进入 schema-backed 解析链。",
+        sourcePath: path.join(ROOT_DIR, "docs", "research", "2026-05-09-bidking-authenticated-schema-backed-table-report.md"),
+        outputName: "2026-05-09-bidking-authenticated-schema-backed-table-report.md"
+    },
+    {
+        label: "Authenticated schema-backed table JSON",
+        description: "authenticated schema-backed 表解析的结构化源数据。",
+        sourcePath: path.join(ROOT_DIR, "docs", "research", "2026-05-09-bidking-authenticated-schema-backed-table-report.json"),
+        outputName: "2026-05-09-bidking-authenticated-schema-backed-table-report.json"
+    },
+    {
+        label: "Authenticated reference integrity",
+        description: "authenticated full-client 表完整性审计：项目相关缺口仍为 1106013。",
+        sourcePath: path.join(ROOT_DIR, "docs", "research", "2026-05-09-bidking-authenticated-table-reference-integrity-report.md"),
+        outputName: "2026-05-09-bidking-authenticated-table-reference-integrity-report.md"
+    },
+    {
+        label: "Authenticated reference integrity JSON",
+        description: "authenticated 表引用完整性审计的结构化源数据。",
+        sourcePath: path.join(ROOT_DIR, "docs", "research", "2026-05-09-bidking-authenticated-table-reference-integrity-report.json"),
+        outputName: "2026-05-09-bidking-authenticated-table-reference-integrity-report.json"
+    },
+    {
         label: "样本补采队列",
         description: "列出当前仍需补采的 sunken_ship 与 villa 同战样本。",
         sourcePath: path.join(ROOT_DIR, "docs", "research", "2026-05-07-bidking-inverse-tail-sample-acquisition-queue.md"),

@@ -9,6 +9,7 @@ const {
     DEFAULT_OUTPUT_PATH,
     buildBidKingTableReferenceIntegrityReport,
     collectMissingTerminalItemReferences,
+    formatReportPath,
     formatBidKingTableReferenceIntegrityMarkdown,
     main,
     resolveArgs,
@@ -70,6 +71,17 @@ test("resolveArgs accepts parse report, schema report, output path, and generate
     assert.equal(result.outputPath, path.resolve("integrity.json"));
     assert.equal(result.generatedAt, "2026-04-29T04:00:00.000+08:00");
     assert.equal(DEFAULT_OUTPUT_PATH.endsWith("2026-04-29-bidking-table-reference-integrity-report.json"), true);
+});
+
+test("table reference integrity report sanitizes publishable input paths", () => {
+    assert.equal(
+        formatReportPath(path.join(__dirname, "..", "docs", "research", "schema.json")),
+        "<repo>/docs/research/schema.json"
+    );
+    assert.equal(
+        formatReportPath("/tmp/ak_bidking_depot_4128581_tables_owned/BidKing_Data/StreamingAssets/Tables"),
+        "<authenticated-steam-depot>/BidKing_Data/StreamingAssets/Tables"
+    );
 });
 
 test("reference helpers separate missing terminal items from nested groups and empty tuples", () => {
