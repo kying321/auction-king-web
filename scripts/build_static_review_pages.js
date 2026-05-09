@@ -81,6 +81,18 @@ const DEFAULT_RESEARCH_ARTIFACTS = [
         outputName: "2026-05-09-bidking-authenticated-table-reference-integrity-report.json"
     },
     {
+        label: "Authenticated missing item candidate",
+        description: "1106013 的族谱、Drop 1066 反比曲线和非权威推断边界。",
+        sourcePath: path.join(ROOT_DIR, "docs", "research", "2026-05-09-bidking-authenticated-missing-item-resolution-candidate-report.md"),
+        outputName: "2026-05-09-bidking-authenticated-missing-item-resolution-candidate-report.md"
+    },
+    {
+        label: "Authenticated missing item candidate JSON",
+        description: "1106013 非权威曲线诊断与门控状态的结构化源数据。",
+        sourcePath: path.join(ROOT_DIR, "docs", "research", "2026-05-09-bidking-authenticated-missing-item-resolution-candidate-report.json"),
+        outputName: "2026-05-09-bidking-authenticated-missing-item-resolution-candidate-report.json"
+    },
+    {
         label: "样本补采队列",
         description: "列出当前仍需补采的 sunken_ship 与 villa 同战样本。",
         sourcePath: path.join(ROOT_DIR, "docs", "research", "2026-05-07-bidking-inverse-tail-sample-acquisition-queue.md"),

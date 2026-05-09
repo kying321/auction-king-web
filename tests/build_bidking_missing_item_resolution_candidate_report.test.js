@@ -9,6 +9,7 @@ const {
     DEFAULT_OUTPUT_PATH,
     buildBidKingMissingItemResolutionCandidateReport,
     buildMissingItemResolutionCandidates,
+    formatReportPath,
     formatBidKingMissingItemResolutionCandidateMarkdown,
     main,
     resolveArgs
@@ -27,7 +28,7 @@ function buildFixtureInputs() {
             },
             Table_Drop: {
                 records: [
-                    { group_id: 10, weight_type: 2, items_list: [[50, 5003, 1, 1, 333]], __meta: { localized_name: "project quality6" } },
+                    { group_id: 10, weight_type: 2, items_list: [[50, 5001, 1, 1, 800], [50, 5002, 1, 1, 400], [50, 5003, 1, 1, 333]], __meta: { localized_name: "project quality6" } },
                     { group_id: 20, weight_type: 2, items_list: [[91, 9999, 1, 1, 111]], __meta: { localized_name: "irrelevant" } }
                 ]
             }
@@ -106,6 +107,17 @@ test("resolveArgs accepts integrity report, schema report, output path, and gene
     assert.equal(DEFAULT_OUTPUT_PATH.endsWith("2026-04-29-bidking-missing-item-resolution-candidate-report.json"), true);
 });
 
+test("resolution candidate report sanitizes publishable input paths", () => {
+    assert.equal(
+        formatReportPath(path.join(__dirname, "..", "docs", "research", "integrity.json")),
+        "<repo>/docs/research/integrity.json"
+    );
+    assert.equal(
+        formatReportPath("/tmp/ak_bidking_depot_4128581_tables_owned/BidKing_Data/StreamingAssets/Tables"),
+        "<authenticated-steam-depot>/BidKing_Data/StreamingAssets/Tables"
+    );
+});
+
 test("candidate builder keeps inferred missing item context non-authoritative", () => {
     const { schemaBackedTableReport, tableReferenceIntegrityReport } = buildFixtureInputs();
     const candidates = buildMissingItemResolutionCandidates({
@@ -121,6 +133,15 @@ test("candidate builder keeps inferred missing item context non-authoritative", 
     assert.equal(candidates[0].candidate_confidence, "low_source_gap");
     assert.equal(candidates[0].authority_action_allowed, false);
     assert.match(candidates[0].resolution_options[0], /recover_original_item_row/);
+    assert.equal(candidates[0].drop_group_curve_contexts.length, 1);
+    assert.equal(candidates[0].drop_group_curve_contexts[0].known_peer_count, 2);
+    assert.equal(candidates[0].drop_group_curve_contexts[0].missing_weight, 333);
+    assert.equal(candidates[0].drop_group_curve_contexts[0].curve_signal, "inverse_value_weight_context_only");
+    assert.ok(candidates[0].drop_group_curve_contexts[0].predicted_base_value_from_missing_weight > 100);
+    assert.deepEqual(
+        candidates[0].drop_group_curve_contexts[0].nearest_weight_peers.map((entry) => entry.item_id),
+        [5002, 5001]
+    );
 });
 
 test("resolution report blocks synthetic item and tuple-exclusion promotion", () => {
@@ -134,6 +155,8 @@ test("resolution report blocks synthetic item and tuple-exclusion promotion", ()
     assert.equal(report.live_path_touched, false);
     assert.equal(report.summary.project_relevant_missing_item_candidate_count, 1);
     assert.deepEqual(report.summary.project_relevant_missing_item_ids, [5003]);
+    assert.equal(report.summary.curve_context_count, 1);
+    assert.equal(report.summary.inverse_value_weight_context_count, 1);
     assert.equal(report.gates.synthetic_item_as_authority_allowed, false);
     assert.equal(report.gates.drop_tuple_exclusion_as_authority_allowed, false);
     assert.equal(report.gates.default_config_update_allowed, false);

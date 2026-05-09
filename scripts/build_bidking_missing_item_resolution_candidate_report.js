@@ -63,6 +63,25 @@ function writeJson(filePath, payload) {
     writeText(filePath, `${JSON.stringify(payload, null, 2)}\n`);
 }
 
+function isWithinPath(basePath, candidatePath) {
+    const relative = path.relative(path.resolve(basePath), path.resolve(candidatePath));
+    return relative === "" || (!!relative && !relative.startsWith("..") && !path.isAbsolute(relative));
+}
+
+function formatReportPath(value) {
+    const text = String(value || "");
+    if (!path.isAbsolute(text)) return text;
+    const aliases = [
+        [ROOT_DIR, "<repo>"],
+        ["/tmp/ak_bidking_depot_4128581_tables_owned", "<authenticated-steam-depot>"]
+    ];
+    const match = aliases.find(([basePath]) => isWithinPath(basePath, text));
+    if (!match) return text;
+    const [basePath, alias] = match;
+    const relative = path.relative(path.resolve(basePath), path.resolve(text)).split(path.sep).join("/");
+    return relative ? `${alias}/${relative}` : alias;
+}
+
 function records(namedTables, tableName) {
     return namedTables && namedTables[tableName] && Array.isArray(namedTables[tableName].records)
         ? namedTables[tableName].records
@@ -136,13 +155,166 @@ function summarizeDropReference(entry) {
     };
 }
 
+function safeRound(value, digits = 6) {
+    const numeric = Number(value);
+    if (!Number.isFinite(numeric)) return null;
+    const scale = 10 ** digits;
+    return Math.round(numeric * scale) / scale;
+}
+
+function percentile(sortedValues, ratio) {
+    if (!sortedValues.length) return null;
+    const index = Math.min(sortedValues.length - 1, Math.max(0, Math.round((sortedValues.length - 1) * ratio)));
+    return sortedValues[index];
+}
+
+function pearsonCorrelation(leftValues, rightValues) {
+    if (!Array.isArray(leftValues) || leftValues.length < 2 || leftValues.length !== rightValues.length) return null;
+    const leftMean = leftValues.reduce((sum, value) => sum + value, 0) / leftValues.length;
+    const rightMean = rightValues.reduce((sum, value) => sum + value, 0) / rightValues.length;
+    let numerator = 0;
+    let leftDenominator = 0;
+    let rightDenominator = 0;
+    for (let index = 0; index < leftValues.length; index += 1) {
+        const leftDelta = leftValues[index] - leftMean;
+        const rightDelta = rightValues[index] - rightMean;
+        numerator += leftDelta * rightDelta;
+        leftDenominator += leftDelta * leftDelta;
+        rightDenominator += rightDelta * rightDelta;
+    }
+    const denominator = Math.sqrt(leftDenominator * rightDenominator);
+    return denominator > 0 ? numerator / denominator : null;
+}
+
+function fitLinear(leftValues, rightValues) {
+    if (!Array.isArray(leftValues) || leftValues.length < 2 || leftValues.length !== rightValues.length) return null;
+    const leftMean = leftValues.reduce((sum, value) => sum + value, 0) / leftValues.length;
+    const rightMean = rightValues.reduce((sum, value) => sum + value, 0) / rightValues.length;
+    let numerator = 0;
+    let denominator = 0;
+    for (let index = 0; index < leftValues.length; index += 1) {
+        numerator += (leftValues[index] - leftMean) * (rightValues[index] - rightMean);
+        denominator += (leftValues[index] - leftMean) ** 2;
+    }
+    if (denominator <= 0) return null;
+    const slope = numerator / denominator;
+    return {
+        intercept: rightMean - slope * leftMean,
+        slope
+    };
+}
+
+function compactCurvePeer(tuple, itemRecord, totalWeight, missingWeight) {
+    const weight = Number(tuple[4]);
+    const baseValue = Number(itemRecord.base_value);
+    return {
+        item_id: Number(itemRecord.id),
+        localized_name: itemRecord.__meta ? itemRecord.__meta.localized_name : null,
+        item_type_hint: Number(tuple[0]),
+        item_type_id: itemRecord.item_type_id || [],
+        item_quality: itemRecord.item_quality ?? null,
+        base_value: baseValue,
+        weight,
+        weight_share: totalWeight > 0 ? safeRound(weight / totalWeight, 8) : null,
+        weight_delta_from_missing: Number.isFinite(missingWeight) ? Math.abs(weight - missingWeight) : null
+    };
+}
+
+function buildDropGroupCurveContext(entry, dropRecordsByGroup, itemRecordsById) {
+    const dropGroupId = Number(entry.drop_group_id);
+    const drop = dropRecordsByGroup.get(dropGroupId);
+    const tuple = Array.isArray(entry.tuple) ? entry.tuple : [];
+    const missingWeight = tuple.length > 4 ? Number(tuple[4]) : null;
+    if (!drop || !Array.isArray(drop.items_list)) {
+        return {
+            drop_group_id: dropGroupId,
+            drop_localized_name: entry.drop_localized_name || null,
+            curve_signal: "drop_group_missing",
+            known_peer_count: 0,
+            missing_weight: Number.isFinite(missingWeight) ? missingWeight : null,
+            authority_action_allowed: false
+        };
+    }
+
+    const totalWeight = drop.items_list.reduce((sum, itemTuple) => {
+        const weight = Array.isArray(itemTuple) && itemTuple.length > 4 ? Number(itemTuple[4]) : 0;
+        return sum + (Number.isFinite(weight) ? weight : 0);
+    }, 0);
+    const knownPeers = drop.items_list
+        .filter((itemTuple) => Array.isArray(itemTuple) && itemTuple.length > 4 && Number(itemTuple[0]) !== 9999)
+        .filter((itemTuple) => Number(itemTuple[1]) !== Number(entry.item_id))
+        .map((itemTuple) => {
+            const itemRecord = itemRecordsById.get(Number(itemTuple[1]));
+            if (!itemRecord) return null;
+            const weight = Number(itemTuple[4]);
+            const baseValue = Number(itemRecord.base_value);
+            if (!Number.isFinite(weight) || weight <= 0 || !Number.isFinite(baseValue) || baseValue <= 0) return null;
+            return compactCurvePeer(itemTuple, itemRecord, totalWeight, missingWeight);
+        })
+        .filter(Boolean);
+
+    const logValues = knownPeers.map((peer) => Math.log(peer.base_value));
+    const logWeights = knownPeers.map((peer) => Math.log(peer.weight));
+    const correlation = pearsonCorrelation(logValues, logWeights);
+    const fit = fitLinear(logValues, logWeights);
+    const predictedBaseValue = (
+        fit
+        && Number.isFinite(missingWeight)
+        && missingWeight > 0
+        && Number.isFinite(fit.slope)
+        && fit.slope !== 0
+    )
+        ? Math.exp((Math.log(missingWeight) - fit.intercept) / fit.slope)
+        : null;
+    const sortedBaseValues = knownPeers.map((peer) => peer.base_value).sort((left, right) => left - right);
+    const nearestWeightPeers = knownPeers
+        .slice()
+        .sort((left, right) => (
+            (left.weight_delta_from_missing ?? Number.POSITIVE_INFINITY)
+            - (right.weight_delta_from_missing ?? Number.POSITIVE_INFINITY)
+            || left.item_id - right.item_id
+        ))
+        .slice(0, 8);
+    const curveSignal = Number.isFinite(correlation) && correlation <= -0.7
+        ? "inverse_value_weight_context_only"
+        : "insufficient_or_weak_curve_context";
+
+    return {
+        drop_group_id: dropGroupId,
+        drop_localized_name: entry.drop_localized_name || (drop.__meta ? drop.__meta.localized_name : null),
+        weight_type: drop.weight_type ?? null,
+        curve_signal: curveSignal,
+        known_peer_count: knownPeers.length,
+        missing_weight: Number.isFinite(missingWeight) ? missingWeight : null,
+        missing_weight_share: totalWeight > 0 && Number.isFinite(missingWeight) ? safeRound(missingWeight / totalWeight, 8) : null,
+        total_group_weight: totalWeight,
+        log_value_log_weight_correlation: safeRound(correlation, 6),
+        log_log_fit: fit ? {
+            intercept: safeRound(fit.intercept, 6),
+            slope: safeRound(fit.slope, 6)
+        } : null,
+        predicted_base_value_from_missing_weight: safeRound(predictedBaseValue, 2),
+        known_base_value_summary: {
+            min: sortedBaseValues[0] ?? null,
+            p25: percentile(sortedBaseValues, 0.25),
+            p50: percentile(sortedBaseValues, 0.5),
+            p75: percentile(sortedBaseValues, 0.75),
+            max: sortedBaseValues[sortedBaseValues.length - 1] ?? null
+        },
+        nearest_weight_peers: nearestWeightPeers,
+        authority_action_allowed: false
+    };
+}
+
 function buildMissingItemResolutionCandidates({
     schemaBackedTableReport,
     tableReferenceIntegrityReport
 }) {
     const namedTables = schemaBackedTableReport.named_tables || {};
     const itemRecords = records(namedTables, "Table_Item");
+    const dropRecords = records(namedTables, "Table_Drop");
     const itemRecordsById = new Map(itemRecords.map((entry) => [Number(entry.id), entry]));
+    const dropRecordsByGroup = new Map(dropRecords.map((entry) => [Number(entry.group_id), entry]));
     const projectRelevantIds = new Set(
         uniqueSortedNumbers(
             tableReferenceIntegrityReport.summary
@@ -163,6 +335,11 @@ function buildMissingItemResolutionCandidates({
             .filter((entry) => Math.abs(Number(entry.id) - itemId) <= 20)
             .map(compactItemRecord);
         const references = (refsByItem.get(itemId) || []).map(summarizeDropReference);
+        const dropGroupCurveContexts = references.map((entry) => buildDropGroupCurveContext(
+            entry,
+            dropRecordsByGroup,
+            itemRecordsById
+        ));
         const referenceWeights = uniqueSortedNumbers(references.map((entry) => entry.weight));
         const parentReferenceCount = references.reduce((total, entry) => total + entry.parent_reference_count, 0);
         const projectMapIds = projectMapIdsByItem.get(itemId) || [];
@@ -182,6 +359,7 @@ function buildMissingItemResolutionCandidates({
             parent_reference_count: parentReferenceCount,
             reference_weights: referenceWeights,
             missing_drop_references: references,
+            drop_group_curve_contexts: dropGroupCurveContexts,
             authority_action_allowed: false,
             resolution_options: [
                 "recover_original_item_row_from_matching_client_or_table_export",
@@ -212,6 +390,11 @@ function buildBidKingMissingItemResolutionCandidateReport({
     });
     const unresolvedCandidates = candidates.filter((entry) => !entry.source_item_record_found);
     const projectRelevantMissingIds = uniqueSortedNumbers(candidates.map((entry) => entry.item_id));
+    const curveContexts = candidates.flatMap((entry) => entry.drop_group_curve_contexts || []);
+    const inverseCorrelations = curveContexts
+        .map((entry) => Number(entry.log_value_log_weight_correlation))
+        .filter(Number.isFinite)
+        .sort((left, right) => left - right);
     const blockers = ["missing_item_resolution_not_authoritative"];
     if (unresolvedCandidates.length) addReason(blockers, "missing_item_source_row_unresolved");
     if (candidates.length) addReason(blockers, "synthetic_item_or_tuple_exclusion_not_allowed");
@@ -224,9 +407,9 @@ function buildBidKingMissingItemResolutionCandidateReport({
         recommended_change_class: "SIM_ONLY",
         live_path_touched: false,
         inputs: {
-            table_reference_integrity_report: paths.tableReferenceIntegrityReportPath || DEFAULT_TABLE_REFERENCE_INTEGRITY_REPORT_PATH,
-            schema_backed_table_report: paths.schemaBackedTableReportPath || DEFAULT_SCHEMA_BACKED_TABLE_REPORT_PATH,
-            tables_dir: schemaBackedTableReport.inputs ? schemaBackedTableReport.inputs.tables_dir : null
+            table_reference_integrity_report: formatReportPath(paths.tableReferenceIntegrityReportPath || DEFAULT_TABLE_REFERENCE_INTEGRITY_REPORT_PATH),
+            schema_backed_table_report: formatReportPath(paths.schemaBackedTableReportPath || DEFAULT_SCHEMA_BACKED_TABLE_REPORT_PATH),
+            tables_dir: schemaBackedTableReport.inputs ? formatReportPath(schemaBackedTableReport.inputs.tables_dir) : null
         },
         summary: {
             project_relevant_missing_item_candidate_count: candidates.length,
@@ -235,6 +418,9 @@ function buildBidKingMissingItemResolutionCandidateReport({
             impacted_project_maps: uniqueSortedNumbers([]).concat(
                 Array.from(new Set(candidates.flatMap((entry) => entry.project_map_ids))).sort()
             ),
+            curve_context_count: curveContexts.length,
+            inverse_value_weight_context_count: curveContexts.filter((entry) => entry.curve_signal === "inverse_value_weight_context_only").length,
+            strongest_inverse_log_value_weight_correlation: inverseCorrelations[0] ?? null,
             synthetic_item_as_authority_allowed: false,
             drop_tuple_exclusion_as_authority_allowed: false,
             table_backed_shadow_replay_allowed: false,
@@ -283,6 +469,11 @@ function formatBidKingMissingItemResolutionCandidateMarkdown(report, jsonPath = 
     const rows = (report.missing_item_candidates || []).map((entry) => (
         `| ${markdownCode(entry.item_id)} | ${markdownCode(entry.source_item_record_found)} | ${markdownCode(entry.candidate_confidence)} | ${markdownCell(JSON.stringify(entry.project_map_ids || []))} | ${markdownCode(entry.parent_reference_count)} | ${markdownCell(JSON.stringify(entry.reference_weights || []))} | ${markdownCell(JSON.stringify(entry.neighboring_same_family_item_ids || []))} |`
     )).join("\n");
+    const curveRows = (report.missing_item_candidates || []).flatMap((entry) => (
+        (entry.drop_group_curve_contexts || []).map((context) => (
+            `| ${markdownCode(entry.item_id)} | ${markdownCode(context.drop_group_id)} | ${markdownCell(context.curve_signal)} | ${markdownCode(context.known_peer_count)} | ${markdownCode(context.missing_weight)} | ${markdownCode(context.log_value_log_weight_correlation)} | ${markdownCode(context.predicted_base_value_from_missing_weight)} | ${markdownCell(JSON.stringify((context.nearest_weight_peers || []).slice(0, 4).map((peer) => peer.item_id)))} |`
+        ))
+    )).join("\n");
 
     return `# BidKing missing item resolution candidate report
 
@@ -291,6 +482,9 @@ function formatBidKingMissingItemResolutionCandidateMarkdown(report, jsonPath = 
 - missing item resolution candidate count: \`${summary.project_relevant_missing_item_candidate_count ?? 0}\`
 - unresolved source gaps: \`${summary.unresolved_source_gap_count ?? 0}\`
 - project-relevant missing item ids: ${markdownCell(JSON.stringify(summary.project_relevant_missing_item_ids || []))}
+- curve contexts: \`${summary.curve_context_count ?? 0}\`
+- inverse value/weight contexts: \`${summary.inverse_value_weight_context_count ?? 0}\`
+- strongest inverse log(value)/log(weight) correlation: \`${summary.strongest_inverse_log_value_weight_correlation ?? "-"}\`
 - Synthetic item as authority allowed: \`${summary.synthetic_item_as_authority_allowed === true}\`
 - Drop tuple exclusion as authority allowed: \`${summary.drop_tuple_exclusion_as_authority_allowed === true}\`
 - Default config update allowed: \`${summary.default_config_update_allowed === true}\`
@@ -301,6 +495,12 @@ function formatBidKingMissingItemResolutionCandidateMarkdown(report, jsonPath = 
 | item id | source row found | confidence | maps | parent refs | weights | neighboring family ids |
 | --- | --- | --- | --- | --- | --- | --- |
 ${rows || "| `-` | `false` | `-` | [] | `0` | [] | [] |"}
+
+## Curve Context
+
+| item id | drop group | signal | known peers | missing weight | log correlation | predicted base | nearest peers |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+${curveRows || "| `-` | `-` | - | `0` | `-` | `-` | `-` | [] |"}
 
 ## Blockers
 
@@ -341,6 +541,7 @@ module.exports = {
     DEFAULT_TABLE_REFERENCE_INTEGRITY_REPORT_PATH,
     buildBidKingMissingItemResolutionCandidateReport,
     buildMissingItemResolutionCandidates,
+    formatReportPath,
     formatBidKingMissingItemResolutionCandidateMarkdown,
     main,
     resolveArgs

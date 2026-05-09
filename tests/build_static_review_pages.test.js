@@ -133,6 +133,12 @@ test("default research artifacts include latest BidKing authenticated local gate
         )),
         true
     );
+    assert.equal(
+        DEFAULT_RESEARCH_ARTIFACTS.some((entry) => (
+            entry.outputName === "2026-05-09-bidking-authenticated-missing-item-resolution-candidate-report.md"
+        )),
+        true
+    );
 });
 
 test("buildStaticReviewPages clears stale published research artifacts before writing", () => {

@@ -1,0 +1,720 @@
+{
+  "schema_version": "ak_bidking_missing_item_resolution_candidate_v1",
+  "generated_at": "2026-05-09T19:21:52+08:00",
+  "mode": "source_first_implementation",
+  "change_class": "SIM_ONLY",
+  "recommended_change_class": "SIM_ONLY",
+  "live_path_touched": false,
+  "inputs": {
+    "table_reference_integrity_report": "<repo>/docs/research/2026-05-09-bidking-authenticated-table-reference-integrity-report.json",
+    "schema_backed_table_report": "<repo>/docs/research/2026-05-09-bidking-authenticated-schema-backed-table-report.json",
+    "tables_dir": "<authenticated-steam-depot>/BidKing_Data/StreamingAssets/Tables"
+  },
+  "summary": {
+    "project_relevant_missing_item_candidate_count": 1,
+    "unresolved_source_gap_count": 1,
+    "project_relevant_missing_item_ids": [
+      1106013
+    ],
+    "impacted_project_maps": [
+      "sunken_ship",
+      "villa"
+    ],
+    "curve_context_count": 1,
+    "inverse_value_weight_context_count": 1,
+    "strongest_inverse_log_value_weight_correlation": -0.954545,
+    "synthetic_item_as_authority_allowed": false,
+    "drop_tuple_exclusion_as_authority_allowed": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "promotion_allowed": false,
+    "recommended_next_action": "recover_or_manually_confirm_original_missing_item_source_row_before_replay_promotion",
+    "blockers": [
+      "missing_item_resolution_not_authoritative",
+      "missing_item_source_row_unresolved",
+      "synthetic_item_or_tuple_exclusion_not_allowed"
+    ],
+    "warnings": [
+      "neighboring item rows are context only and must not be used as authoritative reconstruction"
+    ]
+  },
+  "gates": {
+    "source_item_rows_recovered_for_project_scope": false,
+    "synthetic_item_as_authority_allowed": false,
+    "drop_tuple_exclusion_as_authority_allowed": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false
+  },
+  "missing_item_candidates": [
+    {
+      "item_id": 1106013,
+      "candidate_status": "unresolved_source_gap",
+      "candidate_confidence": "low_source_gap",
+      "source_item_record_found": false,
+      "source_item_record": null,
+      "item_family_prefix": 1106000,
+      "neighboring_same_family_item_count": 12,
+      "neighboring_same_family_item_ids": [
+        1106001,
+        1106002,
+        1106003,
+        1106004,
+        1106005,
+        1106006,
+        1106007,
+        1106008,
+        1106009,
+        1106010,
+        1106011,
+        1106012
+      ],
+      "neighboring_same_family_items": [
+        {
+          "id": 1106001,
+          "localized_name": "清明上河图复刻",
+          "item_type_id": [
+            110,
+            106
+          ],
+          "slot_type": 61,
+          "item_quality": 6,
+          "base_value": 240660,
+          "max_per_listing": 2,
+          "collection": 2407,
+          "collection_coin": 0.0305251141552511,
+          "icon_path": "icon_1106001",
+          "model_3D": "Cube"
+        },
+        {
+          "id": 1106002,
+          "localized_name": "《岩间圣母》",
+          "item_type_id": [
+            110,
+            106
+          ],
+          "slot_type": 23,
+          "item_quality": 6,
+          "base_value": 120600,
+          "max_per_listing": 2,
+          "collection": 1206,
+          "collection_coin": 0.015296803652968,
+          "icon_path": "icon_1106002",
+          "model_3D": "Cube"
+        },
+        {
+          "id": 1106003,
+          "localized_name": "《戴珍珠耳环的少女》",
+          "item_type_id": [
+            110,
+            106
+          ],
+          "slot_type": 22,
+          "item_quality": 6,
+          "base_value": 160200,
+          "max_per_listing": 3,
+          "collection": 1602,
+          "collection_coin": 0.0203196347031963,
+          "icon_path": "icon_1106003",
+          "model_3D": "Cube"
+        },
+        {
+          "id": 1106004,
+          "localized_name": "《自由引导人民》",
+          "item_type_id": [
+            110,
+            106
+          ],
+          "slot_type": 32,
+          "item_quality": 6,
+          "base_value": 191800,
+          "max_per_listing": 3,
+          "collection": 1918,
+          "collection_coin": 0.0243277524099442,
+          "icon_path": "icon_1106004",
+          "model_3D": "Cube"
+        },
+        {
+          "id": 1106005,
+          "localized_name": "《星空》",
+          "item_type_id": [
+            110,
+            106
+          ],
+          "slot_type": 32,
+          "item_quality": 6,
+          "base_value": 170200,
+          "max_per_listing": 5,
+          "collection": 1702,
+          "collection_coin": 0.0215880263825469,
+          "icon_path": "icon_1106005",
+          "model_3D": "Cube"
+        },
+        {
+          "id": 1106006,
+          "localized_name": "《亚威农少女》",
+          "item_type_id": [
+            110,
+            106
+          ],
+          "slot_type": 33,
+          "item_quality": 6,
+          "base_value": 282240,
+          "max_per_listing": 1,
+          "collection": 2822,
+          "collection_coin": 0.0357990867579909,
+          "icon_path": "icon_1106006",
+          "model_3D": "Cube"
+        },
+        {
+          "id": 1106007,
+          "localized_name": "《凯尔经》",
+          "item_type_id": [
+            110,
+            106
+          ],
+          "slot_type": 22,
+          "item_quality": 6,
+          "base_value": 175500,
+          "max_per_listing": 3,
+          "collection": 1755,
+          "collection_coin": 0.0222602739726027,
+          "icon_path": "icon_1106007",
+          "model_3D": "Cube"
+        },
+        {
+          "id": 1106008,
+          "localized_name": "《天工开物》",
+          "item_type_id": [
+            110,
+            106
+          ],
+          "slot_type": 22,
+          "item_quality": 6,
+          "base_value": 148840,
+          "max_per_listing": 3,
+          "collection": 1488,
+          "collection_coin": 0.0188787417554541,
+          "icon_path": "icon_1106008",
+          "model_3D": "Cube"
+        },
+        {
+          "id": 1106009,
+          "localized_name": "永乐大典残本一",
+          "item_type_id": [
+            110,
+            106
+          ],
+          "slot_type": 22,
+          "item_quality": 6,
+          "base_value": 1491800,
+          "max_per_listing": 3,
+          "collection": 14918,
+          "collection_coin": 0.18921867072552,
+          "icon_path": "icon_1106009",
+          "model_3D": "Cube"
+        },
+        {
+          "id": 1106010,
+          "localized_name": "永乐大典残本二",
+          "item_type_id": [
+            110,
+            106
+          ],
+          "slot_type": 22,
+          "item_quality": 6,
+          "base_value": 1553900,
+          "max_per_listing": 3,
+          "collection": 15539,
+          "collection_coin": 0.197095383054287,
+          "icon_path": "icon_1106010",
+          "model_3D": "Cube"
+        },
+        {
+          "id": 1106011,
+          "localized_name": "《富春山居图》",
+          "item_type_id": [
+            110,
+            106
+          ],
+          "slot_type": 31,
+          "item_quality": 6,
+          "base_value": 1236666,
+          "max_per_listing": 3,
+          "collection": 12367,
+          "collection_coin": 0.156857686453577,
+          "icon_path": "icon_1106011",
+          "model_3D": "modle_1106011"
+        },
+        {
+          "id": 1106012,
+          "localized_name": "《般若神掌》",
+          "item_type_id": [
+            110,
+            106,
+            104
+          ],
+          "slot_type": 22,
+          "item_quality": 6,
+          "base_value": 284519,
+          "max_per_listing": 3,
+          "collection": 2845,
+          "collection_coin": 0.0360881532217149,
+          "icon_path": "icon_1106012",
+          "model_3D": "Cube"
+        }
+      ],
+      "project_map_ids": [
+        "sunken_ship",
+        "villa"
+      ],
+      "reference_count": 1,
+      "parent_reference_count": 20,
+      "reference_weights": [
+        3333
+      ],
+      "missing_drop_references": [
+        {
+          "item_id": 1106013,
+          "drop_group_id": 1066,
+          "drop_localized_name": "文物古董品质6",
+          "tuple_index": 33,
+          "tuple": [
+            106,
+            1106013,
+            1,
+            1,
+            3333
+          ],
+          "item_type_hint": 106,
+          "min_count": 1,
+          "max_count": 1,
+          "weight": 3333,
+          "parent_reference_count": 20,
+          "parent_references": [
+            {
+              "parent_drop_group_id": 104601,
+              "parent_localized_name": "​谜之公馆​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                20
+              ]
+            },
+            {
+              "parent_drop_group_id": 104602,
+              "parent_localized_name": "​设计师遗作​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104603,
+              "parent_localized_name": "​科技新贵密室​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104604,
+              "parent_localized_name": "​养生专家私邸​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104605,
+              "parent_localized_name": "​世家望族故居​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                40
+              ]
+            },
+            {
+              "parent_drop_group_id": 104606,
+              "parent_localized_name": "​学者书斋​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104607,
+              "parent_localized_name": "​隐秘金库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104608,
+              "parent_localized_name": "​私人疗养院​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104609,
+              "parent_localized_name": "​安全狂宅邸​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 104610,
+              "parent_localized_name": "​极客梦幻屋​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105601,
+              "parent_localized_name": "​混沌残骸​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                20
+              ]
+            },
+            {
+              "parent_drop_group_id": 105602,
+              "parent_localized_name": "​远洋客轮舱房​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105603,
+              "parent_localized_name": "​军用舰艇保险库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105604,
+              "parent_localized_name": "​冷链货船隔离舱​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105605,
+              "parent_localized_name": "​殖民商船宝库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                40
+              ]
+            },
+            {
+              "parent_drop_group_id": 105606,
+              "parent_localized_name": "​探险家座舰资料库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105607,
+              "parent_localized_name": "​皇家御用货舱​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105608,
+              "parent_localized_name": "​生物实验室样本库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105609,
+              "parent_localized_name": "​私掠船军火舱​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            },
+            {
+              "parent_drop_group_id": 105610,
+              "parent_localized_name": "​现代货轮娱乐库​6",
+              "child_drop_group_id": 1066,
+              "tuple_index": 5,
+              "tuple": [
+                9999,
+                1066,
+                1,
+                1,
+                10
+              ]
+            }
+          ]
+        }
+      ],
+      "drop_group_curve_contexts": [
+        {
+          "drop_group_id": 1066,
+          "drop_localized_name": "文物古董品质6",
+          "weight_type": 2,
+          "curve_signal": "inverse_value_weight_context_only",
+          "known_peer_count": 34,
+          "missing_weight": 3333,
+          "missing_weight_share": 0.01789876,
+          "total_group_weight": 186214,
+          "log_value_log_weight_correlation": -0.954545,
+          "log_log_fit": {
+            "intercept": 23.72493,
+            "slope": -1.23932
+          },
+          "predicted_base_value_from_missing_weight": 296050.09,
+          "known_base_value_summary": {
+            "min": 68400,
+            "p25": 158940,
+            "p50": 191800,
+            "p75": 361000,
+            "max": 19371213
+          },
+          "nearest_weight_peers": [
+            {
+              "item_id": 1106006,
+              "localized_name": "《亚威农少女》",
+              "item_type_hint": 106,
+              "item_type_id": [
+                110,
+                106
+              ],
+              "item_quality": 6,
+              "base_value": 282240,
+              "weight": 3669,
+              "weight_share": 0.01970314,
+              "weight_delta_from_missing": 336
+            },
+            {
+              "item_id": 1066003,
+              "localized_name": "敦煌绢画",
+              "item_type_hint": 106,
+              "item_type_id": [
+                106,
+                110
+              ],
+              "item_quality": 6,
+              "base_value": 255840,
+              "weight": 3852,
+              "weight_share": 0.02068588,
+              "weight_delta_from_missing": 519
+            },
+            {
+              "item_id": 1026003,
+              "localized_name": "古医书《伤寒论》",
+              "item_type_hint": 106,
+              "item_type_id": [
+                102,
+                110,
+                106
+              ],
+              "item_quality": 6,
+              "base_value": 158940,
+              "weight": 4128,
+              "weight_share": 0.02216804,
+              "weight_delta_from_missing": 795
+            },
+            {
+              "item_id": 1106001,
+              "localized_name": "清明上河图复刻",
+              "item_type_hint": 106,
+              "item_type_id": [
+                110,
+                106
+              ],
+              "item_quality": 6,
+              "base_value": 240660,
+              "weight": 4133,
+              "weight_share": 0.02219489,
+              "weight_delta_from_missing": 800
+            },
+            {
+              "item_id": 1046005,
+              "localized_name": "名刀：菊一文字",
+              "item_type_hint": 106,
+              "item_type_id": [
+                104,
+                106
+              ],
+              "item_quality": 6,
+              "base_value": 422002,
+              "weight": 2382,
+              "weight_share": 0.01279173,
+              "weight_delta_from_missing": 951
+            },
+            {
+              "item_id": 1106012,
+              "localized_name": "《般若神掌》",
+              "item_type_hint": 106,
+              "item_type_id": [
+                110,
+                106,
+                104
+              ],
+              "item_quality": 6,
+              "base_value": 284519,
+              "weight": 2338,
+              "weight_share": 0.01255545,
+              "weight_delta_from_missing": 995
+            },
+            {
+              "item_id": 1016006,
+              "localized_name": "红木屏风",
+              "item_type_hint": 106,
+              "item_type_id": [
+                101,
+                110,
+                106
+              ],
+              "item_quality": 6,
+              "base_value": 361000,
+              "weight": 1865,
+              "weight_share": 0.01001536,
+              "weight_delta_from_missing": 1468
+            },
+            {
+              "item_id": 1066011,
+              "localized_name": "双羊尊",
+              "item_type_hint": 106,
+              "item_type_id": [
+                106,
+                109
+              ],
+              "item_quality": 6,
+              "base_value": 567900,
+              "weight": 1672,
+              "weight_share": 0.00897892,
+              "weight_delta_from_missing": 1661
+            }
+          ],
+          "authority_action_allowed": false
+        }
+      ],
+      "authority_action_allowed": false,
+      "resolution_options": [
+        "recover_original_item_row_from_matching_client_or_table_export",
+        "confirm_item_identity_from_in_game_catalog_or_authoritative_capture",
+        "keep_table_backed_shadow_replay_blocked_until_source_row_is_recovered",
+        "do_not_promote_synthetic_item_or_drop_tuple_exclusion_to_authority"
+      ],
+      "blockers": [
+        "missing_item_source_row_unresolved",
+        "synthetic_item_not_authoritative"
+      ]
+    }
+  ],
+  "notes": [
+    "This report records candidate context for missing Item rows; it does not patch tables.",
+    "Synthetic reconstruction and tuple exclusion are not valid authority sources.",
+    "Default estimator config and BidKing shadow simulator gates remain closed."
+  ]
+}
