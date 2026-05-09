@@ -1,0 +1,27 @@
+{
+  "schema_version": "ak_default_weight_implementation_report_v1",
+  "generated_at": "2026-05-07T18:13:24.422Z",
+  "mode": "research_backtest",
+  "change_class": "RESEARCH_ONLY",
+  "implementation_status": "not_applicable",
+  "update_scope": [
+    "maps.*.alpha_counts.p"
+  ],
+  "selected_multiplier": null,
+  "source_fit_report": {
+    "schema_version": "ak_purple_weight_fit_report_v1",
+    "generated_at": "2026-05-07T18:13:14.951Z"
+  },
+  "authority_adoption_allowed": false,
+  "authority_blockers": [
+    "red_label_sample_count_below_default_update_gate",
+    "fit_uses_partial_overlay_replay_samples",
+    "purple_multiplier_scan_is_shadow_only"
+  ],
+  "summary": {
+    "map_count": 0,
+    "applied_map_count": 0,
+    "mismatched_map_count": 0
+  },
+  "maps": {}
+}

@@ -124,25 +124,32 @@ test("buildLegacyEstimatorStateFromFieldValues preserves raw average display tex
     assert.equal(state.r3_white_green_avg_text, "2.44");
 });
 
-test("buildLegacyEstimatorStateFromFieldValues treats zero average cells as blank constraints", () => {
-    const state = buildLegacyEstimatorStateFromFieldValues({
-        blue_count: 9,
-        blue_avg_cells: "0.00",
-        orange_avg_cells: 0,
-        purple_avg_cells: "0"
-    });
+test("buildLegacyEstimatorStateFromFieldValues preserves zero average cells as explicit constraints", () => {
+    const state = buildLegacyEstimatorStateFromFieldValues(
+        {
+            blue_count: 9,
+            blue_avg_cells: "0.00",
+            orange_avg_cells: 0,
+            purple_avg_cells: "0"
+        },
+        {
+            blue_avg_cells: { source_mode: "public_round" }
+        }
+    );
 
     assert.equal(state.r1_blue_count, 9);
-    assert.equal(state.r4_blue_avg, null);
-    assert.equal(state.r4_blue_avg_text, null);
-    assert.equal(state.r4_blue_avg_rounding_mode, undefined);
-    assert.equal(state.r2_orange_avg, null);
-    assert.equal(state.r2_orange_avg_text, null);
-    assert.equal(state.r3_purple_avg, null);
-    assert.equal(state.r3_purple_avg_text, null);
+    assert.equal(state.r4_blue_avg, 0);
+    assert.equal(state.r4_blue_avg_text, "0.00");
+    assert.equal(state.r4_blue_avg_rounding_mode, "round");
+    assert.equal(state.r2_orange_avg, 0);
+    assert.equal(state.r2_orange_avg_text, "0");
+    assert.equal(state.r2_orange_avg_rounding_mode, "truncate");
+    assert.equal(state.r3_purple_avg, 0);
+    assert.equal(state.r3_purple_avg_text, "0");
+    assert.equal(state.r3_purple_avg_rounding_mode, "truncate");
 });
 
-test("normalizeWorkspaceState clears persisted zero average cells on load", () => {
+test("normalizeWorkspaceState preserves persisted zero average cells on load", () => {
     const normalized = normalizeWorkspaceState(createConfig(), {
         active_template_id: "ahmed_default",
         active_map_id: "sunken_ship",
@@ -153,7 +160,7 @@ test("normalizeWorkspaceState clears persisted zero average cells on load", () =
     });
 
     assert.equal(normalized.field_values.total_items, 49);
-    assert.equal(normalized.field_values.orange_avg_cells, null);
+    assert.equal(normalized.field_values.orange_avg_cells, "0.00");
 });
 
 test("buildLegacyEstimatorStateFromFieldValues maps public average metadata into rounded solver fields", () => {

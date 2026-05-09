@@ -22,6 +22,7 @@ test("front page uses Chinese task header and decision-first shell", () => {
     assert.match(html, /class="workspace-header-brief-panel workspace-brief-strip"/);
     assert.match(html, /WORKBENCH BRIEF/);
     assert.match(html, /id="btn-theme-toggle"/);
+    assert.match(html, /href="research\/"[\s\S]*研究/);
     assert.match(html, /id="btn-config"[^>]+href="tools\.html"/);
     assert.doesNotMatch(html, /class="workspace-header-meta"/);
     assert.doesNotMatch(html, /class="workspace-header-brief"/);
@@ -65,6 +66,7 @@ test("front page uses Chinese task header and decision-first shell", () => {
     assert.match(html, /src\/browser\/field_panel_runtime\.js\?v=/);
     assert.match(packageJson.scripts["build:static"], /cp -R src dist\/src/);
     assert.match(packageJson.scripts["build:static"], /tools\.html/);
+    assert.match(packageJson.scripts["build:static"], /scripts\/build_static_review_pages\.js/);
     assert.match(packageJson.scripts["build:static"], /robots\.txt/);
     assert.match(packageJson.scripts["build:static"], /sitemap\.xml/);
     assert.match(packageJson.scripts["check:js"], /src\/browser\/result_panel_runtime\.js/);
@@ -78,6 +80,7 @@ test("front page uses Chinese task header and decision-first shell", () => {
 
 test("front page exposes release SEO metadata", () => {
     const html = fs.readFileSync(path.join(__dirname, "..", "index.html"), "utf8");
+    const sitemap = fs.readFileSync(path.join(__dirname, "..", "sitemap.xml"), "utf8");
 
     assert.match(html, /<title>竞拍之王｜沉船竞拍决策台<\/title>/);
     assert.match(html, /<meta name="description" content="竞拍之王沉船决策台/);
@@ -86,6 +89,7 @@ test("front page exposes release SEO metadata", () => {
     assert.match(html, /name="twitter:card" content="summary"/);
     assert.match(html, /type="application\/ld\+json"/);
     assert.match(html, /"@type": "WebApplication"/);
+    assert.match(sitemap, /https:\/\/ak\.fuuu\.fun\/research\//);
 });
 
 test("static deployment artifact mirrors the front page command surface when present", () => {
@@ -102,6 +106,7 @@ test("static deployment artifact mirrors the front page command surface when pre
 
     assert.ok(rootStyleVersion);
     assert.match(distIndex, new RegExp(`style\\.css\\?v=${rootStyleVersion}`));
+    assert.equal(fs.existsSync(path.join(__dirname, "..", "dist", "research", "index.html")), true);
     assert.match(distIndex, /workspace-context-strip[\s\S]*workspace-utility-actions/);
     assert.doesNotMatch(distIndex, /workspace-utility-actions[\s\S]*workspace-context-strip/);
     assert.equal(distCss, rootCss);
@@ -112,6 +117,7 @@ test("advanced tools page owns config and authority calibration surfaces", () =>
 
     assert.match(html, /高级配置与图鉴校准/);
     assert.match(html, /href="index\.html"/);
+    assert.match(html, /href="research\/"[\s\S]*研究/);
     assert.match(html, /id="config-modal"/);
     assert.match(html, /id="btn-config-view-structured"/);
     assert.match(html, /id="btn-config-view-baseline"/);
@@ -244,8 +250,9 @@ test("primary stylesheet no longer ships removed OCR, role, or inference layers"
 test("primary stylesheet preserves the published warm shell and dark palette", () => {
     const css = fs.readFileSync(path.join(__dirname, "..", "style.css"), "utf8");
 
-    assert.match(css, /--ui-scale:\s*0\.888889;/);
-    assert.match(css, /html\s*\{[\s\S]*font-size:\s*88\.8889%;/);
+    assert.match(css, /--ui-scale:\s*0\.9;/);
+    assert.match(css, /html\s*\{[\s\S]*font-size:\s*90%;/);
+    assert.match(css, /\.app-container\s*\{[\s\S]*transform:\s*scale\(var\(--ui-scale\)\);[\s\S]*transform-origin:\s*top center;/);
     assert.match(css, /--bg-base:\s*#f6f0e6;/);
     assert.match(css, /--accent-primary:\s*#8e5c36;/);
     assert.match(css, /body\[data-theme="dark"\][\s\S]*--bg-base:\s*#11100e;/);

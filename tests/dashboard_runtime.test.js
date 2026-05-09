@@ -198,6 +198,16 @@ test("countObservedSolveSignals includes custom o/r bound constraints", () => {
     );
 });
 
+test("countObservedSolveSignals treats total storage cells as a weak solve signal", () => {
+    assert.equal(
+        countObservedSolveSignals({
+            r1_total_items: 36,
+            r4_total_storage_cells: 48
+        }),
+        1
+    );
+});
+
 test("buildSolveStagePlan keeps sparse early states on refine-only path", () => {
     const plan = buildSolveStagePlan(
         { r1_total_items: 42 },

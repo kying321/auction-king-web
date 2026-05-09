@@ -77,3 +77,22 @@ test("buildDefaultWeightImplementationReport flags mismatched current defaults",
     assert.equal(report.summary.mismatched_map_count, 3);
     assert.equal(report.maps.sunken_ship.matches_expected, false);
 });
+
+test("buildDefaultWeightImplementationReport keeps null selected defaults as not applicable", () => {
+    const purpleFitReport = createPurpleFitEvidence();
+    purpleFitReport.recommendation.selected_default_multiplier = null;
+
+    const report = buildDefaultWeightImplementationReport({
+        defaultConfig,
+        purpleFitReport,
+        generatedAt: "2026-04-25T07:00:00.000Z"
+    });
+
+    assert.equal(report.change_class, "RESEARCH_ONLY");
+    assert.equal(report.implementation_status, "not_applicable");
+    assert.equal(report.selected_multiplier, null);
+    assert.equal(report.summary.map_count, 0);
+    assert.equal(report.summary.applied_map_count, 0);
+    assert.equal(report.summary.mismatched_map_count, 0);
+    assert.deepEqual(report.maps, {});
+});

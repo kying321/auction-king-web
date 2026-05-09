@@ -1,0 +1,57 @@
+{
+  "schema_version": "ak_bidking_overlay_shadow_simulator_gate_v1",
+  "generated_at": "2026-05-08T00:05:00.000+08:00",
+  "mode": "source_first_implementation",
+  "change_class": "SIM_ONLY",
+  "recommended_change_class": "SIM_ONLY",
+  "live_path_touched": false,
+  "inputs": {
+    "staging_overlay_reference_integrity_report": "<repo>/docs/research/2026-05-07-bidking-staging-overlay-reference-integrity-report.json"
+  },
+  "summary": {
+    "overlay_integrity_schema_version": "ak_bidking_staging_overlay_reference_integrity_v1",
+    "original_project_missing_item_ids": [
+      1106013
+    ],
+    "staged_item_ids": [],
+    "covered_project_missing_item_ids": [],
+    "unresolved_project_missing_item_ids_after_overlay": [
+      1106013
+    ],
+    "maps_still_blocked_after_overlay": [
+      "sunken_ship",
+      "villa"
+    ],
+    "staging_overlay_reference_integrity_clean_for_project_scope": false,
+    "overlay_shadow_simulator_candidate_allowed": false,
+    "overlay_shadow_simulator_status": "blocked_overlay_shadow_simulator_gate",
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "source_tables_mutated": false,
+    "recommended_next_action": "resolve_staging_overlay_reference_integrity_before_shadow_simulator",
+    "blockers": [
+      "no_staged_item_rows",
+      "project_relevant_missing_terminal_item_references_after_overlay",
+      "staging_overlay_reference_integrity_not_clean",
+      "staging_overlay_shadow_replay_candidate_not_allowed",
+      "maps_still_blocked_after_overlay"
+    ]
+  },
+  "gates": {
+    "staging_overlay_reference_integrity_schema_valid": true,
+    "staging_overlay_reference_integrity_clean_for_project_scope": false,
+    "overlay_shadow_simulator_candidate_allowed": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "source_tables_mutated": false,
+    "synthetic_item_as_authority_allowed": false,
+    "drop_tuple_exclusion_as_authority_allowed": false
+  },
+  "notes": [
+    "This gate consumes the staging overlay integrity artifact and does not mutate BidKing source tables.",
+    "A clean staging overlay can only permit a SIM_ONLY overlay-shadow simulator candidate.",
+    "Authority handoff, table-backed replay promotion, and default config update remain closed."
+  ]
+}

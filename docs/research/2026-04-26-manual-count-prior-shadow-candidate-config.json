@@ -1623,7 +1623,7 @@
   },
   "calibration": {
     "artifact_version": "ak_authority_calibration_v1",
-    "generated_at": "2026-04-28T15:20:58.479Z",
+    "generated_at": "2026-04-29T10:05:16.500Z",
     "source_summary": {
       "catalog_batch_count": 6,
       "battle_sample_count": 0,

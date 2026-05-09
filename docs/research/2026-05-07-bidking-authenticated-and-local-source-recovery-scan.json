@@ -1,0 +1,794 @@
+{
+  "schema_version": "ak_bidking_missing_item_source_recovery_scan_v1",
+  "generated_at": "2026-05-07T23:59:00.000+08:00",
+  "mode": "source_first_implementation",
+  "change_class": "SIM_ONLY",
+  "recommended_change_class": "SIM_ONLY",
+  "live_path_touched": false,
+  "inputs": {
+    "missing_item_candidate_report": "<repo>/docs/research/2026-05-07-bidking-1106013-resolution-candidate-refresh.json",
+    "scan_sources": [
+      "/tmp/ak_bidking_depot_4128581_tables_owned",
+      "<local>/BidKing_zip_extract_min",
+      "<local>/BidKing",
+      "<steam>/steamapps"
+    ]
+  },
+  "summary": {
+    "scanned_source_count": 4,
+    "project_relevant_missing_item_ids": [
+      1106013
+    ],
+    "source_item_row_recovered_count": 0,
+    "source_item_row_recovered_item_ids": [],
+    "source_item_row_recovered_for_project_scope": false,
+    "reference_hit_count": 1,
+    "path_hint_hit_count": 0,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "promotion_allowed": false,
+    "recommended_next_action": "acquire_additional_client_or_authoritative_capture_for_missing_item_rows",
+    "blockers": [
+      "source_item_rows_not_found_in_local_candidates"
+    ],
+    "warnings": [
+      "reference hits prove the missing item is referenced, not recovered",
+      "path hints and neighboring rows are not authoritative item rows"
+    ]
+  },
+  "gates": {
+    "source_item_row_recovered_for_project_scope": false,
+    "recovered_rows_ingested": false,
+    "table_reference_integrity_clean_after_recovery": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false
+  },
+  "item_recovery": [
+    {
+      "item_id": 1106013,
+      "source_item_row_recovered": false,
+      "source_recovery_status": "not_found_in_local_source_candidates",
+      "source_item_row_hit_count": 0,
+      "reference_hit_count": 1,
+      "path_hint_hit_count": 0,
+      "source_item_row_hits": [],
+      "reference_hits": [
+        {
+          "source_path": "<local>/BidKing_zip_extract_min",
+          "source_type": "directory",
+          "file_path": "<local>/BidKing_zip_extract_min/Tables/Drop.txt",
+          "member_path": null,
+          "relative_path": "Tables/Drop.txt",
+          "line_number": 56,
+          "hit_type": "drop_reference",
+          "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+        }
+      ],
+      "path_hint_hits": [],
+      "source_results": [
+        {
+          "source_path": "/tmp/ak_bidking_depot_4128581_tables_owned",
+          "source_type": "directory",
+          "exists": true,
+          "source_item_row_hits": [],
+          "reference_hits": [],
+          "path_hint_hits": []
+        },
+        {
+          "source_path": "<local>/BidKing_zip_extract_min",
+          "source_type": "directory",
+          "exists": true,
+          "source_item_row_hits": [],
+          "reference_hits": [
+            {
+              "source_path": "<local>/BidKing_zip_extract_min",
+              "source_type": "directory",
+              "file_path": "<local>/BidKing_zip_extract_min/Tables/Drop.txt",
+              "member_path": null,
+              "relative_path": "Tables/Drop.txt",
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            }
+          ],
+          "path_hint_hits": []
+        },
+        {
+          "source_path": "<local>/BidKing",
+          "source_type": "directory",
+          "exists": true,
+          "source_item_row_hits": [],
+          "reference_hits": [],
+          "path_hint_hits": []
+        },
+        {
+          "source_path": "<steam>/steamapps",
+          "source_type": "directory",
+          "exists": true,
+          "source_item_row_hits": [],
+          "reference_hits": [],
+          "path_hint_hits": []
+        }
+      ],
+      "authority_action_allowed": false
+    }
+  ],
+  "source_scans": [
+    {
+      "source_path": "/tmp/ak_bidking_depot_4128581_tables_owned",
+      "source_type": "directory",
+      "exists": true,
+      "scanned_file_count": 0,
+      "skipped_file_count": 0,
+      "item_scans": {
+        "1106013": {
+          "source_path": "/tmp/ak_bidking_depot_4128581_tables_owned",
+          "source_type": "directory",
+          "exists": true,
+          "scanned_file_count": 0,
+          "skipped_file_count": 0,
+          "path_hint_hits": [],
+          "skipped_files": [],
+          "source_item_row_hits": [],
+          "reference_hits": [],
+          "all_text_hits": []
+        }
+      }
+    },
+    {
+      "source_path": "<local>/BidKing_zip_extract_min",
+      "source_type": "directory",
+      "exists": true,
+      "scanned_file_count": 62,
+      "skipped_file_count": 5,
+      "item_scans": {
+        "1106013": {
+          "source_path": "<local>/BidKing_zip_extract_min",
+          "source_type": "directory",
+          "exists": true,
+          "scanned_file_count": 62,
+          "skipped_file_count": 5,
+          "path_hint_hits": [],
+          "skipped_files": [
+            {
+              "file_path": "<local>/BidKing_zip_extract_min/Assembly-CSharp.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 283648
+            },
+            {
+              "file_path": "<local>/BidKing_zip_extract_min/HybridCLR.Runtime.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 5120
+            },
+            {
+              "file_path": "<local>/BidKing_zip_extract_min/HybridCLRGenerate.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4096
+            },
+            {
+              "file_path": "<local>/BidKing_zip_extract_min/NotHotUpdate.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 50688
+            },
+            {
+              "file_path": "<local>/BidKing_zip_extract_min/global-metadata.dat",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 6947184
+            }
+          ],
+          "source_item_row_hits": [],
+          "reference_hits": [
+            {
+              "source_path": "<local>/BidKing_zip_extract_min",
+              "source_type": "directory",
+              "file_path": "<local>/BidKing_zip_extract_min/Tables/Drop.txt",
+              "member_path": null,
+              "relative_path": "Tables/Drop.txt",
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            }
+          ],
+          "all_text_hits": [
+            {
+              "source_path": "<local>/BidKing_zip_extract_min",
+              "source_type": "directory",
+              "file_path": "<local>/BidKing_zip_extract_min/Tables/Drop.txt",
+              "member_path": null,
+              "relative_path": "Tables/Drop.txt",
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_path": "<local>/BidKing",
+      "source_type": "directory",
+      "exists": true,
+      "scanned_file_count": 28,
+      "skipped_file_count": 27,
+      "item_scans": {
+        "1106013": {
+          "source_path": "<local>/BidKing",
+          "source_type": "directory",
+          "exists": true,
+          "scanned_file_count": 28,
+          "skipped_file_count": 27,
+          "path_hint_hits": [],
+          "skipped_files": [
+            {
+              "file_path": "<local>/BidKing/.DS_Store",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 6148
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing.exe",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 653824
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/.DS_Store",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 6148
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1497956
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 431108
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__1.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1467956
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__2.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1415776
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__3.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1427964
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__4.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 762455
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Coffee.UIParticle.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 775793
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Coffee.UIParticle_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 46963
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1838493
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 387136
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween__1.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1293239
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween__2.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 659098
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DotweenModule.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1152995
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DotweenModule_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 110636
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 2400920
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods__1.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1409591
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods__10.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 2255510
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods__11.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1818069
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods__12.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1663596
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/com.rlabrecque.steamworks.net.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 2247565
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/com.rlabrecque.steamworks.net_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1084469
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/com.rlabrecque.steamworks.net__1.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4463875
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/com.rlabrecque.steamworks.net__2.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 584244
+            },
+            {
+              "file_path": "<local>/BidKing/baselib.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 405016
+            }
+          ],
+          "source_item_row_hits": [],
+          "reference_hits": [],
+          "all_text_hits": []
+        }
+      }
+    },
+    {
+      "source_path": "<steam>/steamapps",
+      "source_type": "directory",
+      "exists": true,
+      "scanned_file_count": 10273,
+      "skipped_file_count": 9323,
+      "item_scans": {
+        "1106013": {
+          "source_path": "<steam>/steamapps",
+          "source_type": "directory",
+          "exists": true,
+          "scanned_file_count": 10273,
+          "skipped_file_count": 9323,
+          "path_hint_hits": [],
+          "skipped_files": [
+            {
+              "file_path": "<steam>/steamapps/.DS_Store",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 8196
+            },
+            {
+              "file_path": "<steam>/steamapps/appmanifest_1086940.acf",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 858
+            },
+            {
+              "file_path": "<steam>/steamapps/appmanifest_1091500.acf",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 945
+            },
+            {
+              "file_path": "<steam>/steamapps/appmanifest_1325860.acf",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 766
+            },
+            {
+              "file_path": "<steam>/steamapps/appmanifest_2453360.acf",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 773
+            },
+            {
+              "file_path": "<steam>/steamapps/appmanifest_2868840.acf",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 779
+            },
+            {
+              "file_path": "<steam>/steamapps/appmanifest_3117820.acf",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 775
+            },
+            {
+              "file_path": "<steam>/steamapps/appmanifest_3167020.acf",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 758
+            },
+            {
+              "file_path": "<steam>/steamapps/appmanifest_570.acf",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1447
+            },
+            {
+              "file_path": "<steam>/steamapps/appmanifest_646570.acf",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 769
+            },
+            {
+              "file_path": "<steam>/steamapps/common/.DS_Store",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 10244
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/.DS_Store",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 6148
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Assets.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 115409882
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/DiceSet01.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 17969592
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/DiceSet02.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 19348794
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/DiceSet03.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 17514043
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/DiceSet06.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 12982661
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Effects.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 438790774
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Engine.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 6032277
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/EngineShaders.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4934198
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Game.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1116598711
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/GamePlatform.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 71492
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Gustav.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 13148091999
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/GustavX.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 185079254
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Gustav_NavCloud.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 95851455
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Gustav_Textures.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 888878399
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Gustav_Video.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1718353532
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Icons.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 26884871
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/BrazilianPortuguese/BrazilianPortuguese.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 14296705
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/Chinese/Chinese.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 14325589
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/Chinese/ChineseData.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 10159784
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/ChineseTraditional/ChineseTraditional.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 14349473
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/ChineseTraditional/ChineseTraditionalData.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 18610794
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/English.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 14445598
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/English_Animations.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 5125344433
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/French/French.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 16028909
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/German/German.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 14500380
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/Italian/Italian.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 15511144
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/Japanese/Japanese.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 15495697
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/Japanese/JapaneseData.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 5642152
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/Korean/Korean.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 14374203
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/Korean/KoreanData.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 6078632
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/LatinSpanish/LatinSpanish.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 14578919
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/Polish/Polish.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 15734061
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/Russian/Russian.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 17066866
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/Spanish/Spanish.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 14630175
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/Turkish/Turkish.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 13752067
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/Ukrainian/Ukrainian.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 16279009
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/Voice.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 15159583569
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/VoiceMeta.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 47948463
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Localization/language.lsx",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 573
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Materials.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 12451957
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Models.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 8920746612
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Shaders/Metal/Core.metallib",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 5474189
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Shaders/Metal/Materials.metallib",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 293800567
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Shared.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 159042022
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/SharedSoundBanks.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 43505432
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/SharedSounds.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 10859554561
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Textures.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4293034456
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Textures_1.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4294805696
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Textures_2.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4280176384
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/Textures_3.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 27356224
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4291452025
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_1.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4293918720
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_10.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4288675840
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_11.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4292870144
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_12.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4293918720
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_13.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4290772992
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_14.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4291821568
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_15.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4293918720
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_16.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4268752896
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_17.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4293918720
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_18.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4292870144
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_19.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 2886729728
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_2.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4286578688
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_3.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4282384384
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_4.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4282384384
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_5.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4281335808
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_6.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4287627264
+            },
+            {
+              "file_path": "<steam>/steamapps/common/Baldurs Gate 3/Baldur's Gate 3.app/Contents/Data/VirtualTextures_7.pak",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4190109696
+            }
+          ],
+          "source_item_row_hits": [],
+          "reference_hits": [],
+          "all_text_hits": []
+        }
+      }
+    }
+  ],
+  "notes": [
+    "This scan searches local candidate sources only and does not mutate source tables.",
+    "A source Item row must be ingested and table-reference integrity rerun before any replay promotion.",
+    "Default estimator config and authority handoff remain closed."
+  ]
+}

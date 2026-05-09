@@ -96,7 +96,7 @@ const CALIBRATION_PANEL_MODE_STORAGE_KEY = "ak_calibration_panel_mode_v1";
 const CALIBRATION_DRAFT_STORAGE_KEY = "ak_calibration_panel_draft_v1";
 const CALIBRATION_APPLIED_STORAGE_KEY = "ak_calibration_panel_applied_v1";
 const THEME_MODE_STORAGE_KEY = "ak_theme_mode_v1";
-const FULL_SOLVER_WORKER_VERSION = "20260428232030";
+const FULL_SOLVER_WORKER_VERSION = "20260508020400";
 const CALIBRATION_QUALITY_ORDER = ["w", "g", "b", "p", "o", "r"];
 const CALIBRATION_QUALITY_LABELS = {
     w: "白",
@@ -155,13 +155,6 @@ function parseLooseNumber(value) {
     const numeric = Number(normalized);
     return Number.isFinite(numeric) ? numeric : null;
 }
-
-const AVERAGE_CELL_FIELD_IDS = new Set([
-    "orange_avg_cells",
-    "purple_avg_cells",
-    "white_green_avg_cells",
-    "blue_avg_cells"
-]);
 
 function cloneValue(value) {
     return value === undefined ? undefined : JSON.parse(JSON.stringify(value));
@@ -565,8 +558,7 @@ if (typeof document !== "undefined" && typeof document.addEventListener === "fun
                         label: field.label || fieldId,
                         value,
                         numericValue,
-                        visible: visibleFieldIds.has(fieldId),
-                        isAverageCell: AVERAGE_CELL_FIELD_IDS.has(fieldId)
+                        visible: visibleFieldIds.has(fieldId)
                     };
                 })
                 .filter(Boolean);
@@ -633,22 +625,6 @@ if (typeof document !== "undefined" && typeof document.addEventListener === "fun
 
             const activeConstraints = getActiveSolverConstraintEntries();
             const hiddenConstraints = activeConstraints.filter((entry) => !entry.visible);
-            const zeroAverageConstraints = activeConstraints.filter((entry) => entry.isAverageCell && entry.numericValue === 0);
-
-            if (zeroAverageConstraints.length) {
-                appendEngineErrorLine(
-                    `检测到均格 0 约束：${formatConstraintEntries(zeroAverageConstraints)}。均格 0 不代表空值；0 件请用数量字段表达。`,
-                    "engine-error-line engine-error-diagnostic"
-                );
-                appendEngineErrorAction(
-                    "btn-clear-zero-average-constraints",
-                    "清空 0 均格",
-                    () => clearSolverConstraintFields(
-                        zeroAverageConstraints.map((entry) => entry.fieldId),
-                        "已清空 0 均格约束。"
-                    )
-                );
-            }
 
             if (hiddenConstraints.length) {
                 appendEngineErrorLine(
@@ -2376,6 +2352,58 @@ if (typeof document !== "undefined" && typeof document.addEventListener === "fun
             };
         }
 
+        function getDefaultFullSolveTimeout(resolvedConfig) {
+            return resolvedConfig && resolvedConfig.solver && resolvedConfig.solver.staging
+                ? resolvedConfig.solver.staging.full_timeout_ms_dense
+                : 4200;
+        }
+
+        function buildSolveStagePlanForContext(resolvedConfig, legacyState) {
+            const deriveAdaptiveSolverBudgetFromGlobal = getRuntimeGlobal("deriveAdaptiveSolverBudget");
+            const buildSolveStagePlanFromGlobal = getRuntimeGlobal("buildSolveStagePlan");
+            if (typeof deriveAdaptiveSolverBudgetFromGlobal !== "function" || typeof buildSolveStagePlanFromGlobal !== "function") {
+                return {
+                    refine: null,
+                    full: {
+                        solverOverride: null,
+                        timeoutMs: getDefaultFullSolveTimeout(resolvedConfig)
+                    }
+                };
+            }
+            const solverBudget = deriveAdaptiveSolverBudgetFromGlobal(resolvedConfig, legacyState);
+            return buildSolveStagePlanFromGlobal(
+                legacyState,
+                solverBudget,
+                resolvedConfig && resolvedConfig.solver ? resolvedConfig.solver.staging : null
+            );
+        }
+
+        function pickBackgroundSolveStage(stagePlan) {
+            if (stagePlan && stagePlan.full) {
+                return {
+                    phase: "full",
+                    solverOverride: stagePlan.full.solverOverride || null,
+                    timeoutMs: stagePlan.full.timeoutMs || 4200
+                };
+            }
+            if (stagePlan && stagePlan.refine) {
+                return {
+                    phase: "refine",
+                    solverOverride: stagePlan.refine.solverOverride || null,
+                    timeoutMs: stagePlan.refine.timeoutMs || 2200
+                };
+            }
+            return {
+                phase: "full",
+                solverOverride: null,
+                timeoutMs: 4200
+            };
+        }
+
+        function shouldAllowMainThreadSolveFallback(context) {
+            return !!(context && context.solverOverride);
+        }
+
         function finalizeSolveStage(context, result) {
             if (!context || context.runId !== activeExecutionId) return;
             pendingFullSolveContext = null;
@@ -2408,7 +2436,7 @@ if (typeof document !== "undefined" && typeof document.addEventListener === "fun
             if (typeof Worker === "undefined" || typeof createFullSolveRuntimeFromGlobal !== "function") return null;
             if (fullSolveRuntime) return fullSolveRuntime;
             fullSolveRuntime = createFullSolveRuntimeFromGlobal(
-                () => new Worker(`src/browser/full_solver_worker.js?v=${FULL_SOLVER_WORKER_VERSION}`),
+                () => new Worker(`src/browser/full_solver_worker.js?v=${FULL_SOLVER_WORKER_VERSION}`, { type: "module" }),
                 {
                     onResult: (payload) => {
                         const context = pendingFullSolveContext;
@@ -2419,7 +2447,7 @@ if (typeof document !== "undefined" && typeof document.addEventListener === "fun
                         const context = pendingFullSolveContext;
                         pendingFullSolveContext = null;
                         if (!context || context.runId !== activeExecutionId) return;
-                        if (shouldFallbackToMainThreadFullSolve(error)) {
+                        if (shouldFallbackToMainThreadFullSolve(error) && shouldAllowMainThreadSolveFallback(context)) {
                             scheduleMainThreadFullSolve(context);
                         } else {
                             finalizeSolveStage(context, buildFullSolveErrorResult(error));
@@ -2559,21 +2587,28 @@ if (typeof document !== "undefined" && typeof document.addEventListener === "fun
                 if (coarseResult.error) return;
             }
 
+            const stagePlan = buildSolveStagePlanForContext(resolvedConfig, legacyState);
+            const backgroundStage = pickBackgroundSolveStage(stagePlan);
             const fullContext = {
                 runId,
                 cacheKey,
                 resolvedConfig,
                 workspaceState: JSON.parse(JSON.stringify(workspaceState)),
                 legacyState,
-                phase: "full",
-                solverOverride: null,
-                timeoutMs: resolvedConfig && resolvedConfig.solver && resolvedConfig.solver.staging
-                    ? resolvedConfig.solver.staging.full_timeout_ms_dense
-                    : 4200,
+                phase: backgroundStage.phase,
+                solverOverride: backgroundStage.solverOverride,
+                timeoutMs: backgroundStage.timeoutMs,
                 hasVisibleCoarse: !!coarseResult
             };
 
             if (!dispatchSolveStage(fullContext)) {
+                if (!shouldAllowMainThreadSolveFallback(fullContext)) {
+                    finalizeSolveStage(
+                        fullContext,
+                        buildFullSolveErrorResult(new Error("完整求解器 Worker 不可用；已阻止主线程密集求解以避免页面卡死。"))
+                    );
+                    return;
+                }
                 scheduleMainThreadFullSolve(fullContext);
             }
         }

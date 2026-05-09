@@ -1,6 +1,6 @@
 {
   "schema_version": "ak_bidking_algorithm_weight_optimization_decision_tree_v1",
-  "generated_at": "2026-04-29T12:30:00.000+08:00",
+  "generated_at": "2026-05-07T18:14:58.719Z",
   "mode": "architecture_review",
   "change_class": "RESEARCH_ONLY",
   "recommended_change_class": "RESEARCH_ONLY",
@@ -577,12 +577,12 @@
     }
   ],
   "source_artifacts": {
-    "public_authority_source_search_report": "<repo>/docs/research/2026-04-29-bidking-public-authority-source-search-report.json",
-    "overlay_shadow_simulator_gate_report": "<repo>/docs/research/2026-04-29-bidking-overlay-shadow-simulator-gate-report.json",
-    "staging_overlay_reference_integrity_report": "<repo>/docs/research/2026-04-29-bidking-staging-overlay-reference-integrity-report.json",
-    "table_reference_integrity_report": "<repo>/docs/research/2026-04-29-bidking-table-reference-integrity-report.json",
-    "table_backed_shadow_simulator_report": "<repo>/docs/research/2026-04-29-bidking-table-backed-shadow-simulator-report.json",
-    "strategy_comparison_report": "<repo>/docs/research/2026-04-29-bidking-strategy-comparison-report.json"
+    "public_authority_source_search_report": "docs/research/2026-04-29-bidking-public-authority-source-search-report.json",
+    "overlay_shadow_simulator_gate_report": "docs/research/2026-04-29-bidking-overlay-shadow-simulator-gate-report.json",
+    "staging_overlay_reference_integrity_report": "docs/research/2026-04-29-bidking-staging-overlay-reference-integrity-report.json",
+    "table_reference_integrity_report": "docs/research/2026-04-29-bidking-table-reference-integrity-report.json",
+    "table_backed_shadow_simulator_report": "docs/research/2026-04-29-bidking-table-backed-shadow-simulator-report.json",
+    "strategy_comparison_report": "docs/research/2026-04-29-bidking-strategy-comparison-report.json"
   },
   "notes": [
     "The decision tree is intentionally fail-closed: blocked paths jump to their parent evidence gap instead of relaxing gates.",

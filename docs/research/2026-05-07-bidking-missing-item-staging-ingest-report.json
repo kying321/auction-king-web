@@ -1,0 +1,62 @@
+{
+  "schema_version": "ak_bidking_missing_item_staging_ingest_v1",
+  "generated_at": "2026-05-07T23:58:00.000+08:00",
+  "mode": "source_first_implementation",
+  "change_class": "SIM_ONLY",
+  "recommended_change_class": "SIM_ONLY",
+  "live_path_touched": false,
+  "inputs": {
+    "authority_intake_audit_report": "<repo>/docs/research/2026-05-07-bidking-missing-item-authority-intake-audit-report.json"
+  },
+  "summary": {
+    "authority_intake_audit_schema_version": "ak_bidking_missing_item_authority_intake_audit_v1",
+    "audited_valid_item_count": 0,
+    "audited_blocked_item_count": 1,
+    "staged_item_row_count": 0,
+    "staging_materialized": false,
+    "impacted_project_maps": [
+      "sunken_ship",
+      "villa"
+    ],
+    "source_tables_mutated": false,
+    "table_reference_integrity_clean_after_recovery": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "recommended_next_action": "complete_authority_intake_audit_before_staging_ingest",
+    "blockers": [
+      "missing_raw_item_txt_row",
+      "missing_authority_source_type",
+      "missing_source_path_or_capture_id",
+      "missing_client_build_or_version",
+      "authority_intake_incomplete",
+      "staging_item_ingest_not_allowed",
+      "no_valid_staging_item_rows"
+    ]
+  },
+  "gates": {
+    "staging_item_ingest_allowed": false,
+    "staging_materialized": false,
+    "source_tables_mutated": false,
+    "recovered_rows_ingested_to_source_tables": false,
+    "table_reference_integrity_clean_after_recovery": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "synthetic_item_as_authority_allowed": false,
+    "drop_tuple_exclusion_as_authority_allowed": false
+  },
+  "staging_artifact": {
+    "schema_version": "ak_bidking_staged_item_rows_v1",
+    "generated_at": "2026-05-07T23:58:00.000+08:00",
+    "source_authority_intake_audit_report": "<repo>/docs/research/2026-05-07-bidking-missing-item-authority-intake-audit-report.json",
+    "source_tables_mutated": false,
+    "rows": []
+  },
+  "notes": [
+    "This report materializes audited rows only as staging evidence.",
+    "The authority-intake audit schema must match the expected source-owned builder before staging rows can materialize.",
+    "It does not write to BidKing source tables or default estimator config.",
+    "Table-reference integrity must pass against a staging overlay before table-backed replay can advance."
+  ]
+}

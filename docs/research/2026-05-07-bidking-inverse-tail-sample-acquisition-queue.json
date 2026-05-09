@@ -1,0 +1,230 @@
+{
+  "schema_version": "ak_bidking_inverse_tail_sample_acquisition_queue_v1",
+  "generated_at": "2026-05-07T18:15:06.779Z",
+  "mode": "research_backtest",
+  "change_class": "RESEARCH_ONLY",
+  "recommended_change_class": "SIM_ONLY",
+  "live_path_touched": false,
+  "inputs": {
+    "inverse_tail_shadow_replay_gate_report": "docs/research/2026-05-07-bidking-inverse-tail-shadow-replay-gate-report.json"
+  },
+  "summary": {
+    "queue_status": "blocked_pending_authority_or_same_battle_samples",
+    "authority_task_required": true,
+    "map_sample_task_count": 2,
+    "total_task_count": 3,
+    "target_item_id": 1106013,
+    "impacted_project_maps": [
+      "sunken_ship",
+      "villa"
+    ],
+    "total_target_new_same_battle_samples": 5,
+    "same_battle_sample_deficit_by_map": {
+      "sunken_ship": 2,
+      "villa": 3
+    },
+    "diagnostic_shadow_analysis_allowed": true,
+    "inverse_tail_shadow_replay_allowed": false,
+    "promotion_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "recommended_next_action": "recover_1106013_authority_and_collect_impacted_map_same_battle_samples",
+    "blockers": [
+      "missing_authority_or_same_battle_samples",
+      "shadow_replay_not_default_promotion",
+      "authority_handoff_gate_closed"
+    ]
+  },
+  "gates": {
+    "diagnostic_shadow_analysis_allowed": true,
+    "inverse_tail_shadow_replay_allowed": false,
+    "promotion_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "source_item_row_recovered_for_project_scope": false,
+    "impacted_map_sample_count_ready": false
+  },
+  "items": [
+    {
+      "id": "inverse_tail_authority_gap_1106013",
+      "priority": "P0",
+      "task_type": "recover_missing_item_authority_row",
+      "target_item_id": 1106013,
+      "target_table": "Tables/Item.txt",
+      "target_raw_row_prefix": "1106013\t",
+      "recommended_action": "recover_raw_item_txt_row_with_provenance",
+      "blocking_gate": "source_item_row_recovered_for_project_scope",
+      "acceptance_criteria": [
+        "raw Item.txt row begins with 1106013",
+        "row has complete tab-delimited fields under current Table_Item schema",
+        "source package provenance is recorded",
+        "table reference integrity rerun shows no project-relevant missing terminal item ids"
+      ],
+      "forbidden_actions": [
+        "infer_1106013_from_neighbor_items",
+        "synthesize_1106013_as_authority",
+        "drop_tuple_to_unblock_map"
+      ]
+    },
+    {
+      "id": "inverse_tail_same_battle_gap_sunken_ship",
+      "priority": "P0",
+      "task_type": "capture_fresh_same_battle_samples",
+      "map_id": "sunken_ship",
+      "target_new_same_battle_samples": 2,
+      "current_accepted_same_battle_samples": 1,
+      "min_same_battle_samples_per_impacted_map": 3,
+      "recommended_action": "capture_and_review_fresh_same_battle_count_fit_samples",
+      "output_target": "count_fit_same_battle_sample",
+      "required_fields": [
+        "map_id",
+        "event_timestamp",
+        "observed_state",
+        "actual_counts.w",
+        "actual_counts.g",
+        "actual_counts.b",
+        "actual_counts.p",
+        "actual_counts.o",
+        "actual_counts.r",
+        "actual_counts.total_items",
+        "actual_counts_source",
+        "reviewer_notes"
+      ],
+      "acceptance_criteria": [
+        "same_battle_observed_state_and_actual_counts",
+        "all_six_quality_counts_present",
+        "actual_counts_total_matches_total_items",
+        "manual_or_authority_ready_count_source",
+        "explicit_event_timestamp"
+      ],
+      "blocked_until_review_import_accepts_samples": true
+    },
+    {
+      "id": "inverse_tail_same_battle_gap_villa",
+      "priority": "P0",
+      "task_type": "capture_fresh_same_battle_samples",
+      "map_id": "villa",
+      "target_new_same_battle_samples": 3,
+      "current_accepted_same_battle_samples": 0,
+      "min_same_battle_samples_per_impacted_map": 3,
+      "recommended_action": "capture_and_review_fresh_same_battle_count_fit_samples",
+      "output_target": "count_fit_same_battle_sample",
+      "required_fields": [
+        "map_id",
+        "event_timestamp",
+        "observed_state",
+        "actual_counts.w",
+        "actual_counts.g",
+        "actual_counts.b",
+        "actual_counts.p",
+        "actual_counts.o",
+        "actual_counts.r",
+        "actual_counts.total_items",
+        "actual_counts_source",
+        "reviewer_notes"
+      ],
+      "acceptance_criteria": [
+        "same_battle_observed_state_and_actual_counts",
+        "all_six_quality_counts_present",
+        "actual_counts_total_matches_total_items",
+        "manual_or_authority_ready_count_source",
+        "explicit_event_timestamp"
+      ],
+      "blocked_until_review_import_accepts_samples": true
+    }
+  ],
+  "maps": {
+    "sunken_ship": {
+      "id": "inverse_tail_same_battle_gap_sunken_ship",
+      "priority": "P0",
+      "task_type": "capture_fresh_same_battle_samples",
+      "map_id": "sunken_ship",
+      "target_new_same_battle_samples": 2,
+      "current_accepted_same_battle_samples": 1,
+      "min_same_battle_samples_per_impacted_map": 3,
+      "recommended_action": "capture_and_review_fresh_same_battle_count_fit_samples",
+      "output_target": "count_fit_same_battle_sample",
+      "required_fields": [
+        "map_id",
+        "event_timestamp",
+        "observed_state",
+        "actual_counts.w",
+        "actual_counts.g",
+        "actual_counts.b",
+        "actual_counts.p",
+        "actual_counts.o",
+        "actual_counts.r",
+        "actual_counts.total_items",
+        "actual_counts_source",
+        "reviewer_notes"
+      ],
+      "acceptance_criteria": [
+        "same_battle_observed_state_and_actual_counts",
+        "all_six_quality_counts_present",
+        "actual_counts_total_matches_total_items",
+        "manual_or_authority_ready_count_source",
+        "explicit_event_timestamp"
+      ],
+      "blocked_until_review_import_accepts_samples": true
+    },
+    "villa": {
+      "id": "inverse_tail_same_battle_gap_villa",
+      "priority": "P0",
+      "task_type": "capture_fresh_same_battle_samples",
+      "map_id": "villa",
+      "target_new_same_battle_samples": 3,
+      "current_accepted_same_battle_samples": 0,
+      "min_same_battle_samples_per_impacted_map": 3,
+      "recommended_action": "capture_and_review_fresh_same_battle_count_fit_samples",
+      "output_target": "count_fit_same_battle_sample",
+      "required_fields": [
+        "map_id",
+        "event_timestamp",
+        "observed_state",
+        "actual_counts.w",
+        "actual_counts.g",
+        "actual_counts.b",
+        "actual_counts.p",
+        "actual_counts.o",
+        "actual_counts.r",
+        "actual_counts.total_items",
+        "actual_counts_source",
+        "reviewer_notes"
+      ],
+      "acceptance_criteria": [
+        "same_battle_observed_state_and_actual_counts",
+        "all_six_quality_counts_present",
+        "actual_counts_total_matches_total_items",
+        "manual_or_authority_ready_count_source",
+        "explicit_event_timestamp"
+      ],
+      "blocked_until_review_import_accepts_samples": true
+    }
+  },
+  "authority_task": {
+    "id": "inverse_tail_authority_gap_1106013",
+    "priority": "P0",
+    "task_type": "recover_missing_item_authority_row",
+    "target_item_id": 1106013,
+    "target_table": "Tables/Item.txt",
+    "target_raw_row_prefix": "1106013\t",
+    "recommended_action": "recover_raw_item_txt_row_with_provenance",
+    "blocking_gate": "source_item_row_recovered_for_project_scope",
+    "acceptance_criteria": [
+      "raw Item.txt row begins with 1106013",
+      "row has complete tab-delimited fields under current Table_Item schema",
+      "source package provenance is recorded",
+      "table reference integrity rerun shows no project-relevant missing terminal item ids"
+    ],
+    "forbidden_actions": [
+      "infer_1106013_from_neighbor_items",
+      "synthesize_1106013_as_authority",
+      "drop_tuple_to_unblock_map"
+    ]
+  },
+  "notes": [
+    "This queue is derived from the inverse-tail shadow replay gate.",
+    "It creates acquisition tasks only; it does not mutate runtime config or source tables.",
+    "Accepted same-battle samples must re-enter through the existing review/import pipeline."
+  ]
+}

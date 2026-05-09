@@ -1,6 +1,7 @@
 const bundledDefaultConfig = require("../core/default_config_bundle.js");
 
 function roundTo(value, digits = 6) {
+    if (value === null || value === undefined || value === "") return null;
     const numeric = Number(value);
     if (!Number.isFinite(numeric)) return null;
     const factor = 10 ** digits;
@@ -44,9 +45,11 @@ function buildDefaultWeightImplementationReport({
             && purpleFitReport.recommendation
             && purpleFitReport.recommendation.selected_default_multiplier
     );
-    const hasSelectedMultiplier = Number.isFinite(Number(selectedMultiplier));
+    const hasSelectedMultiplier = typeof selectedMultiplier === "number" && Number.isFinite(selectedMultiplier);
     const baselineCandidate = findCandidateByMultiplier(purpleFitReport, 1);
-    const selectedCandidate = findCandidateByMultiplier(purpleFitReport, selectedMultiplier);
+    const selectedCandidate = hasSelectedMultiplier
+        ? findCandidateByMultiplier(purpleFitReport, selectedMultiplier)
+        : null;
     const candidateMaps = selectedCandidate && selectedCandidate.candidate_alpha_counts_by_map
         ? selectedCandidate.candidate_alpha_counts_by_map
         : {};

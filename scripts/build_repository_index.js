@@ -133,11 +133,11 @@ function walkFiles(dir, baseDir = dir) {
     if (!fs.existsSync(dir)) return [];
     const results = [];
     for (const entry of fs.readdirSync(dir).sort()) {
+        if (IGNORED_DIRS.has(entry)) continue;
         const fullPath = path.join(dir, entry);
         const relative = path.relative(baseDir, fullPath);
         const stat = fs.statSync(fullPath);
         if (stat.isDirectory()) {
-            if (IGNORED_DIRS.has(entry)) continue;
             results.push(...walkFiles(fullPath, baseDir));
         } else if (stat.isFile()) {
             results.push(relative.split(path.sep).join("/"));

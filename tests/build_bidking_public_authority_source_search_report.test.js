@@ -27,7 +27,7 @@ test("resolveArgs accepts output path and generated time", () => {
 
     assert.equal(result.outputPath, path.resolve("search-report.json"));
     assert.equal(result.generatedAt, "2026-04-29T09:05:00.000+08:00");
-    assert.equal(DEFAULT_OUTPUT_PATH.endsWith("2026-04-29-bidking-public-authority-source-search-report.json"), true);
+    assert.equal(DEFAULT_OUTPUT_PATH.endsWith("2026-05-07-bidking-public-authority-source-search-refresh-report.json"), true);
 });
 
 test("public authority source search report keeps current unresolved item fail-closed", () => {
@@ -45,13 +45,47 @@ test("public authority source search report keeps current unresolved item fail-c
     assert.equal(report.summary.steamdb_login_manifest_history_available, true);
     assert.equal(report.summary.visible_manifest_count, 25);
     assert.equal(report.summary.visible_manifest_item_txt_change_count, 0);
+    assert.equal(report.summary.current_full_client_depot_table_files_visible, true);
+    assert.equal(report.summary.current_full_client_depot_id, 4128581);
+    assert.equal(report.summary.current_full_client_item_txt_size, "487.41 KiB");
+    assert.equal(report.summary.current_full_client_drop_txt_size, "283.09 KiB");
+    assert.equal(report.summary.steam_current_full_client_path_viable, true);
     assert.equal(report.summary.steam_older_manifest_path_viable, false);
     assert.equal(report.gates.authority_intake_allowed, false);
     assert.equal(report.gates.staging_item_ingest_allowed, false);
     assert.equal(report.gates.default_config_update_allowed, false);
     assert.match(report.summary.blockers.join(","), /no_direct_public_item_row_found/);
     assert.match(report.summary.blockers.join(","), /steam_visible_manifest_history_has_no_item_txt_change/);
-    assert.match(report.summary.recommended_next_action, /developer_or_server_side_table_export/);
+    assert.match(report.summary.recommended_next_action, /selectively_download_current_full_client_tables/);
+});
+
+test("report promotes current full client Steam depot as the next non-authority source candidate", () => {
+    const { buildBidKingPublicAuthoritySourceSearchReport } = loadBuilder();
+    const report = buildBidKingPublicAuthoritySourceSearchReport({
+        generatedAt: "2026-05-07T23:00:00.000+08:00"
+    });
+    const currentFullClient = report.candidate_paths.find((entry) => (
+        entry.id === "steam_current_full_client_selective_tables_download"
+    ));
+
+    assert.ok(currentFullClient);
+    assert.equal(currentFullClient.status, "source_candidate_requires_table_download_and_scan");
+    assert.equal(currentFullClient.priority_after_history_scan, "high");
+    assert.equal(currentFullClient.expected_output_can_enter_intake_if_row_found, true);
+    assert.equal(currentFullClient.requires_steam_login_or_ownership, true);
+    assert.deepEqual(currentFullClient.app_depot, {
+        app_id: 4128580,
+        depot_id: 4128581,
+        branch: "public",
+        build_id: "23055226",
+        manifest_id: "7599723101430486725"
+    });
+    assert.deepEqual(currentFullClient.filelist, [
+        "BidKing/BidKing_Data/StreamingAssets/Tables/Item.txt",
+        "BidKing/BidKing_Data/StreamingAssets/Tables/Drop.txt"
+    ]);
+    assert.match(currentFullClient.acceptance_criteria.join(","), /raw Item.txt row begins with 1106013/);
+    assert.equal(report.gates.authority_intake_allowed, false);
 });
 
 test("report records SteamDB manifest history and demotes old-depot download after no Item.txt changes", () => {

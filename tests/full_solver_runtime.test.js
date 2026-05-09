@@ -3,6 +3,8 @@ const assert = require("node:assert/strict");
 const {
     createFullSolveRuntime
 } = require("../src/browser/full_solver_runtime.js");
+const fs = require("node:fs");
+const path = require("node:path");
 
 function createMockWorker() {
     return {
@@ -99,4 +101,14 @@ test("createFullSolveRuntime terminates worker when a stage exceeds timeout", as
     assert.equal(worker.terminated, true);
     assert.equal(receivedErrors.length, 1);
     assert.match(receivedErrors[0], /超时/);
+});
+
+test("full solver worker uses module imports to avoid classic worker global redeclarations", () => {
+    const workerJs = fs.readFileSync(path.join(__dirname, "..", "src", "browser", "full_solver_worker.js"), "utf8");
+    const estimatorJs = fs.readFileSync(path.join(__dirname, "..", "src", "core", "estimator.js"), "utf8");
+
+    assert.doesNotMatch(workerJs, /importScripts\(/);
+    assert.match(workerJs, /import\s+["']\.\.\/core\/average_observation_runtime\.js\?v=/);
+    assert.match(workerJs, /import\s+["']\.\.\/core\/estimator\.js\?v=/);
+    assert.match(estimatorJs, /globalThis\.AuctionKingEstimator = AuctionKingEstimator/);
 });

@@ -1,0 +1,267 @@
+{
+  "schema_version": "ak_public_unpack_weight_curve_validation_v1",
+  "generated_at": "2026-05-07T00:00:00.000+08:00",
+  "mode": "research_backtest",
+  "change_class": "RESEARCH_ONLY",
+  "live_path_touched": false,
+  "default_config_update_allowed": false,
+  "authority_adoption_allowed": false,
+  "summary": {
+    "claim_under_test": "价值曲线的权重反比叠加正态分布右侧曲线",
+    "verdict": "mostly_supported_with_refinement",
+    "refined_model": "同品质物品权重接近 value^-beta；beta 在主要红色掉落组约 1.18-1.45，叠加 jackpot/right-tail 特殊抑制。红色价值分布更像对数价格重尾/混合模型，而不是原始价格正态分布。",
+    "public_evidence_strength": "medium",
+    "local_unpack_evidence_strength": "high_for_shadow_modeling",
+    "promotion_blocked_by": [
+      "missing_authoritative_item_row_1106013",
+      "same_battle_replay_samples_missing",
+      "manual_mechanics_review_not_promoted",
+      "authority_handoff_gate_closed"
+    ]
+  },
+  "public_sources": {
+    "github_search": {
+      "query": "BidKing in:name,description,readme",
+      "total_count": 85,
+      "top_relevant_repositories": [
+        {
+          "repo": "sarkozyfan/bidking-bot",
+          "url": "https://github.com/sarkozyfan/bidking-bot",
+          "observed_role": "OCR/automation assistant with configurable pricing and manual advisor"
+        },
+        {
+          "repo": "snkrsubscriberdqh/BidKingCalculator",
+          "url": "https://github.com/snkrsubscriberdqh/BidKingCalculator",
+          "observed_role": "Monte Carlo calculator with explicit grade prior and inverse-price item sampling"
+        },
+        {
+          "repo": "Jrinky908/bidking",
+          "url": "https://github.com/Jrinky908/bidking",
+          "observed_role": "Monte Carlo dictionary and local extracted Item/Drop tables"
+        },
+        {
+          "repo": "MAE5blog/bidking-analyzer-rs",
+          "url": "https://github.com/MAE5blog/bidking-analyzer-rs",
+          "observed_role": "Rust analyzer using static drop weights, map/nest weighted prices, and jackpot handling"
+        },
+        {
+          "repo": "SeasonCake/bidking-lab",
+          "url": "https://github.com/SeasonCake/bidking-lab",
+          "observed_role": "Research project for local table extraction and later simulation"
+        }
+      ]
+    },
+    "sarkozyfan_bidking_bot": {
+      "raw_advisor": "https://raw.githubusercontent.com/sarkozyfan/bidking-bot/main/manual_bidking_advisor.py",
+      "raw_price_config": "https://raw.githubusercontent.com/sarkozyfan/bidking-bot/main/bidking_fresh_bot/price_config.json",
+      "grid_prices_w": {
+        "purple": 0.28,
+        "gold": 1.13,
+        "red": 4.77
+      },
+      "global_exact_item_w": {
+        "purpleItem": 0.891,
+        "orangeItem": 4.661,
+        "redItem": 22.972
+      },
+      "category_count": 10,
+      "mean_ratios": {
+        "orangeItem_over_purpleItem": 5.3474,
+        "redItem_over_orangeItem": 5.0716,
+        "redGridMid_over_orangeGridMid": 5.5774,
+        "redGridMid_over_purpleGrid": 20.8253
+      },
+      "interpretation": "Corroborates separate per-item/per-grid value bands and red ranges, but does not expose authoritative drop weights."
+    },
+    "snkr_bidking_calculator": {
+      "repo": "https://github.com/snkrsubscriberdqh/BidKingCalculator",
+      "model_evidence": {
+        "grade_prior": "32:32:16:8:2:1",
+        "same_grade_sampling": "inverse_price",
+        "sampling_mode": "with_replacement",
+        "red_orange_controls": [
+          "extreme high-price filter",
+          "max high-price red/orange count",
+          "red/orange count dependency decay",
+          "max red/orange count"
+        ]
+      },
+      "source_files_checked": [
+        "readme.md",
+        "src/simulator.py",
+        "data/items_data.csv"
+      ],
+      "interpretation": "Strong public corroboration for inverse-price item rarity and explicit red/orange tail suppression as a practical modeling need."
+    },
+    "mae_bidking_analyzer_rs": {
+      "repo": "https://github.com/MAE5blog/bidking-analyzer-rs",
+      "static_data_checked": "data/auctionanalyzer-4.12.3/static_data.json",
+      "quality_p50_default": {
+        "3": 2500,
+        "4": 9045.5,
+        "5": 40000,
+        "6": 160000
+      },
+      "drop_weights_sample": {
+        "101": [
+          300,
+          320,
+          300,
+          80,
+          20,
+          2
+        ],
+        "103": [
+          130,
+          250,
+          300,
+          400,
+          100,
+          35
+        ],
+        "105": [
+          80,
+          200,
+          240,
+          240,
+          120,
+          70
+        ]
+      },
+      "jackpot_threshold": 1000000,
+      "interpretation": "Corroborates map/tier-specific quality weights and jackpot split; this weakens a single global value-inverse curve and supports map-specific overlays."
+    }
+  },
+  "local_unpack_evidence": {
+    "table_root": "<local>/BidKing_zip_extract_min/Tables",
+    "tables_checked": {
+      "Item.txt": {
+        "line_count": 1127,
+        "row_1106013": "missing"
+      },
+      "Drop.txt": {
+        "line_count": 593,
+        "row_1066_references_1106013": true,
+        "row_1066_weight_for_1106013": 3333
+      },
+      "BidMap.txt": {
+        "line_count": 103,
+        "project_root_bidmaps": {
+          "shipping": 2301,
+          "villa": 2401,
+          "sunken_ship": 2501
+        }
+      },
+      "RankMap.txt": {
+        "line_count": 61,
+        "project_value_ranges": {
+          "shipping_2301": [
+            2001,
+            100000
+          ],
+          "villa_2401": [
+            2001,
+            200000
+          ],
+          "sunken_ship_2501": [
+            2001,
+            300000
+          ]
+        }
+      }
+    },
+    "terminal_drop_weight_regression": {
+      "method": "OLS on log(weight) ~ log(base_value); reported beta = -slope",
+      "quality5": {
+        "group_count": 11,
+        "beta_mean": 0.97,
+        "beta_min": 0.108,
+        "beta_max": 1.451,
+        "corr_mean": -0.796
+      },
+      "quality6": {
+        "group_count": 30,
+        "beta_mean": 1.058,
+        "beta_min": 0,
+        "beta_max": 1.458,
+        "corr_mean": -0.796
+      },
+      "project_relevant_quality6_groups": [
+        {
+          "group_id": 1016,
+          "name": "家具物品品质6",
+          "n": 10,
+          "beta": 1.1833,
+          "corr": -0.9481
+        },
+        {
+          "group_id": 1046,
+          "name": "兵装军火品质6",
+          "n": 10,
+          "beta": 1.453,
+          "corr": -0.958
+        },
+        {
+          "group_id": 1056,
+          "name": "珠宝矿藏品质6",
+          "n": 19,
+          "beta": 1.1803,
+          "corr": -0.9574
+        },
+        {
+          "group_id": 1066,
+          "name": "文物古董品质6",
+          "n": 34,
+          "missing_item_ids": [
+            1106013
+          ],
+          "beta": 1.2393,
+          "corr": -0.9545
+        },
+        {
+          "group_id": 1096,
+          "name": "食饮珍馐品质6",
+          "n": 13,
+          "beta": 1.4111,
+          "corr": -0.9638
+        },
+        {
+          "group_id": 1106,
+          "name": "书画古籍品质6",
+          "n": 17,
+          "beta": 1.3258,
+          "corr": -0.9751
+        }
+      ],
+      "interpretation": "Major red terminal groups strongly support inverse value weighting. The extreme 19,371,213 item has weight 5 in several groups, showing additional jackpot suppression beyond a simple inverse curve."
+    }
+  },
+  "current_project_alignment": {
+    "manual_catalog_red": {
+      "n": 92,
+      "mean": 822956.57,
+      "median": 244830,
+      "mean_over_median": 3.3613,
+      "cv": 3.0477,
+      "skew": 5.8806,
+      "tail_ge_200000_count": 48
+    },
+    "runtime_tail_model": {
+      "tail_weight_basis": "log_price_normal_tail",
+      "threshold": 200000,
+      "sunken_ship_battle_probability": 0.14,
+      "villa_shipping_battle_probability": 0.05
+    },
+    "interpretation": "Existing runtime model is directionally correct: use catalog-tail-aware common red mean plus log-price-normal-like tail uplift, not raw mean as ordinary red value."
+  },
+  "decision": {
+    "public_or_unpack_evidence_can_update_default_config": false,
+    "safe_next_step": "Build or refresh a shadow-only candidate that separates same-grade inverse item weights, map/tier quality priors, and red jackpot tail, then compare only against accepted same-battle samples.",
+    "do_not_do": [
+      "do_not_synthesize_1106013_as_authority",
+      "do_not_drop_tuple_1066_1106013_to_unblock_villa_or_sunken_ship",
+      "do_not_replace_current_alpha_counts_with_public_repo_priors",
+      "do_not_treat_public_calculators_as authoritative game data"
+    ]
+  }
+}

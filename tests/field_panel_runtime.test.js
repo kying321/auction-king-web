@@ -77,7 +77,7 @@ test("decimal field input preserves the raw text so two-decimal solver semantics
     assert.deepEqual(values, ["2.90"]);
 });
 
-test("average cell input treats zero as blank and clears the visible value", () => {
+test("average cell input preserves zero as an explicit solver constraint", () => {
     const documentRef = new FakeDocument();
     const values = [];
 
@@ -89,13 +89,13 @@ test("average cell input treats zero as blank and clears the visible value", () 
     );
 
     const input = documentRef.elements.get("field-input-blue_avg_cells");
-    assert.equal(input.placeholder, "留空则忽略");
+    assert.equal(input.placeholder, "0.00");
 
     input.value = "0.00";
     input.dispatch("input");
 
-    assert.deepEqual(values, [null]);
-    assert.equal(input.value, "");
+    assert.deepEqual(values, ["0.00"]);
+    assert.equal(input.value, "0.00");
 });
 
 test("average cell rows hide the public data toggle outside organize mode", () => {

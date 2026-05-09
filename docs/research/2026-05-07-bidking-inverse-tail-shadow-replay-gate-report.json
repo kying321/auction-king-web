@@ -1,0 +1,103 @@
+{
+  "schema_version": "ak_bidking_inverse_tail_shadow_replay_gate_v1",
+  "generated_at": "2026-05-09T12:00:00.000+08:00",
+  "mode": "research_backtest",
+  "change_class": "SIM_ONLY",
+  "recommended_change_class": "SIM_ONLY",
+  "live_path_touched": false,
+  "inputs": {
+    "inverse_tail_shadow_candidate_report": "docs/research/2026-05-07-bidking-inverse-tail-shadow-candidate-report.json",
+    "missing_item_resolution_candidate_report": "docs/research/2026-05-07-bidking-1106013-resolution-candidate-refresh.json",
+    "missing_item_source_recovery_scan_report": "docs/research/2026-05-07-bidking-1106013-public-local-source-recovery-scan.json",
+    "review_imports": [
+      "docs/research/2026-04-26-sunken-ship-codex-visual-manual-confirmation-import.json",
+      "docs/research/2026-04-27-sunken-ship-p0-manual-count-confirmation-import.json",
+      "docs/research/2026-04-27-sunken-ship-p1-manual-count-confirmation-import.json"
+    ]
+  },
+  "summary": {
+    "inverse_tail_candidate_schema_valid": true,
+    "inverse_tail_candidate_verdict": "inverse_value_supported_shadow_only",
+    "diagnostic_shadow_analysis_allowed": true,
+    "inverse_tail_shadow_replay_allowed": false,
+    "table_backed_shadow_replay_allowed": false,
+    "promotion_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "target_item_id": 1106013,
+    "project_relevant_missing_item_ids": [
+      1106013
+    ],
+    "missing_1106013_source_recovered": false,
+    "impacted_project_maps": [
+      "sunken_ship",
+      "villa"
+    ],
+    "min_same_battle_samples_per_impacted_map": 3,
+    "accepted_same_battle_sample_count": 1,
+    "accepted_same_battle_sample_count_by_map": {
+      "sunken_ship": 1
+    },
+    "same_battle_sample_deficit_by_impacted_map": {
+      "sunken_ship": 2,
+      "villa": 3
+    },
+    "blocked_review_entry_count": 3,
+    "target_missing_item_diagnostic_count": 1,
+    "red_quality_beta_median": 0.932,
+    "recommended_next_action": "recover_1106013_authority_and_collect_impacted_map_same_battle_samples",
+    "blockers": [
+      "missing_authoritative_item_row_1106013",
+      "impacted_map_sample_count_below_minimum",
+      "sunken_ship_same_battle_samples_missing",
+      "villa_same_battle_samples_missing",
+      "accepted_same_battle_sample_count_below_minimum",
+      "shadow_replay_not_default_promotion",
+      "authority_handoff_gate_closed",
+      "default_config_update_gate_closed"
+    ]
+  },
+  "gates": {
+    "diagnostic_shadow_analysis_allowed": true,
+    "inverse_tail_shadow_replay_allowed": false,
+    "table_backed_shadow_replay_allowed": false,
+    "promotion_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "source_item_row_recovered_for_project_scope": false,
+    "impacted_map_sample_count_ready": false
+  },
+  "review_import_summaries": [
+    {
+      "index": 0,
+      "schema_version": "ak_count_fit_sample_review_import_v1",
+      "export_kind": "count_fit_same_battle_samples",
+      "accepted_sample_count": 1,
+      "blocked_entry_count": 0,
+      "map_counts": {
+        "sunken_ship": 1
+      }
+    },
+    {
+      "index": 1,
+      "schema_version": "ak_count_fit_sample_review_import_v1",
+      "export_kind": "count_fit_same_battle_samples",
+      "accepted_sample_count": 0,
+      "blocked_entry_count": 2,
+      "map_counts": {}
+    },
+    {
+      "index": 2,
+      "schema_version": "ak_count_fit_sample_review_import_v1",
+      "export_kind": "count_fit_same_battle_samples",
+      "accepted_sample_count": 0,
+      "blocked_entry_count": 1,
+      "map_counts": {}
+    }
+  ],
+  "notes": [
+    "This gate separates inverse-tail curve evidence from replay/adoption readiness.",
+    "Even when shadow replay is allowed, promotion_allowed remains false.",
+    "Default config updates require a later source-owned authority handoff and non-regression review."
+  ]
+}

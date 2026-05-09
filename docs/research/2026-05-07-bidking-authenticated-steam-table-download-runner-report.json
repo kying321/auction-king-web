@@ -1,0 +1,74 @@
+{
+  "schema_version": "ak_bidking_authenticated_steam_table_download_runner_v1",
+  "generated_at": "2026-05-09T12:00:00.000+08:00",
+  "mode": "research_backtest",
+  "change_class": "RESEARCH_ONLY",
+  "recommended_change_class": "SIM_ONLY",
+  "live_path_touched": false,
+  "summary": {
+    "target_item_id": 1106013,
+    "current_full_client_depot_id": 4128581,
+    "execute_requested": true,
+    "username_provided": true,
+    "auth_mode": "blocked_noninteractive_password_prompt",
+    "safe_execute_auth_mode": false,
+    "download_blocked_reason": "execute_requires_qr_or_remember_password_to_avoid_noninteractive_password_prompt",
+    "download_attempted": false,
+    "downloader_exit_code": null,
+    "downloader_signal": null,
+    "downloader_error_code": null,
+    "downloader_timed_out": false,
+    "table_files_downloaded": false,
+    "item_txt_file_count": 0,
+    "drop_txt_file_count": 0,
+    "source_item_row_recovered": false,
+    "authority_intake_allowed": false,
+    "staging_item_ingest_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "recommended_next_action": "rerun_with_qr_or_remember_password_or_developer_export"
+  },
+  "gates": {
+    "authority_intake_allowed": false,
+    "staging_item_ingest_allowed": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false
+  },
+  "plan": {
+    "filelist_path": "/tmp/ak_bidking_4128581_tables_filelist.txt",
+    "filelist_lines": [
+      "regex:.*BidKing_Data/StreamingAssets/Tables/(Item|Drop)\\.txt$",
+      "regex:.*Tables/(Item|Drop)\\.txt$"
+    ],
+    "download_dir": "/tmp/ak_bidking_depot_4128581_tables_owned",
+    "depotdownloader_path": "/tmp/ak_depotdownloader_3_4_0_arm64/DepotDownloader",
+    "depotdownloader_args_redacted": [
+      "-app",
+      "4128580",
+      "-depot",
+      "4128581",
+      "-manifest",
+      "7599723101430486725",
+      "-username",
+      "<STEAM_USERNAME>",
+      "-filelist",
+      "/tmp/ak_bidking_4128581_tables_filelist.txt",
+      "-dir",
+      "/tmp/ak_bidking_depot_4128581_tables_owned",
+      "-validate"
+    ],
+    "depotdownloader_command_redacted": "'/tmp/ak_depotdownloader_3_4_0_arm64/DepotDownloader' '-app' '4128580' '-depot' '4128581' '-manifest' '7599723101430486725' '-username' '<STEAM_USERNAME>' '-filelist' '/tmp/ak_bidking_4128581_tables_filelist.txt' '-dir' '/tmp/ak_bidking_depot_4128581_tables_owned' '-validate'",
+    "credential_policy": "Username may be supplied; password, 2FA code, refresh token, and access token must not be written to repo artifacts.",
+    "supported_execute_auth_modes": [
+      "remember-password",
+      "qr"
+    ]
+  },
+  "downloader": null,
+  "table_scan": {
+    "item_files": [],
+    "drop_files": [],
+    "source_item_row": null
+  }
+}

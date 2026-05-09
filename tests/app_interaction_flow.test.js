@@ -7,6 +7,7 @@ const configModalRuntime = require("../src/browser/config_modal_state.js");
 const configEditorControlsRuntime = require("../src/browser/config_editor_controls.js");
 const workspaceRuntime = require("../src/browser/workspace_runtime.js");
 const sampleDatasetRuntime = require("../src/browser/sample_dataset.js");
+const estimatorRuntime = require("../src/core/estimator.js");
 
 class FakeClassList {
     constructor() {
@@ -516,6 +517,7 @@ function installAppHarness(options = {}) {
         },
         Worker: function Worker() {},
         ...runtime,
+        deriveAdaptiveSolverBudget: estimatorRuntime.deriveAdaptiveSolverBudget,
         ...configModalRuntime,
         buildConfigEditorSections: configEditorControlsRuntime.buildConfigEditorSections,
         applyTemplateFieldMutation: configEditorControlsRuntime.applyTemplateFieldMutation,
@@ -712,7 +714,7 @@ test("app restores the last workspace state and renders Ahmed default fields in 
     }
 });
 
-test("app clears persisted zero average cells before solving restored workspace state", () => {
+test("app preserves persisted zero average cells before solving restored workspace state", () => {
     const harness = installAppHarness();
     const previousGlobals = {};
 
@@ -740,13 +742,13 @@ test("app clears persisted zero average cells before solving restored workspace 
         require("../src/browser/app.js");
         harness.document.fireDOMContentLoaded();
 
-        assert.equal(harness.document.getElementById("field-input-purple_avg_cells").value, "");
-        assert.equal(harness.document.getElementById("field-input-white_green_avg_cells").value, "");
-        assert.equal(harness.document.getElementById("field-input-blue_avg_cells").value, "");
+        assert.equal(harness.document.getElementById("field-input-purple_avg_cells").value, "0.00");
+        assert.equal(harness.document.getElementById("field-input-white_green_avg_cells").value, "0.00");
+        assert.equal(harness.document.getElementById("field-input-blue_avg_cells").value, "0.00");
         assert.equal(harness.runtimeLog.dispatches.length, 1);
-        assert.equal(harness.runtimeLog.dispatches[0].stateVars.r3_purple_avg, null);
-        assert.equal(harness.runtimeLog.dispatches[0].stateVars.r3_white_green_avg, null);
-        assert.equal(harness.runtimeLog.dispatches[0].stateVars.r4_blue_avg, null);
+        assert.equal(harness.runtimeLog.dispatches[0].stateVars.r3_purple_avg, 0);
+        assert.equal(harness.runtimeLog.dispatches[0].stateVars.r3_white_green_avg, 0);
+        assert.equal(harness.runtimeLog.dispatches[0].stateVars.r4_blue_avg, 0);
         assert.equal(harness.runtimeLog.dispatches[0].stateVars.r1_blue_count, 9);
     } finally {
         harness.restore(previousGlobals);
@@ -2526,6 +2528,121 @@ test("clear button resets compute state so the next blur can recompute immediate
         totalItems.dispatch("blur");
         assert.equal(computeStatusLabel.innerText, "计算中...");
         assert.equal(harness.runtimeLog.dispatches.length, 2);
+    } finally {
+        harness.restore(previousGlobals);
+    }
+});
+
+test("total items plus total storage cells dispatches a bounded sparse refine instead of dense full solve", () => {
+    const harness = installAppHarness();
+    const previousGlobals = {};
+
+    Object.keys(harness.globals).forEach((key) => {
+        previousGlobals[key] = global[key];
+        global[key] = harness.globals[key];
+    });
+
+    try {
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
+        harness.document.fireDOMContentLoaded();
+
+        const totalItems = harness.document.getElementById("field-input-total_items");
+        const totalStorage = harness.document.getElementById("field-input-total_storage_cells");
+
+        totalItems.value = "42";
+        totalItems.dispatch("input");
+        totalStorage.value = "58";
+        totalStorage.dispatch("input");
+        totalStorage.dispatch("blur");
+
+        assert.equal(harness.runtimeLog.dispatches.length, 1);
+        const payload = harness.runtimeLog.dispatches[0];
+        assert.ok(payload.solverOverride);
+        assert.equal(payload.solverOverride.max_states < harness.globals.AUCTION_KING_DEFAULT_CONFIG.solver.max_states, true);
+        assert.equal(payload.timeoutMs, 1400);
+    } finally {
+        harness.restore(previousGlobals);
+    }
+});
+
+test("background full solver is created as a module worker", () => {
+    const workerCreations = [];
+    const harness = installAppHarness({
+        createFullSolveRuntime: (workerFactory) => {
+            workerFactory();
+            return {
+                dispatch(payload) {
+                    harness.runtimeLog.dispatches.push(payload);
+                },
+                terminate() {
+                    harness.runtimeLog.terminations += 1;
+                }
+            };
+        }
+    });
+    harness.globals.Worker = function Worker(url, options) {
+        workerCreations.push({ url, options });
+    };
+    const previousGlobals = {};
+
+    Object.keys(harness.globals).forEach((key) => {
+        previousGlobals[key] = global[key];
+        global[key] = harness.globals[key];
+    });
+
+    try {
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
+        harness.document.fireDOMContentLoaded();
+
+        const totalItems = harness.document.getElementById("field-input-total_items");
+        const totalStorage = harness.document.getElementById("field-input-total_storage_cells");
+        totalItems.value = "42";
+        totalItems.dispatch("input");
+        totalStorage.value = "58";
+        totalStorage.dispatch("input");
+        totalStorage.dispatch("blur");
+
+        assert.equal(workerCreations.length, 1);
+        assert.match(String(workerCreations[0].url), /src\/browser\/full_solver_worker\.js\?v=/);
+        assert.deepEqual(workerCreations[0].options, { type: "module" });
+    } finally {
+        harness.restore(previousGlobals);
+    }
+});
+
+test("zero average constraints no longer render a clear-zero diagnostic action", () => {
+    const harness = installAppHarness({
+        buildCoarseEngineResult: () => ({
+            error: true,
+            messages: ["当前输入组合下没有可行解。"]
+        })
+    });
+    const previousGlobals = {};
+
+    Object.keys(harness.globals).forEach((key) => {
+        previousGlobals[key] = global[key];
+        global[key] = harness.globals[key];
+    });
+
+    try {
+        delete require.cache[require.resolve("../src/browser/app.js")];
+        require("../src/browser/app.js");
+        harness.document.fireDOMContentLoaded();
+
+        const totalItems = harness.document.getElementById("field-input-total_items");
+        const blueAverage = harness.document.getElementById("field-input-blue_avg_cells");
+
+        totalItems.value = "24";
+        totalItems.dispatch("input");
+        blueAverage.value = "0.00";
+        blueAverage.dispatch("input");
+        blueAverage.dispatch("blur");
+
+        const errorText = collectText(harness.document.getElementById("error-box"));
+        assert.doesNotMatch(errorText, /均格 0|清空 0 均格/);
+        assert.equal(harness.document.elements.has("btn-clear-zero-average-constraints"), false);
     } finally {
         harness.restore(previousGlobals);
     }

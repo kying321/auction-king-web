@@ -1,0 +1,236 @@
+{
+  "schema_version": "ak_bidking_missing_item_authority_intake_template_v1",
+  "generated_at": "2026-05-07T23:50:00.000+08:00",
+  "mode": "source_first_implementation",
+  "change_class": "SIM_ONLY",
+  "recommended_change_class": "SIM_ONLY",
+  "live_path_touched": false,
+  "inputs": {
+    "missing_item_candidate_report": "<repo>/docs/research/2026-05-07-bidking-1106013-resolution-candidate-refresh.json",
+    "source_recovery_scan_report": "<repo>/docs/research/2026-05-07-bidking-1106013-public-local-source-recovery-scan.json"
+  },
+  "summary": {
+    "item_count": 1,
+    "unresolved_authority_intake_item_count": 1,
+    "direct_authority_source_required_count": 1,
+    "impacted_project_maps": [
+      "sunken_ship",
+      "villa"
+    ],
+    "acceptable_direct_authority_source_types": [
+      "raw_item_txt_row",
+      "complete_streamingassets_tables_export",
+      "official_or_server_side_table_export"
+    ],
+    "required_item_row_fields": [
+      "id",
+      "localized_name",
+      "item_type_id",
+      "slot_type",
+      "item_quality",
+      "base_value",
+      "max_per_listing",
+      "collection",
+      "collection_coin",
+      "icon_path",
+      "model_3D",
+      "raw_item_txt_row",
+      "authority_source_type",
+      "source_path_or_capture_id",
+      "client_build_or_version",
+      "reviewer_notes"
+    ],
+    "synthetic_item_as_authority_allowed": false,
+    "drop_tuple_exclusion_as_authority_allowed": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "promotion_allowed": false,
+    "recommended_next_action": "collect_authoritative_item_rows_for_missing_project_items_then_ingest_and_rerun_integrity",
+    "blockers": [
+      "missing_item_authority_source_required",
+      "source_item_rows_not_found_in_local_candidates"
+    ]
+  },
+  "gates": {
+    "authority_intake_completed": false,
+    "direct_authority_source_available_for_all_items": false,
+    "recovered_rows_ingested": false,
+    "table_reference_integrity_clean_after_recovery": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "synthetic_item_as_authority_allowed": false,
+    "drop_tuple_exclusion_as_authority_allowed": false
+  },
+  "items": [
+    {
+      "item_id": 1106013,
+      "priority": "P0",
+      "direct_authority_source_required": true,
+      "source_recovery_status": "not_found_in_local_source_candidates",
+      "source_item_row_recovered": false,
+      "source_item_row_hit_count": 0,
+      "reference_hit_count": 5,
+      "impacted_project_maps": [
+        "sunken_ship",
+        "villa"
+      ],
+      "reference_weights": [
+        3333
+      ],
+      "parent_reference_count": 20,
+      "neighboring_same_family_item_ids": [
+        1106001,
+        1106002,
+        1106003,
+        1106004,
+        1106005,
+        1106006,
+        1106007,
+        1106008,
+        1106009,
+        1106010,
+        1106011,
+        1106012
+      ],
+      "acceptable_direct_authority_sources": [
+        "raw Tables/Item.txt row from a matching or newer BidKing client package where the row starts with 1106013\\t",
+        "complete StreamingAssets/Tables export containing the Item.txt row plus matching Drop.txt references",
+        "official or server-side table export with build/version provenance for the missing item row"
+      ],
+      "supporting_but_not_direct_authority_sources": [
+        "in-game catalog or settlement capture that helps confirm identity but does not replace the Item.txt row",
+        "asset, icon, model, or localization hits that support review but cannot authorize replay promotion alone",
+        "neighboring same-family item rows used only as context"
+      ],
+      "required_item_row_fields": [
+        "id",
+        "localized_name",
+        "item_type_id",
+        "slot_type",
+        "item_quality",
+        "base_value",
+        "max_per_listing",
+        "collection",
+        "collection_coin",
+        "icon_path",
+        "model_3D",
+        "raw_item_txt_row",
+        "authority_source_type",
+        "source_path_or_capture_id",
+        "client_build_or_version",
+        "reviewer_notes"
+      ],
+      "source_evidence_to_collect": [
+        "exact raw Item.txt line for item 1106013",
+        "source file path or zip member path",
+        "client build, version, or package hash",
+        "surrounding Item.txt family rows when available",
+        "reviewer note explaining source provenance"
+      ],
+      "drop_reference_context": [
+        {
+          "item_id": 1106013,
+          "drop_group_id": 1066,
+          "drop_localized_name": "文物古董品质6",
+          "tuple_index": 33,
+          "tuple": [
+            106,
+            1106013,
+            1,
+            1,
+            3333
+          ],
+          "weight": 3333,
+          "parent_reference_count": 20
+        }
+      ],
+      "local_reference_hits": [
+        {
+          "source_path": "<local>/BidKing_zip_extract_min",
+          "source_type": "directory",
+          "file_path": "<local>/BidKing_zip_extract_min/Tables/Drop.txt",
+          "member_path": null,
+          "relative_path": "Tables/Drop.txt",
+          "line_number": 56,
+          "hit_type": "drop_reference"
+        },
+        {
+          "source_path": "/tmp/ak_public_jrinky",
+          "source_type": "directory",
+          "file_path": "/tmp/ak_public_jrinky/Drop.txt",
+          "member_path": null,
+          "relative_path": "Drop.txt",
+          "line_number": 56,
+          "hit_type": "drop_reference"
+        },
+        {
+          "source_path": "/tmp/ak_public_jrinky",
+          "source_type": "directory",
+          "file_path": "/tmp/ak_public_jrinky/calculator_data_merged.csv",
+          "member_path": null,
+          "relative_path": "calculator_data_merged.csv",
+          "line_number": 1210,
+          "hit_type": "text_reference"
+        },
+        {
+          "source_path": "/tmp/ak_public_mae",
+          "source_type": "directory",
+          "file_path": "/tmp/ak_public_mae/data/auctionanalyzer-4.12.2/resources/MapBidCalculator.calculator_data_merged.csv",
+          "member_path": null,
+          "relative_path": "data/auctionanalyzer-4.12.2/resources/MapBidCalculator.calculator_data_merged.csv",
+          "line_number": 1210,
+          "hit_type": "text_reference"
+        },
+        {
+          "source_path": "/tmp/ak_public_mae",
+          "source_type": "directory",
+          "file_path": "/tmp/ak_public_mae/data/auctionanalyzer-4.12.3/resources/MapBidCalculator.calculator_data_merged.csv",
+          "member_path": null,
+          "relative_path": "data/auctionanalyzer-4.12.3/resources/MapBidCalculator.calculator_data_merged.csv",
+          "line_number": 1210,
+          "hit_type": "text_reference"
+        }
+      ],
+      "intake_row_template": {
+        "id": 1106013,
+        "localized_name": null,
+        "item_type_id": null,
+        "slot_type": null,
+        "item_quality": null,
+        "base_value": null,
+        "max_per_listing": null,
+        "collection": null,
+        "collection_coin": null,
+        "icon_path": null,
+        "model_3D": null,
+        "raw_item_txt_row": null,
+        "authority_source_type": null,
+        "source_path_or_capture_id": null,
+        "client_build_or_version": null,
+        "collected_at": null,
+        "reviewer_notes": null
+      },
+      "allowed_next_actions": [
+        "collect_raw_item_row_or_authoritative_table_export",
+        "attach_build_version_and_source_path",
+        "ingest_recovered_item_row_into_staging_artifact_only",
+        "rerun_bidking_table_reference_integrity",
+        "rerun_table_backed_shadow_simulator_after_integrity_clean"
+      ],
+      "blocked_actions": [
+        "synthetic_item_as_authority",
+        "drop_tuple_exclusion_as_authority",
+        "table_backed_shadow_replay_promotion",
+        "authority_handoff",
+        "default_config_update"
+      ]
+    }
+  ],
+  "notes": [
+    "This template defines evidence required for authority intake; it does not synthesize item rows.",
+    "Manual captures can support identity review but cannot directly authorize table-backed replay promotion.",
+    "Default estimator config and authority handoff remain closed until source rows are ingested and integrity is clean."
+  ]
+}

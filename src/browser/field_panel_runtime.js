@@ -28,13 +28,6 @@ const DEFAULT_FIELD_PANEL_OPTIONS = {
     }
 };
 
-const AVERAGE_SOURCE_FIELD_IDS = new Set([
-    "orange_avg_cells",
-    "purple_avg_cells",
-    "white_green_avg_cells",
-    "blue_avg_cells"
-]);
-
 function defaultSetElementText(element, text) {
     if (!element) return;
     element.innerText = text || "";
@@ -69,7 +62,6 @@ function getFieldInputStorageValue(field, rawValue, parseLooseNumber = defaultPa
         if (!text) return null;
         const parsed = parseLooseNumber(text);
         if (parsed === null) return null;
-        if (canTreatZeroAverageAsBlank(field) && parsed === 0) return null;
         return text;
     }
     return parseLooseNumber(rawValue);
@@ -90,8 +82,8 @@ function canTogglePublicAverageSource(field) {
     return !!(field && field.input_mode === "decimal");
 }
 
-function canTreatZeroAverageAsBlank(field) {
-    return !!(field && AVERAGE_SOURCE_FIELD_IDS.has(field.id));
+function canTreatZeroAverageAsBlank() {
+    return false;
 }
 
 function resolveFieldPanelHelpers(helpers = {}) {
@@ -243,9 +235,6 @@ function buildFieldCard(field, state, deps = {}, helpers = {}, options = DEFAULT
     input.addEventListener("input", (event) => {
         if (typeof onFieldInput === "function") {
             const nextValue = getFieldInputStorageValue(field, event.currentTarget.value, parseLooseNumber);
-            if (nextValue === null && canTreatZeroAverageAsBlank(field) && parseLooseNumber(event.currentTarget.value) === 0) {
-                event.currentTarget.value = "";
-            }
             onFieldInput(field.id, nextValue);
         }
     });

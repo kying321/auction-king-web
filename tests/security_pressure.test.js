@@ -33,6 +33,10 @@ function headerFileExists(fileName) {
 function assertStaticSecurityHeaders(headersText) {
     assert.match(headersText, /Content-Security-Policy:/);
     assert.match(headersText, /default-src 'self'/);
+    assert.match(headersText, /script-src[^;]*https:\/\/static\.cloudflareinsights\.com/);
+    assert.match(headersText, /style-src[^;]*https:\/\/fonts\.googleapis\.com/);
+    assert.match(headersText, /font-src[^;]*https:\/\/fonts\.gstatic\.com/);
+    assert.match(headersText, /connect-src[^;]*https:\/\/cloudflareinsights\.com/);
     assert.match(headersText, /frame-ancestors 'none'/);
     assert.match(headersText, /object-src 'none'/);
     assert.match(headersText, /base-uri 'self'/);

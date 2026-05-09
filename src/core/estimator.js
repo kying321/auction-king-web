@@ -1157,3 +1157,13 @@ if (typeof window !== "undefined") {
     window.hasFeasibleAverageForCount = hasFeasibleAverageForCount;
     window.deriveAdaptiveSolverBudget = deriveAdaptiveSolverBudget;
 }
+
+if (typeof globalThis !== "undefined") {
+    globalThis.AuctionKingEstimator = AuctionKingEstimator;
+    globalThis.resolveEstimatorConfig = resolveEstimatorConfig;
+    globalThis.QUALITIES = QUALITIES;
+    globalThis.QUALITY_NAMES = QUALITY_NAMES;
+    globalThis.formatAverageDisplayFromTotalCells = formatAverageDisplayFromTotalCells;
+    globalThis.hasFeasibleAverageForCount = hasFeasibleAverageForCount;
+    globalThis.deriveAdaptiveSolverBudget = deriveAdaptiveSolverBudget;
+}

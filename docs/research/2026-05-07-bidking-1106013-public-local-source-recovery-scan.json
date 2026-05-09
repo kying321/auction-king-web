@@ -1,0 +1,797 @@
+{
+  "schema_version": "ak_bidking_missing_item_source_recovery_scan_v1",
+  "generated_at": "2026-05-07T20:35:00.000+08:00",
+  "mode": "source_first_implementation",
+  "change_class": "SIM_ONLY",
+  "recommended_change_class": "SIM_ONLY",
+  "live_path_touched": false,
+  "inputs": {
+    "missing_item_candidate_report": "<repo>/docs/research/2026-05-07-bidking-1106013-resolution-candidate-refresh.json",
+    "scan_sources": [
+      "<local>/BidKing_zip_extract_min",
+      "<local>/BidKing",
+      "/tmp/ak_public_snkr",
+      "/tmp/ak_public_jrinky",
+      "/tmp/ak_public_mae"
+    ]
+  },
+  "summary": {
+    "scanned_source_count": 5,
+    "project_relevant_missing_item_ids": [
+      1106013
+    ],
+    "source_item_row_recovered_count": 0,
+    "source_item_row_recovered_item_ids": [],
+    "source_item_row_recovered_for_project_scope": false,
+    "reference_hit_count": 5,
+    "path_hint_hit_count": 0,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false,
+    "promotion_allowed": false,
+    "recommended_next_action": "acquire_additional_client_or_authoritative_capture_for_missing_item_rows",
+    "blockers": [
+      "source_item_rows_not_found_in_local_candidates"
+    ],
+    "warnings": [
+      "reference hits prove the missing item is referenced, not recovered",
+      "path hints and neighboring rows are not authoritative item rows"
+    ]
+  },
+  "gates": {
+    "source_item_row_recovered_for_project_scope": false,
+    "recovered_rows_ingested": false,
+    "table_reference_integrity_clean_after_recovery": false,
+    "table_backed_shadow_replay_allowed": false,
+    "authority_handoff_allowed": false,
+    "default_config_update_allowed": false
+  },
+  "item_recovery": [
+    {
+      "item_id": 1106013,
+      "source_item_row_recovered": false,
+      "source_recovery_status": "not_found_in_local_source_candidates",
+      "source_item_row_hit_count": 0,
+      "reference_hit_count": 5,
+      "path_hint_hit_count": 0,
+      "source_item_row_hits": [],
+      "reference_hits": [
+        {
+          "source_path": "<local>/BidKing_zip_extract_min",
+          "source_type": "directory",
+          "file_path": "<local>/BidKing_zip_extract_min/Tables/Drop.txt",
+          "member_path": null,
+          "relative_path": "Tables/Drop.txt",
+          "line_number": 56,
+          "hit_type": "drop_reference",
+          "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+        },
+        {
+          "source_path": "/tmp/ak_public_jrinky",
+          "source_type": "directory",
+          "file_path": "/tmp/ak_public_jrinky/Drop.txt",
+          "member_path": null,
+          "relative_path": "Drop.txt",
+          "line_number": 56,
+          "hit_type": "drop_reference",
+          "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+        },
+        {
+          "source_path": "/tmp/ak_public_jrinky",
+          "source_type": "directory",
+          "file_path": "/tmp/ak_public_jrinky/calculator_data_merged.csv",
+          "member_path": null,
+          "relative_path": "calculator_data_merged.csv",
+          "line_number": 1210,
+          "hit_type": "text_reference",
+          "snippet": "\"DROP\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1066\",\"1106013\",\"3333\",\"106\""
+        },
+        {
+          "source_path": "/tmp/ak_public_mae",
+          "source_type": "directory",
+          "file_path": "/tmp/ak_public_mae/data/auctionanalyzer-4.12.2/resources/MapBidCalculator.calculator_data_merged.csv",
+          "member_path": null,
+          "relative_path": "data/auctionanalyzer-4.12.2/resources/MapBidCalculator.calculator_data_merged.csv",
+          "line_number": 1210,
+          "hit_type": "text_reference",
+          "snippet": "\"DROP\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1066\",\"1106013\",\"3333\",\"106\""
+        },
+        {
+          "source_path": "/tmp/ak_public_mae",
+          "source_type": "directory",
+          "file_path": "/tmp/ak_public_mae/data/auctionanalyzer-4.12.3/resources/MapBidCalculator.calculator_data_merged.csv",
+          "member_path": null,
+          "relative_path": "data/auctionanalyzer-4.12.3/resources/MapBidCalculator.calculator_data_merged.csv",
+          "line_number": 1210,
+          "hit_type": "text_reference",
+          "snippet": "\"DROP\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1066\",\"1106013\",\"3333\",\"106\""
+        }
+      ],
+      "path_hint_hits": [],
+      "source_results": [
+        {
+          "source_path": "<local>/BidKing_zip_extract_min",
+          "source_type": "directory",
+          "exists": true,
+          "source_item_row_hits": [],
+          "reference_hits": [
+            {
+              "source_path": "<local>/BidKing_zip_extract_min",
+              "source_type": "directory",
+              "file_path": "<local>/BidKing_zip_extract_min/Tables/Drop.txt",
+              "member_path": null,
+              "relative_path": "Tables/Drop.txt",
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            }
+          ],
+          "path_hint_hits": []
+        },
+        {
+          "source_path": "<local>/BidKing",
+          "source_type": "directory",
+          "exists": true,
+          "source_item_row_hits": [],
+          "reference_hits": [],
+          "path_hint_hits": []
+        },
+        {
+          "source_path": "/tmp/ak_public_snkr",
+          "source_type": "directory",
+          "exists": true,
+          "source_item_row_hits": [],
+          "reference_hits": [],
+          "path_hint_hits": []
+        },
+        {
+          "source_path": "/tmp/ak_public_jrinky",
+          "source_type": "directory",
+          "exists": true,
+          "source_item_row_hits": [],
+          "reference_hits": [
+            {
+              "source_path": "/tmp/ak_public_jrinky",
+              "source_type": "directory",
+              "file_path": "/tmp/ak_public_jrinky/Drop.txt",
+              "member_path": null,
+              "relative_path": "Drop.txt",
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            },
+            {
+              "source_path": "/tmp/ak_public_jrinky",
+              "source_type": "directory",
+              "file_path": "/tmp/ak_public_jrinky/calculator_data_merged.csv",
+              "member_path": null,
+              "relative_path": "calculator_data_merged.csv",
+              "line_number": 1210,
+              "hit_type": "text_reference",
+              "snippet": "\"DROP\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1066\",\"1106013\",\"3333\",\"106\""
+            }
+          ],
+          "path_hint_hits": []
+        },
+        {
+          "source_path": "/tmp/ak_public_mae",
+          "source_type": "directory",
+          "exists": true,
+          "source_item_row_hits": [],
+          "reference_hits": [
+            {
+              "source_path": "/tmp/ak_public_mae",
+              "source_type": "directory",
+              "file_path": "/tmp/ak_public_mae/data/auctionanalyzer-4.12.2/resources/MapBidCalculator.calculator_data_merged.csv",
+              "member_path": null,
+              "relative_path": "data/auctionanalyzer-4.12.2/resources/MapBidCalculator.calculator_data_merged.csv",
+              "line_number": 1210,
+              "hit_type": "text_reference",
+              "snippet": "\"DROP\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1066\",\"1106013\",\"3333\",\"106\""
+            },
+            {
+              "source_path": "/tmp/ak_public_mae",
+              "source_type": "directory",
+              "file_path": "/tmp/ak_public_mae/data/auctionanalyzer-4.12.3/resources/MapBidCalculator.calculator_data_merged.csv",
+              "member_path": null,
+              "relative_path": "data/auctionanalyzer-4.12.3/resources/MapBidCalculator.calculator_data_merged.csv",
+              "line_number": 1210,
+              "hit_type": "text_reference",
+              "snippet": "\"DROP\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1066\",\"1106013\",\"3333\",\"106\""
+            }
+          ],
+          "path_hint_hits": []
+        }
+      ],
+      "authority_action_allowed": false
+    }
+  ],
+  "source_scans": [
+    {
+      "source_path": "<local>/BidKing_zip_extract_min",
+      "source_type": "directory",
+      "exists": true,
+      "scanned_file_count": 62,
+      "skipped_file_count": 5,
+      "item_scans": {
+        "1106013": {
+          "source_path": "<local>/BidKing_zip_extract_min",
+          "source_type": "directory",
+          "exists": true,
+          "scanned_file_count": 62,
+          "skipped_file_count": 5,
+          "path_hint_hits": [],
+          "skipped_files": [
+            {
+              "file_path": "<local>/BidKing_zip_extract_min/Assembly-CSharp.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 283648
+            },
+            {
+              "file_path": "<local>/BidKing_zip_extract_min/HybridCLR.Runtime.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 5120
+            },
+            {
+              "file_path": "<local>/BidKing_zip_extract_min/HybridCLRGenerate.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4096
+            },
+            {
+              "file_path": "<local>/BidKing_zip_extract_min/NotHotUpdate.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 50688
+            },
+            {
+              "file_path": "<local>/BidKing_zip_extract_min/global-metadata.dat",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 6947184
+            }
+          ],
+          "source_item_row_hits": [],
+          "reference_hits": [
+            {
+              "source_path": "<local>/BidKing_zip_extract_min",
+              "source_type": "directory",
+              "file_path": "<local>/BidKing_zip_extract_min/Tables/Drop.txt",
+              "member_path": null,
+              "relative_path": "Tables/Drop.txt",
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            }
+          ],
+          "all_text_hits": [
+            {
+              "source_path": "<local>/BidKing_zip_extract_min",
+              "source_type": "directory",
+              "file_path": "<local>/BidKing_zip_extract_min/Tables/Drop.txt",
+              "member_path": null,
+              "relative_path": "Tables/Drop.txt",
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_path": "<local>/BidKing",
+      "source_type": "directory",
+      "exists": true,
+      "scanned_file_count": 28,
+      "skipped_file_count": 27,
+      "item_scans": {
+        "1106013": {
+          "source_path": "<local>/BidKing",
+          "source_type": "directory",
+          "exists": true,
+          "scanned_file_count": 28,
+          "skipped_file_count": 27,
+          "path_hint_hits": [],
+          "skipped_files": [
+            {
+              "file_path": "<local>/BidKing/.DS_Store",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 6148
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing.exe",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 653824
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/.DS_Store",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 6148
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1497956
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 431108
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__1.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1467956
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__2.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1415776
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__3.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1427964
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Assembly-CSharp__4.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 762455
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Coffee.UIParticle.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 775793
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/Coffee.UIParticle_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 46963
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1838493
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 387136
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween__1.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1293239
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DOTween__2.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 659098
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DotweenModule.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1152995
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/DotweenModule_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 110636
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 2400920
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods__1.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1409591
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods__10.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 2255510
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods__11.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1818069
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/GenericMethods__12.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1663596
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/com.rlabrecque.steamworks.net.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 2247565
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/com.rlabrecque.steamworks.net_CodeGen.c",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1084469
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/com.rlabrecque.steamworks.net__1.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4463875
+            },
+            {
+              "file_path": "<local>/BidKing/BidKing_BackUpThisFolder_ButDontShipItWithYourGame/il2cppOutput/com.rlabrecque.steamworks.net__2.cpp",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 584244
+            },
+            {
+              "file_path": "<local>/BidKing/baselib.dll",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 405016
+            }
+          ],
+          "source_item_row_hits": [],
+          "reference_hits": [],
+          "all_text_hits": []
+        }
+      }
+    },
+    {
+      "source_path": "/tmp/ak_public_snkr",
+      "source_type": "directory",
+      "exists": true,
+      "scanned_file_count": 59,
+      "skipped_file_count": 19,
+      "item_scans": {
+        "1106013": {
+          "source_path": "/tmp/ak_public_snkr",
+          "source_type": "directory",
+          "exists": true,
+          "scanned_file_count": 59,
+          "skipped_file_count": 19,
+          "path_hint_hits": [],
+          "skipped_files": [
+            {
+              "file_path": "/tmp/ak_public_snkr/__pycache__/app.cpython-313.pyc",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 28828
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/app.py",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 22023
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/scripts/build_items_data.py",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 2200
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/scripts/setup.ps1",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1767
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/scripts/start.ps1",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 769
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/src/__init__.py",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 13
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/src/__pycache__/__init__.cpython-313.pyc",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 156
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/src/__pycache__/clue_loader.cpython-313.pyc",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 2640
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/src/__pycache__/constraints.cpython-313.pyc",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 6453
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/src/__pycache__/data_loader.cpython-313.pyc",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 6219
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/src/__pycache__/models.cpython-313.pyc",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4604
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/src/__pycache__/simulator.cpython-313.pyc",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 12717
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/src/__pycache__/solver.cpython-313.pyc",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 12524
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/src/clue_loader.py",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1721
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/src/constraints.py",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4474
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/src/data_loader.py",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4105
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/src/models.py",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 2253
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/src/simulator.py",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 9506
+            },
+            {
+              "file_path": "/tmp/ak_public_snkr/src/solver.py",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 10176
+            }
+          ],
+          "source_item_row_hits": [],
+          "reference_hits": [],
+          "all_text_hits": []
+        }
+      }
+    },
+    {
+      "source_path": "/tmp/ak_public_jrinky",
+      "source_type": "directory",
+      "exists": true,
+      "scanned_file_count": 46,
+      "skipped_file_count": 7,
+      "item_scans": {
+        "1106013": {
+          "source_path": "/tmp/ak_public_jrinky",
+          "source_type": "directory",
+          "exists": true,
+          "scanned_file_count": 46,
+          "skipped_file_count": 7,
+          "path_hint_hits": [],
+          "skipped_files": [
+            {
+              "file_path": "/tmp/ak_public_jrinky/bidking-oil.ipynb",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 86774
+            },
+            {
+              "file_path": "/tmp/ak_public_jrinky/maincode.py",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1330
+            },
+            {
+              "file_path": "/tmp/ak_public_jrinky/map_background/2201.png",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 771074
+            },
+            {
+              "file_path": "/tmp/ak_public_jrinky/map_background/2202.png",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 631873
+            },
+            {
+              "file_path": "/tmp/ak_public_jrinky/map_background/2204.png",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 906073
+            },
+            {
+              "file_path": "/tmp/ak_public_jrinky/map_background/2205.png",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 857493
+            },
+            {
+              "file_path": "/tmp/ak_public_jrinky/map_static_dict.rar",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 31038504
+            }
+          ],
+          "source_item_row_hits": [],
+          "reference_hits": [
+            {
+              "source_path": "/tmp/ak_public_jrinky",
+              "source_type": "directory",
+              "file_path": "/tmp/ak_public_jrinky/Drop.txt",
+              "member_path": null,
+              "relative_path": "Drop.txt",
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            },
+            {
+              "source_path": "/tmp/ak_public_jrinky",
+              "source_type": "directory",
+              "file_path": "/tmp/ak_public_jrinky/calculator_data_merged.csv",
+              "member_path": null,
+              "relative_path": "calculator_data_merged.csv",
+              "line_number": 1210,
+              "hit_type": "text_reference",
+              "snippet": "\"DROP\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1066\",\"1106013\",\"3333\",\"106\""
+            }
+          ],
+          "all_text_hits": [
+            {
+              "source_path": "/tmp/ak_public_jrinky",
+              "source_type": "directory",
+              "file_path": "/tmp/ak_public_jrinky/Drop.txt",
+              "member_path": null,
+              "relative_path": "Drop.txt",
+              "line_number": 56,
+              "hit_type": "drop_reference",
+              "snippet": "...[106,1066009,1,1,7421],[106,1046005,1,1,2382],[106,1016006,1,1,1865],[106,1066006,1,1,1218],[106,1106001,1,1,4133],[106,1106013,1,1,3333],[100,1006001,1,1,5]]"
+            },
+            {
+              "source_path": "/tmp/ak_public_jrinky",
+              "source_type": "directory",
+              "file_path": "/tmp/ak_public_jrinky/calculator_data_merged.csv",
+              "member_path": null,
+              "relative_path": "calculator_data_merged.csv",
+              "line_number": 1210,
+              "hit_type": "text_reference",
+              "snippet": "\"DROP\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1066\",\"1106013\",\"3333\",\"106\""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_path": "/tmp/ak_public_mae",
+      "source_type": "directory",
+      "exists": true,
+      "scanned_file_count": 59,
+      "skipped_file_count": 15,
+      "item_scans": {
+        "1106013": {
+          "source_path": "/tmp/ak_public_mae",
+          "source_type": "directory",
+          "exists": true,
+          "scanned_file_count": 59,
+          "skipped_file_count": 15,
+          "path_hint_hits": [],
+          "skipped_files": [
+            {
+              "file_path": "/tmp/ak_public_mae/.github/workflows/release.yml",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 4624
+            },
+            {
+              "file_path": "/tmp/ak_public_mae/.gitignore",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 654
+            },
+            {
+              "file_path": "/tmp/ak_public_mae/Cargo.lock",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 130415
+            },
+            {
+              "file_path": "/tmp/ak_public_mae/Cargo.toml",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 958
+            },
+            {
+              "file_path": "/tmp/ak_public_mae/LICENSE",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 1064
+            },
+            {
+              "file_path": "/tmp/ak_public_mae/scripts/start-gui.ps1",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 364
+            },
+            {
+              "file_path": "/tmp/ak_public_mae/scripts/start-gui.vbs",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 297
+            },
+            {
+              "file_path": "/tmp/ak_public_mae/src/bin/bidking-gui.rs",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 103502
+            },
+            {
+              "file_path": "/tmp/ak_public_mae/src/importer.rs",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 17151
+            },
+            {
+              "file_path": "/tmp/ak_public_mae/src/lib.rs",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 140779
+            },
+            {
+              "file_path": "/tmp/ak_public_mae/src/main.rs",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 14775
+            },
+            {
+              "file_path": "/tmp/ak_public_mae/src/ocr.rs",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 47444
+            },
+            {
+              "file_path": "/tmp/ak_public_mae/tests/case1.rs",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 3926
+            },
+            {
+              "file_path": "/tmp/ak_public_mae/tests/ocr.rs",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 7195
+            },
+            {
+              "file_path": "/tmp/ak_public_mae/tests/reference.rs",
+              "reason": "not_text_candidate_or_too_large",
+              "size": 38059
+            }
+          ],
+          "source_item_row_hits": [],
+          "reference_hits": [
+            {
+              "source_path": "/tmp/ak_public_mae",
+              "source_type": "directory",
+              "file_path": "/tmp/ak_public_mae/data/auctionanalyzer-4.12.2/resources/MapBidCalculator.calculator_data_merged.csv",
+              "member_path": null,
+              "relative_path": "data/auctionanalyzer-4.12.2/resources/MapBidCalculator.calculator_data_merged.csv",
+              "line_number": 1210,
+              "hit_type": "text_reference",
+              "snippet": "\"DROP\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1066\",\"1106013\",\"3333\",\"106\""
+            },
+            {
+              "source_path": "/tmp/ak_public_mae",
+              "source_type": "directory",
+              "file_path": "/tmp/ak_public_mae/data/auctionanalyzer-4.12.3/resources/MapBidCalculator.calculator_data_merged.csv",
+              "member_path": null,
+              "relative_path": "data/auctionanalyzer-4.12.3/resources/MapBidCalculator.calculator_data_merged.csv",
+              "line_number": 1210,
+              "hit_type": "text_reference",
+              "snippet": "\"DROP\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1066\",\"1106013\",\"3333\",\"106\""
+            }
+          ],
+          "all_text_hits": [
+            {
+              "source_path": "/tmp/ak_public_mae",
+              "source_type": "directory",
+              "file_path": "/tmp/ak_public_mae/data/auctionanalyzer-4.12.2/resources/MapBidCalculator.calculator_data_merged.csv",
+              "member_path": null,
+              "relative_path": "data/auctionanalyzer-4.12.2/resources/MapBidCalculator.calculator_data_merged.csv",
+              "line_number": 1210,
+              "hit_type": "text_reference",
+              "snippet": "\"DROP\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1066\",\"1106013\",\"3333\",\"106\""
+            },
+            {
+              "source_path": "/tmp/ak_public_mae",
+              "source_type": "directory",
+              "file_path": "/tmp/ak_public_mae/data/auctionanalyzer-4.12.3/resources/MapBidCalculator.calculator_data_merged.csv",
+              "member_path": null,
+              "relative_path": "data/auctionanalyzer-4.12.3/resources/MapBidCalculator.calculator_data_merged.csv",
+              "line_number": 1210,
+              "hit_type": "text_reference",
+              "snippet": "\"DROP\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1066\",\"1106013\",\"3333\",\"106\""
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "notes": [
+    "This scan searches local candidate sources only and does not mutate source tables.",
+    "A source Item row must be ingested and table-reference integrity rerun before any replay promotion.",
+    "Default estimator config and authority handoff remain closed."
+  ]
+}

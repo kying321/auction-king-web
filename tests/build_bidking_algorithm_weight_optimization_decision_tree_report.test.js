@@ -74,6 +74,7 @@ test("decision tree remains fail-closed when 1106013 authority is missing", () =
     assert.match(report.blockers.join(","), /developer_or_server_side_table_export_required/);
     assert.match(report.forbidden_actions.join(","), /synthesize_1106013_as_authority/);
     assert.match(report.forbidden_actions.join(","), /drop_tuple_to_unblock_map/);
+    assert.ok(Object.values(report.source_artifacts).every((artifactPath) => !path.isAbsolute(artifactPath)));
 });
 
 test("decision tree defines authority mainline and non-authority shadow fallback lanes", () => {

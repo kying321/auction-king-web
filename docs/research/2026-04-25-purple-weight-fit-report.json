@@ -1,0 +1,714 @@
+{
+  "schema_version": "ak_purple_weight_fit_report_v1",
+  "generated_at": "2026-05-07T18:13:14.951Z",
+  "mode": "research_backtest",
+  "change_class": "RESEARCH_ONLY",
+  "recommended_change_class": "RESEARCH_ONLY",
+  "baseline_config_source": {
+    "kind": "default_config_plus_overrides",
+    "overrides_path": "docs/research/2026-04-25-purple-weight-fit-baseline-overrides.json"
+  },
+  "adoption_allowed": false,
+  "adoption_blockers": [
+    "red_label_sample_count_below_default_update_gate",
+    "fit_uses_partial_overlay_replay_samples",
+    "purple_multiplier_scan_is_shadow_only"
+  ],
+  "evidence_sources": {
+    "replay_sample_count": 2,
+    "red_label_sample_count": 1,
+    "orange_label_sample_count": 2,
+    "atlas_value_summary": {},
+    "external_research_links": [
+      "https://github.com/sarkozyfan/bidking-bot",
+      "https://raw.githubusercontent.com/sarkozyfan/bidking-bot/main/bidking_fresh_bot/price_config.json"
+    ],
+    "external_research_notes": [
+      "公开 bidking-bot 只提供 OCR/出价决策与品质单格价格，不能作为爆率标签。",
+      "图鉴可稳定支持价值层 p/o/r 单件均值，但不含地图爆率或品质数量分布。",
+      "紫色倍率扫描只能作为数量先验的 shadow fit，不能覆盖 count-fit readiness gate。"
+    ]
+  },
+  "baseline": {
+    "multiplier": 1,
+    "objective_score": 29.087059,
+    "metrics": {
+      "o": {
+        "sample_count": 2,
+        "mean_actual_prob": 0.142101,
+        "mean_log_loss": 9.020003,
+        "mean_abs_error": 2.5466,
+        "mean_rank": 2.5,
+        "top1_hit_rate": 0,
+        "top3_hit_rate": 1,
+        "support_rate": 1
+      },
+      "r": {
+        "sample_count": 1,
+        "mean_actual_prob": 0.032993,
+        "mean_log_loss": 3.411453,
+        "mean_abs_error": 2.5424,
+        "mean_rank": 5,
+        "top1_hit_rate": 0,
+        "top3_hit_rate": 0,
+        "support_rate": 1
+      }
+    },
+    "red_mean_delta": 0
+  },
+  "candidates": [
+    {
+      "multiplier": 1,
+      "objective_score": 29.087059,
+      "metrics": {
+        "o": {
+          "sample_count": 2,
+          "mean_actual_prob": 0.142101,
+          "mean_log_loss": 9.020003,
+          "mean_abs_error": 2.5466,
+          "mean_rank": 2.5,
+          "top1_hit_rate": 0,
+          "top3_hit_rate": 1,
+          "support_rate": 1
+        },
+        "r": {
+          "sample_count": 1,
+          "mean_actual_prob": 0.032993,
+          "mean_log_loss": 3.411453,
+          "mean_abs_error": 2.5424,
+          "mean_rank": 5,
+          "top1_hit_rate": 0,
+          "top3_hit_rate": 0,
+          "support_rate": 1
+        }
+      },
+      "red_mean_delta": 0,
+      "sample_deltas": [
+        {
+          "id": "downloads_2026_04_24_95b7_overlay_clean",
+          "map_id": "villa",
+          "actual_counts": {
+            "o": 1
+          },
+          "quality_deltas": {
+            "o": {
+              "actual_count": 1,
+              "baseline_mean_count": 6,
+              "candidate_mean_count": 6,
+              "mean_count_delta": 0,
+              "baseline_actual_prob": 0,
+              "candidate_actual_prob": 0,
+              "actual_prob_delta": 0,
+              "baseline_rank": 2,
+              "candidate_rank": 2
+            }
+          }
+        },
+        {
+          "id": "downloads_2026_04_24_9814_overlay_clean",
+          "map_id": "sunken_ship",
+          "actual_counts": {
+            "o": 2,
+            "r": 4
+          },
+          "quality_deltas": {
+            "o": {
+              "actual_count": 2,
+              "baseline_mean_count": 2.0932,
+              "candidate_mean_count": 2.0932,
+              "mean_count_delta": 0,
+              "baseline_actual_prob": 0.284202,
+              "candidate_actual_prob": 0.284202,
+              "actual_prob_delta": 0,
+              "baseline_rank": 3,
+              "candidate_rank": 3
+            },
+            "r": {
+              "actual_count": 4,
+              "baseline_mean_count": 1.4576,
+              "candidate_mean_count": 1.4576,
+              "mean_count_delta": 0,
+              "baseline_actual_prob": 0.032993,
+              "candidate_actual_prob": 0.032993,
+              "actual_prob_delta": 0,
+              "baseline_rank": 5,
+              "candidate_rank": 5
+            }
+          }
+        }
+      ],
+      "candidate_alpha_counts_by_map": {
+        "shipping": {
+          "p": 2.9
+        },
+        "sunken_ship": {
+          "p": 3.84
+        },
+        "villa": {
+          "p": 4.2
+        }
+      }
+    },
+    {
+      "multiplier": 1.25,
+      "objective_score": 27.466547,
+      "metrics": {
+        "o": {
+          "sample_count": 2,
+          "mean_actual_prob": 0.144748,
+          "mean_log_loss": 7.940357,
+          "mean_abs_error": 2.5192,
+          "mean_rank": 2.5,
+          "top1_hit_rate": 0,
+          "top3_hit_rate": 1,
+          "support_rate": 1
+        },
+        "r": {
+          "sample_count": 1,
+          "mean_actual_prob": 0.021471,
+          "mean_log_loss": 3.841033,
+          "mean_abs_error": 2.7064,
+          "mean_rank": 5,
+          "top1_hit_rate": 0,
+          "top3_hit_rate": 0,
+          "support_rate": 1
+        }
+      },
+      "red_mean_delta": -0.164,
+      "sample_deltas": [
+        {
+          "id": "downloads_2026_04_24_95b7_overlay_clean",
+          "map_id": "villa",
+          "actual_counts": {
+            "o": 1
+          },
+          "quality_deltas": {
+            "o": {
+              "actual_count": 1,
+              "baseline_mean_count": 6,
+              "candidate_mean_count": 6,
+              "mean_count_delta": 0,
+              "baseline_actual_prob": 0,
+              "candidate_actual_prob": 0,
+              "actual_prob_delta": 0,
+              "baseline_rank": 2,
+              "candidate_rank": 2
+            }
+          }
+        },
+        {
+          "id": "downloads_2026_04_24_9814_overlay_clean",
+          "map_id": "sunken_ship",
+          "actual_counts": {
+            "o": 2,
+            "r": 4
+          },
+          "quality_deltas": {
+            "o": {
+              "actual_count": 2,
+              "baseline_mean_count": 2.0932,
+              "candidate_mean_count": 2.0384,
+              "mean_count_delta": -0.0548,
+              "baseline_actual_prob": 0.284202,
+              "candidate_actual_prob": 0.289495,
+              "actual_prob_delta": 0.005293,
+              "baseline_rank": 3,
+              "candidate_rank": 3
+            },
+            "r": {
+              "actual_count": 4,
+              "baseline_mean_count": 1.4576,
+              "candidate_mean_count": 1.2936,
+              "mean_count_delta": -0.164,
+              "baseline_actual_prob": 0.032993,
+              "candidate_actual_prob": 0.021471,
+              "actual_prob_delta": -0.011522,
+              "baseline_rank": 5,
+              "candidate_rank": 5
+            }
+          }
+        }
+      ],
+      "candidate_alpha_counts_by_map": {
+        "shipping": {
+          "p": 3.625
+        },
+        "sunken_ship": {
+          "p": 4.8
+        },
+        "villa": {
+          "p": 5.25
+        }
+      }
+    },
+    {
+      "multiplier": 1.5,
+      "objective_score": 25.90382,
+      "metrics": {
+        "o": {
+          "sample_count": 2,
+          "mean_actual_prob": 0.146342,
+          "mean_log_loss": 6.919114,
+          "mean_abs_error": 2.5031,
+          "mean_rank": 2.5,
+          "top1_hit_rate": 0,
+          "top3_hit_rate": 1,
+          "support_rate": 1
+        },
+        "r": {
+          "sample_count": 1,
+          "mean_actual_prob": 0.014087,
+          "mean_log_loss": 4.262492,
+          "mean_abs_error": 2.7969,
+          "mean_rank": 5,
+          "top1_hit_rate": 0,
+          "top3_hit_rate": 0,
+          "support_rate": 1
+        }
+      },
+      "red_mean_delta": -0.2545,
+      "sample_deltas": [
+        {
+          "id": "downloads_2026_04_24_95b7_overlay_clean",
+          "map_id": "villa",
+          "actual_counts": {
+            "o": 1
+          },
+          "quality_deltas": {
+            "o": {
+              "actual_count": 1,
+              "baseline_mean_count": 6,
+              "candidate_mean_count": 6,
+              "mean_count_delta": 0,
+              "baseline_actual_prob": 0,
+              "candidate_actual_prob": 0.000003,
+              "actual_prob_delta": 0.000003,
+              "baseline_rank": 2,
+              "candidate_rank": 2
+            }
+          }
+        },
+        {
+          "id": "downloads_2026_04_24_9814_overlay_clean",
+          "map_id": "sunken_ship",
+          "actual_counts": {
+            "o": 2,
+            "r": 4
+          },
+          "quality_deltas": {
+            "o": {
+              "actual_count": 2,
+              "baseline_mean_count": 2.0932,
+              "candidate_mean_count": 2.0062,
+              "mean_count_delta": -0.087,
+              "baseline_actual_prob": 0.284202,
+              "candidate_actual_prob": 0.292681,
+              "actual_prob_delta": 0.008479,
+              "baseline_rank": 3,
+              "candidate_rank": 3
+            },
+            "r": {
+              "actual_count": 4,
+              "baseline_mean_count": 1.4576,
+              "candidate_mean_count": 1.2031,
+              "mean_count_delta": -0.2545,
+              "baseline_actual_prob": 0.032993,
+              "candidate_actual_prob": 0.014087,
+              "actual_prob_delta": -0.018906,
+              "baseline_rank": 5,
+              "candidate_rank": 5
+            }
+          }
+        }
+      ],
+      "candidate_alpha_counts_by_map": {
+        "shipping": {
+          "p": 4.35
+        },
+        "sunken_ship": {
+          "p": 5.76
+        },
+        "villa": {
+          "p": 6.3
+        }
+      }
+    },
+    {
+      "multiplier": 1.75,
+      "objective_score": 24.43154,
+      "metrics": {
+        "o": {
+          "sample_count": 2,
+          "mean_actual_prob": 0.147336,
+          "mean_log_loss": 5.949314,
+          "mean_abs_error": 2.5067,
+          "mean_rank": 2.5,
+          "top1_hit_rate": 0,
+          "top3_hit_rate": 1,
+          "support_rate": 1
+        },
+        "r": {
+          "sample_count": 1,
+          "mean_actual_prob": 0.009378,
+          "mean_log_loss": 4.669412,
+          "mean_abs_error": 2.8501,
+          "mean_rank": 5,
+          "top1_hit_rate": 0,
+          "top3_hit_rate": 0,
+          "support_rate": 1
+        }
+      },
+      "red_mean_delta": -0.3077,
+      "sample_deltas": [
+        {
+          "id": "downloads_2026_04_24_95b7_overlay_clean",
+          "map_id": "villa",
+          "actual_counts": {
+            "o": 1
+          },
+          "quality_deltas": {
+            "o": {
+              "actual_count": 1,
+              "baseline_mean_count": 6,
+              "candidate_mean_count": 5.9999,
+              "mean_count_delta": -0.0001,
+              "baseline_actual_prob": 0,
+              "candidate_actual_prob": 0.000023,
+              "actual_prob_delta": 0.000023,
+              "baseline_rank": 2,
+              "candidate_rank": 2
+            }
+          }
+        },
+        {
+          "id": "downloads_2026_04_24_9814_overlay_clean",
+          "map_id": "sunken_ship",
+          "actual_counts": {
+            "o": 2,
+            "r": 4
+          },
+          "quality_deltas": {
+            "o": {
+              "actual_count": 2,
+              "baseline_mean_count": 2.0932,
+              "candidate_mean_count": 1.9865,
+              "mean_count_delta": -0.1067,
+              "baseline_actual_prob": 0.284202,
+              "candidate_actual_prob": 0.294649,
+              "actual_prob_delta": 0.010447,
+              "baseline_rank": 3,
+              "candidate_rank": 3
+            },
+            "r": {
+              "actual_count": 4,
+              "baseline_mean_count": 1.4576,
+              "candidate_mean_count": 1.1499,
+              "mean_count_delta": -0.3077,
+              "baseline_actual_prob": 0.032993,
+              "candidate_actual_prob": 0.009378,
+              "actual_prob_delta": -0.023615,
+              "baseline_rank": 5,
+              "candidate_rank": 5
+            }
+          }
+        }
+      ],
+      "candidate_alpha_counts_by_map": {
+        "shipping": {
+          "p": 5.075
+        },
+        "sunken_ship": {
+          "p": 6.72
+        },
+        "villa": {
+          "p": 7.35
+        }
+      }
+    },
+    {
+      "multiplier": 2,
+      "objective_score": 23.018939,
+      "metrics": {
+        "o": {
+          "sample_count": 2,
+          "mean_actual_prob": 0.14802,
+          "mean_log_loss": 5.025537,
+          "mean_abs_error": 2.5126,
+          "mean_rank": 2.5,
+          "top1_hit_rate": 0,
+          "top3_hit_rate": 1,
+          "support_rate": 1
+        },
+        "r": {
+          "sample_count": 1,
+          "mean_actual_prob": 0.006348,
+          "mean_log_loss": 5.059665,
+          "mean_abs_error": 2.883,
+          "mean_rank": 5,
+          "top1_hit_rate": 0,
+          "top3_hit_rate": 0,
+          "support_rate": 1
+        }
+      },
+      "red_mean_delta": -0.3406,
+      "sample_deltas": [
+        {
+          "id": "downloads_2026_04_24_95b7_overlay_clean",
+          "map_id": "villa",
+          "actual_counts": {
+            "o": 1
+          },
+          "quality_deltas": {
+            "o": {
+              "actual_count": 1,
+              "baseline_mean_count": 6,
+              "candidate_mean_count": 5.9993,
+              "mean_count_delta": -0.0007,
+              "baseline_actual_prob": 0,
+              "candidate_actual_prob": 0.000146,
+              "actual_prob_delta": 0.000146,
+              "baseline_rank": 2,
+              "candidate_rank": 2
+            }
+          }
+        },
+        {
+          "id": "downloads_2026_04_24_9814_overlay_clean",
+          "map_id": "sunken_ship",
+          "actual_counts": {
+            "o": 2,
+            "r": 4
+          },
+          "quality_deltas": {
+            "o": {
+              "actual_count": 2,
+              "baseline_mean_count": 2.0932,
+              "candidate_mean_count": 1.9741,
+              "mean_count_delta": -0.1191,
+              "baseline_actual_prob": 0.284202,
+              "candidate_actual_prob": 0.295894,
+              "actual_prob_delta": 0.011692,
+              "baseline_rank": 3,
+              "candidate_rank": 3
+            },
+            "r": {
+              "actual_count": 4,
+              "baseline_mean_count": 1.4576,
+              "candidate_mean_count": 1.117,
+              "mean_count_delta": -0.3406,
+              "baseline_actual_prob": 0.032993,
+              "candidate_actual_prob": 0.006348,
+              "actual_prob_delta": -0.026646,
+              "baseline_rank": 5,
+              "candidate_rank": 5
+            }
+          }
+        }
+      ],
+      "candidate_alpha_counts_by_map": {
+        "shipping": {
+          "p": 5.8
+        },
+        "sunken_ship": {
+          "p": 7.68
+        },
+        "villa": {
+          "p": 8.4
+        }
+      }
+    },
+    {
+      "multiplier": 2.25,
+      "objective_score": 21.653459,
+      "metrics": {
+        "o": {
+          "sample_count": 2,
+          "mean_actual_prob": 0.148774,
+          "mean_log_loss": 4.143559,
+          "mean_abs_error": 2.5148,
+          "mean_rank": 2.5,
+          "top1_hit_rate": 0,
+          "top3_hit_rate": 1,
+          "support_rate": 1
+        },
+        "r": {
+          "sample_count": 1,
+          "mean_actual_prob": 0.00437,
+          "mean_log_loss": 5.432941,
+          "mean_abs_error": 2.9038,
+          "mean_rank": 5,
+          "top1_hit_rate": 0,
+          "top3_hit_rate": 0,
+          "support_rate": 1
+        }
+      },
+      "red_mean_delta": -0.3614,
+      "sample_deltas": [
+        {
+          "id": "downloads_2026_04_24_95b7_overlay_clean",
+          "map_id": "villa",
+          "actual_counts": {
+            "o": 1
+          },
+          "quality_deltas": {
+            "o": {
+              "actual_count": 1,
+              "baseline_mean_count": 6,
+              "candidate_mean_count": 5.9958,
+              "mean_count_delta": -0.0042,
+              "baseline_actual_prob": 0,
+              "candidate_actual_prob": 0.000848,
+              "actual_prob_delta": 0.000848,
+              "baseline_rank": 2,
+              "candidate_rank": 2
+            }
+          }
+        },
+        {
+          "id": "downloads_2026_04_24_9814_overlay_clean",
+          "map_id": "sunken_ship",
+          "actual_counts": {
+            "o": 2,
+            "r": 4
+          },
+          "quality_deltas": {
+            "o": {
+              "actual_count": 2,
+              "baseline_mean_count": 2.0932,
+              "candidate_mean_count": 1.9662,
+              "mean_count_delta": -0.127,
+              "baseline_actual_prob": 0.284202,
+              "candidate_actual_prob": 0.296699,
+              "actual_prob_delta": 0.012497,
+              "baseline_rank": 3,
+              "candidate_rank": 3
+            },
+            "r": {
+              "actual_count": 4,
+              "baseline_mean_count": 1.4576,
+              "candidate_mean_count": 1.0962,
+              "mean_count_delta": -0.3614,
+              "baseline_actual_prob": 0.032993,
+              "candidate_actual_prob": 0.00437,
+              "actual_prob_delta": -0.028623,
+              "baseline_rank": 5,
+              "candidate_rank": 5
+            }
+          }
+        }
+      ],
+      "candidate_alpha_counts_by_map": {
+        "shipping": {
+          "p": 6.525
+        },
+        "sunken_ship": {
+          "p": 8.64
+        },
+        "villa": {
+          "p": 9.45
+        }
+      }
+    },
+    {
+      "multiplier": 2.5,
+      "objective_score": 20.325246,
+      "metrics": {
+        "o": {
+          "sample_count": 2,
+          "mean_actual_prob": 0.150899,
+          "mean_log_loss": 3.300852,
+          "mean_abs_error": 2.50815,
+          "mean_rank": 2.5,
+          "top1_hit_rate": 0,
+          "top3_hit_rate": 1,
+          "support_rate": 1
+        },
+        "r": {
+          "sample_count": 1,
+          "mean_actual_prob": 0.003059,
+          "mean_log_loss": 5.789742,
+          "mean_abs_error": 2.9175,
+          "mean_rank": 5,
+          "top1_hit_rate": 0,
+          "top3_hit_rate": 0,
+          "support_rate": 1
+        }
+      },
+      "red_mean_delta": -0.3751,
+      "sample_deltas": [
+        {
+          "id": "downloads_2026_04_24_95b7_overlay_clean",
+          "map_id": "villa",
+          "actual_counts": {
+            "o": 1
+          },
+          "quality_deltas": {
+            "o": {
+              "actual_count": 1,
+              "baseline_mean_count": 6,
+              "candidate_mean_count": 5.9772,
+              "mean_count_delta": -0.0228,
+              "baseline_actual_prob": 0,
+              "candidate_actual_prob": 0.004569,
+              "actual_prob_delta": 0.004569,
+              "baseline_rank": 2,
+              "candidate_rank": 2
+            }
+          }
+        },
+        {
+          "id": "downloads_2026_04_24_9814_overlay_clean",
+          "map_id": "sunken_ship",
+          "actual_counts": {
+            "o": 2,
+            "r": 4
+          },
+          "quality_deltas": {
+            "o": {
+              "actual_count": 2,
+              "baseline_mean_count": 2.0932,
+              "candidate_mean_count": 1.9609,
+              "mean_count_delta": -0.1323,
+              "baseline_actual_prob": 0.284202,
+              "candidate_actual_prob": 0.29723,
+              "actual_prob_delta": 0.013027,
+              "baseline_rank": 3,
+              "candidate_rank": 3
+            },
+            "r": {
+              "actual_count": 4,
+              "baseline_mean_count": 1.4576,
+              "candidate_mean_count": 1.0825,
+              "mean_count_delta": -0.3751,
+              "baseline_actual_prob": 0.032993,
+              "candidate_actual_prob": 0.003059,
+              "actual_prob_delta": -0.029934,
+              "baseline_rank": 5,
+              "candidate_rank": 5
+            }
+          }
+        }
+      ],
+      "candidate_alpha_counts_by_map": {
+        "shipping": {
+          "p": 7.25
+        },
+        "sunken_ship": {
+          "p": 9.6
+        },
+        "villa": {
+          "p": 10.5
+        }
+      }
+    }
+  ],
+  "recommendation": {
+    "statistical_best_multiplier": 2.5,
+    "safe_red_suppression_multiplier": null,
+    "near_double_multiplier": 2,
+    "selected_shadow_multiplier": 2.5,
+    "selected_default_multiplier": null,
+    "default_weight_change_class": "RESEARCH_ONLY",
+    "conclusion": "2x purple suppresses red mean but fails the only current red-label replay; keep as aggressive shadow, not default."
+  }
+}

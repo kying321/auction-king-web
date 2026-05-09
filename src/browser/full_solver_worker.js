@@ -1,10 +1,10 @@
-importScripts(
-    "../core/average_observation_runtime.js?v=20260428232030",
-    "../core/posterior_runtime.js?v=20260428232030",
-    "../core/count_constraint_runtime.js?v=20260428232030",
-    "../core/valuation_runtime.js?v=20260428232030",
-    "../core/estimator.js?v=20260428232030"
-);
+import "../core/source_data_runtime.js?v=20260508020400";
+import "../core/authority_calibration_runtime.js?v=20260508020400";
+import "../core/average_observation_runtime.js?v=20260508020400";
+import "../core/posterior_runtime.js?v=20260508020400";
+import "../core/count_constraint_runtime.js?v=20260508020400";
+import "../core/valuation_runtime.js?v=20260508020400";
+import "../core/estimator.js?v=20260508020400";
 
 self.onmessage = function onWorkerMessage(event) {
     const payload = event && event.data ? event.data : null;
@@ -22,7 +22,11 @@ self.onmessage = function onWorkerMessage(event) {
                 }
             }
             : resolvedConfig;
-        const estimator = new AuctionKingEstimator(effectiveConfig, stateVars);
+        const AuctionKingEstimatorFromGlobal = globalThis.AuctionKingEstimator;
+        if (typeof AuctionKingEstimatorFromGlobal !== "function") {
+            throw new Error("完整求解器不可用。");
+        }
+        const estimator = new AuctionKingEstimatorFromGlobal(effectiveConfig, stateVars);
         const result = estimator.recompute();
         self.postMessage({
             type: "solve_result",

@@ -6,11 +6,20 @@ const DEFAULT_OUTPUT_PATH = path.join(
     ROOT_DIR,
     "docs",
     "research",
-    "2026-04-29-bidking-public-authority-source-search-report.json"
+    "2026-05-07-bidking-public-authority-source-search-refresh-report.json"
 );
 
 const TARGET_ITEM_ID = 1106013;
-const STEAM_APP_DEPOT = {
+const STEAM_CURRENT_FULL_CLIENT_DEPOT = {
+    app_id: 4128580,
+    depot_id: 4128581,
+    branch: "public",
+    build_id: "23055226",
+    manifest_id: "7599723101430486725",
+    item_txt_size: "487.41 KiB",
+    drop_txt_size: "283.09 KiB"
+};
+const STEAM_DEMO_APP_DEPOT = {
     app_id: 4205000,
     depot_id: 4205001,
     branch: "public"
@@ -97,10 +106,41 @@ function markdownCode(value) {
 function buildCandidatePaths() {
     return [
         {
+            id: "steam_current_full_client_selective_tables_download",
+            status: "source_candidate_requires_table_download_and_scan",
+            change_class: "RESEARCH_ONLY",
+            app_depot: {
+                app_id: STEAM_CURRENT_FULL_CLIENT_DEPOT.app_id,
+                depot_id: STEAM_CURRENT_FULL_CLIENT_DEPOT.depot_id,
+                branch: STEAM_CURRENT_FULL_CLIENT_DEPOT.branch,
+                build_id: STEAM_CURRENT_FULL_CLIENT_DEPOT.build_id,
+                manifest_id: STEAM_CURRENT_FULL_CLIENT_DEPOT.manifest_id
+            },
+            filelist: [
+                "BidKing/BidKing_Data/StreamingAssets/Tables/Item.txt",
+                "BidKing/BidKing_Data/StreamingAssets/Tables/Drop.txt"
+            ],
+            visible_file_sizes: {
+                item_txt: STEAM_CURRENT_FULL_CLIENT_DEPOT.item_txt_size,
+                drop_txt: STEAM_CURRENT_FULL_CLIENT_DEPOT.drop_txt_size
+            },
+            requires_steam_login_or_ownership: true,
+            expected_output_can_enter_intake_if_row_found: true,
+            expected_output_can_enter_intake: false,
+            priority_after_history_scan: "high",
+            reason: "SteamDB current full-client depot exposes Item.txt and Drop.txt file entries, but not raw row contents.",
+            acceptance_criteria: [
+                "raw Item.txt row begins with 1106013",
+                "Drop.txt reference context for group 1066 is preserved",
+                "depot app id, depot id, build id, and manifest id are recorded",
+                "table reference integrity rerun passes before any staging or handoff"
+            ]
+        },
+        {
             id: "steam_older_manifest_selective_tables_download",
             status: "demoted_after_manifest_history_scan",
             change_class: "RESEARCH_ONLY",
-            app_depot: STEAM_APP_DEPOT,
+            app_depot: STEAM_DEMO_APP_DEPOT,
             filelist: [
                 "BidKing/BidKing_Data/StreamingAssets/Tables/Item.txt",
                 "BidKing/BidKing_Data/StreamingAssets/Tables/Drop.txt"
@@ -148,6 +188,7 @@ function buildBidKingPublicAuthoritySourceSearchReport({
     ));
     const blockers = [
         "no_direct_public_item_row_found",
+        "current_full_client_tables_not_downloaded",
         "steam_visible_manifest_history_has_no_item_txt_change",
         "current_public_manifest_has_authority_gap",
         "developer_or_server_side_table_export_required"
@@ -161,6 +202,9 @@ function buildBidKingPublicAuthoritySourceSearchReport({
         recommended_change_class: "RESEARCH_ONLY",
         live_path_touched: false,
         source_urls: [
+            "https://steamdb.info/app/4128580/depots/",
+            "https://steamdb.info/depot/4128581/apps/",
+            "https://steamdb.info/depot/4128581/manifests/",
             "https://steamdb.info/depot/4205001/manifests/",
             "https://steamdb.info/depot/4205001/history/?changeid=M:4886628206852187961",
             "https://api.steamcmd.net/v1/info/4205000?pretty=1",
@@ -174,17 +218,24 @@ function buildBidKingPublicAuthoritySourceSearchReport({
             visible_manifest_count: STEAMDB_MANIFEST_HISTORY.length,
             visible_manifest_item_txt_change_count: itemTxtChangeManifests.length,
             visible_manifest_drop_txt_change_count: dropTxtChangeManifests.length,
+            current_full_client_depot_id: STEAM_CURRENT_FULL_CLIENT_DEPOT.depot_id,
+            current_full_client_build_id: STEAM_CURRENT_FULL_CLIENT_DEPOT.build_id,
+            current_full_client_manifest_id: STEAM_CURRENT_FULL_CLIENT_DEPOT.manifest_id,
+            current_full_client_depot_table_files_visible: true,
+            current_full_client_item_txt_size: STEAM_CURRENT_FULL_CLIENT_DEPOT.item_txt_size,
+            current_full_client_drop_txt_size: STEAM_CURRENT_FULL_CLIENT_DEPOT.drop_txt_size,
+            steam_current_full_client_path_viable: true,
             current_public_manifest_id: "1315456865473715661",
             current_public_build_id: "22531236",
-            app_id: STEAM_APP_DEPOT.app_id,
-            depot_id: STEAM_APP_DEPOT.depot_id,
+            app_id: STEAM_DEMO_APP_DEPOT.app_id,
+            depot_id: STEAM_DEMO_APP_DEPOT.depot_id,
             steam_older_manifest_path_viable: false,
             authority_intake_allowed: false,
             staging_item_ingest_allowed: false,
             table_backed_shadow_replay_allowed: false,
             authority_handoff_allowed: false,
             default_config_update_allowed: false,
-            recommended_next_action: "acquire_developer_or_server_side_table_export_for_1106013",
+            recommended_next_action: "selectively_download_current_full_client_tables_then_scan_1106013",
             blockers
         },
         gates: {
@@ -196,7 +247,9 @@ function buildBidKingPublicAuthoritySourceSearchReport({
             synthetic_item_as_authority_allowed: false,
             drop_tuple_exclusion_as_authority_allowed: false
         },
-        steam_app_depot: STEAM_APP_DEPOT,
+        steam_app_depot: STEAM_DEMO_APP_DEPOT,
+        steam_current_full_client_depot: STEAM_CURRENT_FULL_CLIENT_DEPOT,
+        steam_demo_app_depot: STEAM_DEMO_APP_DEPOT,
         steamdb_manifest_history: STEAMDB_MANIFEST_HISTORY,
         candidate_paths: buildCandidatePaths(),
         notes: [
@@ -215,7 +268,7 @@ function formatBidKingPublicAuthoritySourceSearchMarkdown(report, jsonPath = DEF
         `| ${markdownCode(entry.seen_at_utc)} | ${markdownCode(entry.manifest_id)} | ${markdownCell(JSON.stringify(entry.table_changes || []))} |`
     )).join("\n");
     const candidateRows = (report.candidate_paths || []).map((entry) => (
-        `| ${markdownCode(entry.id)} | ${markdownCode(entry.status)} | ${markdownCode(entry.priority_after_history_scan)} | ${markdownCode(entry.expected_output_can_enter_intake === true)} |`
+        `| ${markdownCode(entry.id)} | ${markdownCode(entry.status)} | ${markdownCode(entry.priority_after_history_scan)} | ${markdownCode(entry.expected_output_can_enter_intake === true ? "true" : entry.expected_output_can_enter_intake_if_row_found === true ? "if_row_found" : "false")} |`
     )).join("\n");
 
     return `# BidKing public authority source search
@@ -224,8 +277,12 @@ function formatBidKingPublicAuthoritySourceSearchMarkdown(report, jsonPath = DEF
 - JSON: \`${jsonDisplayPath}\`
 - Target item id: \`${summary.target_item_id || TARGET_ITEM_ID}\`
 - Direct public authority row found: \`${summary.direct_public_authority_item_row_found === true}\`
+- Current full-client depot: \`${summary.current_full_client_depot_id || "-"}\`
+- Current full-client table files visible: \`${summary.current_full_client_depot_table_files_visible === true}\`
+- Current full-client Item.txt size: \`${summary.current_full_client_item_txt_size || "-"}\`
 - SteamDB visible manifest count: \`${summary.visible_manifest_count || 0}\`
 - Visible Item.txt change count: \`${summary.visible_manifest_item_txt_change_count || 0}\`
+- Current full-client path viable: \`${summary.steam_current_full_client_path_viable === true}\`
 - Steam older manifest path viable: \`${summary.steam_older_manifest_path_viable === true}\`
 - Authority intake allowed: \`${summary.authority_intake_allowed === true}\`
 - Staging item ingest allowed: \`${summary.staging_item_ingest_allowed === true}\`
@@ -250,7 +307,7 @@ ${(summary.blockers || []).map((blocker) => `- \`${blocker}\``).join("\n") || "-
 
 ## Decision
 
-Logged-in SteamDB history does not show any visible \`Item.txt\` change, so old public Steam manifest download is demoted. The next authority-grade path is a developer/server-side table export or an independently sourced complete \`StreamingAssets/Tables\` package with a raw \`1106013\\t\` row.
+Logged-in SteamDB history does not show any visible demo-depot \`Item.txt\` change, so old public demo manifest download is demoted. The next source-recovery path is selective download of current full-client depot tables, followed by a raw \`1106013\\t\` scan. If that row is still absent, fall back to developer/server-side table export or an independently sourced complete \`StreamingAssets/Tables\` package.
 `;
 }
 
@@ -274,6 +331,8 @@ if (require.main === module) {
 
 module.exports = {
     DEFAULT_OUTPUT_PATH,
+    STEAM_CURRENT_FULL_CLIENT_DEPOT,
+    STEAM_DEMO_APP_DEPOT,
     STEAMDB_MANIFEST_HISTORY,
     buildBidKingPublicAuthoritySourceSearchReport,
     formatBidKingPublicAuthoritySourceSearchMarkdown,

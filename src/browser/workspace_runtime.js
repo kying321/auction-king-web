@@ -150,7 +150,6 @@ function getAverageRoundingModeFromMeta(value) {
 function normalizeFieldValueForStorage(field, value) {
     const numericValue = normalizeNumericValue(value);
     if (numericValue === null) return null;
-    if (field && isAverageCellFieldId(field.id) && numericValue === 0) return null;
     if (field && field.input_mode === "decimal" && typeof value === "string") {
         return normalizeNumericText(value);
     }
@@ -164,7 +163,6 @@ function buildLegacyEstimatorStateFromFieldValues(fieldValues, fieldValueMeta = 
 
     Object.entries(FIELD_TO_LEGACY_STATE_KEY).forEach(([fieldId, legacyKey]) => {
         const numericValue = normalizeNumericValue(source[fieldId]);
-        if (isAverageCellFieldId(fieldId) && numericValue === 0) return;
         if (numericValue !== null) state[legacyKey] = numericValue;
     });
 
@@ -177,16 +175,12 @@ function buildLegacyEstimatorStateFromFieldValues(fieldValues, fieldValueMeta = 
     });
 
     Object.entries(AVG_TEXT_FIELD_MAP).forEach(([fieldId, legacyKey]) => {
-        if (normalizeNumericValue(source[fieldId]) === 0) {
-            state[legacyKey] = null;
-            return;
-        }
         state[legacyKey] = normalizeNumericText(source[fieldId]);
     });
 
     Object.entries(AVG_ROUNDING_MODE_FIELD_MAP).forEach(([fieldId, legacyKey]) => {
         const numericValue = normalizeNumericValue(source[fieldId]);
-        if (numericValue !== null && numericValue !== 0) {
+        if (numericValue !== null) {
             state[legacyKey] = getAverageRoundingModeFromMeta(sourceMeta[fieldId]);
         }
     });

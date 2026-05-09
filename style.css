@@ -1,5 +1,5 @@
 :root {
-    --ui-scale: 0.888889;
+    --ui-scale: 0.9;
     --bg-base: #f6f0e6;
     --bg-muted: #efe6d8;
     --bg-panel: rgba(251, 247, 240, 0.96);
@@ -44,7 +44,7 @@
 
 html {
     color-scheme: light;
-    font-size: 88.8889%;
+    font-size: 90%;
 }
 
 body {
@@ -111,6 +111,8 @@ body[data-theme="dark"] .app-background {
     max-width: 1560px;
     margin: 0 auto;
     padding: 1.45rem 1.8rem 1.8rem;
+    transform: scale(var(--ui-scale));
+    transform-origin: top center;
 }
 
 .workspace-shell {
@@ -517,6 +519,89 @@ body[data-theme="dark"] .app-background {
     background: transparent;
     border: 0;
     box-shadow: none;
+}
+
+.research-dashboard {
+    grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+}
+
+.research-dashboard .workspace-panel-heading > p {
+    max-width: min(680px, 70%);
+}
+
+.research-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+}
+
+.research-summary-card,
+.research-artifact-card {
+    display: grid;
+    gap: 0.35rem;
+    min-width: 0;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--bg-panel-strong);
+    color: inherit;
+    text-decoration: none;
+}
+
+.research-summary-card {
+    padding: 0.68rem 0.78rem;
+}
+
+.research-summary-label,
+.research-artifact-label {
+    color: var(--text-strong);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.research-summary-label {
+    font-size: 0.86rem;
+}
+
+.research-summary-value {
+    color: var(--accent-primary);
+    font-size: 1.08rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.research-summary-note,
+.research-artifact-description,
+.research-note {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    line-height: 1.55;
+}
+
+.research-artifact-grid {
+    display: grid;
+    gap: 0.48rem;
+}
+
+.research-artifact-card {
+    padding: 0.72rem 0.78rem;
+    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.research-artifact-card:hover {
+    transform: translateY(-1px);
+    border-color: var(--border-strong);
+    background: var(--bg-panel);
+}
+
+.research-artifact-label {
+    font-size: 0.96rem;
+}
+
+.research-artifact-path {
+    color: var(--accent-blue);
+    font-size: 0.76rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
 }
 
 .glass {
@@ -1832,6 +1917,8 @@ body[data-theme="dark"] .workspace-compute-meta {
 }
 
 body[data-theme="dark"] .calibration-meta-card,
+body[data-theme="dark"] .research-summary-card,
+body[data-theme="dark"] .research-artifact-card,
 body[data-theme="dark"] .calibration-grid-card,
 body[data-theme="dark"] .field-group,
 body[data-theme="dark"] .more-fields-panel,
@@ -2048,6 +2135,10 @@ body[data-theme="dark"] .code-editor[readonly] {
         grid-template-columns: 1fr;
     }
 
+    .research-dashboard {
+        grid-template-columns: 1fr;
+    }
+
     .workspace-result-panel {
         order: -1;
     }
@@ -2212,6 +2303,7 @@ body[data-theme="dark"] .code-editor[readonly] {
     }
 
     .calibration-meta-grid,
+    .research-summary-grid,
     .calibration-grid-shell {
         grid-template-columns: 1fr;
     }

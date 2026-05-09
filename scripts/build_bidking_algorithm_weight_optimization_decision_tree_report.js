@@ -85,6 +85,10 @@ function writeJson(filePath, payload) {
     writeText(filePath, `${JSON.stringify(payload, null, 2)}\n`);
 }
 
+function repoRelativePath(filePath) {
+    return path.relative(ROOT_DIR, filePath).replace(/\\/g, "/");
+}
+
 function isPlainObject(value) {
     return value !== null && typeof value === "object" && !Array.isArray(value);
 }
@@ -816,12 +820,12 @@ function buildBidKingAlgorithmWeightOptimizationDecisionTreeReport({
         optimization_lanes: buildOptimizationLanes(signals),
         backtracking_rules: buildBacktrackingRules(signals),
         source_artifacts: {
-            public_authority_source_search_report: DEFAULT_PUBLIC_AUTHORITY_SOURCE_SEARCH_REPORT_PATH,
-            overlay_shadow_simulator_gate_report: DEFAULT_OVERLAY_SHADOW_SIMULATOR_GATE_REPORT_PATH,
-            staging_overlay_reference_integrity_report: DEFAULT_STAGING_OVERLAY_REFERENCE_INTEGRITY_REPORT_PATH,
-            table_reference_integrity_report: DEFAULT_TABLE_REFERENCE_INTEGRITY_REPORT_PATH,
-            table_backed_shadow_simulator_report: DEFAULT_TABLE_BACKED_SHADOW_SIMULATOR_REPORT_PATH,
-            strategy_comparison_report: DEFAULT_STRATEGY_COMPARISON_REPORT_PATH
+            public_authority_source_search_report: repoRelativePath(DEFAULT_PUBLIC_AUTHORITY_SOURCE_SEARCH_REPORT_PATH),
+            overlay_shadow_simulator_gate_report: repoRelativePath(DEFAULT_OVERLAY_SHADOW_SIMULATOR_GATE_REPORT_PATH),
+            staging_overlay_reference_integrity_report: repoRelativePath(DEFAULT_STAGING_OVERLAY_REFERENCE_INTEGRITY_REPORT_PATH),
+            table_reference_integrity_report: repoRelativePath(DEFAULT_TABLE_REFERENCE_INTEGRITY_REPORT_PATH),
+            table_backed_shadow_simulator_report: repoRelativePath(DEFAULT_TABLE_BACKED_SHADOW_SIMULATOR_REPORT_PATH),
+            strategy_comparison_report: repoRelativePath(DEFAULT_STRATEGY_COMPARISON_REPORT_PATH)
         },
         notes: [
             "The decision tree is intentionally fail-closed: blocked paths jump to their parent evidence gap instead of relaxing gates.",

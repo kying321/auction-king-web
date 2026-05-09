@@ -5,8 +5,8 @@
   "change_class": "RESEARCH_ONLY",
   "export_kind": "count_fit_same_battle_samples",
   "inputs": {
-    "count_fit_sample_review_template": "/var/folders/dr/2wz304850ynflhw9qtp_6c_80000gn/T/ak-manual-priority-select-9L7frx/older-p1-manual-count-confirmation-results.json",
-    "count_fit_sample_review_source": "/var/folders/dr/2wz304850ynflhw9qtp_6c_80000gn/T/ak-manual-priority-select-9L7frx/older-p1-manual-count-confirmation-results.json"
+    "count_fit_sample_review_template": "/var/folders/dr/2wz304850ynflhw9qtp_6c_80000gn/T/ak-manual-priority-select-JmifJB/older-p1-manual-count-confirmation-results.json",
+    "count_fit_sample_review_source": "/var/folders/dr/2wz304850ynflhw9qtp_6c_80000gn/T/ak-manual-priority-select-JmifJB/older-p1-manual-count-confirmation-results.json"
   },
   "source_template_schema_version": "ak_count_fit_sample_review_results_v1",
   "source_template_generated_at": "2026-04-26T12:00:00.000+08:00",
