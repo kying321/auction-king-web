@@ -142,6 +142,19 @@ test("candidate builder keeps inferred missing item context non-authoritative", 
         candidates[0].drop_group_curve_contexts[0].nearest_weight_peers.map((entry) => entry.item_id),
         [5002, 5001]
     );
+    assert.equal(candidates[0].sensitivity_scenarios.length >= 3, true);
+    assert.equal(
+        candidates[0].sensitivity_scenarios.every((scenario) => scenario.authority_action_allowed === false),
+        true
+    );
+    assert.equal(
+        candidates[0].sensitivity_scenarios.some((scenario) => scenario.scenario_id === "curve_fit_context"),
+        true
+    );
+    assert.ok(
+        candidates[0].sensitivity_scenarios.find((scenario) => scenario.scenario_id === "curve_fit_context")
+            .expected_group_base_value_with_missing > 0
+    );
 });
 
 test("resolution report blocks synthetic item and tuple-exclusion promotion", () => {
@@ -157,6 +170,8 @@ test("resolution report blocks synthetic item and tuple-exclusion promotion", ()
     assert.deepEqual(report.summary.project_relevant_missing_item_ids, [5003]);
     assert.equal(report.summary.curve_context_count, 1);
     assert.equal(report.summary.inverse_value_weight_context_count, 1);
+    assert.equal(report.summary.sensitivity_scenario_count >= 3, true);
+    assert.equal(report.summary.sensitivity_authority_action_allowed, false);
     assert.equal(report.gates.synthetic_item_as_authority_allowed, false);
     assert.equal(report.gates.drop_tuple_exclusion_as_authority_allowed, false);
     assert.equal(report.gates.default_config_update_allowed, false);

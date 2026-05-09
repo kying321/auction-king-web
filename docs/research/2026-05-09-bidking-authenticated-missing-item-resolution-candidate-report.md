@@ -8,6 +8,8 @@
 - curve contexts: `1`
 - inverse value/weight contexts: `1`
 - strongest inverse log(value)/log(weight) correlation: `-0.954545`
+- sensitivity scenarios: `4`
+- Sensitivity authority action allowed: `false`
 - Synthetic item as authority allowed: `false`
 - Drop tuple exclusion as authority allowed: `false`
 - Default config update allowed: `false`
@@ -24,6 +26,15 @@
 | item id | drop group | signal | known peers | missing weight | log correlation | predicted base | nearest peers |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `1106013` | `1066` | inverse_value_weight_context_only | `34` | `3333` | `-0.954545` | `296050.09` | [1106006,1066003,1026003,1106001] |
+
+## Sensitivity Scenarios
+
+| item id | scenario | inferred base | missing EV contribution | group expected base | tail >=200k | jackpot >=1m | authority allowed |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `1106013` | known_p25_floor_context | `158940` | `2844.83` | `201495.02` | `0.23898311` | `0.01327505` | `false` |
+| `1106013` | curve_fit_context | `296050.09` | `5298.93` | `203949.12` | `0.25688187` | `0.01327505` | `false` |
+| `1106013` | known_p75_ceiling_context | `361000` | `6461.45` | `205111.64` | `0.25688187` | `0.01327505` | `false` |
+| `1106013` | neighboring_family_max_stress_context | `1553900` | `27812.88` | `226463.07` | `0.25688187` | `0.03117381` | `false` |
 
 ## Blockers
 

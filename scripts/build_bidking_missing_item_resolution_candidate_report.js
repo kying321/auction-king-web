@@ -267,6 +267,13 @@ function buildDropGroupCurveContext(entry, dropRecordsByGroup, itemRecordsById) 
         ? Math.exp((Math.log(missingWeight) - fit.intercept) / fit.slope)
         : null;
     const sortedBaseValues = knownPeers.map((peer) => peer.base_value).sort((left, right) => left - right);
+    const knownWeightedBaseSum = knownPeers.reduce((sum, peer) => sum + peer.weight * peer.base_value, 0);
+    const knownTailWeightGe200k = knownPeers
+        .filter((peer) => peer.base_value >= 200000)
+        .reduce((sum, peer) => sum + peer.weight, 0);
+    const knownJackpotWeightGe1m = knownPeers
+        .filter((peer) => peer.base_value >= 1000000)
+        .reduce((sum, peer) => sum + peer.weight, 0);
     const nearestWeightPeers = knownPeers
         .slice()
         .sort((left, right) => (
@@ -288,6 +295,10 @@ function buildDropGroupCurveContext(entry, dropRecordsByGroup, itemRecordsById) 
         missing_weight: Number.isFinite(missingWeight) ? missingWeight : null,
         missing_weight_share: totalWeight > 0 && Number.isFinite(missingWeight) ? safeRound(missingWeight / totalWeight, 8) : null,
         total_group_weight: totalWeight,
+        known_weighted_base_sum: safeRound(knownWeightedBaseSum, 2),
+        expected_group_base_value_without_missing: totalWeight > 0 ? safeRound(knownWeightedBaseSum / totalWeight, 2) : null,
+        known_tail_probability_ge_200000: totalWeight > 0 ? safeRound(knownTailWeightGe200k / totalWeight, 8) : null,
+        known_jackpot_probability_ge_1000000: totalWeight > 0 ? safeRound(knownJackpotWeightGe1m / totalWeight, 8) : null,
         log_value_log_weight_correlation: safeRound(correlation, 6),
         log_log_fit: fit ? {
             intercept: safeRound(fit.intercept, 6),
@@ -304,6 +315,77 @@ function buildDropGroupCurveContext(entry, dropRecordsByGroup, itemRecordsById) 
         nearest_weight_peers: nearestWeightPeers,
         authority_action_allowed: false
     };
+}
+
+function makeSensitivityScenario({
+    scenarioId,
+    scenarioLabel,
+    baseValue,
+    context,
+    projectMapIds
+}) {
+    const inferredBaseValue = Number(baseValue);
+    const missingShare = Number(context.missing_weight_share);
+    const knownExpectedBase = Number(context.expected_group_base_value_without_missing);
+    const knownTailProbability = Number(context.known_tail_probability_ge_200000);
+    const knownJackpotProbability = Number(context.known_jackpot_probability_ge_1000000);
+    if (!Number.isFinite(inferredBaseValue) || inferredBaseValue <= 0 || !Number.isFinite(missingShare)) return null;
+    return {
+        scenario_id: scenarioId,
+        scenario_label: scenarioLabel,
+        source_classification: "context_only_not_authority",
+        impacted_project_maps: projectMapIds,
+        drop_group_id: context.drop_group_id,
+        inferred_base_value: safeRound(inferredBaseValue, 2),
+        missing_weight: context.missing_weight,
+        missing_probability_share: context.missing_weight_share,
+        missing_expected_value_contribution: safeRound(missingShare * inferredBaseValue, 2),
+        expected_group_base_value_with_missing: Number.isFinite(knownExpectedBase)
+            ? safeRound(knownExpectedBase + missingShare * inferredBaseValue, 2)
+            : null,
+        group_tail_probability_ge_200000: Number.isFinite(knownTailProbability)
+            ? safeRound(knownTailProbability + (inferredBaseValue >= 200000 ? missingShare : 0), 8)
+            : null,
+        group_jackpot_probability_ge_1000000: Number.isFinite(knownJackpotProbability)
+            ? safeRound(knownJackpotProbability + (inferredBaseValue >= 1000000 ? missingShare : 0), 8)
+            : null,
+        authority_action_allowed: false,
+        default_config_update_allowed: false,
+        notes: [
+            "sensitivity scenario only",
+            "does not recover source Item row",
+            "does not authorize default config or replay promotion"
+        ]
+    };
+}
+
+function buildSensitivityScenarios({ itemId, projectMapIds, neighboringSameFamily, dropGroupCurveContexts }) {
+    const familyBaseValues = (neighboringSameFamily || [])
+        .map((entry) => Number(entry.base_value))
+        .filter((value) => Number.isFinite(value) && value > 0);
+    const familyMax = familyBaseValues.length ? Math.max(...familyBaseValues) : null;
+    return (dropGroupCurveContexts || []).flatMap((context) => {
+        const baseSummary = context.known_base_value_summary || {};
+        const definitions = [
+            ["known_p25_floor_context", "Known peer p25 floor", baseSummary.p25],
+            ["curve_fit_context", "Log-log curve fit", context.predicted_base_value_from_missing_weight],
+            ["known_p75_ceiling_context", "Known peer p75 ceiling", baseSummary.p75],
+            ["neighboring_family_max_stress_context", "Neighboring family max stress", familyMax]
+        ];
+        return definitions
+            .map(([scenarioId, scenarioLabel, baseValue]) => makeSensitivityScenario({
+                scenarioId,
+                scenarioLabel,
+                baseValue,
+                context,
+                projectMapIds
+            }))
+            .filter(Boolean)
+            .map((scenario) => ({
+                ...scenario,
+                item_id: itemId
+            }));
+    });
 }
 
 function buildMissingItemResolutionCandidates({
@@ -343,6 +425,12 @@ function buildMissingItemResolutionCandidates({
         const referenceWeights = uniqueSortedNumbers(references.map((entry) => entry.weight));
         const parentReferenceCount = references.reduce((total, entry) => total + entry.parent_reference_count, 0);
         const projectMapIds = projectMapIdsByItem.get(itemId) || [];
+        const sensitivityScenarios = buildSensitivityScenarios({
+            itemId,
+            projectMapIds,
+            neighboringSameFamily,
+            dropGroupCurveContexts
+        });
 
         return {
             item_id: itemId,
@@ -360,6 +448,7 @@ function buildMissingItemResolutionCandidates({
             reference_weights: referenceWeights,
             missing_drop_references: references,
             drop_group_curve_contexts: dropGroupCurveContexts,
+            sensitivity_scenarios: sensitivityScenarios,
             authority_action_allowed: false,
             resolution_options: [
                 "recover_original_item_row_from_matching_client_or_table_export",
@@ -391,6 +480,7 @@ function buildBidKingMissingItemResolutionCandidateReport({
     const unresolvedCandidates = candidates.filter((entry) => !entry.source_item_record_found);
     const projectRelevantMissingIds = uniqueSortedNumbers(candidates.map((entry) => entry.item_id));
     const curveContexts = candidates.flatMap((entry) => entry.drop_group_curve_contexts || []);
+    const sensitivityScenarios = candidates.flatMap((entry) => entry.sensitivity_scenarios || []);
     const inverseCorrelations = curveContexts
         .map((entry) => Number(entry.log_value_log_weight_correlation))
         .filter(Number.isFinite)
@@ -421,6 +511,8 @@ function buildBidKingMissingItemResolutionCandidateReport({
             curve_context_count: curveContexts.length,
             inverse_value_weight_context_count: curveContexts.filter((entry) => entry.curve_signal === "inverse_value_weight_context_only").length,
             strongest_inverse_log_value_weight_correlation: inverseCorrelations[0] ?? null,
+            sensitivity_scenario_count: sensitivityScenarios.length,
+            sensitivity_authority_action_allowed: false,
             synthetic_item_as_authority_allowed: false,
             drop_tuple_exclusion_as_authority_allowed: false,
             table_backed_shadow_replay_allowed: false,
@@ -474,6 +566,11 @@ function formatBidKingMissingItemResolutionCandidateMarkdown(report, jsonPath = 
             `| ${markdownCode(entry.item_id)} | ${markdownCode(context.drop_group_id)} | ${markdownCell(context.curve_signal)} | ${markdownCode(context.known_peer_count)} | ${markdownCode(context.missing_weight)} | ${markdownCode(context.log_value_log_weight_correlation)} | ${markdownCode(context.predicted_base_value_from_missing_weight)} | ${markdownCell(JSON.stringify((context.nearest_weight_peers || []).slice(0, 4).map((peer) => peer.item_id)))} |`
         ))
     )).join("\n");
+    const sensitivityRows = (report.missing_item_candidates || []).flatMap((entry) => (
+        (entry.sensitivity_scenarios || []).map((scenario) => (
+            `| ${markdownCode(scenario.item_id)} | ${markdownCell(scenario.scenario_id)} | ${markdownCode(scenario.inferred_base_value)} | ${markdownCode(scenario.missing_expected_value_contribution)} | ${markdownCode(scenario.expected_group_base_value_with_missing)} | ${markdownCode(scenario.group_tail_probability_ge_200000)} | ${markdownCode(scenario.group_jackpot_probability_ge_1000000)} | ${markdownCode(scenario.authority_action_allowed)} |`
+        ))
+    )).join("\n");
 
     return `# BidKing missing item resolution candidate report
 
@@ -485,6 +582,8 @@ function formatBidKingMissingItemResolutionCandidateMarkdown(report, jsonPath = 
 - curve contexts: \`${summary.curve_context_count ?? 0}\`
 - inverse value/weight contexts: \`${summary.inverse_value_weight_context_count ?? 0}\`
 - strongest inverse log(value)/log(weight) correlation: \`${summary.strongest_inverse_log_value_weight_correlation ?? "-"}\`
+- sensitivity scenarios: \`${summary.sensitivity_scenario_count ?? 0}\`
+- Sensitivity authority action allowed: \`${summary.sensitivity_authority_action_allowed === true}\`
 - Synthetic item as authority allowed: \`${summary.synthetic_item_as_authority_allowed === true}\`
 - Drop tuple exclusion as authority allowed: \`${summary.drop_tuple_exclusion_as_authority_allowed === true}\`
 - Default config update allowed: \`${summary.default_config_update_allowed === true}\`
@@ -501,6 +600,12 @@ ${rows || "| `-` | `false` | `-` | [] | `0` | [] | [] |"}
 | item id | drop group | signal | known peers | missing weight | log correlation | predicted base | nearest peers |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 ${curveRows || "| `-` | `-` | - | `0` | `-` | `-` | `-` | [] |"}
+
+## Sensitivity Scenarios
+
+| item id | scenario | inferred base | missing EV contribution | group expected base | tail >=200k | jackpot >=1m | authority allowed |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+${sensitivityRows || "| `-` | - | `-` | `-` | `-` | `-` | `-` | `false` |"}
 
 ## Blockers
 

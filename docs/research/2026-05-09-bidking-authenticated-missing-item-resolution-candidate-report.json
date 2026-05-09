@@ -1,6 +1,6 @@
 {
   "schema_version": "ak_bidking_missing_item_resolution_candidate_v1",
-  "generated_at": "2026-05-09T19:21:52+08:00",
+  "generated_at": "2026-05-09T19:31:00+08:00",
   "mode": "source_first_implementation",
   "change_class": "SIM_ONLY",
   "recommended_change_class": "SIM_ONLY",
@@ -23,6 +23,8 @@
     "curve_context_count": 1,
     "inverse_value_weight_context_count": 1,
     "strongest_inverse_log_value_weight_correlation": -0.954545,
+    "sensitivity_scenario_count": 4,
+    "sensitivity_authority_action_allowed": false,
     "synthetic_item_as_authority_allowed": false,
     "drop_tuple_exclusion_as_authority_allowed": false,
     "table_backed_shadow_replay_allowed": false,
@@ -566,6 +568,10 @@
           "missing_weight": 3333,
           "missing_weight_share": 0.01789876,
           "total_group_weight": 186214,
+          "known_weighted_base_sum": 36991446783,
+          "expected_group_base_value_without_missing": 198650.19,
+          "known_tail_probability_ge_200000": 0.23898311,
+          "known_jackpot_probability_ge_1000000": 0.01327505,
           "log_value_log_weight_correlation": -0.954545,
           "log_log_fit": {
             "intercept": 23.72493,
@@ -697,6 +703,108 @@
             }
           ],
           "authority_action_allowed": false
+        }
+      ],
+      "sensitivity_scenarios": [
+        {
+          "scenario_id": "known_p25_floor_context",
+          "scenario_label": "Known peer p25 floor",
+          "source_classification": "context_only_not_authority",
+          "impacted_project_maps": [
+            "sunken_ship",
+            "villa"
+          ],
+          "drop_group_id": 1066,
+          "inferred_base_value": 158940,
+          "missing_weight": 3333,
+          "missing_probability_share": 0.01789876,
+          "missing_expected_value_contribution": 2844.83,
+          "expected_group_base_value_with_missing": 201495.02,
+          "group_tail_probability_ge_200000": 0.23898311,
+          "group_jackpot_probability_ge_1000000": 0.01327505,
+          "authority_action_allowed": false,
+          "default_config_update_allowed": false,
+          "notes": [
+            "sensitivity scenario only",
+            "does not recover source Item row",
+            "does not authorize default config or replay promotion"
+          ],
+          "item_id": 1106013
+        },
+        {
+          "scenario_id": "curve_fit_context",
+          "scenario_label": "Log-log curve fit",
+          "source_classification": "context_only_not_authority",
+          "impacted_project_maps": [
+            "sunken_ship",
+            "villa"
+          ],
+          "drop_group_id": 1066,
+          "inferred_base_value": 296050.09,
+          "missing_weight": 3333,
+          "missing_probability_share": 0.01789876,
+          "missing_expected_value_contribution": 5298.93,
+          "expected_group_base_value_with_missing": 203949.12,
+          "group_tail_probability_ge_200000": 0.25688187,
+          "group_jackpot_probability_ge_1000000": 0.01327505,
+          "authority_action_allowed": false,
+          "default_config_update_allowed": false,
+          "notes": [
+            "sensitivity scenario only",
+            "does not recover source Item row",
+            "does not authorize default config or replay promotion"
+          ],
+          "item_id": 1106013
+        },
+        {
+          "scenario_id": "known_p75_ceiling_context",
+          "scenario_label": "Known peer p75 ceiling",
+          "source_classification": "context_only_not_authority",
+          "impacted_project_maps": [
+            "sunken_ship",
+            "villa"
+          ],
+          "drop_group_id": 1066,
+          "inferred_base_value": 361000,
+          "missing_weight": 3333,
+          "missing_probability_share": 0.01789876,
+          "missing_expected_value_contribution": 6461.45,
+          "expected_group_base_value_with_missing": 205111.64,
+          "group_tail_probability_ge_200000": 0.25688187,
+          "group_jackpot_probability_ge_1000000": 0.01327505,
+          "authority_action_allowed": false,
+          "default_config_update_allowed": false,
+          "notes": [
+            "sensitivity scenario only",
+            "does not recover source Item row",
+            "does not authorize default config or replay promotion"
+          ],
+          "item_id": 1106013
+        },
+        {
+          "scenario_id": "neighboring_family_max_stress_context",
+          "scenario_label": "Neighboring family max stress",
+          "source_classification": "context_only_not_authority",
+          "impacted_project_maps": [
+            "sunken_ship",
+            "villa"
+          ],
+          "drop_group_id": 1066,
+          "inferred_base_value": 1553900,
+          "missing_weight": 3333,
+          "missing_probability_share": 0.01789876,
+          "missing_expected_value_contribution": 27812.88,
+          "expected_group_base_value_with_missing": 226463.07,
+          "group_tail_probability_ge_200000": 0.25688187,
+          "group_jackpot_probability_ge_1000000": 0.03117381,
+          "authority_action_allowed": false,
+          "default_config_update_allowed": false,
+          "notes": [
+            "sensitivity scenario only",
+            "does not recover source Item row",
+            "does not authorize default config or replay promotion"
+          ],
+          "item_id": 1106013
         }
       ],
       "authority_action_allowed": false,
