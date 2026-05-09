@@ -10,6 +10,7 @@ const {
     buildAuthenticatedSteamTableDownloadPlan,
     main,
     redactRunnerText,
+    resolveExecutionUsername,
     resolveArgs,
     runAuthenticatedSteamTableDownload
 } = require("../scripts/run_bidking_authenticated_steam_table_download.js");
@@ -46,6 +47,7 @@ test("resolveArgs accepts attempt report, output path, username, execute flag, a
         "attempt.json",
         "runner.json",
         "--username=owned-user",
+        "--username-env=AK_STEAM_USERNAME",
         "--auth-mode=remember-password",
         "--execute",
         "--download-dir=/tmp/owned",
@@ -56,11 +58,130 @@ test("resolveArgs accepts attempt report, output path, username, execute flag, a
     assert.equal(result.attemptReportPath, path.resolve("attempt.json"));
     assert.equal(result.outputPath, path.resolve("runner.json"));
     assert.equal(result.username, "owned-user");
+    assert.equal(result.usernameEnv, "AK_STEAM_USERNAME");
     assert.equal(result.authMode, "remember-password");
     assert.equal(result.execute, true);
     assert.equal(result.downloadDir, path.resolve("/tmp/owned"));
     assert.equal(result.depotDownloaderPath, path.resolve("/tmp/dd/DepotDownloader"));
     assert.equal(result.generatedAt, "2026-05-08T00:30:00.000+08:00");
+});
+
+test("resolveExecutionUsername reads username from an explicit environment variable without artifact exposure", () => {
+    const result = resolveExecutionUsername({
+        username: null,
+        usernameEnv: "AK_STEAM_USERNAME",
+        env: { AK_STEAM_USERNAME: "owned-user" }
+    });
+
+    assert.equal(result.username, "owned-user");
+    assert.equal(result.source, "env");
+    assert.equal(result.envName, "AK_STEAM_USERNAME");
+});
+
+test("execute mode can use username-env while keeping reports credential-safe", () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "ak-steam-runner-username-env-"));
+    const fakeDownloader = path.join(tempDir, "DepotDownloader");
+    fs.writeFileSync(
+        fakeDownloader,
+        "#!/bin/sh\necho \"$@\" > \"$AK_ARG_LOG\"\nOUT=''\nwhile [ $# -gt 0 ]; do\n  if [ \"$1\" = \"-dir\" ]; then\n    shift\n    OUT=\"$1\"\n  fi\n  shift\n done\nmkdir -p \"$OUT/BidKing_Data/StreamingAssets/Tables\"\nprintf '1106013\\tRecovered\\n' > \"$OUT/BidKing_Data/StreamingAssets/Tables/Item.txt\"\nprintf '1066\\t[[106,1106013,1,1,3333]]\\n' > \"$OUT/BidKing_Data/StreamingAssets/Tables/Drop.txt\"\necho \"logged in as owned-user\"\n",
+        { mode: 0o755 }
+    );
+    const originalArgLog = process.env.AK_ARG_LOG;
+    const originalSteamUsername = process.env.AK_STEAM_USERNAME;
+    process.env.AK_ARG_LOG = path.join(tempDir, "args.log");
+    process.env.AK_STEAM_USERNAME = "owned-user";
+
+    try {
+        const report = runAuthenticatedSteamTableDownload({
+            attemptReport: attemptReport(),
+            generatedAt: "2026-05-08T00:30:00.000+08:00",
+            filelistPath: path.join(tempDir, "filelist.txt"),
+            downloadDir: path.join(tempDir, "owned"),
+            depotDownloaderPath: fakeDownloader,
+            usernameEnv: "AK_STEAM_USERNAME",
+            execute: true,
+            authMode: "remember-password"
+        });
+
+        assert.match(fs.readFileSync(process.env.AK_ARG_LOG, "utf8"), /owned-user/);
+        assert.equal(report.summary.username_provided, true);
+        assert.equal(report.summary.username_source, "env");
+        assert.equal(report.summary.username_env, "AK_STEAM_USERNAME");
+        assert.equal(report.summary.download_attempted, true);
+        assert.equal(report.summary.source_item_row_recovered, true);
+        assert.doesNotMatch(JSON.stringify(report), /owned-user/);
+        assert.match(report.downloader.output_redacted, /<STEAM_USERNAME>/);
+    } finally {
+        if (originalArgLog === undefined) delete process.env.AK_ARG_LOG;
+        else process.env.AK_ARG_LOG = originalArgLog;
+        if (originalSteamUsername === undefined) delete process.env.AK_STEAM_USERNAME;
+        else process.env.AK_STEAM_USERNAME = originalSteamUsername;
+    }
+});
+
+test("execute with missing username env is reported fail-closed without launching downloader", () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "ak-steam-runner-username-env-missing-"));
+    const fakeDownloader = path.join(tempDir, "DepotDownloader");
+    const markerPath = path.join(tempDir, "called");
+    fs.writeFileSync(fakeDownloader, `#!/bin/sh\ntouch ${JSON.stringify(markerPath)}\nexit 99\n`, { mode: 0o755 });
+    const originalSteamUsername = process.env.AK_STEAM_USERNAME;
+    delete process.env.AK_STEAM_USERNAME;
+
+    try {
+        const report = runAuthenticatedSteamTableDownload({
+            attemptReport: attemptReport(),
+            generatedAt: "2026-05-08T00:30:00.000+08:00",
+            filelistPath: path.join(tempDir, "filelist.txt"),
+            downloadDir: path.join(tempDir, "owned"),
+            depotDownloaderPath: fakeDownloader,
+            usernameEnv: "AK_STEAM_USERNAME",
+            execute: true,
+            authMode: "remember-password"
+        });
+
+        assert.equal(fs.existsSync(markerPath), false);
+        assert.equal(report.summary.execute_requested, true);
+        assert.equal(report.summary.username_provided, false);
+        assert.equal(report.summary.username_source, "env_missing");
+        assert.equal(report.summary.download_attempted, false);
+        assert.equal(report.summary.download_blocked_reason, "missing_steam_username_env");
+        assert.match(report.summary.recommended_next_action, /set_steam_username_env/);
+        assert.equal(report.summary.default_config_update_allowed, false);
+    } finally {
+        if (originalSteamUsername === undefined) delete process.env.AK_STEAM_USERNAME;
+        else process.env.AK_STEAM_USERNAME = originalSteamUsername;
+    }
+});
+
+test("execute with missing downloader binary is reported fail-closed before spawn", () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "ak-steam-runner-missing-tool-"));
+    const missingDownloader = path.join(tempDir, "missing", "DepotDownloader");
+    const originalSteamUsername = process.env.AK_STEAM_USERNAME;
+    process.env.AK_STEAM_USERNAME = "owned-user";
+
+    try {
+        const report = runAuthenticatedSteamTableDownload({
+            attemptReport: attemptReport(),
+            generatedAt: "2026-05-08T00:30:00.000+08:00",
+            filelistPath: path.join(tempDir, "filelist.txt"),
+            downloadDir: path.join(tempDir, "owned"),
+            depotDownloaderPath: missingDownloader,
+            usernameEnv: "AK_STEAM_USERNAME",
+            execute: true,
+            authMode: "remember-password"
+        });
+
+        assert.equal(report.summary.username_provided, true);
+        assert.equal(report.summary.depotdownloader_available, false);
+        assert.equal(report.summary.download_attempted, false);
+        assert.equal(report.summary.download_blocked_reason, "missing_depotdownloader_binary");
+        assert.match(report.summary.recommended_next_action, /install_depotdownloader/);
+        assert.equal(report.summary.default_config_update_allowed, false);
+        assert.doesNotMatch(JSON.stringify(report), /owned-user/);
+    } finally {
+        if (originalSteamUsername === undefined) delete process.env.AK_STEAM_USERNAME;
+        else process.env.AK_STEAM_USERNAME = originalSteamUsername;
+    }
 });
 
 test("execute without safe auth mode is blocked before launching noninteractive password prompt", () => {

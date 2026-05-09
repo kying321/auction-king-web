@@ -37,6 +37,7 @@ function resolveArgs(argv = process.argv.slice(2)) {
     let depotDownloaderPath = DEFAULT_DEPOTDOWNLOADER_PATH;
     let timeoutMs = DEFAULT_DOWNLOADER_TIMEOUT_MS;
     let authMode = null;
+    let usernameEnv = null;
 
     for (let index = 0; index < argv.length; index += 1) {
         const arg = String(argv[index]);
@@ -48,6 +49,12 @@ function resolveArgs(argv = process.argv.slice(2)) {
             username = String(argv[index]);
         } else if (arg.startsWith("--username=")) {
             username = arg.slice("--username=".length);
+        } else if (arg === "--username-env") {
+            index += 1;
+            if (!argv[index]) throw new Error("--username-env requires a value");
+            usernameEnv = String(argv[index]);
+        } else if (arg.startsWith("--username-env=")) {
+            usernameEnv = arg.slice("--username-env=".length);
         } else if (arg === "--auth-mode") {
             index += 1;
             if (!argv[index]) throw new Error("--auth-mode requires a value");
@@ -93,6 +100,7 @@ function resolveArgs(argv = process.argv.slice(2)) {
         attemptReportPath: positional[0] ? path.resolve(positional[0]) : DEFAULT_ATTEMPT_REPORT_PATH,
         outputPath: positional[1] ? path.resolve(positional[1]) : DEFAULT_OUTPUT_PATH,
         username,
+        usernameEnv,
         authMode,
         execute,
         filelistPath,
@@ -115,6 +123,24 @@ function normalizeAuthMode(value = null) {
     if (normalized === "remember" || normalized === "rememberpassword") return "remember-password";
     if (SAFE_EXECUTE_AUTH_MODES.has(normalized)) return normalized;
     throw new Error(`Unsupported --auth-mode: ${value}`);
+}
+
+function resolveExecutionUsername({ username = null, usernameEnv = null, env = process.env } = {}) {
+    if (username) return { username: String(username), source: "argument", envName: null };
+    if (!usernameEnv) return { username: null, source: null, envName: null };
+    const envName = String(usernameEnv);
+    const envValue = env ? env[envName] : null;
+    if (!envValue) return { username: null, source: "env_missing", envName };
+    return { username: String(envValue), source: "env", envName };
+}
+
+function isExecutableFile(filePath) {
+    try {
+        fs.accessSync(filePath, fs.constants.X_OK);
+        return true;
+    } catch (_error) {
+        return false;
+    }
 }
 
 function readJson(filePath) {
@@ -187,9 +213,16 @@ function getDownloaderRecommendedNextAction({
     sourceItemRow = null,
     execute = false,
     authMode = null,
+    downloadBlockedReason = null,
     downloaderSummary = {}
 } = {}) {
     if (sourceItemRow) return "run_source_recovery_scan_then_authority_intake_audit";
+    if (downloadBlockedReason === "missing_steam_username_env") {
+        return "set_steam_username_env_and_rerun_with_safe_auth_mode";
+    }
+    if (downloadBlockedReason === "missing_depotdownloader_binary") {
+        return "install_depotdownloader_and_rerun_with_safe_auth_mode";
+    }
     if (authMode === LOGIN_PROMPT_BLOCKED_MODE) {
         return "rerun_with_qr_or_remember_password_or_developer_export";
     }
@@ -244,15 +277,28 @@ function buildAuthenticatedSteamTableDownloadPlan({
     downloadDir = DEFAULT_DOWNLOAD_DIR,
     depotDownloaderPath = DEFAULT_DEPOTDOWNLOADER_PATH,
     username = null,
+    usernameEnv = null,
     execute = false,
     authMode = null,
+    downloaderAvailable = null,
     downloaderResult = null
 } = {}) {
     const attemptSummary = safeSummary(attemptReport);
     const normalizedAuthMode = normalizeAuthMode(authMode);
+    const usernameResolution = resolveExecutionUsername({ username, usernameEnv });
+    const resolvedDownloaderAvailable = typeof downloaderAvailable === "boolean"
+        ? downloaderAvailable
+        : isExecutableFile(depotDownloaderPath);
     const summaryAuthMode = normalizedAuthMode
         || (execute && downloaderResult ? LEGACY_LOGIN_PROMPT_MODE : null)
         || (execute ? LOGIN_PROMPT_BLOCKED_MODE : "dry_run");
+    const downloadBlockedReason = usernameResolution.source === "env_missing"
+        ? "missing_steam_username_env"
+        : execute && !downloaderResult && !resolvedDownloaderAvailable
+            ? "missing_depotdownloader_binary"
+        : summaryAuthMode === LOGIN_PROMPT_BLOCKED_MODE
+            ? "execute_requires_qr_or_remember_password_to_avoid_noninteractive_password_prompt"
+            : null;
     const downloaderArgs = buildDownloaderArgs({
         attemptSummary,
         username,
@@ -278,12 +324,13 @@ function buildAuthenticatedSteamTableDownloadPlan({
             target_item_id: attemptSummary.target_item_id || 1106013,
             current_full_client_depot_id: attemptSummary.current_full_client_depot_id || 4128581,
             execute_requested: execute === true,
-            username_provided: Boolean(username),
+            username_provided: Boolean(usernameResolution.username),
+            username_source: usernameResolution.source,
+            username_env: usernameResolution.envName,
             auth_mode: summaryAuthMode,
             safe_execute_auth_mode: SAFE_EXECUTE_AUTH_MODES.has(normalizedAuthMode),
-            download_blocked_reason: summaryAuthMode === LOGIN_PROMPT_BLOCKED_MODE
-                ? "execute_requires_qr_or_remember_password_to_avoid_noninteractive_password_prompt"
-                : null,
+            depotdownloader_available: resolvedDownloaderAvailable,
+            download_blocked_reason: downloadBlockedReason,
             download_attempted: Boolean(downloaderResult),
             downloader_exit_code: downloaderSummary.exit_code,
             downloader_signal: downloaderSummary.signal,
@@ -301,6 +348,7 @@ function buildAuthenticatedSteamTableDownloadPlan({
                 sourceItemRow,
                 execute,
                 authMode: summaryAuthMode,
+                downloadBlockedReason,
                 downloaderSummary
             })
         },
@@ -342,7 +390,10 @@ function buildAuthenticatedSteamTableDownloadPlan({
                 signal: downloaderResult.signal || null,
                 error_code: downloaderSummary.error_code,
                 timed_out: downloaderSummary.timed_out,
-                output_redacted: redactRunnerText(`${downloaderResult.stdout || ""}${downloaderResult.stderr || ""}`, username)
+                output_redacted: redactRunnerText(
+                    `${downloaderResult.stdout || ""}${downloaderResult.stderr || ""}`,
+                    usernameResolution.username
+                )
             }
             : null,
         table_scan: {
@@ -356,14 +407,19 @@ function buildAuthenticatedSteamTableDownloadPlan({
 function runAuthenticatedSteamTableDownload(options = {}) {
     const plan = buildAuthenticatedSteamTableDownloadPlan(options);
     if (options.execute !== true) return plan;
-    if (!options.username) throw new Error("--username is required with --execute");
+    const usernameResolution = resolveExecutionUsername({
+        username: options.username,
+        usernameEnv: options.usernameEnv
+    });
+    if (!usernameResolution.username) return plan;
     const normalizedAuthMode = normalizeAuthMode(options.authMode);
     if (!SAFE_EXECUTE_AUTH_MODES.has(normalizedAuthMode)) return plan;
+    if (!isExecutableFile(options.depotDownloaderPath || DEFAULT_DEPOTDOWNLOADER_PATH)) return plan;
 
     const attemptSummary = safeSummary(options.attemptReport || {});
     const args = buildDownloaderArgs({
         attemptSummary,
-        username: options.username,
+        username: usernameResolution.username,
         filelistPath: options.filelistPath || DEFAULT_FILELIST_PATH,
         downloadDir: options.downloadDir || DEFAULT_DOWNLOAD_DIR,
         authMode: normalizedAuthMode
@@ -389,6 +445,7 @@ function formatAuthenticatedSteamTableDownloadMarkdown(report, jsonPath = DEFAUL
 - Username provided: \`${summary.username_provided === true}\`
 - Auth mode: \`${summary.auth_mode || "-"}\`
 - Safe execute auth mode: \`${summary.safe_execute_auth_mode === true}\`
+- DepotDownloader available: \`${summary.depotdownloader_available === true}\`
 - Download blocked reason: \`${summary.download_blocked_reason || "-"}\`
 - Download attempted: \`${summary.download_attempted === true}\`
 - Downloader exit code: \`${summary.downloader_exit_code ?? "-"}\`
@@ -422,6 +479,7 @@ function main(argv = process.argv.slice(2)) {
         downloadDir: args.downloadDir,
         depotDownloaderPath: args.depotDownloaderPath,
         username: args.username,
+        usernameEnv: args.usernameEnv,
         authMode: args.authMode,
         execute: args.execute,
         timeoutMs: args.timeoutMs
@@ -446,6 +504,7 @@ module.exports = {
     main,
     normalizeAuthMode,
     redactRunnerText,
+    resolveExecutionUsername,
     resolveArgs,
     resolveDownloaderTimeoutMs,
     runAuthenticatedSteamTableDownload
