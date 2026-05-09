@@ -22,7 +22,7 @@
 | /tmp/ak_bidking_depot_4128581_tables_owned | `directory` | `true` | `0` | `0` |
 | <local>/BidKing_zip_extract_min | `directory` | `true` | `62` | `5` |
 | <local>/BidKing | `directory` | `true` | `28` | `27` |
-| <steam>/steamapps | `directory` | `true` | `10273` | `9323` |
+| <steam>/steamapps | `directory` | `true` | `10270` | `9323` |
 
 ## Blockers
 

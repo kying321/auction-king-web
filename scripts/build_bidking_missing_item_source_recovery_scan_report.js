@@ -1,4 +1,5 @@
 const fs = require("node:fs");
+const os = require("node:os");
 const path = require("node:path");
 const childProcess = require("node:child_process");
 
@@ -103,6 +104,52 @@ function isFile(filePath) {
 
 function uniqueSortedNumbers(values) {
     return Array.from(new Set((values || []).map(Number).filter(Number.isFinite))).sort((left, right) => left - right);
+}
+
+function makePublicPathAliases() {
+    const homeDir = os.homedir();
+    return [
+        [ROOT_DIR, "<repo>"],
+        [path.join(homeDir, "Downloads", "BidKing_zip_extract_min"), "<local>/BidKing_zip_extract_min"],
+        [path.join(homeDir, "Downloads", "BidKing"), "<local>/BidKing"],
+        [path.join(homeDir, "Library", "Application Support", "Steam", "steamapps"), "<steam>/steamapps"],
+        [homeDir, "<home>"]
+    ];
+}
+
+function isWithinPath(basePath, candidatePath) {
+    const relative = path.relative(path.resolve(basePath), path.resolve(candidatePath));
+    return relative === "" || (!!relative && !relative.startsWith("..") && !path.isAbsolute(relative));
+}
+
+function formatPublicPath(value) {
+    const text = String(value || "");
+    if (!path.isAbsolute(text)) return text;
+    const match = makePublicPathAliases().find(([basePath]) => isWithinPath(basePath, text));
+    if (!match) return text;
+    const [basePath, alias] = match;
+    const relative = path.relative(path.resolve(basePath), path.resolve(text));
+    return relative ? `${alias}/${relative.split(path.sep).join("/")}` : alias;
+}
+
+function sanitizePublicPaths(value) {
+    if (Array.isArray(value)) return value.map((entry) => sanitizePublicPaths(entry));
+    if (value && typeof value === "object") {
+        return Object.fromEntries(Object.entries(value).map(([key, entry]) => [key, sanitizePublicPaths(entry)]));
+    }
+    if (typeof value === "string") return formatPublicPath(value);
+    return value;
+}
+
+function redactSkippedFileDetails(report) {
+    (report.source_scans || []).forEach((sourceScan) => {
+        Object.values(sourceScan.item_scans || {}).forEach((itemScan) => {
+            if (!Array.isArray(itemScan.skipped_files) || itemScan.skipped_files.length === 0) return;
+            itemScan.skipped_file_details_redacted = true;
+            itemScan.skipped_files = [];
+        });
+    });
+    return report;
 }
 
 function normalizeZipName(value) {
@@ -425,7 +472,7 @@ function buildBidKingMissingItemSourceRecoveryScanReport({
     const recoveredItems = itemReports.filter((entry) => entry.source_item_row_recovered);
     const allRecovered = itemReports.length > 0 && recoveredItems.length === itemReports.length;
 
-    return {
+    const report = {
         schema_version: "ak_bidking_missing_item_source_recovery_scan_v1",
         generated_at: generatedAt,
         mode: "source_first_implementation",
@@ -472,9 +519,11 @@ function buildBidKingMissingItemSourceRecoveryScanReport({
         notes: [
             "This scan searches local candidate sources only and does not mutate source tables.",
             "A source Item row must be ingested and table-reference integrity rerun before any replay promotion.",
+            "Skipped file paths are counted but not published in public artifacts.",
             "Default estimator config and authority handoff remain closed."
         ]
     };
+    return sanitizePublicPaths(redactSkippedFileDetails(report));
 }
 
 function markdownCell(value) {

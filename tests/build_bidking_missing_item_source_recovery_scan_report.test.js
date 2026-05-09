@@ -102,6 +102,58 @@ test("source recovery report keeps recovered candidates non-authoritative until 
     assert.match(report.summary.recommended_next_action, /ingest_recovered_item_rows/);
 });
 
+test("source recovery report redacts local absolute paths for public artifacts", () => {
+    const homeDir = os.homedir();
+    const report = buildBidKingMissingItemSourceRecoveryScanReport({
+        missingItemCandidateReport: buildCandidateReport(1106013),
+        scanSources: [
+            path.join(homeDir, "Downloads", "BidKing_zip_extract_min"),
+            path.join(homeDir, "Downloads", "BidKing"),
+            path.join(homeDir, "Library", "Application Support", "Steam", "steamapps")
+        ],
+        generatedAt: "2026-05-09T19:20:00.000+08:00",
+        paths: {
+            missingItemCandidateReportPath: path.resolve("docs/research/fixture-candidate.json")
+        }
+    });
+
+    const serialized = JSON.stringify(report);
+    assert.equal(serialized.includes(homeDir), false);
+    assert.equal(report.inputs.missing_item_candidate_report, "<repo>/docs/research/fixture-candidate.json");
+    assert.deepEqual(report.inputs.scan_sources, [
+        "<local>/BidKing_zip_extract_min",
+        "<local>/BidKing",
+        "<steam>/steamapps"
+    ]);
+    assert.deepEqual(report.source_scans.map((entry) => entry.source_path), [
+        "<local>/BidKing_zip_extract_min",
+        "<local>/BidKing",
+        "<steam>/steamapps"
+    ]);
+
+    const markdown = formatBidKingMissingItemSourceRecoveryScanMarkdown(report);
+    assert.equal(markdown.includes(homeDir), false);
+    assert.match(markdown, /<local>\/BidKing_zip_extract_min/);
+    assert.match(markdown, /<steam>\/steamapps/);
+});
+
+test("source recovery report keeps skipped counts without publishing skipped file paths", () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "ak-bidking-source-skipped-"));
+    writeFixtureFile(path.join(tempDir, "Tables", "Drop.txt"), "10\tfixture\tfixture\t2\t[[50,5003,1,1,333]]\n");
+    fs.writeFileSync(path.join(tempDir, "payload.bin"), Buffer.from([0, 1, 2, 3]));
+
+    const report = buildBidKingMissingItemSourceRecoveryScanReport({
+        missingItemCandidateReport: buildCandidateReport(),
+        scanSources: [tempDir],
+        generatedAt: "2026-05-09T19:20:00.000+08:00"
+    });
+    const itemScan = report.source_scans[0].item_scans["5003"];
+
+    assert.equal(itemScan.skipped_file_count, 1);
+    assert.deepEqual(itemScan.skipped_files, []);
+    assert.equal(JSON.stringify(report).includes("payload.bin"), false);
+});
+
 test("main writes JSON and Markdown source recovery scan artifacts", () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "ak-bidking-source-missing-"));
     const sourceDir = path.join(tempDir, "source");
