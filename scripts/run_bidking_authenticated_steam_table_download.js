@@ -169,14 +169,17 @@ function buildDownloaderArgs({ attemptSummary = {}, username, filelistPath, down
         String(attemptSummary.current_full_client_depot_id || 4128581),
         "-manifest",
         String(attemptSummary.current_full_client_manifest_id || "7599723101430486725"),
-        "-username",
-        String(username || "<STEAM_USERNAME>"),
+    ];
+    if (username || normalizedAuthMode !== "qr") {
+        args.push("-username", String(username || "<STEAM_USERNAME>"));
+    }
+    args.push(
         "-filelist",
         filelistPath,
         "-dir",
         downloadDir,
         "-validate"
-    ];
+    );
     if (normalizedAuthMode === "remember-password") args.push("-remember-password");
     if (normalizedAuthMode === "qr") args.push("-qr");
     return args;
@@ -222,6 +225,9 @@ function getDownloaderRecommendedNextAction({
     }
     if (downloadBlockedReason === "missing_depotdownloader_binary") {
         return "install_depotdownloader_and_rerun_with_safe_auth_mode";
+    }
+    if (downloadBlockedReason === "qr_requires_interactive_terminal") {
+        return "run_interactive_qr_depotdownloader_without_artifact_capture";
     }
     if (authMode === LOGIN_PROMPT_BLOCKED_MODE) {
         return "rerun_with_qr_or_remember_password_or_developer_export";
@@ -296,6 +302,8 @@ function buildAuthenticatedSteamTableDownloadPlan({
         ? "missing_steam_username_env"
         : execute && !downloaderResult && !resolvedDownloaderAvailable
             ? "missing_depotdownloader_binary"
+        : execute && !downloaderResult && normalizedAuthMode === "qr"
+            ? "qr_requires_interactive_terminal"
         : summaryAuthMode === LOGIN_PROMPT_BLOCKED_MODE
             ? "execute_requires_qr_or_remember_password_to_avoid_noninteractive_password_prompt"
             : null;
@@ -306,6 +314,9 @@ function buildAuthenticatedSteamTableDownloadPlan({
         downloadDir,
         authMode: normalizedAuthMode
     });
+    const redactedPlanUsername = normalizedAuthMode === "qr" && !usernameResolution.username
+        ? null
+        : "<STEAM_USERNAME>";
     const tableFiles = findTableFiles(downloadDir);
     const sourceItemRow = scanSourceItemRow(tableFiles.item_files, attemptSummary.target_item_id || 1106013);
     const tableFilesDownloaded = tableFiles.item_files.length > 0 && tableFiles.drop_files.length > 0;
@@ -366,7 +377,7 @@ function buildAuthenticatedSteamTableDownloadPlan({
             depotdownloader_path: depotDownloaderPath,
             depotdownloader_args_redacted: buildDownloaderArgs({
                 attemptSummary,
-                username: "<STEAM_USERNAME>",
+                username: redactedPlanUsername,
                 filelistPath,
                 downloadDir,
                 authMode: normalizedAuthMode
@@ -375,7 +386,7 @@ function buildAuthenticatedSteamTableDownloadPlan({
                 shellQuote(depotDownloaderPath),
                 ...buildDownloaderArgs({
                     attemptSummary,
-                    username: "<STEAM_USERNAME>",
+                    username: redactedPlanUsername,
                     filelistPath,
                     downloadDir,
                     authMode: normalizedAuthMode
@@ -415,6 +426,7 @@ function runAuthenticatedSteamTableDownload(options = {}) {
     const normalizedAuthMode = normalizeAuthMode(options.authMode);
     if (!SAFE_EXECUTE_AUTH_MODES.has(normalizedAuthMode)) return plan;
     if (!isExecutableFile(options.depotDownloaderPath || DEFAULT_DEPOTDOWNLOADER_PATH)) return plan;
+    if (normalizedAuthMode === "qr") return plan;
 
     const attemptSummary = safeSummary(options.attemptReport || {});
     const args = buildDownloaderArgs({

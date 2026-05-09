@@ -244,6 +244,52 @@ test("qr auth mode appends qr flag and remains credential-safe", () => {
     assert.doesNotMatch(report.plan.depotdownloader_command_redacted, /owned-user|'-password'|access token|refresh token|2FA/i);
 });
 
+test("qr auth mode can be planned without username and omits username argument", () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "ak-steam-runner-qr-envless-"));
+    const report = buildAuthenticatedSteamTableDownloadPlan({
+        attemptReport: attemptReport(),
+        generatedAt: "2026-05-08T00:30:00.000+08:00",
+        filelistPath: path.join(tempDir, "filelist.txt"),
+        downloadDir: path.join(tempDir, "owned"),
+        depotDownloaderPath: "/tmp/dd/DepotDownloader",
+        execute: true,
+        authMode: "qr",
+        downloaderAvailable: true
+    });
+
+    assert.equal(report.summary.auth_mode, "qr");
+    assert.equal(report.summary.username_provided, false);
+    assert.equal(report.summary.safe_execute_auth_mode, true);
+    assert.equal(report.summary.download_attempted, false);
+    assert.equal(report.summary.download_blocked_reason, "qr_requires_interactive_terminal");
+    assert.match(report.summary.recommended_next_action, /run_interactive_qr/);
+    assert.match(report.plan.depotdownloader_command_redacted, /'-qr'/);
+    assert.doesNotMatch(report.plan.depotdownloader_command_redacted, /'-username'|<STEAM_USERNAME>|owned-user/);
+});
+
+test("execute qr mode without username is blocked before QR output can be captured", () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "ak-steam-runner-qr-block-"));
+    const fakeDownloader = path.join(tempDir, "DepotDownloader");
+    const markerPath = path.join(tempDir, "called");
+    fs.writeFileSync(fakeDownloader, `#!/bin/sh\ntouch ${JSON.stringify(markerPath)}\necho 'QR LOGIN CODE SHOULD NOT BE CAPTURED'\nexit 0\n`, { mode: 0o755 });
+
+    const report = runAuthenticatedSteamTableDownload({
+        attemptReport: attemptReport(),
+        generatedAt: "2026-05-08T00:30:00.000+08:00",
+        filelistPath: path.join(tempDir, "filelist.txt"),
+        downloadDir: path.join(tempDir, "owned"),
+        depotDownloaderPath: fakeDownloader,
+        execute: true,
+        authMode: "qr"
+    });
+
+    assert.equal(fs.existsSync(markerPath), false);
+    assert.equal(report.summary.download_attempted, false);
+    assert.equal(report.summary.download_blocked_reason, "qr_requires_interactive_terminal");
+    assert.equal(report.downloader, null);
+    assert.doesNotMatch(JSON.stringify(report), /QR LOGIN CODE SHOULD NOT BE CAPTURED/);
+});
+
 test("dry run writes filelist and produces a credential-safe plan without executing DepotDownloader", () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "ak-steam-runner-dry-"));
     const filelistPath = path.join(tempDir, "filelist.txt");
