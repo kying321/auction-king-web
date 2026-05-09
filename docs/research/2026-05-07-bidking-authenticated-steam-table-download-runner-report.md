@@ -6,7 +6,7 @@
 - Username provided: `false`
 - Auth mode: `remember-password`
 - Safe execute auth mode: `true`
-- DepotDownloader available: `false`
+- DepotDownloader available: `true`
 - Download blocked reason: `missing_steam_username_env`
 - Download attempted: `false`
 - Downloader exit code: `-`

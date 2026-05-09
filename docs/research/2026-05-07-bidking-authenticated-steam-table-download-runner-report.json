@@ -1,6 +1,6 @@
 {
   "schema_version": "ak_bidking_authenticated_steam_table_download_runner_v1",
-  "generated_at": "2026-05-09T18:00:00.000+08:00",
+  "generated_at": "2026-05-09T18:40:00.000+08:00",
   "mode": "research_backtest",
   "change_class": "RESEARCH_ONLY",
   "recommended_change_class": "SIM_ONLY",
@@ -14,7 +14,7 @@
     "username_env": "AK_STEAM_USERNAME",
     "auth_mode": "remember-password",
     "safe_execute_auth_mode": true,
-    "depotdownloader_available": false,
+    "depotdownloader_available": true,
     "download_blocked_reason": "missing_steam_username_env",
     "download_attempted": false,
     "downloader_exit_code": null,
